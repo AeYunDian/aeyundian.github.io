@@ -1,14 +1,133 @@
-<h1 id="">告别与新的开始</h1>
-<p>亲爱的访客：</p>
-<p>感谢您对本站的支持与陪伴。</p>
-<p>很不舍地通知您，本网站已于 <strong>2025年09月10日</strong> 正式停止服务并下线。这是一个艰难的决定，但所有的结束都意味着新的开始。</p>
-<p>虽然网站已成为回忆，但我为您提供的服务并未终止。</p>
-<p><strong>我的邮箱服务已稳定运行，诚邀您继续使用：</strong></p>
-<p>🏷 <strong>邮箱登录地址：</strong> <a href="https://mail.heiye.xin">https://mail.heiye.xin</a></p>
-<p>您可以使用它进行安全、高效的邮件沟通。</p>
-<p>再次感谢您的理解与多年的相伴。山高水长，我们后会有期。</p>
-<p>祝好！</p>
-<p>Heiye 个人开发者
-2025年09月10日</p>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随机文本展示</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', 'SimHei', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://bing.img.run/rand.php');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -2;
+        }
+        
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.7);
+            z-index: -1;
+        }
+        
+        .text-container {
+            max-width: 600px;
+            padding: 40px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            line-height: 1.8;
+        }
+        
+        .text-content {
+            font-size: 18px;
+            color: #333;
+            white-space: pre-line;
+        }
+        
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            padding: 0 20px;
+        }
+        
+        .footer-content {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+            color: #333;
+            line-height: 1.5;
+        }
+        
+        .footer-content strong {
+            color: #d32f2f;
+        }
+        
+        .footer-content a {
+            color: #1976d2;
+            text-decoration: none;
+        }
+        
+        .footer-content a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="overlay"></div>
+    
+    <div class="text-container">
+        <div class="text-content" id="textContent"></div>
+    </div>
+    
+    <div class="footer">
+        <div class="footer-content">
+            <p>本主站已于 <strong>2025年09月06日</strong> 正式停止服务，我的邮箱服务已稳定运行，诚邀您继续使用：<a href="https://mail.heiye.xin">https://mail.heiye.xin</a></p>
+        </div>
+    </div>
 
-
+    <script>
+        // 文本数组
+        const texts = [
+            "世上每一个小小的生灵，都应当拥有一片乐土。\n草木扎根于无垠之中，叶梢朝向繁星生长。\n直到枝头结出果实，果实中包含天空与海洋、智慧与畅想。",
+            "寻寻觅觅，怀感妄执数百夕。\n凄凄恻恻，渡来恶风已无意。",
+            "虽不能至，心向往之。"
+        ];
+        
+        // 随机选择文本
+        function getRandomText() {
+            const randomIndex = Math.floor(Math.random() * texts.length);
+            return texts[randomIndex];
+        }
+        
+        // 页面加载完成后显示随机文本
+        window.addEventListener('load', function() {
+            document.getElementById('textContent').textContent = getRandomText();
+        });
+    </script>
+</body>
+</html>
