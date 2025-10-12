@@ -145,7 +145,7 @@
             const randomIndex = Math.floor(Math.random() * texts.length);
             return texts[randomIndex];
         }
-        
+        document.getElementById('textContent').innerHTML = '正在加载...';
         // 页面加载完成后显示随机文本
         window.addEventListener('load', function() {
            document.getElementById('textContent').innerHTML = getRandomText();
@@ -154,4 +154,5 @@
 </body>
 
 </html>
+
 
