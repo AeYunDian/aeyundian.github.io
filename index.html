@@ -62,6 +62,16 @@
             white-space: pre-line;
         }
         
+        .text-content a {
+            color: #1976d2;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .text-content a:hover {
+            text-decoration: underline;
+        }
+        
         .footer {
             position: absolute;
             bottom: 20px;
@@ -115,7 +125,19 @@
         const texts = [
             "世上每一个小小的生灵，都应当拥有一片乐土。\n草木扎根于无垠之中，叶梢朝向繁星生长。\n直到枝头结出果实，果实中包含天空与海洋、智慧与畅想。",
             "寻寻觅觅，怀感妄执数百夕。\n凄凄恻恻，渡来恶风已无意。",
-            "虽不能至，心向往之。"
+            "Searching and seeking for an illusory obsession through countless nights.\nWith melancholy and misery as company, malevolent winds mean naught to him.",
+            "心至「空」处，天地万物皆为「空」；\n心中「净」澈，万物天地皆为「净」。",
+            "无法更改，不可违逆。正因如此，命运才是命运。",
+            "能在年少时拥有坚定的梦想并为之奋斗，是一件非常不错的事。\n唯有打磨自己，才能克服接连不断的困境。",
+            "浮世景色百千年依旧，而人之在世，却如白露与泡影般虚无。",
+            "万事万物都存在着相互联系，一切事物都可以指向命运。",
+            "一张纸···它本身并无意义，重要的···是纸上的内容。",
+            "过去不会被撼动，但你可以继续走。只要未来的线够长，总有一天过去会变成比例尺上很短小的一段。",
+            "见证者，为见证而来；\n铭记者，因铭记而生。",
+            "人心就像大海上的小船，看似能够控制航向，其实随时会被风和浪卷去最危险的地方。",
+            "口才好可以很容易地安抚别人，甚至让对方为自己所用呢。",
+            "唯有遵循应守之“律”，人才能获得解开一切的“法”。",
+            '<a href="https://www.heiye.xin/music.mp3">绰巡林风 Winding Through Avidya</a>'
         ];
         
         // 随机选择文本
@@ -126,9 +148,10 @@
         
         // 页面加载完成后显示随机文本
         window.addEventListener('load', function() {
-            document.getElementById('textContent').textContent = getRandomText();
+           document.getElementById('textContent').innerHTML = getRandomText();
         });
     </script>
 </body>
 
 </html>
+
