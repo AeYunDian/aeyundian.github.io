@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>主站服务已停止 - 2025/09/06</title>
+    <title>Dashboard - Yund</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
         * {
             margin: 0;
@@ -12,147 +13,634 @@
         }
         
         body {
-            font-family: 'Microsoft YaHei', 'SimHei', sans-serif;
-            min-height: 100vh;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            position: relative;
+            min-height: 100vh;
+            background: radial-gradient(ellipse at center, #000000, #1a0022);
             overflow: hidden;
+            font-family: 'Arial', sans-serif;
+            color: white;
         }
         
-        .background {
+        /* 黑洞背景容器 */
+        .background-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        canvas {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('https://bing.img.run/rand.php');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            z-index: -2;
         }
         
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
+        .black-hole-container {
+            position: relative;
             width: 100%;
             height: 100%;
-            background-color: rgba(255, 255, 255, 0.7);
-            z-index: -1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         
-        .text-container {
-            max-width: 600px;
-            padding: 40px;
-            text-align: center;
-            background-color: rgba(255, 255, 255, 0.85);
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            margin: 20px;
-            line-height: 1.8;
+        .black-hole {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: black;
+            border-radius: 50%;
+            border: 10px solid transparent;
+            box-shadow:
+                0 0 20px 5px rgba(255, 105, 180, 0.8),
+                0 0 40px 10px rgba(128, 0, 128, 0.7),
+                0 0 60px 15px rgba(0, 0, 255, 0.6);
+            animation: neon-glow 3s infinite ease-in-out;
         }
         
-        .text-content {
-            font-size: 18px;
-            color: #333;
-            white-space: pre-line;
+        .purple-shadow {
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, rgba(128, 0, 128, 0.2), transparent 70%);
+            border-radius: 50%;
+            animation: wave-color-motion 5s infinite ease-in-out;
         }
         
-        .text-content a {
-            color: #1976d2;
-            text-decoration: none;
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+        
+        .star {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: purple;
+            border-radius: 50%;
+            animation: twinkle 3s infinite ease-in-out;
+        }
+        
+        @keyframes neon-glow {
+            0%, 100% {
+                box-shadow:
+                    0 0 20px 5px rgba(255, 105, 180, 0.8),
+                    0 0 40px 10px rgba(128, 0, 128, 0.7),
+                    0 0 60px 15px rgba(0, 0, 255, 0.6);
+            }
+            50% {
+                box-shadow:
+                    0 0 30px 10px rgba(255, 105, 180, 0.9),
+                    0 0 50px 15px rgba(128, 0, 128, 0.8),
+                    0 0 70px 20px rgba(0, 0, 255, 0.7);
+            }
+        }
+        
+        @keyframes wave-color-motion {
+            0% {
+                transform: scale(1);
+                background: radial-gradient(circle, rgba(59, 3, 59, 0.2), transparent 70%);
+            }
+            25% {
+                transform: scale(1.1);
+                background: radial-gradient(circle, rgba(170, 0, 170, 0.4), transparent 70%);
+            }
+            50% {
+                transform: scale(1.2);
+                background: radial-gradient(circle, rgba(200, 0, 200, 0.6), transparent 70%);
+            }
+            75% {
+                transform: scale(1.1);
+                background: radial-gradient(circle, rgba(170, 0, 170, 0.4), transparent 70%);
+            }
+            100% {
+                transform: scale(1);
+                background: radial-gradient(circle, rgba(128, 0, 128, 0.2), transparent 70%);
+            }
+        }
+        
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.2;
+            }
+        }
+
+        /* 主界面样式 */
+        .main-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 800px;
+            z-index: 3;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        .glass-window {
+            background: rgba(30, 30, 40, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            cursor: move;
+        }
+
+        .window-header {
+            padding: 15px 20px;
+            background: rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            user-select: none;
+        }
+
+        .window-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            border-radius: 4px;
+        }
+
+        .window-title {
             font-weight: bold;
+            color: #f0f0f0;
         }
-        
-        .text-content a:hover {
-            text-decoration: underline;
+
+        .window-content {
+            padding: 20px;
         }
-        
-        .footer {
-            position: absolute;
-            bottom: 20px;
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-right: 20px;
+            border: 2px solid rgba(255, 105, 180, 0.5);
+            box-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
+        }
+
+        .profile-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(255, 105, 180, 0.8);
+        }
+
+        .button-container {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border-radius: 8px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-pink {
+            background: linear-gradient(45deg, #ff4d8d, #ff0066);
+            color: white;
+        }
+
+        .btn-black {
+            background: linear-gradient(45deg, #333, #000);
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-pink:hover {
+            background: linear-gradient(45deg, #ff0066, #cc0052);
+        }
+
+        .btn-black:hover {
+            background: linear-gradient(45deg, #000, #222);
+        }
+
+        .software-section {
+            margin-top: 20px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #f0f0f0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 8px;
+        }
+
+        .software-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 15px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .software-item:hover {
+            background: rgba(0, 0, 0, 0.3);
+            transform: translateX(5px);
+        }
+
+        .software-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .software-name {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .tag {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .tag-disabled {
+            background: rgba(255, 0, 0, 0.2);
+            color: #ff0000;
+        }
+
+        .tag-active {
+            background: rgba(0, 200, 0, 0.2);
+            color: #0f0;
+        }
+        .software-btn {
+            padding: 6px 12px;
+            border-radius: 5px;
+            border: none;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-disabled {
+            background: #555;
+            color: #999;
+            cursor: not-allowed;
+        }
+
+        .btn-active {
+            background: rgba(255, 105, 180, 0.3);
+            color: white;
+        }
+
+        .btn-active:hover {
+            background: rgba(255, 105, 180, 0.5);
+        }
+
+        .loading {
+            position: fixed;
+            top: 0;
             left: 0;
             width: 100%;
-            text-align: center;
-            padding: 0 20px;
+            height: 100%;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 1s ease;
         }
-        
-        .footer-content {
-            display: inline-block;
-            background-color: rgba(255, 255, 255, 0.85);
-            padding: 15px 25px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            font-size: 14px;
-            color: #333;
-            line-height: 1.5;
-        }
-        
-        .footer-content strong {
-            color: #d32f2f;
-        }
-        
-        .footer-content a {
-            color: #1976d2;
-            text-decoration: none;
-        }
-        
-        .footer-content a:hover {
-            text-decoration: underline;
+
+        @media (max-width: 768px) {
+            .main-content {
+                width: 95%;
+            }
+            
+            .profile-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .profile-image {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .button-container {
+                justify-content: center;
+            }
+            
+            .software-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .software-btn {
+                margin-top: 10px;
+                align-self: flex-end;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="background"></div>
-    <div class="overlay"></div>
-    
-    <div class="text-container">
-        <div class="text-content" id="textContent">正在加载...</div>
+    <!-- 黑洞背景容器 -->
+    <div class="background-container">
+        <div class="stars"></div>
+        <canvas id="blackHoleCanvas"></canvas>
+        <div class="black-hole-container">
+            <div class="purple-shadow"></div>
+            <div class="black-hole"></div>
+        </div>
     </div>
-    
-    <div class="footer">
-        <div class="footer-content">
-            <p>本主站已于 <strong>2025年09月06日</strong> 正式停止服务，我的邮箱服务已稳定运行，诚邀您继续使用：<a href="https://mail.heiye.xin">https://mail.heiye.xin</a></p>
+
+    <!-- 加载层 -->
+    <div class="loading" id="loading"></div>
+
+    <!-- 主内容 -->
+    <div class="main-content" id="mainContent">
+        <div class="glass-window" id="glassWindow">
+            <div class="window-header" id="windowHeader">
+                <img src="favicon.ico" alt="favicon.ico" class="window-icon">
+                <div class="window-title">Dashboard - Yund</div>
+            </div>
+            <div class="window-content">
+                <div class="profile-section">
+                    <img src="favicon.ico" alt="favicon.ico" class="profile-image">
+                    <div class="profile-text">Yund (Indie Developer).</div>
+                </div>
+
+                <div class="button-container">
+                    <button class="btn btn-pink" onclick="window.open('https://space.bilibili.com/3494370328185235', '_blank')">Bilibili</button>
+                    <button class="btn btn-black" onclick="window.open('https://github.com/AeYunDian', '_blank')">Github</button>
+                </div>
+
+                <div class="software-section">
+                    <div class="section-title">软件</div>
+
+                    <div class="software-item">
+                        <div class="software-info">
+                            <div class="software-name">Qr Code Manager</div>
+                            <div class="tag tag-active">实用</div>
+                            <div class="tag tag-disabled">开源，但已停止所有支持</div>
+                        </div>
+                        <button class="software-btn btn-disabled">无可用库</button>
+                    </div>
+
+                    <div class="software-item">
+                        <div class="software-info">
+                            <div class="software-name">Cloud mail</div>
+                            <div class="tag tag-active">实用</div>
+                            <div class="tag tag-active">开源</div>
+                            <div class="tag tag-active">在线服务</div>
+                        </div>
+                        <button class="software-btn btn-active" onclick="window.open('https://mail.heiye.xin', '_blank')" >转到邮箱页面</button>
+                    </div>
+                </div>
+                <div class="software-section">
+                    <div class="section-title">服务</div>
+
+                    <div class="software-item">
+                        <div class="software-info">
+                            <div class="software-name">Email Verification Code Service</div>
+                            <div class="tag tag-active">开源</div>
+                            <div class="tag tag-active">在线</div>
+
+                        </div>
+                        <button class="software-btn btn-active" onclick="window.open('https://www.heiye.xin/mail_veri_srvc', '_blank')" >申请服务</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <script>
-        // 文本数组
-        const texts = [
-            "世上每一个小小的生灵，都应当拥有一片乐土。\n草木扎根于无垠之中，叶梢朝向繁星生长。\n直到枝头结出果实，果实中包含天空与海洋、智慧与畅想。",
-            "寻寻觅觅，怀感妄执数百夕。\n凄凄恻恻，渡来恶风已无意。",
-            "Searching and seeking for an illusory obsession through countless nights.\nWith melancholy and misery as company, malevolent winds mean naught to him.",
-            "心至「空」处，天地万物皆为「空」；\n心中「净」澈，万物天地皆为「净」。",
-            "无法更改，不可违逆。正因如此，命运才是命运。",
-            "能在年少时拥有坚定的梦想并为之奋斗，是一件非常不错的事。\n唯有打磨自己，才能克服接连不断的困境。",
-            "浮世景色百千年依旧，而人之在世，却如白露与泡影般虚无。",
-            "万事万物都存在着相互联系，一切事物都可以指向命运。",
-            "一张纸···它本身并无意义，重要的···是纸上的内容。",
-            "过去不会被撼动，但你可以继续走。只要未来的线够长，总有一天过去会变成比例尺上很短小的一段。",
-            "见证者，为见证而来；\n铭记者，因铭记而生。",
-            "人心就像大海上的小船，看似能够控制航向，其实随时会被风和浪卷去最危险的地方。",
-            "口才好可以很容易地安抚别人，甚至让对方为自己所用呢。",
-            "唯有遵循应守之“律”，人才能获得解开一切的“法”。",
-            '<a href="https://www.heiye.xin/music.mp3">绰巡林风 Winding Through Avidya</a>'
-        ];
-        
-        // 随机选择文本
-        function getRandomText() {
-            const randomIndex = Math.floor(Math.random() * texts.length);
-            return texts[randomIndex];
+        // 初始化星星
+        const starsContainer = document.querySelector('.stars');
+        for (let i = 0; i < 200; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            star.style.left = `${Math.random() * 100}vw`;
+            star.style.top = `${Math.random() * 100}vh`;
+            star.style.animationDelay = `${Math.random() * 5}s`;
+            starsContainer.appendChild(star);
         }
-        // 页面加载完成后显示随机文本
-        window.addEventListener('load', function() {
-           document.getElementById('textContent').innerHTML = getRandomText();
+
+        // 获取Canvas和上下文
+        const canvas = document.getElementById('blackHoleCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        // 设置Canvas尺寸为窗口大小
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        // 中心点坐标
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+        
+        // 动画参数
+        let particles = [];
+        
+        // 初始化函数
+        function init() {
+            particles = [];
+            
+            // 创建大量粒子
+            const particleCount = 2000;
+            
+            for (let i = 0; i < particleCount; i++) {
+                // 随机生成粒子位置
+                const distance = 100 + Math.random() * 300;
+                const angle = Math.random() * Math.PI * 2;
+                
+                particles.push({
+                    x: centerX + Math.cos(angle) * distance,
+                    y: centerY + Math.sin(angle) * distance,
+                    size: Math.random() * 2 + 0.5,
+                    speed: 0.005 + Math.random() * 0.005,
+                    angle: angle,
+                    distance: distance,
+                    color: `hsl(${Math.random() * 60 + 280}, 100%, ${60 + Math.random() * 30}%)`,
+                    orbitSpeed: (0.5 + Math.random() * 0.5) * 0.003 * Math.sqrt(200/distance),
+                });
+            }
+        }
+        
+        // 绘制函数
+        function draw() {
+            // 使用半透明黑色清除画布，创造拖尾效果
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // 更新和绘制粒子
+            for (let i = 0; i < particles.length; i++) {
+                const p = particles[i];
+                
+                // 更新角度
+                p.angle += p.orbitSpeed;
+                
+                // 计算位置
+                p.x = centerX + Math.cos(p.angle) * p.distance;
+                p.y = centerY + Math.sin(p.angle) * p.distance;
+                
+                // 绘制粒子
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fillStyle = p.color;
+                ctx.fill();
+                
+                // 为一些粒子添加光晕效果
+                if (Math.random() > 0.7) {
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.size * 2, 0, Math.PI * 2);
+                    ctx.fillStyle = `hsla(${Math.random() * 60 + 280}, 100%, 70%, 0.2)`;
+                    ctx.fill();
+                }
+            }
+            
+            // 递归调用绘制函数
+            requestAnimationFrame(draw);
+        }
+        
+        // 初始化并开始动画
+        init();
+        draw();
+        
+        // 窗口大小调整事件
+        window.addEventListener('resize', function() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            centerX = canvas.width / 2;
+            centerY = canvas.height / 2;
+            init();
         });
+
+        // 页面加载处理
+        document.addEventListener('DOMContentLoaded', function() {
+            // 1秒后显示主内容
+            setTimeout(function() {
+                document.getElementById('loading').style.opacity = '0';
+                setTimeout(function() {
+                    document.getElementById('loading').style.display = 'none';
+                    document.getElementById('mainContent').style.opacity = '1';
+                }, 500);
+            }, 500);
+        });
+
+        // 实现窗口拖动功能
+        const glassWindow = document.getElementById('glassWindow');
+        const windowHeader = document.getElementById('windowHeader');
+        
+        let isDragging = false;
+        let currentX;
+        let currentY;
+        let initialX;
+        let initialY;
+        let xOffset = 0;
+        let yOffset = 0;
+        
+        windowHeader.addEventListener("mousedown", dragStart);
+        windowHeader.addEventListener("mouseup", dragEnd);
+        windowHeader.addEventListener("mousemove", drag);
+        
+        function dragStart(e) {
+            initialX = e.clientX - xOffset;
+            initialY = e.clientY - yOffset;
+            
+            if (e.target === windowHeader || e.target.parentElement === windowHeader) {
+                isDragging = true;
+            }
+        }
+        
+        function dragEnd(e) {
+            initialX = currentX;
+            initialY = currentY;
+            
+            isDragging = false;
+        }
+        
+        function drag(e) {
+            if (isDragging) {
+                e.preventDefault();
+                currentX = e.clientX - initialX;
+                currentY = e.clientY - initialY;
+                
+                xOffset = currentX;
+                yOffset = currentY;
+                
+                setTranslate(currentX, currentY, glassWindow);
+            }
+        }
+        
+        function setTranslate(xPos, yPos, el) {
+            el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
+        }
+        
+        // 触摸设备支持
+        windowHeader.addEventListener("touchstart", dragStartTouch);
+        windowHeader.addEventListener("touchend", dragEndTouch);
+        windowHeader.addEventListener("touchmove", dragTouch);
+        
+        function dragStartTouch(e) {
+            initialX = e.touches[0].clientX - xOffset;
+            initialY = e.touches[0].clientY - yOffset;
+            
+            if (e.target === windowHeader || e.target.parentElement === windowHeader) {
+                isDragging = true;
+            }
+        }
+        
+        function dragEndTouch(e) {
+            initialX = currentX;
+            initialY = currentY;
+            
+            isDragging = false;
+        }
+        
+        function dragTouch(e) {
+            if (isDragging) {
+                e.preventDefault();
+                currentX = e.touches[0].clientX - initialX;
+                currentY = e.touches[0].clientY - initialY;
+                
+                xOffset = currentX;
+                yOffset = currentY;
+                
+                setTranslate(currentX, currentY, glassWindow);
+            }
+        }
     </script>
 </body>
-
 </html>
-
-
-
