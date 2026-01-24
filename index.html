@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Yund</title>
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <style>
+        .dialog-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);display:none;justify-content:center;align-items:center;z-index:9999;}.dialog-content{background:white;padding:30px;border-radius:10px;max-width:500px;width:90%;text-align:center;box-shadow:0 5px 15px rgba(0,0,0,0.3);}.dialog-title{color:#e74c3c;font-size:24px;margin-bottom:15px;}.dialog-message{color:#333;font-size:16px;line-height:1.5;margin-bottom:25px;}.dialog-button{background:#3498db;color:white;border:none;padding:10px 25px;border-radius:5px;font-size:16px;cursor:pointer;transition:background 0.3s;}.dialog-button:hover{background:#2980b9;}.redirect-notice{margin-top:15px;font-size:14px;color:#666;}*{margin:0;padding:0;box-sizing:border-box;}body{display:flex;justify-content:center;align-items:center;min-height:100vh;background:radial-gradient(ellipse at center,#000,#1a0022);overflow:hidden;font-family:Arial,sans-serif;color:#fff;}.background-container{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1;display:flex;justify-content:center;align-items:center;}canvas{position:absolute;top:0;left:0;width:100%;height:100%;}.black-hole-container{position:relative;width:100%;height:100%;display:flex;justify-content:center;align-items:center;}.black-hole{position:absolute;width:200px;height:200px;background:#000;border-radius:50%;border:10px solid transparent;box-shadow:0 0 20px 5px rgba(255,105,180,.8),0 0 40px 10px rgba(128,0,128,.7),0 0 60px 15px rgba(0,0,255,.6);animation:a 3s infinite ease-in-out;}.purple-shadow{position:absolute;width:450px;height:450px;background:radial-gradient(circle,rgba(128,0,128,.2),transparent 70%);border-radius:50%;animation:b 5s infinite ease-in-out;}.stars{position:absolute;width:100%;height:100%;top:0;left:0;}.star{position:absolute;width:4px;height:4px;background:purple;border-radius:50%;animation:c 3s infinite ease-in-out;}@keyframes a{0%,100%{box-shadow:0 0 20px 5px rgba(255,105,180,.8),0 0 40px 10px rgba(128,0,128,.7),0 0 60px 15px rgba(0,0,255,.6);}50%{box-shadow:0 0 30px 10px rgba(255,105,180,.9),0 0 50px 15px rgba(128,0,128,.8),0 0 70px 20px rgba(0,0,255,.7);}}@keyframes b{0%{transform:scale(1);background:radial-gradient(circle,rgba(59,3,59,.2),transparent 70%);}25%{transform:scale(1.1);background:radial-gradient(circle,rgba(170,0,170,.4),transparent 70%);}50%{transform:scale(1.2);background:radial-gradient(circle,rgba(200,0,200,.6),transparent 70%);}75%{transform:scale(1.1);background:radial-gradient(circle,rgba(170,0,170,.4),transparent 70%);}100%{transform:scale(1);background:radial-gradient(circle,rgba(128,0,128,.2),transparent 70%);}}@keyframes c{0%,100%{opacity:1;}50%{opacity:.2;}}.main-content{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:80%;max-width:800px;z-index:3;opacity:0;transition:opacity .5s ease;}.glass-window{background:rgba(30,30,40,.7);backdrop-filter:blur(10px);border-radius:15px;border:1px solid rgba(255,255,255,.2);box-shadow:0 8px 32px rgba(0,0,0,.3);overflow:hidden;}.window-header{padding:15px 20px;background:rgba(0,0,0,.3);display:flex;align-items:center;border-bottom:1px solid rgba(255,255,255,.1);user-select:none;cursor:move;}.window-icon{width:24px;height:24px;margin-right:10px;border-radius:4px;}.window-title{font-weight:700;color:#f0f0f0;}.window-content{padding:20px;}.profile-section{display:flex;align-items:center;margin-bottom:20px;}.profile-image{width:80px;height:80px;border-radius:50%;margin-right:20px;border:2px solid rgba(255,105,180,.5);box-shadow:0 0 15px rgba(255,105,180,.5);}.profile-text{font-size:24px;font-weight:700;color:#fff;text-shadow:0 0 10px rgba(255,105,180,.8);}.button-container{display:flex;gap:15px;margin-bottom:30px;flex-wrap:wrap;}.btn{padding:12px 25px;border-radius:8px;border:none;font-weight:700;cursor:pointer;transition:all .3s ease;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 15px rgba(0,0,0,.2);}.btn-pink{background:linear-gradient(45deg,#ff4d8d,#ff0066);color:#fff;}.btn-black{background:linear-gradient(45deg,#333,#000);color:#fff;}.btn:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,.3);}.btn-pink:hover{background:linear-gradient(45deg,#ff0066,#cc0052);}.btn-black:hover{background:linear-gradient(45deg,#000,#222);}.software-section{margin-top:20px;}.section-title{font-size:18px;margin-bottom:15px;color:#f0f0f0;border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:8px;}.software-item{display:flex;justify-content:space-between;align-items:center;padding:12px 15px;background:rgba(0,0,0,.2);border-radius:8px;margin-bottom:10px;transition:all .3s ease;}.software-item:hover{background:rgba(0,0,0,.3);transform:translateX(5px);}.software-info{display:flex;align-items:center;}.software-name{font-weight:700;margin-right:10px;}.tag{padding:3px 8px;border-radius:4px;font-size:12px;margin-right:8px;}.tag:last-child{margin-right:0;}.tag-disabled{background:rgba(255,0,0,.2);color:red;}.tag-active{background:rgba(0,200,0,.2);color:#0f0;}.software-btn{padding:6px 12px;border-radius:5px;border:none;font-size:12px;cursor:pointer;transition:all .3s ease;}.btn-disabled{background:#555;color:#999;cursor:not-allowed;}.btn-active{background:rgba(255,105,180,.3);color:#fff;}.btn-active:hover{background:rgba(255,105,180,.5);}.loading{position:fixed;top:0;left:0;width:100%;height:100%;background:#000;display:flex;justify-content:center;align-items:center;z-index:9999;transition:opacity 1s ease;}@media(max-width:768px){.main-content{width:95%;}.profile-section{flex-direction:column;text-align:center;}.profile-image{margin-right:0;margin-bottom:15px;}.button-container{justify-content:center;}.software-item{flex-direction:column;align-items:flex-start;}.software-btn{margin-top:10px;align-self:flex-end;}}
+    </style>
+</head>
+<body>
+    <div class="background-container">
+        <div class="stars"></div>
+        <canvas id="blackHoleCanvas"></canvas>
+        <div class="black-hole-container">
+            <div class="purple-shadow"></div>
+            <div class="black-hole"></div>
+        </div>
+    </div>
+    <div class="loading" id="loading"></div>
+    <div class="main-content" id="mainContent">
+        <div class="glass-window" id="glassWindow">
+            <div class="window-header" id="windowHeader">
+                <img src="favicon.ico" class="window-icon">
+                <div class="window-title">Dashboard - Yund</div>
+            </div>
+            <div class="window-content">
+                <div class="profile-section">
+                    <img src="favicon.ico" class="profile-image">
+                    <div class="profile-text">Yund (Indie Developer).</div>
+                </div>
+                <div class="button-container">
+                    <button class="btn btn-pink" onclick="window.open('https://space.bilibili.com/3494370328185235','_self')">Bilibili</button>
+                    <button class="btn btn-black" onclick="window.open('https://github.com/AeYunDian','_self')">Github</button>
+                </div>
+                <div class="software-section">
+                    <div class="section-title">软件</div>
+                    <div class="software-item">
+                        <div class="software-info">
+                            <div class="software-name">Qr Code Manager</div>
+                            <div class="tag tag-active">实用</div>
+                            <div class="tag tag-disabled">开源，但已停止所有支持</div>
+                        </div>
+                        <button class="software-btn btn-disabled">无可用库</button>
+                    </div>
+                    <div class="software-item">
+                        <div class="software-info">
+                            <div class="software-name">Cloud mail</div>
+                            <div class="tag tag-active">实用</div>
+                            <div class="tag tag-active">开源</div>
+                            <div class="tag tag-active">在线服务</div>
+                        </div>
+                        <button class="software-btn btn-active" onclick="window.open('https://mail.io.hb.xin','_self')">转到邮箱页面</button>
+                    </div>
+                </div>
+                <div class="software-section">
+                    <div class="section-title">服务</div>
+                    <div class="software-item">
+                        <div class="software-info">
+                            <div class="software-name">Email Verification Code Service</div>
+                            <div class="tag tag-active">开源</div>
+                            <div class="tag tag-active">在线</div>
+                        </div>
+                        <button class="software-btn btn-active" onclick="window.open('https://www.io.hb.xin/mail_veri_srvc','_self')">申请服务</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="redirectDialog" class="dialog-overlay">
+        <div class="dialog-content">
+            <h2 class="dialog-title">重要提示</h2>
+            <p class="dialog-message" id="dialogMessage">
+                您正在使用旧链接访问，该链接即将失效。<br>
+                请使用新域名 <strong>www.io.hb.cn</strong> 访问网站。
+            </p>
+            <button class="dialog-button" onclick="closeDialog()">我知道了</button>
+            <div class="redirect-notice" id="redirectNotice"></div>
+        </div>
+    </div>
+    <script>
+        function _0x5b6a(){function _0x18e3a(_0x48c){return function(){if(_0x48c===0)return!0;if(_0x48c===1)return!1;_0x48c=_0x48c-1;return _0x18e3a(_0x48c);};}var _0x4c2e=_0x18e3a(2);return function(_0x12d,_0x193){var _0x3e9c=_0x4c2e()?function(){if(_0x193){var _0x1b5d=_0x193.apply(_0x12d,arguments);_0x193=null;return _0x1b5d;}}:function(){};_0x4c2e=null;return _0x3e9c;};}(function(){var _0x2f=!_0x5b6a();return function(_0x45,_0x1c){var _0x4a=_0x2f?function(){if(_0x1c){var _0x58=_0x1c.apply(_0x45,arguments);_0x1c=null;return _0x58;}}:function(){};_0x2f=null;return _0x4a;};}());var _0x1a53c=_0x5b6a(this,function(){return function(){var _0x5a=function(){var _0x20b=document.createElement('div');_0x20b.innerHTML='<div/>(.*?)<div/>(.*?)<div/>(.*?)<div/>(.*?)';return _0x20b.firstChild;};try{_0x5a();}catch(_0x2a){}return _0x5a();}.constructor('debugger').call('action');});_0x1a53c();function _0x2b(){var _0x3c=document.getElementById('redirectDialog');var _0x14=document.getElementById('dialogMessage');var _0x39=document.getElementById('redirectNotice');if(_0x3c){_0x3c.style.display='flex';if(_0x39)_0x39.innerHTML='3秒后自动跳转到新域名...';setTimeout(function(){window.location.href='https://www.io.hb.cn';},3000);}}function _0x1e(){var _0x28=document.getElementById('redirectDialog');if(_0x28)_0x28.style.display='none';}function _0x3a(_0x1d){var _0x17=new URLSearchParams(window.location.search);return _0x17.get(_0x1d);}document.addEventListener('DOMContentLoaded',function(){var _0x22=window.location.hostname;var _0x13=_0x3a('from');if(_0x22==='www.heiye.xin'){_0x2b();return;}if(_0x13==='heiye.xin'){_0x2b();}});if(window.location.hostname==='www.io.hb.cn'){sessionStorage.setItem('alreadyRedirected','true');}
+        (function(){var _0x18=document.querySelector('.stars');for(var _0x1=0;_0x1<200;_0x1++){var _0x1b=document.createElement('div');_0x1b.classList.add('star');_0x1b.style.left=Math.random()*100+'vw';_0x1b.style.top=Math.random()*100+'vh';_0x1b.style.animationDelay=Math.random()*5+'s';_0x18.appendChild(_0x1b);}var _0x1e=document.getElementById('blackHoleCanvas');var _0xf=_0x1e.getContext('2d');_0x1e.width=window.innerWidth;_0x1e.height=window.innerHeight;var _0x14=_0x1e.width/2;var _0x15=_0x1e.height/2;var _0x10=[];function _0x19(){_0x10=[];for(var _0x9=0;_0x9<2000;_0x9++){var _0x1c=100+Math.random()*300;var _0x12=Math.random()*Math.PI*2;_0x10.push({x:_0x14+Math.cos(_0x12)*_0x1c,y:_0x15+Math.sin(_0x12)*_0x1c,size:Math.random()*2+.5,speed:.005+Math.random()*.005,angle:_0x12,distance:_0x1c,color:'hsl('+(Math.random()*60+280)+',100%,'+(60+Math.random()*30)+'%)',orbitSpeed:(.5+Math.random()*.5)*.003*Math.sqrt(200/_0x1c)});}}function _0x1a(){_0xf.fillStyle='rgba(0,0,0,.1)';_0xf.fillRect(0,0,_0x1e.width,_0x1e.height);for(var _0x8=0;_0x8<_0x10.length;_0x8++){var _0x17=_0x10[_0x8];_0x17.angle+=_0x17.orbitSpeed;_0x17.x=_0x14+Math.cos(_0x17.angle)*_0x17.distance;_0x17.y=_0x15+Math.sin(_0x17.angle)*_0x17.distance;_0xf.beginPath();_0xf.arc(_0x17.x,_0x17.y,_0x17.size,0,Math.PI*2);_0xf.fillStyle=_0x17.color;_0xf.fill();if(Math.random()>.7){_0xf.beginPath();_0xf.arc(_0x17.x,_0x17.y,_0x17.size*2,0,Math.PI*2);_0xf.fillStyle='hsla('+(Math.random()*60+280)+',100%,70%,.2)';_0xf.fill();}}requestAnimationFrame(_0x1a);}_0x19();_0x1a();window.addEventListener('resize',function(){_0x1e.width=window.innerWidth;_0x1e.height=window.innerHeight;_0x14=_0x1e.width/2;_0x15=_0x1e.height/2;_0x19();});document.addEventListener('DOMContentLoaded',function(){setTimeout(function(){document.getElementById('loading').style.opacity='0';setTimeout(function(){document.getElementById('loading').style.display='none';document.getElementById('mainContent').style.opacity='1';},100);},100);});var _0x2=document.getElementById('glassWindow');var _0x3=document.getElementById('windowHeader');var _0x6=!1,_0x7,_0x5,_0x4,_0xd,_0xb;_0x3.addEventListener("mousedown",_0x11);_0x3.addEventListener("mouseup",_0x16);_0x3.addEventListener("mousemove",_0xc);function _0x11(_0xa){_0x7=_0xa.clientX-_0xb;_0x5=_0xa.clientY-_0xd;if(_0xa.target===_0x3||_0xa.target.parentElement===_0x3)_0x6=!0;}function _0x16(_0xa){_0x7=_0x4;_0x5=_0xd;_0x6=!1;}function _0xc(_0xa){if(_0x6){_0xa.preventDefault();_0x4=_0xa.clientX-_0x7;_0xd=_0xa.clientY-_0x5;_0xb=_0x4;_0xd=_0xd;_0xe(_0x4,_0xd,_0x2);}}function _0xe(_0xa,_0xb,_0xc){_0xc.style.transform="translate3d("+_0xa+"px, "+_0xb+"px, 0)";}_0x3.addEventListener("touchstart",_0x13);_0x3.addEventListener("touchend",_0x1f);_0x3.addEventListener("touchmove",_0x20);function _0x13(_0xa){_0x7=_0xa.touches[0].clientX-_0xb;_0x5=_0xa.touches[0].clientY-_0xd;if(_0xa.target===_0x3||_0xa.target.parentElement===_0x3)_0x6=!0;}function _0x1f(_0xa){_0x7=_0x4;_0x5=_0xd;_0x6=!1;}function _0x20(_0xa){if(_0x6){_0xa.preventDefault();_0x4=_0xa.touches[0].clientX-_0x7;_0xd=_0xa.touches[0].clientY-_0x5;_0xb=_0x4;_0xd=_0xd;_0xe(_0x4,_0xd,_0x2);}}})();
+    </script>
+</body>
+</html>
