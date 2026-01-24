@@ -4,8 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Yund</title>
-    <link rel="icon" href="https://www.heiye.xin/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
     <style>
+                .dialog-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .dialog-content {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .dialog-title {
+            color: #e74c3c;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .dialog-message {
+            color: #333;
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+
+        .dialog-button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .dialog-button:hover {
+            background: #2980b9;
+        }
+
+        .redirect-notice {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #666;
+        }
         *{margin:0;padding:0;box-sizing:border-box}
         body{display:flex;justify-content:center;align-items:center;min-height:100vh;background:radial-gradient(ellipse at center,#000,#1a0022);overflow:hidden;font-family:Arial,sans-serif;color:#fff}
         .background-container{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1;display:flex;justify-content:center;align-items:center}
@@ -94,7 +150,7 @@
                             <div class="tag tag-active">开源</div>
                             <div class="tag tag-active">在线服务</div>
                         </div>
-                        <button class="software-btn btn-active" onclick="window.open('https://mail.heiye.xin','_self')">转到邮箱页面</button>
+                        <button class="software-btn btn-active" onclick="window.open('https://mail.io.hb.xin','_self')">转到邮箱页面</button>
                     </div>
                 </div>
                 <div class="software-section">
@@ -105,13 +161,74 @@
                             <div class="tag tag-active">开源</div>
                             <div class="tag tag-active">在线</div>
                         </div>
-                        <button class="software-btn btn-active" onclick="window.open('https://www.heiye.xin/mail_veri_srvc','_self')">申请服务</button>
+                        <button class="software-btn btn-active" onclick="window.open('https://www.io.hb.xin/mail_veri_srvc','_self')">申请服务</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+        <div id="redirectDialog" class="dialog-overlay">
+        <div class="dialog-content">
+            <h2 class="dialog-title">重要提示</h2>
+            <p class="dialog-message" id="dialogMessage">
+                您正在使用旧链接访问，该链接即将失效。<br>
+                请使用新域名 <strong>www.io.hb.cn</strong> 访问网站。
+            </p>
+            <button class="dialog-button" onclick="closeDialog()">我知道了</button>
+            <div class="redirect-notice" id="redirectNotice"></div>
+        </div>
+    </div>
     <script>
+                function showDialog(message) {
+            const dialog = document.getElementById('redirectDialog');
+            const dialogMessage = document.getElementById('dialogMessage');
+            const redirectNotice = document.getElementById('redirectNotice');
+            
+            if (message) {
+                dialogMessage.innerHTML = message;
+            }
+            
+            redirectNotice.innerHTML = '3秒后自动跳转到新域名...';
+            dialog.style.display = 'flex';
+            
+            // 3秒后自动跳转
+            setTimeout(() => {
+                window.location.href = 'https://www.io.hb.cn';
+            }, 3000);
+        }
+
+        // 关闭对话框函数
+        function closeDialog() {
+            document.getElementById('redirectDialog').style.display = 'none';
+        }
+
+        // 获取URL参数函数
+        function getQueryParam(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // 页面加载时执行
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentHostname = window.location.hostname;
+            const fromParam = getQueryParam('from');
+            
+            // 第一步：检查域名是否为 www.heiye.xin
+            if (currentHostname === 'www.heiye.xin') {
+                showDialog('您正在使用旧域名 <strong>www.heiye.xin</strong> 访问，该链接即将失效。<br>请使用新域名 <strong>www.io.hb.cn</strong> 访问网站。');
+                return; // 直接跳转，不继续检查参数
+            }
+            
+            // 第二步：检查from参数是否为 heiye.xin
+            if (fromParam === 'heiye.xin') {
+                showDialog('检测到您来自旧链接，该链接即将失效。<br>请收藏并使用新域名 <strong>www.io.hb.cn</strong> 访问网站。');
+            }
+        });
+
+        // 防止跳转后再次显示对话框（可选）
+        if (window.location.hostname === 'www.io.hb.cn') {
+            sessionStorage.setItem('alreadyRedirected', 'true');
+        }
         (function(){
             var a=document.querySelector('.stars');
             for(var b=0;b<200;b++){
@@ -242,4 +359,5 @@
 </body>
 
 </html>
+
 
