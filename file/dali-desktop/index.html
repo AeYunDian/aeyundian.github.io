@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>大力学生端 5.5.6.apk - 高速下载</title>
+    <link rel="stylesheet" href="/css/share.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* 基础重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        /* 主容器 */
+        .main-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* 头部区域 */
+        .share-header {
+            background: linear-gradient(135deg, #2c3e50 0%, #4a6491 100%);
+            color: white;
+            padding: 40px 30px 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .share-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #3498db, #2ecc71, #3498db);
+        }
+        
+        .package-icon {
+            font-size: 70px;
+            margin-bottom: 20px;
+            display: inline-block;
+            width: 120px;
+            height: 120px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .package-icon img {
+            width: 70px;
+            height: 70px;
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+        }
+        
+        .share-header h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        
+        .file-subtitle {
+            font-size: 18px;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+        
+        /* 文件信息区域 */
+        .share-details {
+            padding: 30px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .file-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+        
+        .info-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid #3498db;
+        }
+        
+        .info-card h3 {
+            font-size: 16px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .info-card h3 i {
+            color: #3498db;
+        }
+        
+        .info-card p {
+            font-size: 18px;
+            font-weight: 600;
+            color: #495057;
+        }
+        
+        .source-url {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid #2ecc71;
+        }
+        
+        .source-url strong {
+            color: #2c3e50;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .source-url a {
+            color: #2980b9;
+            text-decoration: none;
+            word-break: break-all;
+            display: inline-block;
+            padding: 8px 12px;
+            background: #e8f4fd;
+            border-radius: 6px;
+            transition: all 0.3s;
+            width: 100%;
+        }
+        
+        .source-url a:hover {
+            background: #d4eaf9;
+            color: #1c5a7a;
+        }
+        
+        /* 下载区域 */
+        .download-section {
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .download-section h2 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 26px;
+            font-weight: 700;
+        }
+        
+        .download-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .download-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e9ecef;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .download-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #3498db, #2ecc71);
+        }
+        
+        .download-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+        
+        .download-card.direct-download {
+            border-top: 4px solid #3498db;
+        }
+        
+        .download-card.cloud-download {
+            border-top: 4px solid #2ecc71;
+        }
+        
+        .download-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            color: #3498db;
+        }
+        
+        .cloud-download .download-icon {
+            color: #2ecc71;
+        }
+        
+        .download-card h3 {
+            font-size: 18px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .download-card p {
+            color: #7f8c8d;
+            font-size: 14px;
+            margin-bottom: 20px;
+            min-height: 40px;
+        }
+        
+        .btn-download {
+            display: inline-block;
+            padding: 14px 25px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 17px;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+            transition: all 0.3s ease;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+        }
+        
+        .cloud-download .btn-download {
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
+        }
+        
+        .btn-download:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
+        }
+        
+        .cloud-download .btn-download:hover {
+            box-shadow: 0 8px 20px rgba(46, 204, 113, 0.4);
+        }
+        
+        .btn-download i {
+            margin-right: 8px;
+        }
+        
+        .file-size-large {
+            font-size: 18px;
+            color: #7f8c8d;
+            margin-top: 10px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            display: inline-block;
+            font-weight: 600;
+        }
+        
+        /* 底部信息 */
+        .footer-info {
+            padding: 20px 30px;
+            text-align: center;
+            background: #f8f9fa;
+            border-top: 1px solid #e9ecef;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+        
+        .footer-info a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .main-container {
+                border-radius: 15px;
+            }
+            
+            .share-header {
+                padding: 30px 20px;
+            }
+            
+            .share-header h1 {
+                font-size: 26px;
+            }
+            
+            .package-icon {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .package-icon img {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .share-details {
+                padding: 20px;
+            }
+            
+            .info-card p {
+                font-size: 16px;
+            }
+            
+            .download-section {
+                padding: 30px 20px;
+            }
+            
+            .download-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .download-card {
+                padding: 20px 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .share-header h1 {
+                font-size: 22px;
+            }
+            
+            .file-subtitle {
+                font-size: 16px;
+            }
+            
+            .btn-download {
+                padding: 12px 20px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="share-header">
+            <div class="package-icon">
+                <img src="./zip.gif" alt="APK文件图标">
+            </div>
+            <h1>大力学生端 5.5.6.apk</h1>
+            <p class="file-subtitle">高效学习工具 | 最新版本</p>
+        </div>
+        
+        <div class="share-details">
+            <div class="file-info-grid">
+                <div class="info-card">
+                    <h3><i class="fas fa-file-alt"></i> 文件类型</h3>
+                    <p>Android应用包 (APK)</p>
+                </div>
+                <div class="info-card">
+                    <h3><i class="fas fa-weight-hanging"></i> 文件大小</h3>
+                    <p>176.13 MB</p>
+                </div>
+            </div>
+            
+            <div class="source-url">
+                <strong><i class="fas fa-link"></i> 来源网址</strong>
+                <a href="https://io.hb.cn" target="_blank">
+                    https://io.hb.cn
+                </a>
+            </div>
+        </div>
+        
+        <div class="download-section">
+            <h2>选择下载方式</h2>
+            
+            <div class="download-grid">
+                <div class="download-card direct-download">
+                    <div class="download-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>高速直链下载</h3>
+                    <p>直接从服务器下载，速度最快</p>
+                    <a href="https://www.wang-pan.org/download_share.php?code=dali-desktop&download=1" class="btn-download">
+                        <i class="fas fa-download"></i> 立即下载
+                    </a>
+                </div>
+                
+                <div class="download-card cloud-download">
+                    <div class="download-icon">
+                        <i class="fas fa-cloud-download-alt"></i>
+                    </div>
+                    <h3>123网盘 线路1</h3>
+                    <p>备用下载线路，稳定性高</p>
+                    <a href="https://www.123865.com/s/ay6VVv-BnS4H" class="btn-download">
+                        <i class="fas fa-download"></i> 线路1下载
+                    </a>
+                </div>
+                
+                <div class="download-card cloud-download">
+                    <div class="download-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>123网盘 线路2</h3>
+                    <p>备用下载线路，适合部分地区</p>
+                    <a href="https://www.123684.com/s/ay6VVv-BnS4H" class="btn-download">
+                        <i class="fas fa-download"></i> 线路2下载
+                    </a>
+                </div>
+                
+                <div class="download-card cloud-download">
+                    <div class="download-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>123网盘 线路3</h3>
+                    <p>备用下载线路，负载均衡</p>
+                    <a href="https://www.123912.com/s/ay6VVv-BnS4H" class="btn-download">
+                        <i class="fas fa-download"></i> 线路3下载
+                    </a>
+                </div>
+            </div>
+            
+            <div class="file-size-large">
+                <i class="fas fa-info-circle"></i> 文件大小: 176.13 MB
+            </div>
+        </div>
+        
+        <div class="footer-info">
+            <p>如果下载遇到问题，请尝试更换下载线路</p>
+        </div>
+    </div>
+</body>
+</html>
