@@ -4,7 +4,7 @@ layout: Blog
 icon: house
 title: 主页
 heroImage: /logo.svg
-heroText: Understanding nature's depth, zest deepens
+heroText: 理解自然的深度，兴致愈发浓厚
 heroFullScreen: true
 tagline: 
 projects:
