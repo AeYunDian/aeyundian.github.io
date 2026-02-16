@@ -9,9 +9,11 @@ export default hopeTheme({
   author: {
     name: "Yund",
     url: "https://io.hb.cn",
+    email: "admin@io.hb.cn",
   },
-
-  logo: "/logo.svg",
+  
+  favicon: "/favicon.ico",
+  logo: "/ma.ico",
 
   repo: "vuepress-theme-hope/vuepress-theme-hope",
 
@@ -24,7 +26,7 @@ export default hopeTheme({
   sidebar,
 
   // 页脚
-  footer: "默认页脚",
+  footer: "VuePress 提供页面服务",
   displayFooter: true,
 
   // 博客相关
