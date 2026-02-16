@@ -13,7 +13,7 @@ export default hopeTheme({
   },
   
   favicon: "/favicon.ico",
-  logo: "/ma.ico",
+  logo: "/logo.png",
 
   repo: "vuepress-theme-hope/vuepress-theme-hope",
 
@@ -33,6 +33,7 @@ export default hopeTheme({
   blog: {
     description: "普通的开发者而已",
     intro: "/intro.html",
+    avatar: "/ma.ico",
     medias: {
       BiliBili: "https://space.bilibili.com/3494370328185235",
       Email: "mailto:zhanghaoyu19281@outlook.com",
