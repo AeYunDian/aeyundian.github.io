@@ -4,7 +4,7 @@ layout: Blog
 icon: house
 title: 主页
 heroImage: /logo.svg
-heroText: undz
+heroText: UNDZ
 heroFullScreen: true
 tagline: Protect What You Love.
 projects:

@@ -2,6 +2,7 @@
 title: Unity学习笔记
 index: true
 icon: laptop-code
+article: false
 category:
   - 学习
   - 教程
