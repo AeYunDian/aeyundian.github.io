@@ -2,6 +2,7 @@
 title: 友链
 index: false
 icon: laptop-code
+article: false
 ---
-
-#暂时还没有qwq
+<!-- more -->
+# 暂时还没有qwq

@@ -9,5 +9,10 @@ export default sidebar({
       prefix: "posts/",
       children: "structure",
     },
+    {
+      text: "关于",
+      icon: "book",
+      link: "/intro",
+    },
   ],
 });

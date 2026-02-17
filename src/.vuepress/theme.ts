@@ -152,7 +152,16 @@ export default hopeTheme({
     components: {
       components: ["Badge", "VPCard"],
     },
-
+    blog: {
+      // 过滤函数：返回 false 的页面不会被视为“文章”
+      filter: ({ filePathRelative }) => {
+        // 排除 demo 文件夹下的所有 .md 文件
+        if (filePathRelative && filePathRelative.startsWith('demo/')) {
+          return false;
+        }
+        return true; // 其他页面正常显示
+      },
+    },
     icon: {
       prefix: "fa6-solid:",
     },

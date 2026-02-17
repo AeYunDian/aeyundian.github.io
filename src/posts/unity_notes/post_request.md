@@ -2,13 +2,14 @@
 icon: pen-to-square
 date: 2026-02-17
 category:
-  - 蔬菜
+  - Unity
 tag:
   - Unity
   - 笔记
 sticky: true
 ---
-
+Unity POST网络请求实现教程
+<!-- more -->
 # POST网络请求
 
 ## 前言
@@ -67,10 +68,12 @@ public class GameApiClient : MonoBehaviour
 }
 
 ```
-### 3.在游戏第一个场景创建一个空游戏对象，绑定这个代码文件，如果启动游戏，游戏提示`GameApiClent创建成功！`，则代表以上步骤你都完成了
+### 3.加载
+在游戏第一个场景创建一个空游戏对象，绑定这个代码文件，如果启动游戏，游戏提示`GameApiClent创建成功！`，则代表以上步骤你都完成了
 ### 4.调用
 一个应用应该写一个类来处理网络请求，在其它类中处理返回
 要想在其他代码中发送POST请求，只需调用 `GameApiClient.Instance.PostNetData(string path, string json)` 
-!!! 警告
-    网络请求是异步的，所以需要使用`await`来调用
+::: warning 警告
+网络请求是异步的，所以需要使用`await`来调用
+:::
 该函数的返回格式是`HttpResponseMessage`，再具体处理即可
