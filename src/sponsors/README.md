@@ -2,8 +2,9 @@
 title: 赞助
 index: false
 icon: hand-holding-heart
-draft: true
+article: false
 ---
+
 <!-- more -->
 
 如果您觉得我的内容对您有帮助，欢迎通过以下方式支持我的创作。您的每一份支持都是我持续创作的动力！
