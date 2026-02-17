@@ -12,6 +12,8 @@
   },
   "devDependencies": {
     "@vuepress/bundler-webpack": "2.0.0-rc.26",
+    "@waline/client": "^3.12.0",
+    "katex": "^0.16.28",
     "sass-embedded": "^1.97.1",
     "sass-loader": "^16.0.6",
     "vue": "^3.5.26",

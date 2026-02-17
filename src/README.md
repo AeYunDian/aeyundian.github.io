@@ -15,7 +15,7 @@ projects:
 
   - icon: link
     name: "Ys Post"
-    desc: 韵邮，全球最大网络服务商保障您的帐号安全
+    desc: 韵邮，网络邮箱，全球最大网络服务商保障您的帐号安全
     link: https://mail.io.hb.cn
 
 
