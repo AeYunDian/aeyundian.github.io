@@ -4,6 +4,7 @@ import navbar from "./navbar.js";
 import sidebar from "./sidebar.js";
 
 export default hopeTheme({
+  darkmode: "disable",
   hostname: "https://io.hb.cn",
   editLink: false,
   repoDisplay: false,
@@ -50,6 +51,10 @@ export default hopeTheme({
       "/demo/encrypt.html": {
         hint: "You（ ）Server",
         password: "truelove",
+      }, 
+      "/intro.html": {
+        hint: "Go find it yourself",
+        password: "fucktheworld",
       },
     },
   },

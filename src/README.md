@@ -4,9 +4,9 @@ layout: Blog
 icon: house
 title: 主页
 heroImage: /logo.svg
-heroText: 理解自然的深度，兴致愈发浓厚
+heroText: undz
 heroFullScreen: true
-tagline: 
+tagline: Protect What You Love.
 projects:
   - icon: folder-open
     name: "Crossfire: Ys"
@@ -15,7 +15,7 @@ projects:
 
   - icon: link
     name: "Ys Post"
-    desc: 韵邮，网络邮箱，全球最大网络服务商保障您的帐号安全
+    desc: 安全、稳定的个人邮箱，为您守护每一封邮件
     link: https://mail.io.hb.cn
 
 

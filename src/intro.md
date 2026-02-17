@@ -1,8 +1,7 @@
 ---
 icon: circle-info
-cover: /assets/images/cover3.jpg
 ---
 
 # 关于
 
-填写的很用心
+271: Good eloquence makes it easy to console others and even make them work for you.(Aether)
