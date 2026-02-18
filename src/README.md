@@ -6,7 +6,7 @@ title: 主页
 heroImage: /logo.svg
 heroText: UNDZ
 heroFullScreen: true
-tagline: Protect What You Love.
+tagline: Protect What You Love
 projects:
   - icon: gamepad
     name: "Crossfire: Ys"
