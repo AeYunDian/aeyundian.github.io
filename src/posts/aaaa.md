@@ -14,7 +14,7 @@ This submission is mandatory!
 setlocal enabledelayedexpansion
 set /p ver=<ver.txt
 git add .
-git commit -m "%ver%"
+git commit -m "Ver %ver%"
 if errorlevel 1 (
     echo Submission failed possibly no changes,script exiting.
     pause
@@ -33,12 +33,15 @@ if errorlevel 1 (
         echo The version has been updated to !ver!
     ) else (
         echo Push failed, version not incremented
+       pause
+       exit /b 1
     )
 ) else (
     echo No new submissions,version not increased
+    pause
+    exit /b 1
 )
 del push_output.txt
-pause
 ```
 
 
