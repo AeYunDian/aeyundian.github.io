@@ -33,41 +33,45 @@ backtotop: false
 </div>
 
 <script>
-if (typeof window === 'undefined') return;
-window.addEventListener('load', function() {
-  console.log('赞助页面脚本已执行'); 
-  const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-  console.log('是否为移动端:', isMobile); 
-  const infoContainer = document.querySelector('div.hint-container.info');
-  if (infoContainer) {
-    infoContainer.style.setProperty('display', isMobile ? 'block' : 'none', 'important');
-    console.log('info容器已设置display为:', isMobile ? 'block' : 'none');
-  } else {
-    console.warn('未找到 .hint-container.info 元素');
-  }
-  if (isMobile) {
-    const container = document.getElementById('qr-container');
-    if (container) {
-      container.addEventListener('click', function(e) {
-        const target = e.target;
-        if (target.tagName === 'IMG') {
-          e.preventDefault();
-          e.stopPropagation();
-          console.log('图片点击已拦截'); 
-        }
-        if (target.classList.contains('alipay-link')) {
-          window.location.href = 'https://qr.alipay.com/fkx19538tldpvgxawbq0d22';
-        }
-        else if (target.classList.contains('wechat-link')) {
-          alert('暂未接入微信支付');
-        }
-      });
-      console.log('图片点击事件监听已绑定');
+(function() {
+  if (typeof window === 'undefined') return;
+
+  window.addEventListener('load', function() {
+    console.log('赞助页面脚本已执行'); 
+    const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    console.log('是否为移动端:', isMobile); 
+
+    const infoContainer = document.querySelector('div.hint-container.info');
+    if (infoContainer) {
+      infoContainer.style.setProperty('display', isMobile ? 'block' : 'none', 'important');
+      console.log('info容器已设置display为:', isMobile ? 'block' : 'none');
     } else {
-      console.warn('未找到 #qr-container 元素');
+      console.warn('未找到 .hint-container.info 元素');
     }
-  }
-});
+
+    if (isMobile) {
+      const container = document.getElementById('qr-container');
+      if (container) {
+        container.addEventListener('click', function(e) {
+          const target = e.target;
+          if (target.tagName === 'IMG') {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('图片点击已拦截'); 
+          }
+          if (target.classList.contains('alipay-link')) {
+            window.location.href = 'https://qr.alipay.com/fkx19538tldpvgxawbq0d22';
+          } else if (target.classList.contains('wechat-link')) {
+            alert('暂未接入微信支付');
+          }
+        });
+        console.log('图片点击事件监听已绑定');
+      } else {
+        console.warn('未找到 #qr-container 元素');
+      }
+    }
+  });
+})();
 </script>
 
 
