@@ -50,7 +50,7 @@ export default defineClientConfig({
     // 1. 页面首次加载时执行
     handleSponsorPage();
 
-    // 2. 监听路由切换（通过 MutationObserver 检测内容变化）
+    // 2. 监听路由切换（通过 MutationObserver 检测内容变化） 
     const observer = new MutationObserver(() => {
       // 简单的防抖：切换路由后延迟一小段时间再执行
       clearTimeout((window as any)._sponsorTimer);
