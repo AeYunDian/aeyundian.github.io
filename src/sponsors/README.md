@@ -33,14 +33,11 @@ backtotop: false
 </div>
 
 <script>
-// 等待所有资源加载完成（包括 Vue 渲染）
+if (typeof window === 'undefined') return;
 window.addEventListener('load', function() {
-  console.log('赞助页面脚本已执行'); // 调试：确认脚本运行
-
+  console.log('赞助页面脚本已执行'); 
   const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-  console.log('是否为移动端:', isMobile); // 调试：查看设备判断
-
-  // 控制 info 容器显示/隐藏（使用更具体的选择器和 !important）
+  console.log('是否为移动端:', isMobile); 
   const infoContainer = document.querySelector('div.hint-container.info');
   if (infoContainer) {
     infoContainer.style.setProperty('display', isMobile ? 'block' : 'none', 'important');
@@ -48,24 +45,19 @@ window.addEventListener('load', function() {
   } else {
     console.warn('未找到 .hint-container.info 元素');
   }
-
-  // 移动端处理图片点击
   if (isMobile) {
     const container = document.getElementById('qr-container');
     if (container) {
       container.addEventListener('click', function(e) {
         const target = e.target;
-        // 阻止所有图片的默认行为（如打开图片）
         if (target.tagName === 'IMG') {
           e.preventDefault();
-          e.stopPropagation(); // 防止事件冒泡
-          console.log('图片点击已拦截'); // 调试
+          e.stopPropagation();
+          console.log('图片点击已拦截'); 
         }
-        // 支付宝点击
         if (target.classList.contains('alipay-link')) {
           window.location.href = 'https://qr.alipay.com/fkx19538tldpvgxawbq0d22';
         }
-        // 微信点击
         else if (target.classList.contains('wechat-link')) {
           alert('暂未接入微信支付');
         }

@@ -140,7 +140,6 @@ export default hopeTheme({
 
   // 在这里配置主题提供的插件
   plugins: {
-    blog: true,
     mediumZoom: true,
     // 启用之前需安装 @waline/client
     // 警告: 这是一个仅供演示的测试服务，在生产环境中请自行部署并使用自己的服务！
@@ -153,13 +152,11 @@ export default hopeTheme({
       components: ["Badge", "VPCard"],
     },
     blog: {
-      // 过滤函数：返回 false 的页面不会被视为“文章”
       filter: ({ filePathRelative }) => {
-        // 排除 demo 文件夹下的所有 .md 文件
         if (filePathRelative && filePathRelative.startsWith('demo/')) {
           return false;
         }
-        return true; // 其他页面正常显示
+        return true;
       },
     },
     icon: {
