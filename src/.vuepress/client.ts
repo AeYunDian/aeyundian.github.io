@@ -3,37 +3,9 @@ import { defineClientConfig } from '@vuepress/client';
 
 export default defineClientConfig({
   setup() {
-    // 仅在浏览器环境运行（避免构建时出错）
     if (typeof window === 'undefined') return;
 
-    // 路由切换后执行的核心逻辑
-    const handleSponsorPage = () => {
-      // 判断当前页面是否是赞助页（根据实际 URL 调整）
-      // 如果您的赞助页路径是 /sponsors/，则如下判断
-      if (!window.location.pathname.includes('/sponsors/')) return;
-
-      console.log('赞助页面脚本执行 (路由切换)');
-
-      const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-      const infoContainer = document.querySelector('div.hint-container.info');
-
-      // 控制 info 容器显示/隐藏
-      if (infoContainer) {
-        infoContainer.style.setProperty('display', isMobile ? 'block' : 'none', 'important');
-      }
-
-      // 移动端绑定点击事件
-      if (isMobile) {
-        const container = document.getElementById('qr-container');
-        if (container) {
-          // 移除旧监听器，避免重复绑定
-          container.removeEventListener('click', handleImageClick);
-          container.addEventListener('click', handleImageClick);
-        }
-      }
-    };
-
-    // 图片点击处理函数
+    // 图片点击处理函数（单独定义，避免重复）
     const handleImageClick = (e: Event) => {
       const target = e.target as HTMLElement;
       if (target.tagName === 'IMG') {
@@ -47,18 +19,39 @@ export default defineClientConfig({
       }
     };
 
-    // 1. 页面首次加载时执行
-    handleSponsorPage();
+    // 处理赞助页面逻辑
+    const handleSponsorPage = () => {
+      // 根据实际路由路径判断（您的赞助页路径为 /sponsors/）
+      if (!window.location.pathname.includes('/sponsors/')) return;
 
-    // 2. 监听路由切换（通过 MutationObserver 检测内容变化） 
-    const observer = new MutationObserver(() => {
-      // 简单的防抖：切换路由后延迟一小段时间再执行
-      clearTimeout((window as any)._sponsorTimer);
-      (window as any)._sponsorTimer = setTimeout(handleSponsorPage, 100);
-    });
-    observer.observe(document.querySelector('#main-content') || document.body, {
-      childList: true,
-      subtree: true,
+      console.log('赞助页面脚本执行 (路由切换)');
+
+      const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+      const infoContainer = document.querySelector('div.hint-container.info');
+      if (infoContainer) {
+        infoContainer.style.setProperty('display', isMobile ? 'block' : 'none', 'important');
+      }
+
+      if (isMobile) {
+        const container = document.getElementById('qr-container');
+        if (container) {
+          // 先移除旧监听器，再添加新监听器，避免重复绑定
+          container.removeEventListener('click', handleImageClick);
+          container.addEventListener('click', handleImageClick);
+        }
+      }
+    };
+
+    // 关键改动：通过 VuePress 的路由钩子执行
+    // 注意：需要从 VuePress 运行时获取 router 实例
+    import('@vuepress/client').then(({ useRouter }) => {
+      const router = useRouter();
+      // 首次加载时执行
+      handleSponsorPage();
+      // 每次路由切换后执行
+      router.afterEach(() => {
+        handleSponsorPage();
+      });
     });
   },
 });
