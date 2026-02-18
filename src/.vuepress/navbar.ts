@@ -19,7 +19,7 @@ export default navbar([
   },
   {
     text: "邮箱",
-    icon: "book",
+    icon: "envelope",
     link: "https://mail.io.hb.cn",
   },
 ]);
