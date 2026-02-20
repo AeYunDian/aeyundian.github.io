@@ -1,14 +1,14 @@
 name: 定时发布文章
 on:
   schedule:
-    - cron: '58 23 * * *'   # 北京时间 07:57
-    - cron: '58 3 * * *'    # 北京时间 11:57
-    - cron: '58 11 * * *'   # 北京时间 19:57
-    - cron: '58 15 * * *'   # 北京时间 23:57
+    - cron: '58 23 * * *'   # 北京时间 07:58
+    - cron: '58 3 * * *'    # 北京时间 11:58
+    - cron: '58 11 * * *'   # 北京时间 19:58
+    - cron: '58 15 * * *'   # 北京时间 23:58
   workflow_dispatch:
 
 jobs:
-  publish:
+  公开文章:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -21,7 +21,7 @@ jobs:
       - name: 准备 Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 20
           cache: npm
 
       - name: 安装依赖项
