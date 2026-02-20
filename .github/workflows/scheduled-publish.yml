@@ -1,0 +1,58 @@
+name: Scheduled Publish
+
+on:
+  schedule:
+    # 北京时间 00:00 -> UTC 16:00（前一日）
+    - cron: '0 16 * * *'
+    # 北京时间 08:00 -> UTC 00:00
+    - cron: '0 0 * * *'
+    # 北京时间 12:00 -> UTC 04:00
+    - cron: '0 4 * * *'
+    # 北京时间 20:00 -> UTC 12:00
+    - cron: '0 12 * * *'
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          token: ${{ secrets.ACCESS_TOKEN }}  # 使用 ACCESS_TOKEN 拉取代码，确保后续推送权限一致
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install gray-matter
+
+      - name: Run publish check script
+        run: node .github/scripts/publish-check.js
+
+      - name: Commit and push changes using ACCESS_TOKEN
+        run: |
+          # 配置 git 用户信息（仅用于提交记录）
+          git config --local user.email "zhanghaoyu19281@outlook.com"
+          git config --local user.name "AeYunDian"
+
+          # 添加所有更改
+          git add .
+
+          # 检查是否有更改需要提交
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: auto publish scheduled articles"
+
+            # 重新设置远程仓库 URL，使用 ACCESS_TOKEN 进行认证
+            REPO_URL="https://x-access-token:${{ secrets.ACCESS_TOKEN }}@github.com/${{ github.repository }}.git"
+            git remote set-url origin "$REPO_URL"
+
+            # 推送到 main 分支
+            git push origin main
+          else
+            echo "No changes to commit."
+          fi
