@@ -5,8 +5,8 @@ const matter = require('gray-matter');
 // ---------- 配置 ----------
 const SOURCE_DIR = 'src';                 // 你的文档根目录
 const EXCLUDE_PATTERNS = [
-  '/src/.vuepress/',                       // 排除 .vuepress 目录下所有文件
-  '/src/README.md'                          // 排除根 README.md
+  'src/.vuepress/',                       // 排除 .vuepress 目录下所有文件
+  'src/README.md'                          // 排除根 README.md
 ];
 // 注意：路径匹配时使用相对于仓库根目录的完整路径，如 'src/.vuepress/config.js'
 
@@ -43,8 +43,12 @@ function isExcluded(filePath) {
   // 转换为相对于仓库根目录的路径（使用正斜杠）
   const relative = filePath.replace(/\\/g, '/');
   for (const pattern of EXCLUDE_PATTERNS) {
-    if (relative.startsWith(pattern) || relative === pattern.slice(1)) { // 处理 /src/README.md 与 src/README.md 的匹配
-      return true;
+    // 如果 pattern 以 / 结尾，表示目录，使用 startsWith 匹配
+    if (pattern.endsWith('/')) {
+      if (relative.startsWith(pattern)) return true;
+    } else {
+      // 否则精确匹配文件
+      if (relative === pattern) return true;
     }
   }
   return false;

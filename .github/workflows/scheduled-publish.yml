@@ -1,4 +1,4 @@
-name: Scheduled Publish
+name: 自动公开文章
 
 on:
   schedule:
@@ -31,10 +31,10 @@ jobs:
       - name: Install dependencies
         run: npm install gray-matter
 
-      - name: Run publish check script
-        run: node .github/scripts/publish-check.js
+      - name: 运行检查脚本
+        run: node .github/scripts/publish-check.cjs
 
-      - name: Commit and push changes using ACCESS_TOKEN
+      - name: 推送更新的文件
         run: |
           # 配置 git 用户信息（仅用于提交记录）
           git config --local user.email "zhanghaoyu19281@outlook.com"
