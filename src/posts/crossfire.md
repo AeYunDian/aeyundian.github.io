@@ -3,7 +3,7 @@ icon: pen-to-square
 date: 2026-02-20 20:00
 publishDate: 2026-02-20 20:00
 draft: true
-title: Crossfire: Ys 正式公测
+title: 'Crossfire: Ys 正式公测'
 prev: false
 next: false
 ---
