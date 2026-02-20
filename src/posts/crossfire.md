@@ -1,6 +1,6 @@
 ---
 icon: pen-to-square
-date: 2026-02-20 12:00
+date: 2026-02-20 20:00
 publishDate: 2026-02-20 20:00
 draft: true
 prev: false
@@ -11,7 +11,7 @@ next: false
 # Crossfire: Ys 正式公测
 
 
-2026-02-20 12:00
+2026-02-20 20:00
 Crossfire: Ys 4.0.6 版本 正式开启不删档测试
 这款游戏使用Unity引擎构建，目前只支持Windows端，预计在将来版本制作各端UI并逐步开放测试
 
