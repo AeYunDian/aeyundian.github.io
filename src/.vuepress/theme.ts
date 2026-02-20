@@ -151,14 +151,20 @@ export default hopeTheme({
     components: {
       components: ["Badge", "VPCard"],
     },
-    blog: {
-      filter: ({ filePathRelative }) => {
-        if (filePathRelative && filePathRelative.startsWith('demo/')) {
-          return false;
-        }
-        return true;
-      },
+   blog: {
+    filter: ({ filePathRelative, frontmatter }) => {
+      // 1. 如果文章标记为草稿（draft: true），则不视为博客文章
+      if (frontmatter.draft) {
+        return false;
+      }
+      // 2. 排除 demo 目录下的所有文件
+      if (filePathRelative && filePathRelative.startsWith('demo/')) {
+        return false;
+      }
+      // 3. 其他情况均视为文章
+      return true;
     },
+  },
     icon: {
       prefix: "fa6-solid:",
     },

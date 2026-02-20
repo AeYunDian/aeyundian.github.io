@@ -3,14 +3,16 @@ const path = require('path');
 const matter = require('gray-matter');
 
 const SOURCE_DIR = 'src';
-const EXCLUDE_PATTERNS = ['src/.vuepress/', 'src/README.md'];
+const EXCLUDE_PATTERNS = ['/src/.vuepress/', '/src/README.md'];
 const WINDOW_MINUTES = 5;
 
+// 获取北京时间当前时间
 function getBeijingNow() {
   const now = new Date();
   return new Date(now.getTime() + 8 * 60 * 60 * 1000);
 }
 
+// 解析 "YYYY-MM-DD HH:mm" 格式的北京时间字符串
 function parseBeijingDate(dateStr) {
   if (typeof dateStr !== 'string') return new Date(NaN);
   const parts = dateStr.split(' ');
@@ -22,9 +24,11 @@ function parseBeijingDate(dateStr) {
   const [year, month, day] = dateParts.map(Number);
   const [hour, minute] = timeParts.map(Number);
   if (isNaN(year) || isNaN(month) || isNaN(day) || isNaN(hour) || isNaN(minute)) return new Date(NaN);
+  // 返回北京时间对应的 Date 对象（内部存储 UTC，但计算时视为 UTC+8）
   return new Date(Date.UTC(year, month - 1, day, hour - 8, minute));
 }
 
+// 递归查找所有 .md 文件
 function findMdFiles(dir, fileList = []) {
   if (!fs.existsSync(dir)) return fileList;
   const entries = fs.readdirSync(dir, { withFileTypes: true });
@@ -40,6 +44,7 @@ function findMdFiles(dir, fileList = []) {
   return fileList;
 }
 
+// 检查是否应排除
 function isExcluded(filePath) {
   const relative = filePath.replace(/\\/g, '/');
   for (const pattern of EXCLUDE_PATTERNS) {
@@ -67,22 +72,20 @@ function main() {
     const content = fs.readFileSync(file, 'utf8');
     const parsed = matter(content);
 
-    // 必须同时有 publishDate 和 draft: true
+    // 必须有 publishDate 且当前为草稿才处理
     if (!parsed.data.publishDate || parsed.data.draft !== true) return;
 
-    // 检查 publishDate 是否为字符串
+    // 校验 publishDate 格式
     if (typeof parsed.data.publishDate !== 'string') {
-      console.log(`⚠️ 文件 ${file} 的 publishDate 不是字符串 (${typeof parsed.data.publishDate})，跳过`);
+      console.log(`⚠️ 文件 ${file} 的 publishDate 不是字符串，跳过`);
       return;
     }
-
     const publishDateStr = parsed.data.publishDate.trim();
     if (!publishDateStr) {
-      console.log(`⚠️ 文件 ${file} 的 publishDate 为空字符串，跳过`);
+      console.log(`⚠️ 文件 ${file} 的 publishDate 为空，跳过`);
       return;
     }
 
-    // 尝试解析日期
     const publishBeijing = parseBeijingDate(publishDateStr);
     if (isNaN(publishBeijing.getTime())) {
       console.log(`⚠️ 文件 ${file} 的 publishDate 格式无效: "${publishDateStr}"，跳过`);
@@ -91,13 +94,16 @@ function main() {
 
     const diffMs = Math.abs(nowBeijing - publishBeijing);
     const diffMinutes = diffMs / (1000 * 60);
-
     console.log(`检查: ${file} -> 发布时间: ${publishDateStr}, 相差 ${diffMinutes.toFixed(2)} 分钟`);
 
     if (diffMinutes <= WINDOW_MINUTES) {
-      console.log(`   ✅ 在窗口内，移除 draft 标记`);
+      console.log(`   ✅ 在窗口内，移除 draft 和 index 标记`);
 
-      const newContent = content.replace(/^draft:\s*true\s*\n?/gm, '');
+      // 移除 draft: true 行
+      let newContent = content.replace(/^draft:\s*true\s*\n?/gm, '');
+      // 移除 index: false 行
+      newContent = newContent.replace(/^index:\s*false\s*\n?/gm, '');
+
       fs.writeFileSync(file, newContent, 'utf8');
       changed = true;
     } else {

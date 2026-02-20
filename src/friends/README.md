@@ -7,6 +7,7 @@ sidebar: false
 pageInfo: false
 contributors: false
 breadcrumb: false
+draft: true
 lastUpdated: false
 prev: false
 next: false
