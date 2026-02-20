@@ -2,9 +2,7 @@
 icon: pen-to-square
 date: 2026-02-20
 publishDate: 2026-02-20 20:00
-draft: true
 title: 'Crossfire: Ys 正式公测'
-index: false
 prev: false
 next: false
 ---
