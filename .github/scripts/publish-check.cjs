@@ -4,7 +4,6 @@ const matter = require('gray-matter');
 
 const SOURCE_DIR = 'src';
 const EXCLUDE_PATTERNS = ['/src/.vuepress/', '/src/README.md'];
-const WINDOW_MINUTES = 5;
 
 // 获取北京时间当前时间
 function getBeijingNow() {
@@ -92,25 +91,26 @@ function main() {
       return;
     }
 
+    // 计算时间差（仅用于日志）
     const diffMs = Math.abs(nowBeijing - publishBeijing);
     const diffMinutes = diffMs / (1000 * 60);
     console.log(`检查: ${file} -> 发布时间: ${publishDateStr}, 相差 ${diffMinutes.toFixed(2)} 分钟`);
 
-    if (diffMinutes <= WINDOW_MINUTES) {
-      console.log(`   ✅ 在窗口内，移除 draft 和 index 标记`);
-
+    // 关键判断：只要当前时间 ≥ 发布时间，就发布
+    if (nowBeijing >= publishBeijing) {
+      console.log(`   ✅ 已过发布时间，移除 draft 和 index 标记`);
       // 移除 draft: true 行
       let newContent = content.replace(/^draft:\s*true\s*\n?/gm, '');
       // 移除 index: false 行
       newContent = newContent.replace(/^index:\s*false\s*\n?/gm, '');
-
       fs.writeFileSync(file, newContent, 'utf8');
       changed = true;
     } else {
-      console.log(`   ⏳ 不在窗口内，跳过`);
+      console.log(`   ⏳ 尚未到达发布时间`);
     }
   });
 
+  // 循环结束后输出最终状态
   if (!changed) {
     console.log('没有文章需要发布');
   }
