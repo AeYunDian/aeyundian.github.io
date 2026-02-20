@@ -1,7 +1,0 @@
-updata.bat
-ver.txt
-.gitignore
-node_modules/
-src/.vuepress/.cache/
-src/.vuepress/.temp/
-src/.vuepress/dist/
