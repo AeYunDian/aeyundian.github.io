@@ -2,7 +2,6 @@
 icon: pen-to-square
 date: 2026-02-20 12:00
 publishDate: 2026-02-20 12:00
-draft: true
 prev: false
 next: false
 ---
