@@ -19,5 +19,8 @@
     "vue": "^3.5.26",
     "vuepress": "2.0.0-rc.26",
     "vuepress-theme-hope": "2.0.0-rc.102"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3"
   }
 }
