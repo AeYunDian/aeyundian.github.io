@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  公开文章:
+  public:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -18,7 +18,7 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.ACCESS_TOKEN }}  # 使用 ACCESS_TOKEN 拉取代码，确保后续推送权限一致
 
-      - name: 准备 Node.js
+      - name: Set Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
