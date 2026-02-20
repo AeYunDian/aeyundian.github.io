@@ -2,32 +2,34 @@ const fs = require('fs');
 const path = require('path');
 const matter = require('gray-matter');
 
-// ---------- 配置 ----------
-const SOURCE_DIR = 'src';                 // 你的文档根目录
-const EXCLUDE_PATTERNS = [
-  'src/.vuepress/',                       // 排除 .vuepress 目录下所有文件
-  'src/README.md'                          // 排除根 README.md
-];
-// 注意：路径匹配时使用相对于仓库根目录的完整路径，如 'src/.vuepress/config.js'
+const SOURCE_DIR = 'src';
+const EXCLUDE_PATTERNS = ['src/.vuepress/', 'src/README.md'];
+const WINDOW_MINUTES = 5;
 
-// ---------- 工具函数 ----------
-
-// 获取北京时间当前时间字符串 (YYYY-MM-DD HH:mm)
 function getBeijingNow() {
   const now = new Date();
-  // 转换为北京时间（UTC+8）
-  const beijingTime = new Date(now.getTime() + (8 * 60 * 60 * 1000));
-  return beijingTime.toISOString().slice(0, 10) + ' ' +
-         beijingTime.toTimeString().slice(0, 5);
+  return new Date(now.getTime() + 8 * 60 * 60 * 1000);
 }
 
-// 递归查找所有 .md 文件（排除 node_modules 等）
+function parseBeijingDate(dateStr) {
+  if (typeof dateStr !== 'string') return new Date(NaN);
+  const parts = dateStr.split(' ');
+  if (parts.length !== 2) return new Date(NaN);
+  const [datePart, timePart] = parts;
+  const dateParts = datePart.split('-');
+  const timeParts = timePart.split(':');
+  if (dateParts.length !== 3 || timeParts.length !== 2) return new Date(NaN);
+  const [year, month, day] = dateParts.map(Number);
+  const [hour, minute] = timeParts.map(Number);
+  if (isNaN(year) || isNaN(month) || isNaN(day) || isNaN(hour) || isNaN(minute)) return new Date(NaN);
+  return new Date(Date.UTC(year, month - 1, day, hour - 8, minute));
+}
+
 function findMdFiles(dir, fileList = []) {
   if (!fs.existsSync(dir)) return fileList;
   const entries = fs.readdirSync(dir, { withFileTypes: true });
   for (const entry of entries) {
     const fullPath = path.join(dir, entry.name);
-    // 跳过 node_modules 和 .git 等
     if (entry.name === 'node_modules' || entry.name === '.git' || entry.name === '.github') continue;
     if (entry.isDirectory()) {
       findMdFiles(fullPath, fileList);
@@ -38,41 +40,25 @@ function findMdFiles(dir, fileList = []) {
   return fileList;
 }
 
-// 检查文件是否应被排除
 function isExcluded(filePath) {
-  // 转换为相对于仓库根目录的路径（使用正斜杠）
   const relative = filePath.replace(/\\/g, '/');
   for (const pattern of EXCLUDE_PATTERNS) {
-    // 如果 pattern 以 / 结尾，表示目录，使用 startsWith 匹配
-    if (pattern.endsWith('/')) {
-      if (relative.startsWith(pattern)) return true;
-    } else {
-      // 否则精确匹配文件
-      if (relative === pattern) return true;
+    if (relative.startsWith(pattern) || relative === pattern.slice(1)) {
+      return true;
     }
   }
   return false;
 }
 
-// ---------- 主逻辑 ----------
 function main() {
-  const nowStr = getBeijingNow();
-  console.log(`当前北京时间: ${nowStr}`);
+  const nowBeijing = getBeijingNow();
+  console.log(`当前北京时间: ${nowBeijing.toLocaleString('zh-CN', { hour12: false })}`);
 
-  // 确定要扫描的绝对路径
   const rootDir = path.join(process.cwd(), SOURCE_DIR);
-  if (!fs.existsSync(rootDir)) {
-    console.error(`错误: 源目录 ${SOURCE_DIR} 不存在`);
-    process.exit(1);
-  }
-
   const mdFiles = findMdFiles(rootDir);
-  console.log(`找到 ${mdFiles.length} 个 .md 文件`);
-
   let changed = false;
 
   mdFiles.forEach(file => {
-    // 跳过被排除的文件
     if (isExcluded(file)) {
       console.log(`⏭️ 跳过排除文件: ${file}`);
       return;
@@ -81,22 +67,41 @@ function main() {
     const content = fs.readFileSync(file, 'utf8');
     const parsed = matter(content);
 
-    // 必须同时存在 publishDate 和 draft: true 才处理
+    // 必须同时有 publishDate 和 draft: true
     if (!parsed.data.publishDate || parsed.data.draft !== true) return;
 
+    // 检查 publishDate 是否为字符串
+    if (typeof parsed.data.publishDate !== 'string') {
+      console.log(`⚠️ 文件 ${file} 的 publishDate 不是字符串 (${typeof parsed.data.publishDate})，跳过`);
+      return;
+    }
+
     const publishDateStr = parsed.data.publishDate.trim();
-    console.log(`检查: ${file} -> 发布时间: ${publishDateStr}`);
+    if (!publishDateStr) {
+      console.log(`⚠️ 文件 ${file} 的 publishDate 为空字符串，跳过`);
+      return;
+    }
 
-    // 字符串比较要求格式严格为 "YYYY-MM-DD HH:mm"
-    if (nowStr >= publishDateStr) {
-      console.log(`   ✅ 达到发布时间，移除 draft 标记`);
+    // 尝试解析日期
+    const publishBeijing = parseBeijingDate(publishDateStr);
+    if (isNaN(publishBeijing.getTime())) {
+      console.log(`⚠️ 文件 ${file} 的 publishDate 格式无效: "${publishDateStr}"，跳过`);
+      return;
+    }
 
-      // 移除 "draft: true" 行（支持多种空格变体）
+    const diffMs = Math.abs(nowBeijing - publishBeijing);
+    const diffMinutes = diffMs / (1000 * 60);
+
+    console.log(`检查: ${file} -> 发布时间: ${publishDateStr}, 相差 ${diffMinutes.toFixed(2)} 分钟`);
+
+    if (diffMinutes <= WINDOW_MINUTES) {
+      console.log(`   ✅ 在窗口内，移除 draft 标记`);
+
       const newContent = content.replace(/^draft:\s*true\s*\n?/gm, '');
       fs.writeFileSync(file, newContent, 'utf8');
       changed = true;
     } else {
-      console.log(`   ⏳ 尚未到达发布时间`);
+      console.log(`   ⏳ 不在窗口内，跳过`);
     }
   });
 

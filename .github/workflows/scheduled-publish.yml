@@ -1,35 +1,31 @@
-name: 自动公开文章
-
+name: 定时发布文章
 on:
   schedule:
-    # 北京时间 00:00 -> UTC 16:00（前一日）
-    - cron: '0 16 * * *'
-    # 北京时间 08:00 -> UTC 00:00
-    - cron: '0 0 * * *'
-    # 北京时间 12:00 -> UTC 04:00
-    - cron: '0 4 * * *'
-    # 北京时间 20:00 -> UTC 12:00
-    - cron: '0 12 * * *'
-  workflow_dispatch:  # 允许手动触发
+    - cron: '57 23 * * *'   # 北京时间 07:57
+    - cron: '57 3 * * *'    # 北京时间 11:57
+    - cron: '57 11 * * *'   # 北京时间 19:57
+    - cron: '57 15 * * *'   # 北京时间 23:57
+  workflow_dispatch:
 
 jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
         with:
           ref: main
           fetch-depth: 0
           token: ${{ secrets.ACCESS_TOKEN }}  # 使用 ACCESS_TOKEN 拉取代码，确保后续推送权限一致
 
-      - name: Setup Node.js
+      - name: 准备 Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
+          cache: npm
 
-      - name: Install dependencies
-        run: npm install gray-matter
+      - name: 安装依赖项
+        run: npm ci
 
       - name: 运行检查脚本
         run: node .github/scripts/publish-check.cjs
@@ -54,5 +50,5 @@ jobs:
             # 推送到 main 分支
             git push origin main
           else
-            echo "No changes to commit."
+            echo "没有需要提交的更改"
           fi
