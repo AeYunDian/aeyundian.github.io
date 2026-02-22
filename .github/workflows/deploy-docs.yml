@@ -1,5 +1,5 @@
 
-name: 部署文档
+name: Deploy-Docs
 
 on:
   push:
