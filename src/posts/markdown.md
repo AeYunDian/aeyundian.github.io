@@ -1,15 +1,10 @@
 ---
 title: Markdown 展示
-<<<<<<< HEAD
-icon: 'fa6-brands:markdown'
-publishDate: '2026-02-23 00:00'
-=======
 icon: fa6-brands:markdown
 index: false
 draft: true
 date: 2026-02-24
 publishDate: 2026-02-24 08:00
->>>>>>> 9823645 (Ver 56)
 order: 2
 category:
   - 使用指南
