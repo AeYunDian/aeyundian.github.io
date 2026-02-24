@@ -1,10 +1,8 @@
 ---
 title: Markdown 展示
-icon: fa6-brands:markdown
-index: false
-draft: true
-date: 2026-02-24
-publishDate: 2026-02-24 08:00
+icon: 'fa6-brands:markdown'
+date: 2026-02-24T00:00:00.000Z
+publishDate: '2026-02-24 08:00'
 order: 2
 category:
   - 使用指南
