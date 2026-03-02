@@ -11,7 +11,7 @@ export default sidebar({
     },
     {
       text: "关于",
-      icon: "book",
+      icon: "circle-info",
       link: "/intro",
     },
   ],

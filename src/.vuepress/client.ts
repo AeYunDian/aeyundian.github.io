@@ -6,6 +6,7 @@ export default defineClientConfig({
   layouts: {
     Blog,
   },
+
   setup() {
     setupRunningTimeFooter(
       new Date("2025-02-29T19:42:00Z"),
