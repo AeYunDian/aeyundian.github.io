@@ -1,25 +1,28 @@
 import { defineUserConfig } from "vuepress";
-import path from 'path';
 import theme from "./theme.js";
 
 export default defineUserConfig({
   base: "/",
-  head: [
-    ["link", { rel: "icon", href: "/logo.png" }]
-  ],
+  head: [ ["link", { rel: "icon", href: "/logo.png" }] ],
   lang: "zh-CN",
   title: "UNDZ",
   description: "UNDZ博客",
-
   theme,
 
   chainWebpack(config) {
-    // 添加别名 @font 指向 .vuepress/public/font
-    config.resolve.alias.set('@font', path.resolve(__dirname, 'public/font'));
-
-    // 可选：确保 css-loader 不对带 ~ 的路径做特殊处理（默认已支持）
-    // 但通常不需要额外配置，因为 ~ 就是用来触发别名解析的
+    // 遍历所有规则，找到处理 scss 的规则，并将 css-loader 的 url 选项设为 false
+    config.module.rules.forEach(rule => {
+      // 检查规则是否处理 scss 文件（通常 test 包含 /\.scss$/）
+      if (rule.test && rule.test.toString().includes('scss')) {
+        rule.uses.forEach(use => {
+          if (use.get('loader') === 'css-loader') {
+            use.tap(options => {
+              options.url = false;  // 完全禁用 url 解析
+              return options;
+            });
+          }
+        });
+      }
+    });
   }
-  // 和 PWA 一起启用
-  // shouldPrefetch: false,
 });
