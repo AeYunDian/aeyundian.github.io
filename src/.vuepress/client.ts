@@ -9,7 +9,7 @@ export default defineClientConfig({
 
   setup() {
     setupRunningTimeFooter(
-      new Date("2025-02-29T19:42:00Z"),
+      new Date("2025-02-22T13:42:00Z"),
       {
         "/": "Running time: :day days :hour hours :minute minutes :second seconds",
       },
