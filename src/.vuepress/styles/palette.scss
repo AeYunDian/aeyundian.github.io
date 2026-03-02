@@ -1,5 +1,12 @@
-// you can change colors her
-
+@font-face {
+  font-family: 'ys';
+  src: url('https://io.hb.cn/font/font.woff2') format('woff2'),
+       url('https://io.hb.cn/font/font.woff') format('woff'),
+       url('https://io.hb.cn/font/font.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 $vp-font-heading: 'ys', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 $vp-font: 'ys', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
