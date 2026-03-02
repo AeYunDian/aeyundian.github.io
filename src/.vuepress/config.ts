@@ -13,7 +13,7 @@ export default defineUserConfig({
     // 遍历所有规则，找到处理 scss 的规则，并将 css-loader 的 url 选项设为 false
     config.module.rules.forEach(rule => {
       // 检查规则是否处理 scss 文件（通常 test 包含 /\.scss$/）
-      if (rule.test && rule.test.toString().includes('scss')) {
+      if (rule.test && rule.test.toString().includes('css')) {
         rule.uses.forEach(use => {
           if (use.get('loader') === 'css-loader') {
             use.tap(options => {
