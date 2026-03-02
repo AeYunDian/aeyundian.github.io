@@ -8,7 +8,7 @@ export default defineUserConfig({
       [
           "link",
           {
-              href: "https://cdn.bootcdn.net/ajax/libs/firacode/6.2.0/fira_code.css",
+              href: "https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css",
               rel: "stylesheet",
           },
       ],
