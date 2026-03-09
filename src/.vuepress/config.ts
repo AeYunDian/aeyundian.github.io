@@ -5,6 +5,7 @@ export default defineUserConfig({
   base: "/",
   head: [ 
       ["link", { rel: "icon", href: "/logo.png" }],
+      ['meta', { name: 'referrer', content: 'no-referrer' }],
       [
           "link",
           {

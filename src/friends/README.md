@@ -25,6 +25,13 @@ logo: https://io.hb.cn/ma.ico
 link: https://github.com/AeYunDian/
 background: rgba(253, 230, 138, 0.15)
 ```
+```component VPCard
+title: ZYY-Office
+desc: https://zyyos.io.hb.cn
+logo: https://i0.hdslb.com/bfs/face/44a43a3a4a119c301172102d504ea60a2af7ebc2.jpg
+link: https://zyyos.io.hb.cn
+background: rgb(13.0769230769, 140.5769230769, 241.9230769231, 0.15)
+```
 <style>
   .vp-card {
     min-width: 270px;
