@@ -1,11 +1,9 @@
 ---
 title: Markdown 展示
 icon: 'fa6-brands:markdown'
-date: 2026-02-24T00:00:00.000Z
+date: 2026-02-24
 publishDate: '2026-02-24 08:00'
 order: 2
-category:
-  - 使用指南
 tag:
   - Markdown
 ---

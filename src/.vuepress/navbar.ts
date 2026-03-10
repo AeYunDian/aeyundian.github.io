@@ -43,9 +43,4 @@ export default navbar([
     icon: "hand-holding-heart",
     link: "/sponsors/",
   },
-  {
-    text: "邮箱",
-    icon: "envelope",
-    link: "https://mail.io.hb.cn",
-  },
 ]);

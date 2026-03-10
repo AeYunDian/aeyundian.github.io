@@ -5,13 +5,13 @@ import sidebar from "./sidebar.js";
 
 export default hopeTheme({
   darkmode: "disable",
-  hostname: "https://io.hb.cn",
+  hostname: "https://undz.cn",
   editLink: false,
   repoDisplay: false,
   author: {
     name: "Yund",
-    url: "https://io.hb.cn",
-    email: "admin@io.hb.cn",
+    url: "https://undz.cn",
+    email: "admin@undz.cn",
   },
   
   favicon: "/favicon.ico",
@@ -34,7 +34,7 @@ export default hopeTheme({
   // 博客相关
   blog: {
     description: "普通的开发者而已",
-    intro: "/intro.html",
+    intro: "/about.html",
     avatar: "/ma.ico",
     medias: {
       BiliBili: "https://space.bilibili.com/3494370328185235",
@@ -51,11 +51,7 @@ export default hopeTheme({
       "/demo/encrypt.html": {
         hint: "You（ ）Server",
         password: "truelove",
-      }, 
-      "/intro.html": {
-        hint: "Go find it yourself",
-        password: "fucktheworld",
-      },
+      }
     },
   },
 

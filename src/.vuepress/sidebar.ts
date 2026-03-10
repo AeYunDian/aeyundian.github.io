@@ -4,6 +4,12 @@ export default sidebar({
   "/": [
     "",
     {
+      text: "日记",
+      icon: "book",
+      prefix: "diary/",
+      children: "structure",
+    },
+    {
       text: "文章",
       icon: "book",
       prefix: "posts/",
@@ -12,7 +18,7 @@ export default sidebar({
     {
       text: "关于",
       icon: "circle-info",
-      link: "/intro",
+      link: "/about",
     },
   ],
 });

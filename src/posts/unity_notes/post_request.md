@@ -1,6 +1,6 @@
 ---
 icon: pen-to-square
-date: 2026-02-17
+date: 2026-03-10
 category:
   - Unity
 tag:
@@ -70,7 +70,7 @@ public class GameApiClient : MonoBehaviour
 
 ```
 ### 3.加载
-在游戏第一个场景创建一个空游戏对象，绑定这个代码文件，启动游戏，如果游戏的日志有一条`GameApiClent创建成功！`，则代表以上步骤你都完成了
+在游戏第一个场景创建一个空游戏对象，绑定这个代码文件，启动游戏，如果游戏的日志有一条`GameApiClient创建成功！`，则代表以上步骤你都完成了
 ### 4.调用
 一个应用应该写一个类来处理网络请求，在其它类中处理返回
 要想在其他代码中发送POST请求，只需调用 `GameApiClient.Instance.PostNetData(string path, string json)` 

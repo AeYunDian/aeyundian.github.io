@@ -1,16 +1,18 @@
 ---
 icon: pen-to-square
-date: 2026-02-22
-publishDate: 2026-02-22 08:00
-title: 'Crossfire: Ys 正式公测'
+date: 2026-03-11
+publishDate: 2026-03-11 08:00
+title: 'Crossfire: Ys 正式发布'
+draft: true
+index: false
 prev: false
 next: false
 ---
-
+Crossfire: Ys 4.0.6 版本 正式发布
 <!-- more -->
 
-Crossfire: Ys 4.0.6 版本 正式开启不删档测试
-这款游戏使用Unity引擎构建，目前只支持Windows端，预计在将来版本制作各端UI并逐步开放测试
+Crossfire: Ys 4.0.6 版本 正式发布
+这款游戏使用Unity引擎构建，目前只支持Windows端，短期时间内没有支持其他端的计划
 
 ## 下载
 <a href="https://github.com/AeYunDian/Crossfire-Ys/releases/download/4.0.6_beta_0.4/4.0.6.beta.0.4.26-02-13.7z" style="text-decoration: none;" download>Github下载</a>
@@ -22,12 +24,13 @@ Crossfire: Ys 4.0.6 版本 正式开启不删档测试
 
 ## 配置
 ### 最低配置
-    1.系统：Windows7 64位 s3
+    1.系统：Windows 7 SP1 64-bit 或 Windows 8.1 64-bit 或 Windows 10 64-bit
     2.储存：512MB
-    3.内存：2GB
+    3.内存：2GB RAM
+    4.DirectX 版本：11
 
 ### 推荐配置：
-    1.系统：Windows10 64位 22h2
+    1.系统：Windows 10 64-bit 或 Windows 11 64-bit
     2.储存：1GB～2GB
-    3.内存：16GB
-    4.显卡：NVIDIA GeForce GTX 1650 4GB
+    3.内存：8GB RAM
+    4.DirectX 版本：11
