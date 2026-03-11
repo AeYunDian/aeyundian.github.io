@@ -1,9 +1,8 @@
 ---
-title: 日记
+title: 文章
 icon: book
 index: false
 article: false
 ---
-哇哦
 
 <Catalog />

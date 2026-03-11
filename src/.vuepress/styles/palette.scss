@@ -2,8 +2,11 @@
 @font-face {
     font-family: 'ys';
     src: url('https://undz.cn/font/font.woff2') format('woff2'),
+          url('https://io.hb.cn/font/font.woff2') format('woff2'),
           url('https://undz.cn/font/font.woff') format('woff'),
-          url('https://undz.cn/font/font.ttf') format('truetype');
+          url('https://io.hb.cn/font/font.woff') format('woff'),
+          url('https://undz.cn/font/font.ttf') format('truetype'),
+          url('https://io.hb.cn/font/font.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap; /* 优化字体加载体验 */

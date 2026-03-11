@@ -5,14 +5,19 @@ next: false
 lastUpdated: false
 contributors: 'AeYunDian'
 changelog: false
----
- 
+watermark:
+  width: 200
+  height: 200
+  content: 'undz.cn 202603111051'
+  opacity: 0.5
+--- 
+   
 <!-- more -->
 # 关于
 
 ## 网站简介
 - **站名**: undz
-- **建站时间**: 2025-02-22 13:42
+- **建站时间**: 2025-02-22
 
 ## 技术实现
 - **域名**: 本站使用两个域名，`undz.cn`和`io.hb.cn`，两个域名都通过阿里云注册，并由 Cloudflare 提供 DNS 解析和 SSL 证书。
@@ -20,9 +25,9 @@ changelog: false
 - **安全加密**：
   - 全站使用 HTTPS 加密访问。
   - SSL 证书由 [Cloudflare](https://www.cloudflare.com/) 提供，采用 TLS 1.3 协议。
-- **托管**: 
- - 源码托管: [GitHub](https://github.com/AeYunDian/aeyundian.github.io/) 
- - 博客地址: https://undz.cn（由 GitHub Pages 自动部署）
+- **托管**: 博客源码托管于 GitHub，并通过 GitHub Pages 自动部署
+  - 源码托管: [GitHub](https://github.com/AeYunDian/aeyundian.github.io/) 
+  - 博客地址: https://undz.cn（由 GitHub Pages 自动部署）
 - 使用 [VuePress](https://vuepress.vuejs.org/zh/) 强力驱动
 - 图标: 本站图标由我自己设计。
 - 主题: [vuepress-theme-hope](https://theme-hope.vuejs.press/zh/)
@@ -53,3 +58,9 @@ Code changes the world
 ## 特此声明
 UNDZ 是我的技术项目名称，与加拿大内衣品牌 UNDZ (undz.ca) 无任何关联。
 此网站、社交媒体绝不出现任何与内衣、时尚相关的内容，也不会链接到该品牌。请不要带入该品牌！
+
+
+::: right
+上一次更新：2026-03-11
+版本：1051
+:::

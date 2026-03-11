@@ -13,7 +13,7 @@ export default hopeTheme({
     url: "https://undz.cn",
     email: "admin@undz.cn",
   },
-  
+  fullscreen: true,
   favicon: "/favicon.ico",
   logo: "/logo.png",
 
@@ -38,7 +38,7 @@ export default hopeTheme({
     avatar: "/ma.ico",
     medias: {
       BiliBili: "https://space.bilibili.com/3494370328185235",
-      Email: "mailto:zhanghaoyu19281@outlook.com",
+      Email: "mailto:admin@undz.cn",
       GitHub: "https://github.com/AeYunDian",
       Gmail: "mailto:zhanghaoyu19281@gmail.com",
       Youtube: "https://www.youtube.com/@yspost",
@@ -49,8 +49,12 @@ export default hopeTheme({
   encrypt: {
     config: {
       "/demo/encrypt.html": {
-        hint: "You（ ）Server",
-        password: "truelove",
+        hint: "1~3",
+        password: "123",
+      },
+      "/diary/": {
+        hint: "( ? ) the world",
+        password: ["fuck", "hello"],
       }
     },
   },
@@ -136,16 +140,49 @@ export default hopeTheme({
 
   // 在这里配置主题提供的插件
   plugins: {
-    mediumZoom: true,
     // 启用之前需安装 @waline/client
     // 警告: 这是一个仅供演示的测试服务，在生产环境中请自行部署并使用自己的服务！
    // comment: {
     //   provider: "Waline",
     //   serverURL: "https://waline-comment.vuejs.press",
     // },
+   watermark: {
+      // 通过 enabled 函数控制只在关于页面显示
+         enabled: (page) => page.path === '/about.html',  // 根据你的实际路径调整
+    },
+        notice: [
+            {
+                path: "/",
+                showOnce: true,
+                title: "声明",
+                confirm: true,
+                content: "<p>UNDZ 是我的技术项目名称，与加拿大内衣品牌 UNDZ (undz.ca) 无任何关联。</p><p>此网站、社交媒体绝不出现任何与内衣、时尚相关的内容，也不会链接到该品牌。请不要带入该品牌！</p>",
+                actions: [
+                    {
+                        text: "查看详情",
+                        link: "/about#特此声明",
+                        type: "primary",
+                    },
+                    { text: "确认" },
+                ],
+            },
+        ],
+
 
     components: {
-      components: ["Badge", "VPCard"],
+        components: [
+            "ArtPlayer",
+            "Badge",
+            "BiliBili",
+            "CodePen",
+            "PDF",
+            "Share",
+            "SiteInfo",
+            "StackBlitz",
+            "VPBanner",
+            "VPCard",
+            "VidStack",
+        ],
     },
    blog: {
     filter: ({ filePathRelative, frontmatter }) => {
