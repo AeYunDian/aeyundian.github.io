@@ -6,19 +6,61 @@ export default sidebar({
     {
       text: "日记",
       icon: "book",
-      prefix: "diary/",
-      children: "structure",
+      link: "diary/",
     },
     {
       text: "文章",
       icon: "book",
-      prefix: "posts/",
-      children: "structure",
+      link: "posts/",
+    },
+    {
+      text: "视频",
+      icon: "film",
+      link: "videos/",
     },
     {
       text: "关于",
       icon: "circle-info",
       link: "/about",
+    },
+  ],
+  "/diary/": [
+    {
+      text: "返回",
+      icon: "arrow-left",
+      link: "/list/", 
+    },
+    {
+      text: "日记",
+      icon: "book",
+      prefix: "",
+      children: "structure",
+    },
+  ],
+  "/videos/": [
+    {
+      text: "返回",
+      icon: "arrow-left",
+      link: "/list/", 
+    },
+    {
+      text: "视频",
+      icon: "film",
+      prefix: "",
+      children: "structure",
+    },
+  ],
+  "/posts/": [
+    {
+      text: "返回",
+      icon: "arrow-left",
+      link: "/list/", 
+    },
+    {
+      text: "文章",
+      icon: "book",
+      prefix: "",
+      children: "structure",
     },
   ],
 });
