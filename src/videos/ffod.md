@@ -1,5 +1,5 @@
 ---
-icon: fa-film
+icon: film
 date: 2026-03-13
 publishDate: 2026-03-13 08:00
 title: '《原神》过场动画-「折枝落梦」'
