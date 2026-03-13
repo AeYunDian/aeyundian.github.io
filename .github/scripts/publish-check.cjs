@@ -4,7 +4,7 @@ const matter = require('gray-matter');
 
 const SOURCE_DIR = 'src';
 const EXCLUDE_PATTERNS = ['src/.vuepress/', 'src/README.md'];  // 相对于仓库根目录
-const WINDOW_MINUTES = 3;
+const FUTURE_WINDOW_MINUTES = 10;  // 允许的未来分钟数
 
 // 解析 "YYYY-MM-DD HH:mm" 格式的北京时间字符串，返回对应的 UTC Date 对象
 function parseBeijingDate(dateStr) {
@@ -87,16 +87,11 @@ function main() {
 
     console.log(`检查: ${file} -> 发布时间: ${publishDateStr}, 相差 ${diffMinutes.toFixed(2)} 分钟`);
 
-    // 仅在发布时间 ≤ 当前时间，且差值在窗口内时发布
-    if (diffMinutes >= 0 && diffMinutes <= WINDOW_MINUTES) {
-      console.log(`   ✅ 在窗口内，移除 draft 和 index 标记`);
+    // 发布条件：发布时间已经过去（diffMinutes >= 0）或者在未来 FUTURE_WINDOW_MINUTES 分钟内
+    if (diffMinutes >= -FUTURE_WINDOW_MINUTES) {
+      console.log(`   ✅ 符合发布条件（过去或未来 ${FUTURE_WINDOW_MINUTES} 分钟内），移除 draft 和 index 标记`);
 
-      // 方式1：正则替换（简单，但需注意正文误伤）
-      // let newContent = content.replace(/^draft:\s*true\s*\n?/gm, '');
-      // newContent = newContent.replace(/^index:\s*false\s*\n?/gm, '');
-      // fs.writeFileSync(file, newContent, 'utf8');
-
-      // 方式2：使用 gray-matter 修改（更安全）
+      // 使用 gray-matter 修改（更安全）
       const { data, content: body } = parsed;
       delete data.draft;
       delete data.index;
@@ -104,10 +99,8 @@ function main() {
       fs.writeFileSync(file, updated, 'utf8');
 
       changed = true;
-    } else if (diffMinutes < 0) {
-      console.log(`   ⏳ 发布时间在未来，跳过`);
     } else {
-      console.log(`   ⏳ 超出窗口 (${diffMinutes.toFixed(2)} > ${WINDOW_MINUTES})，跳过`);
+      console.log(`   ⏳ 超出未来窗口 (未来 ${(-diffMinutes).toFixed(2)} > ${FUTURE_WINDOW_MINUTES} 分钟)，跳过`);
     }
   });
 
