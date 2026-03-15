@@ -1,10 +1,8 @@
 ---
 icon: film
-date: 2026-03-16
-publishDate: 2026-03-16 00:00
-title: '《刺猬索尼克》国语版'
-draft: true
-index: false
+date: 2026-03-16T00:00:00.000Z
+publishDate: '2026-03-16 00:00'
+title: 《刺猬索尼克》国语版
 ---
 
 <!-- more -->
