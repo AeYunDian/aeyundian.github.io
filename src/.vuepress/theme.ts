@@ -28,7 +28,7 @@ export default hopeTheme({
   sidebar,
 
   // 页脚
-  footer: "VuePress 提供页面服务",
+  footer: '<a href="https://icp.gov.moe/?keyword=20263044" target="_blank">萌ICP备20263044号</a></br> Running time: <span id="runtime-value">0 days 0 hours 0 minutes 0 seconds</span>',
   displayFooter: true,
 
   // 博客相关
