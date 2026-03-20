@@ -16,7 +16,11 @@ export default hopeTheme({
   fullscreen: true,
   favicon: "/favicon.ico",
   logo: "/logo.png",
-
+  navbarLayout: {
+    start: ["Brand"],
+    center: ["Links"],
+    end: ["Outlook", "SettingsMenu"],
+  },
   repo: "AeYunDian",
 
   docsDir: "src",
@@ -33,7 +37,7 @@ export default hopeTheme({
 
   // 博客相关
   blog: {
-    description: "普通的开发者而已",
+    description: "Protect What You Love",
     intro: "/about.html",
     avatar: "/ma.ico",
     medias: {

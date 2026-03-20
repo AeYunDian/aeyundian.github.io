@@ -14,7 +14,7 @@
 
 $vp-font-heading: "ys", -apple-system, BlinkMacSystemFont, sans-serif  !important;
 $vp-font:  "ys", -apple-system, BlinkMacSystemFont, sans-serif  !important;
-$vp-font-mono: "Fira Code", "Consolas", monospace  !important;
+$vp-font-mono: "Fira Code","ys" , "Consolas", monospace !important;
 body, h1, h2, h3, h4, h5, h6, p, span, div, a, ul, ol, li, table, th, td, pre, code, kbd, samp {
   font-family: $vp-font;
 }

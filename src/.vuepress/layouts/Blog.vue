@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Blog } from "vuepress-theme-hope/blog";
+import TodayInHistory from './TodayInHistory.vue'
 import BingHeroBackground from "vuepress-theme-hope/presets/BingHeroBackground.js";
 </script>
 
@@ -8,6 +9,13 @@ import BingHeroBackground from "vuepress-theme-hope/presets/BingHeroBackground.j
     <template #heroBg>
       <BingHeroBackground />
       <div class="backdrop-blur-layer"></div>
+    </template>
+
+    <template #heroInfo>
+      <div class="vp-blog-hero-info">
+        <h1 class="vp-blog-hero-title">undz</h1>
+        <TodayInHistory />
+      </div>
     </template>
   </Blog>
 </template>
