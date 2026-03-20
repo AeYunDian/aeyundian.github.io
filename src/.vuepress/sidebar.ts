@@ -27,7 +27,7 @@ export default sidebar({
   "/diary/": [
     {
       text: "上一级",
-      icon: "arrow-left",
+      icon: "arrow-up",
       link: "/list/", 
     },
     {
@@ -40,7 +40,7 @@ export default sidebar({
   "/videos/": [
     {
       text: "上一级",
-      icon: "arrow-left",
+      icon: "arrow-up",
       link: "/list/", 
     },
     {
@@ -53,7 +53,7 @@ export default sidebar({
   "/posts/": [
     {
       text: "上一级",
-      icon: "arrow-left",
+      icon: "arrow-up",
       link: "/list/", 
     },
     {
