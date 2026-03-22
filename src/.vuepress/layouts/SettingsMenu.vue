@@ -17,21 +17,22 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-
+import { ref, onMounted } from 'vue'
 
 const isOpen = ref(false)
 const showTip = ref(false)
+
 const closeDebugMode = () => {
-  if (typeof window.debugMode !== 'undefined') {
+  if (typeof window !== 'undefined' && window.debugMode) {
     delete window.debugMode;
     showTip.value = false;
   }
 }
 
 const open = () => {
-  if (typeof window.debugMode !== 'undefined')
-  {showTip.value =true}
+  if (typeof window !== 'undefined' && window.debugMode) {
+    showTip.value = true
+  }
   isOpen.value = true
 }
 
@@ -39,8 +40,11 @@ const close = () => {
   isOpen.value = false
 }
 
-if (typeof window.debugMode !== 'undefined')
-{showTip.value =true}
+onMounted(() => {
+  if (typeof window !== 'undefined' && window.debugMode) {
+    showTip.value = true
+  }
+})
 </script>
 
 <style scoped>
