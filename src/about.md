@@ -2,6 +2,7 @@
 icon: circle-info
 prev: false
 next: false
+comment: false
 lastUpdated: false
 contributors: 'AeYunDian'
 changelog: false
