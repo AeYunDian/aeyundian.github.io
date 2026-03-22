@@ -1,14 +1,31 @@
 ---
 icon: film
-date: 2026-03-16
+
 
 title: '《刺猬索尼克》国语版'
 
 ---
 
 <!-- more -->
+<script setup>
+import { ref, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+const loadPlayer = ref(false)
+
+onMounted(() => {
+  // 如果条件不满足，直接跳转，不渲染播放器
+  if (typeof window.debugMode === 'undefined') {
+    router.push('/videos/module_stopped_service.html')
+  } else {
+    loadPlayer.value = true   // 满足条件时才渲染播放器
+  }
+})
+</script>
 
 <ArtPlayer
+  v-if="loadPlayer"
   src="https://oss.undz.cn/sth1_cn/manifest.mpd"
   title="《刺猬索尼克》国语版"
   poster="https://oss.undz.cn/sth1_cn/index.webp"

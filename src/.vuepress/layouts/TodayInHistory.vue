@@ -59,6 +59,7 @@ onMounted(async () => {
 .history-today-card {
   padding: 1rem 1.2rem;
   border-radius: 12px;
+  opacity: 0.93;
   background: var(--bg-color-secondary, #f5f7fa);
   border: 1px solid var(--border-color, #eaecef);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);

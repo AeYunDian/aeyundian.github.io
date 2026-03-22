@@ -1,8 +1,9 @@
 ---
 title: 列表
 icon: bars
-index: true
+comment: false
+sticky: true
 ---
-   
+查看文章列表
 <!-- more -->
 您可以在左边选个一个项目查看

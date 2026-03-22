@@ -3,7 +3,7 @@ title: 日记
 icon: book
 index: false
 article: false
+comment: false
 ---
-哇哦
 
 <Catalog />

@@ -1,15 +1,15 @@
 <template>
   <div class="settings-menu-wrapper" @mouseenter="open" @mouseleave="close">
     <div class="settings-trigger">
-      <VPIcon icon="gear" />
-      <span class="arrow" :class="{ open: isOpen }">▼</span>
+      <VPIcon class="arrow" icon="gear"  :class="{ open: isOpen }"/>
+
     </div>
 
     <transition name="scale">
       <div v-show="isOpen" class="settings-dropdown" @mouseenter="open" @mouseleave="close">
         <div class="menu-content">
           <RTLToggle />
-         
+          <a class="tip-label" v-if="showTip"   @click.prevent="closeDebugMode" href="javascript:void(0)">调试模式已开启，点击关闭</a>
         </div>
       </div>
     </transition>
@@ -21,17 +21,35 @@ import { ref } from 'vue'
 
 
 const isOpen = ref(false)
+const showTip = ref(false)
+const closeDebugMode = () => {
+  if (typeof window.debugMode !== 'undefined') {
+    delete window.debugMode;
+    showTip.value = false;
+  }
+}
 
 const open = () => {
+  if (typeof window.debugMode !== 'undefined')
+  {showTip.value =true}
   isOpen.value = true
 }
 
 const close = () => {
   isOpen.value = false
 }
+
+if (typeof window.debugMode !== 'undefined')
+{showTip.value =true}
 </script>
 
 <style scoped>
+.tip-label {
+  color: var(--vp-c-text-mute);
+  font-size: 0.8rem;
+  line-height: 0.8rem;
+}
+
 .settings-menu-wrapper {
   position: relative;
   display: inline-flex;
@@ -56,10 +74,8 @@ const close = () => {
 
 .arrow {
   display: inline-block;
-  font-size: 0.7rem;
   transition: transform 0.2s;
 
-  transform-origin: 50% 45%;  
 }
 
 .arrow.open {
