@@ -11,12 +11,14 @@ export default sidebar({
     {
       text: "文章",
       icon: "book",
-      link: "posts/",
+      prefix: "posts/",
+      children: "structure",
     },
     {
-      text: "视频",
-      icon: "film",
-      link: "videos/",
+      text: "项目",
+      icon: "pen-ruler",
+      prefix: "project/",
+      children: "structure",
     },
     {
       text: "关于",
@@ -50,17 +52,5 @@ export default sidebar({
       children: "structure",
     },
   ],
-  "/posts/": [
-    {
-      text: "上一级",
-      icon: "arrow-up",
-      link: "/list/", 
-    },
-    {
-      text: "文章",
-      icon: "book",
-      prefix: "",
-      children: "structure",
-    },
-  ],
+
 });
