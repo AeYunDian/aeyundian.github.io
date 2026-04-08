@@ -16,7 +16,7 @@ export default sidebar({
     },
     {
       text: "项目",
-      icon: "pen-ruler",
+      icon: "compass-drafting",
       prefix: "project/",
       children: "structure",
     },
