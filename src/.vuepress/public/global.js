@@ -1,6 +1,8 @@
 window.debugMode = window.debugMode;
+
 (function() {
     function initBanner() {
+return;
         const STORAGE_KEY = 'domainSaleBannerClosed';
         if (localStorage.getItem(STORAGE_KEY) === 'true') return;
 

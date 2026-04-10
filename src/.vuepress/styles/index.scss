@@ -1,26 +1,15 @@
-@font-face {
-    font-family: 'ys';
-    src: url('https://undz.cn/font/font.woff2') format('woff2'),
-          url('https://io.hb.cn/font/font.woff2') format('woff2'),
-          url('https://undz.cn/font/font.woff') format('woff'),
-          url('https://io.hb.cn/font/font.woff') format('woff'),
-          url('https://undz.cn/font/font.ttf') format('truetype'),
-          url('https://io.hb.cn/font/font.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap; /* 优化字体加载体验 */
-}
-
-
 $vp-font-heading: "ys", -apple-system, BlinkMacSystemFont, sans-serif  !important;
 $vp-font:  "ys", -apple-system, BlinkMacSystemFont, sans-serif  !important;
-$vp-font-mono: "Fira Code" , "Consolas", monospace !important;
-body, h1, h2, h3, h4, h5, h6, p, span, div, a, ul, ol, li, table, th, td {
+$vp-font-mono: "Fira Code" , "Consolas", monospace  !important;
+
+$--vp-font-heading: "ys", -apple-system, BlinkMacSystemFont, sans-serif  !important;
+$--vp-font:  "ys", -apple-system, BlinkMacSystemFont, sans-serif  !important;
+$--vp-font-mono: "Fira Code" , "Consolas", monospace  !important;
+
+body, h1, h2, h3, h4, h5, h6, p, span[property="headline"], div, a, ul, ol, li, table, th, td {
   font-family: $vp-font;
 }
 
-
-// 设置代码的字体
 code, pre, kbd, samp {
-  font-family: $vp-font-mono;
+  font-family: $vp-font-mono !important;
 }

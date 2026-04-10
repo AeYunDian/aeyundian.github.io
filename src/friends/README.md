@@ -7,7 +7,6 @@ sidebar: false
 pageInfo: false
 contributors: false
 breadcrumb: false
-comment: false
 draft: true
 lastUpdated: false
 prev: false
@@ -16,22 +15,36 @@ backtotop: false
 ---
  
 <!-- more -->
-如果您也想加入友链名单，<a href="https://github.com/AeYunDian/aeyundian.github.io/tree/main/src/friends" style="text-decoration: none;">点击这里提交</a>
+如果您也想加入友链名单，<a href="https://github.com/AeYunDian/aeyundian.github.io/tree/main/src/friends" style="text-decoration: none;">点击这里提交</a>；或者，您也可以在下方评论，按如下格式提供信息：
+```text
+icon: 网站图标
+name: 网站名字
+desc: 网站描述
+link: 网站链接
+```
 我们会定期对这里的所有站点做访问性测试，如果不通过测试（如网站无法访问），该条目将被删除。当您再次做好准备时，欢迎再次提交 PR 申请。
+
 
 ```component VPCard
 title: AeYunDian
 desc: 保护你所爱的一切
-logo: https://io.hb.cn/ma.ico
+logo: /ma.ico
 link: https://github.com/AeYunDian/
 background: rgba(253, 230, 138, 0.15)
 ```
 ```component VPCard
 title: ZYY-Office
-desc: https://zyyos.io.hb.cn
+desc: https://zyy.undz.cn
 logo: https://i0.hdslb.com/bfs/face/44a43a3a4a119c301172102d504ea60a2af7ebc2.jpg
-link: https://zyyos.io.hb.cn
-background: rgb(13.0769230769, 140.5769230769, 241.9230769231, 0.15)
+link: https://zyy.undz.cn
+background: rgba(13.0769230769, 140.5769230769, 241.9230769231, 0.15)
+```
+```component VPCard
+title: Bing🐣
+desc: 一个基于VuePress的个人博客
+logo: https://liubing.me/logo.png
+link: https://liubing.me
+background: rgba(225,252,252,1.00)
 ```
 <style>
   .vp-card {

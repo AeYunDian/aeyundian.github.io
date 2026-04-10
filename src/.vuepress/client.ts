@@ -1,18 +1,21 @@
 // .vuepress/client.js
 import Blog from "./layouts/Blog.vue";
-import TodayInHistory from "./layouts/TodayInHistory.vue";
+import TodayInHistory from "./components/TodayInHistory.vue";
 import { defineClientConfig } from '@vuepress/client'
-import RTLToggle from './layouts/RTLToggle.vue'
-import SettingsMenu from './layouts/SettingsMenu.vue'
+import RTLToggle from './components/RTLToggle.vue'
+import SettingsMenu from './components/SettingsMenu.vue'
+import SaleBanner from './components/SaleBanner.vue'
 
 export default defineClientConfig({
   layouts: {
+    
     Blog,
   },
   enhance({ app, router, siteData }) {
     // 注册全局组件
     app.component('RTLToggle', RTLToggle)
     app.component('SettingsMenu', SettingsMenu)
+    app.component('SaleBanner', SaleBanner)
   },
   setup() {
     // 只在浏览器环境下运行
