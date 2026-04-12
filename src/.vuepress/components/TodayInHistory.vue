@@ -1,5 +1,5 @@
 <template>
-  <div v-if="loading" class="history-loading">Hold on...</div>
+  <div v-if="loading" class="history-loading">Please wait a moment...</div>
   <p v-else-if="showTagline" class="vp-blog-hero-description">Protect What You Love</p>
   <div v-else class="history-today-card">
     <div class="history-today-title">
@@ -57,31 +57,34 @@ onMounted(async () => {
 <style scoped>
 
 .history-today-card {
-  padding: 1rem 1.2rem;
+  padding: 1rem 1.3rem;
   border-radius: 12px;
-  opacity: 0.93;
-  background: var(--bg-color-secondary, #f5f7fa);
-  border: 1px solid var(--border-color, #eaecef);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  background: rgba(245,247,250,0.15);
+  border: 2px solid #eaecef;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   margin: 1.5rem 0;
 }
+
 .history-today-title {
   display: flex;
   justify-content: space-between;
   align-items: baseline; /* 标题和年份基线对齐 */
   gap: 0.5rem;
 }
+
 .history-title {
   font-size: 1.1rem;
   font-weight: 600;
-  border-left: 4px solid #3b82f6;
+  border-left: 4px solid color-mix(in srgb, var(--vp-c-accent), white 15%);
   padding-left: 0.6rem;
-  color: var(--text-color, #2c3e50);
+  color: #eee;
   margin: 0;
 }
 .history-year {
   font-size: 0.9rem;
-  color: #6b7280;
+  color: #D3D3D3;
   margin: 0;
   text-align: left;
 }
@@ -91,14 +94,14 @@ onMounted(async () => {
 .history-event-text {
   font-size: 1rem;
   font-weight: 500;
-  color: var(--text-color, #34495e);
+  color: #eee;
   text-decoration: none;
 }
 .history-event-text:hover {
   color: #1e4c8f;
 }
 .history-loading {
-  color: var(--text-color, #2c3e50);
+  color: #eee;
   text-align: center;
 }
 </style>

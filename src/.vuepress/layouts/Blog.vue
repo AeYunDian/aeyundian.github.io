@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { Blog } from "vuepress-theme-hope/blog";
+import { Layout, NotFound } from "vuepress-theme-hope/client";
 import TodayInHistory from '../components/TodayInHistory.vue'
 import SaleBanner from '../components/SaleBanner.vue'
+import SaleBlock from '../components/SaleBlock.vue'
 import BingHeroBackground from "vuepress-theme-hope/presets/BingHeroBackground.js";
 </script>
 
@@ -10,20 +12,23 @@ import BingHeroBackground from "vuepress-theme-hope/presets/BingHeroBackground.j
   <Blog>
 
     <template #heroBg>
-
       <BingHeroBackground />
       <div class="backdrop-blur-layer"><SaleBanner /></div>
-
     </template>
 
     <template #heroInfo>
       <div class="vp-blog-hero-info">
         <h1 class="vp-blog-hero-title">undz</h1>
         <TodayInHistory />
-        </div>
+      </div>
+    </template>
+
+    <template #infoAfter>
+      <SaleBlock />
     </template>
 
   </Blog>
+
 </template>
 
 <style scoped>

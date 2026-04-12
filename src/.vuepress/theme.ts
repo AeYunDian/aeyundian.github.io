@@ -9,7 +9,7 @@ export default hopeTheme({
   editLink: false,
   repoDisplay: false,
   author: {
-    name: "Yund",
+    name: "AeYunDian",
     url: "https://undz.cn",
     email: "admin@undz.cn",
   },

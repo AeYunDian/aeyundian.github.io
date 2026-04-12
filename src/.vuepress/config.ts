@@ -12,6 +12,6 @@ export default defineUserConfig({
   ],
   lang: "zh-CN",
   title: "undz",
-  description: "undz博客",
+  description: "AeYunDian的博客",
   theme,
 });

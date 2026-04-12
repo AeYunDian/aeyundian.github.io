@@ -5,24 +5,26 @@ import { defineClientConfig } from '@vuepress/client'
 import RTLToggle from './components/RTLToggle.vue'
 import SettingsMenu from './components/SettingsMenu.vue'
 import SaleBanner from './components/SaleBanner.vue'
+import SaleBlock from './components/SaleBlock.vue'
 
 export default defineClientConfig({
   layouts: {
-    
     Blog,
   },
+
   enhance({ app, router, siteData }) {
     // 注册全局组件
     app.component('RTLToggle', RTLToggle)
     app.component('SettingsMenu', SettingsMenu)
     app.component('SaleBanner', SaleBanner)
+    app.component('SaleBlock', SaleBlock)
   },
+
   setup() {
     // 只在浏览器环境下运行
     if (typeof window !== 'undefined') {
-      // 定义计算运行时间的函数
       const updateRuntime = () => {
-        const startTime = new Date('2025-02-22T13:42:00Z') // 你的开始时间
+        const startTime = new Date('2025-02-22T13:42:00Z') // 开始时间
         const now = new Date()
         const diff = Math.floor((now - startTime) / 1000) // 总秒数
 
