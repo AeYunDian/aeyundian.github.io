@@ -10,3 +10,9 @@
     font-style: normal;
     font-display: swap;
 }
+
+.vp-navbar {
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  background: rgb(190, 190, 220, 0.15);
+}
