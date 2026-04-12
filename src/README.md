@@ -3,7 +3,7 @@ home: true
 layout: Blog
 icon: house
 title: 主页
-heroImage: /logo.svg
+heroImage: /logo.png
 heroText: undz
 heroFullScreen: true
 tagline: 'Protect What You Love'
