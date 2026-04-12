@@ -12,7 +12,7 @@
 }
 
 .vp-navbar {
-  -webkit-backdrop-filter: blur(14px);
-  backdrop-filter: blur(14px);
-  background: rgb(190, 190, 220, 0.15);
+  -webkit-backdrop-filter: blur(14px) !important;
+  backdrop-filter: blur(14px) !important;
+  background: rgb(190, 190, 220, 0.15) !important;
 }
