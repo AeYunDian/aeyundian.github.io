@@ -17,7 +17,7 @@ export default defineUserConfig({
     // shortcut icon 兼容 IE 等旧浏览器
     ["link", { rel: "shortcut icon", href: "/favicon.ico", type: "image/x-icon", sizes: "any" }],
 
-    ['meta', { name: 'referrer', content: 'no-referrer' }],
+    ['meta', { name: 'referrer', content: 'strict-origin-when-cross-origin' }],
     ['script', { src: '/global.js' }],
     ['link', { href: '/global.css', type: 'text/css', rel: 'stylesheet' }],
     ['link', { href: "https://cdn.jsdmirror.com/npm/firacode@6.2.0/distr/fira_code.css", rel: "stylesheet" }],
