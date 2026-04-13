@@ -4,6 +4,7 @@ import theme from "./theme.js";
 export default defineUserConfig({
   base: "/",
   head: [
+    ['script', { src: 'https://hm.baidu.com/hm.js?79463ae1d0aa94c4bc728b9486856172' }],
     // PNG 128x128
     ["link", { rel: "icon", href: "/logo.png", type: "image/png", sizes: "128x128" }],
     // WebP
@@ -17,9 +18,10 @@ export default defineUserConfig({
     // shortcut icon 兼容 IE 等旧浏览器
     ["link", { rel: "shortcut icon", href: "/favicon.ico", type: "image/x-icon", sizes: "any" }],
 
-    ['meta', { name: 'referrer', content: 'strict-origin-when-cross-origin' }],
+
     ['script', { src: '/global.js' }],
     ['link', { href: '/global.css', type: 'text/css', rel: 'stylesheet' }],
+    ['meta', { name: 'referrer', content: 'no-referrer' }],
     ['link', { href: "https://cdn.jsdmirror.com/npm/firacode@6.2.0/distr/fira_code.css", rel: "stylesheet" }],
   ],
   lang: "zh-CN",
