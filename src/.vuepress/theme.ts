@@ -167,16 +167,16 @@ export default hopeTheme({
             {
                 path: "/",
                 showOnce: true,
-                title: "声明",
+                title: "Statement / 声明",
                 confirm: true,
-                content: "<p>UNDZ 是我的技术项目名称，与加拿大内衣品牌 UNDZ (undz.ca) 无任何关联。</p><p>此网站、社交媒体绝不出现任何与内衣、时尚相关的内容，也不会链接到该品牌。请不要带入该品牌！</p>",
+                content: "<p>UNDZ is the name of my technology project and has no connection with the Canadian underwear brand UNDZ (undz.ca).</p><p>This website and social media will never contain any content related to underwear or fashion, nor will they link to that brand. Please do not associate it with that brand!</p><p>UNDZ 是我的技术项目名称，与加拿大内衣品牌 UNDZ (undz.ca) 无任何关联。</p><p>此网站、社交媒体绝不出现任何与内衣、时尚相关的内容，也不会链接到该品牌。请不要带入该品牌！</p>",
                 actions: [
                     {
-                        text: "查看详情",
+                        text: "查看详情 / View Details",
                         link: "/about#特此声明",
                         type: "primary",
                     },
-                    { text: "确认" },
+                    { text: "确认 / Yes" },
                 ],
             },
         ],

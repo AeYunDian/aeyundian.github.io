@@ -1,16 +1,15 @@
 ---
 title: Markdown 展示
 icon: 'fa6-brands:markdown'
-date: 2026-02-24
-publishDate: '2026-02-24 08:00'
-order: 2
+date: 2026-04-13
+publishDate: '2026-04-14 08:00'
 tag:
   - Markdown
 ---
 
-VuePress 主要从 Markdown 文件生成页面。因此，你可以使用它轻松生成文档或博客站点。
+VuePress 主要从 Markdown 文件生成页面。因此，可以使用它轻松生成文档或博客站点。
 
-你需要创建并编写 Markdown，以便 VuePress 可以根据文件结构将它们转换为不同的页面。
+需要创建并编写 Markdown，以便 VuePress 可以根据文件结构将它们转换为不同的页面。
 
 <!-- more -->
 
@@ -72,7 +71,7 @@ Orange
 
 #### 导入文件
 
-<!-- @include: ./crossfire.md{11-17} -->
+<!-- @include: ../project/aycanvars.md{11-17} -->
 
 - [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/content/include.html)
 

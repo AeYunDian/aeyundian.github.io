@@ -14,5 +14,6 @@
 .vp-navbar {
   -webkit-backdrop-filter: blur(14px) !important;
   backdrop-filter: blur(14px) !important;
-  background: rgb(190, 190, 220, 0.15) !important;
+  background: rgb(180, 180, 220, 0.15) !important;
+  box-shadow: 0 4px 8px var(--vp-c-shadow);
 }
