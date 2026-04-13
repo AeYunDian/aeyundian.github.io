@@ -1,6 +1,6 @@
 ---
 icon: film
-
+index: false
 
 title: '《原神》过场动画-「折枝落梦」'
 

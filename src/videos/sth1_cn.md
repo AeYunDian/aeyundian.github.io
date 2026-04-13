@@ -1,6 +1,6 @@
 ---
 icon: film
-
+index: false
 
 title: '《刺猬索尼克》国语版'
 

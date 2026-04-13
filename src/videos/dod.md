@@ -1,6 +1,6 @@
 ---
 icon: film
-
+index: false
 title: '《孤注一掷》'
 
 ---

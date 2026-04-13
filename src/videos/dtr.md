@@ -1,7 +1,7 @@
 ---
 icon: film
 
-
+index: false
 title: '《南京照相馆》'
 
 ---
