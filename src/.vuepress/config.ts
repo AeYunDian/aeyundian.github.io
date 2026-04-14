@@ -1,8 +1,9 @@
 import { defineUserConfig } from "vuepress";
 import theme from "./theme.js";
-
+import { webpackBundler } from '@vuepress/bundler-webpack';
 export default defineUserConfig({
   base: "/",
+
   head: [
     ['script', { src: 'https://hm.baidu.com/hm.js?79463ae1d0aa94c4bc728b9486856172' }],
     ['script', { src: 'https://hm.baidu.com/hm.js?7002155a5e0994d38a3585bf5e60cdbc' }],

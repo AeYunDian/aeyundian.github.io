@@ -19,6 +19,7 @@ export default {
     };
   },
   mounted() {
+
     // 检查 localStorage 是否关闭过
     if (localStorage.getItem('domainSaleBannerClosed') === 'true') {
       this.closed = true;

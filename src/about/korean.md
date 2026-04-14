@@ -17,7 +17,7 @@ watermark:
    
 <!-- more -->
 ::: center
-[简体中文](/about.html) | [繁體中文](/about.traditional_chinese.html) | [English](/about.english.html) | [Français](/about.french.html) | [日本語](/about.japanese.html) | [한국어](/about.korean.html) | [文言文](/about.classical_chinese.html)
+[简体中文](/about.html) | [繁體中文](/about/traditional_chinese.html) | [English](/about/english.html) | [Français](/about/french.html) | [日本語](/about/japanese.html) | [한국어](/about/korean.html) | [文言文](/about/classical_chinese.html)
 This page is translated by AI
 :::
 

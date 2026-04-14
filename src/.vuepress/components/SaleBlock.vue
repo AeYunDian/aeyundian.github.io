@@ -28,18 +28,21 @@ export default {
   line-height: 22px;
   background: linear-gradient(to top right, rgb(7 16 45), rgb(58 60 84));
   font-size: 13px;
-  box-shadow: 0 1px 3px 1px var(--vp-c-shadow);
   border-radius: 8px;
   padding: 20px 20px;
   margin-bottom: 16px;
   overflow-wrap: break-word;
   align-items: center;
   cursor: pointer;
+  box-shadow: 0 1px 3px 1px var(--vp-c-shadow);
+  &:hover {
+    box-shadow: 0 4px 8px 4px var(--vp-c-shadow);
+  }
 }
 
 .domain-sale-title {
   font-size: 1.125rem;
-  color: var(--vp-c-white, #fff);
+  color: rgba(235, 235, 245, 0.86);
 }
 
 .domain-sale-text {

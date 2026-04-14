@@ -1,18 +1,23 @@
-// .vuepress/client.js
 import Blog from "./layouts/Blog.vue";
-import TodayInHistory from "./components/TodayInHistory.vue";
 import { defineClientConfig } from '@vuepress/client'
 import RTLToggle from './components/RTLToggle.vue'
 import SettingsMenu from './components/SettingsMenu.vue'
 import SaleBanner from './components/SaleBanner.vue'
 import SaleBlock from './components/SaleBlock.vue'
+import TopNavBeautify from './components/TopNavBeautify.vue'
+import HeroBG from './components/HeroBG.vue'
 
 export default defineClientConfig({
   layouts: {
-    Blog,
+    Blog: Blog
   },
+  rootComponents: [
+    TopNavBeautify,
+    HeroBG
+  ],
 
-  enhance({ app, router, siteData }) {
+ enhance({ app, router, siteData }) {
+
     // 注册全局组件
     app.component('RTLToggle', RTLToggle)
     app.component('SettingsMenu', SettingsMenu)
@@ -20,29 +25,23 @@ export default defineClientConfig({
     app.component('SaleBlock', SaleBlock)
   },
 
-  setup() {
-    // 只在浏览器环境下运行
+  setup: function() {
     if (typeof window !== 'undefined') {
-      const updateRuntime = () => {
-        const startTime = new Date('2025-02-22T13:42:00Z') // 开始时间
-        const now = new Date()
-        const diff = Math.floor((now - startTime) / 1000) // 总秒数
-
-        const days = Math.floor(diff / 86400)
-        const hours = Math.floor((diff % 86400) / 3600)
-        const minutes = Math.floor((diff % 3600) / 60)
-        const seconds = diff % 60
-
-        const runtimeSpan = document.getElementById('runtime-value')
+      var updateRuntime = function() {
+        var startTime = new Date('2025-02-22T13:42:00Z');
+        var now = new Date();
+        var diff = Math.floor((now - startTime) / 1000);
+        var days = Math.floor(diff / 86400);
+        var hours = Math.floor((diff % 86400) / 3600);
+        var minutes = Math.floor((diff % 3600) / 60);
+        var seconds = diff % 60;
+        var runtimeSpan = document.getElementById('runtime-value');
         if (runtimeSpan) {
-          runtimeSpan.textContent = `${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`
+          runtimeSpan.textContent = days + ' days ' + hours + ' hours ' + minutes + ' minutes ' + seconds + ' seconds';
         }
-      }
-
-      // 立即执行一次
-      updateRuntime()
-      // 每秒更新一次
-      setInterval(updateRuntime, 1000)
+      };
+      updateRuntime();
+      setInterval(updateRuntime, 1000);
     }
   }
-})
+});

@@ -13,3 +13,132 @@ body, h1, h2, h3, h4, h5, h6, p, span[property="headline"], div, a, ul, ol, li, 
 code, pre, kbd, samp {
   font-family: $vp-font-mono !important;
 }
+ 
+
+.none {
+  width: 0;
+  height: 0;
+  user-select: none;
+  pointer-events: none;
+  overflow: hidden;
+  display: none;
+}
+
+
+// 让内容在更宽的屏幕上可以有更宽的显示区域，宽屏补丁
+:root {
+  --content-width: 830px;
+}
+@media screen and (min-width: 1770px) {
+  :root {
+    --content-width: calc(100vw - 15rem - 6rem - var(--sidebar-width) - 20rem);
+  }
+}
+
+// 图片合组
+.ImgGroup {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  align-content: baseline;
+  width: 100%;
+  figure {
+    margin: 2px;
+  }
+}
+
+
+// 回到顶部按钮半透明
+.vp-back-to-top-button {
+  opacity: 0.7;
+}
+
+// 项目卡片添加阴影
+.vp-project-card {
+  box-shadow: 0 2px 6px 2px var(--vp-c-shadow);
+  &:hover {
+    box-shadow: 0 1px 3px 1px var(--vp-c-shadow);
+  }
+}
+
+
+// 美化标签hover之后的小标签
+[aria-label][data-balloon-pos]:after {
+  border-radius: 0.6rem;
+}
+[aria-label][data-balloon-pos]:hover:before,
+[aria-label][data-balloon-pos]:hover:after,
+[aria-label][data-balloon-pos][data-balloon-visible]:before,
+[aria-label][data-balloon-pos][data-balloon-visible]:after,
+[aria-label][data-balloon-pos]:not([data-balloon-nofocus]):focus:before,
+[aria-label][data-balloon-pos]:not([data-balloon-nofocus]):focus:after {
+  opacity: 0.8;
+  font-family: none;
+}
+
+// 卡片半透明
+@mixin articleLightBg {
+  $my-alpha: 0.6;
+  background: rgba($color: #fff, $alpha: $my-alpha);
+  background-color: rgba($color: #fff, $alpha: $my-alpha);
+}
+[data-theme='light'] {
+  .theme-container {
+    .vp-page {
+      .vp-blogger-info {
+        @include articleLightBg;
+      }
+      .vp-blog-infos {
+        @include articleLightBg;
+      }
+      .vp-article-item {
+        @include articleLightBg;
+      }
+    }
+
+    .vp-pagination-nav input {
+      @include articleLightBg;
+    }
+    .vp-pagination-button {
+      @include articleLightBg;
+    }
+    .vp-pagination-number div {
+      @include articleLightBg;
+      &.active {
+        background-color: var(--theme-color);
+      }
+    }
+  }
+}
+@mixin articleDarkBg {
+  $my-alpha: 0.7;
+  background: rgba($color: #000, $alpha: $my-alpha);
+  background-color: rgba($color: #000, $alpha: $my-alpha);
+}
+[data-theme='dark'] {
+  .theme-container {
+    .vp-page {
+      .vp-blogger-info {
+        @include articleDarkBg;
+      }
+      .vp-blog-infos {
+        @include articleDarkBg;
+      }
+      .vp-article-item {
+        @include articleDarkBg;
+      }
+      .vp-pagination-nav input {
+        @include articleDarkBg;
+      }
+      .vp-pagination-button {
+        @include articleDarkBg;
+      }
+      .vp-pagination-number div {
+        @include articleDarkBg;
+        &.active {
+          background-color: var(--theme-color);
+        }
+      }
+    }
+  }
+}
