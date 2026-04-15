@@ -51,15 +51,16 @@ const CheckScrollTopClass = () => {
   checkRootPath();
 };
 
+
 const checkRootPath = () => {
   const themeElms = document.getElementsByClassName('theme-container');
-  if (themeElms.length < 1) return;
+  if (themeElms.length === 0) return;
   const themeElm = themeElms[0];
+  if (!themeElm) return;
   if (route.path !== '/') {
     themeElm.classList.remove('ayund-scroll-blog-hero-inner');
   }
 };
-
 onMounted(() => {
   nextTick(() => {
     console.debug('TopNavBeautify mounted');
