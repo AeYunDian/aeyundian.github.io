@@ -1,10 +1,17 @@
 <template>
   <ClientOnly>
-    <div style="display: none;"></div>
+    <div class="none">HeroBG mounted</div>
   </ClientOnly>
 </template>
-<script setup>
-  console.log("修改主题模块加载")
+<script setup lang="ts">
+import { onMounted, nextTick } from 'vue';
+
+onMounted(() => {
+  nextTick(() => {
+    console.debug('HeroBG mounted');
+  });
+});
+
 </script>
 <style lang="scss">
 .vp-blog-hero .slide-down-button {

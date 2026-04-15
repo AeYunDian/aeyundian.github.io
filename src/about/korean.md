@@ -47,7 +47,8 @@ This page is translated by AI
 하고 싶은 말이 있거나 사이트 문제를 발견하면 다음 방법으로 연락해 주세요:
 - [BiliBili](https://space.bilibili.com/3494370328185235)
 - [Github](https://github.com/AeYunDian)
-- [Youtube](https://www.youtube.com/@yspost)
+- [Youtube](https://www.youtube.com/@aeundz)
+- [FoxMail](mailto:aeyundian@foxmail.com)
 - [YsPost (자체 이메일)](mailto:admin@undz.cn)
 
 ## 나의 신념
@@ -55,7 +56,7 @@ This page is translated by AI
 Code changes the world
 
 ## 저작권 선언
-© 2025-2026 윤디안 (AeYunDian) 일명 undz, Yund, YunDian
+© 2025-2026 윤디안 (AeYunDian) 일명 undz, Yund, YunDian, aeundz
 
 이 블로그의 모든 오리지널 글(특별히 명시되지 않은 경우)은 [크리에이티브 커먼즈 저작자표시-동일조건변경허락 4.0 국제 라이선스 (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/deed.zh)에 따라 제공됩니다. 여러분은 내 작업을 자유롭게 공유하고 변형할 수 있지만, 적절한 위치에 저작자 표시(예: 글 시작 부분에 AeYunDian을 명시하고 원본 링크 첨부)를 해야 합니다. 상업적 목적으로 사용할 수 있으며, 변형 작업도 동일한 라이선스를 따라야 합니다.
 
@@ -69,6 +70,6 @@ UNDZ는 저의 기술 프로젝트 이름이며, 캐나다 속옷 브랜드 UNDZ
 
 
 ::: right
-마지막 업데이트: 2026-03-11  
-버전: 1051
+마지막 업데이트: 2026-04-15 
+버전: 0415
 :::

@@ -18,7 +18,7 @@ export default hopeTheme({
   navbarLayout: {
     start: ["Brand"],
     center: ["Links"],
-    end: ["Outlook", "SettingsMenu"],
+    end: ["SearchBox", "Outlook", "SettingsMenu"],
   },
   repo: "AeYunDian",
 
@@ -43,8 +43,10 @@ export default hopeTheme({
       BiliBili: "https://space.bilibili.com/3494370328185235",
       Email: "mailto:admin@undz.cn",
       GitHub: "https://github.com/AeYunDian",
+      QQ: "mailto:aeyundian@qq.com",
+    
       Gmail: "mailto:zhanghaoyu19281@gmail.com",
-      Youtube: "https://www.youtube.com/@yspost",
+      Youtube: "https://www.youtube.com/@aeundz",
     },
   },
 
@@ -143,9 +145,50 @@ export default hopeTheme({
 
   // 在这里配置主题提供的插件
   plugins: {
-   
-    // 启用之前需安装 @waline/client
-    // 警告: 这是一个仅供演示的测试服务，在生产环境中请自行部署并使用自己的服务！
+
+   search: {
+      maxSuggestions: 15,
+      hotKeys: ['s', '/'],
+      isSearchable: (page) => page.path !== '/',
+      getExtraFields: (page) => {
+        const extra: string[] = []
+        
+        // 标签
+        const tags = page.frontmatter.tags
+        if (Array.isArray(tags)) {
+          extra.push(...tags.filter(t => typeof t === 'string'))
+        } else if (typeof tags === 'string') {
+          extra.push(tags)
+        }
+        
+        // 分类
+        let cats = page.frontmatter.category ?? page.frontmatter.categories
+        if (typeof cats === 'string') {
+          extra.push(cats)
+        } else if (Array.isArray(cats)) {
+          extra.push(...cats.filter(c => typeof c === 'string'))
+        }
+        
+        // 日期
+        const date = page.frontmatter.date
+        if (date instanceof Date) {
+          extra.push(date.toISOString().slice(0, 10))
+        } else if (typeof date === 'string') {
+          extra.push(date)
+        }
+        
+        // 发布日期
+        const pubDate = page.frontmatter.publishDate
+        if (pubDate instanceof Date) {
+          extra.push(pubDate.toISOString().slice(0, 10))
+        } else if (typeof pubDate === 'string') {
+          extra.push(pubDate)
+        }
+        
+        return extra
+      },
+    },
+
    comment: {
       provider: "Giscus",
       repo: "AeYunDian/aeyundian.github.io",
@@ -153,11 +196,9 @@ export default hopeTheme({
       category: "General",
       categoryId: "DIC_kwDORRf6Gc4C5A_E",
       mapping: "pathname",
-      strict: "0", 
-      reactionsEnabled: "1",
+      strict: false,
+      reactionsEnabled: true, 
       inputPosition: "bottom",
-      lang: "zh-CN",
-      // 其他参数见官方文档
     },
 
    watermark: {

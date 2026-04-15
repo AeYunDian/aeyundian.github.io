@@ -47,7 +47,8 @@ This page is translated by AI
 何か言いたいことやサイトの問題を見つけた場合は、以下の方法で連絡できます：
 - [BiliBili](https://space.bilibili.com/3494370328185235)
 - [Github](https://github.com/AeYunDian)
-- [Youtube](https://www.youtube.com/@yspost)
+- [Youtube](https://www.youtube.com/@aeundz)
+- [FoxMail](mailto:aeyundian@foxmail.com)
 - [YsPost（自前メール）](mailto:admin@undz.cn)
 
 ## 私の理念
@@ -55,7 +56,7 @@ This page is translated by AI
 Code changes the world
 
 ## 著作権声明
-© 2025-2026 韵典 (AeYunDian) 別名 undz, Yund, YunDian
+© 2025-2026 韵典 (AeYunDian) 別名 undz, Yund, YunDian, aeundz
 
 このブログのすべてのオリジナル記事（特別な記載がない限り）は、[クリエイティブ・コモンズ 表示 - 継承 4.0 国際 ライセンス (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/deed.zh) の下で提供されています。あなたは私の作品を自由に共有し、翻案することができますが、適切な場所で著作者名（記事の冒頭に AeYunDian と明記し、元のリンクを添付するなど）を表示する必要があります。商業目的での利用は可能であり、翻案作品も同じライセンスで提供する必要があります。
 
@@ -69,6 +70,6 @@ UNDZ は私の技術プロジェクト名であり、カナダの下着ブラン
 
 
 ::: right
-最終更新：2026-03-11  
-バージョン：1051
+最終更新：2026-04-15
+バージョン：0415
 :::

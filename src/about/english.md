@@ -47,15 +47,15 @@ We do not oppose robots crawling our site for learning purposes; in fact, we sup
 If you have something to say or find issues with the site, you can contact me via:
 - [BiliBili](https://space.bilibili.com/3494370328185235)
 - [Github](https://github.com/AeYunDian)
-- [Youtube](https://www.youtube.com/@yspost)
+- [Youtube](https://www.youtube.com/@aeundz)
+- [FoxMail](mailto:aeyundian@foxmail.com)
 - [YsPost (self-hosted email)](mailto:admin@undz.cn)
 
 ## My Philosophy
-Code changes the world  
 Code changes the world
 
 ## Copyright Statement
-© 2025-2026 Yundian (AeYunDian) also known as undz, Yund, YunDian
+© 2025-2026 Yundian (AeYunDian) also known as undz, Yund, YunDian, aeundz
 
 All original articles on this blog (unless otherwise noted) are licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/deed.zh). You are free to share and adapt my work, provided you give appropriate credit (e.g., prominently note the author AeYunDian at the beginning of the article with a link to the original). Commercial use is allowed, and derivative works must be licensed under the same terms.
 
@@ -69,6 +69,6 @@ This website and social media will never contain any content related to underwea
 
 
 ::: right
-Last updated: 2026-03-11  
-Version: 1051
+Last updated: 2026-04-15  
+Version: 0415
 :::

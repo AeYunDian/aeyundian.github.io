@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onMounted, nextTick } from 'vue';
-import { useRouter } from 'vue-router';
+import { useRouter, useRoute } from 'vue-router';
+const route = useRoute();
 
 const CheckSidebarOpen = () => {
   CheckScrollTopClass();
@@ -47,10 +48,21 @@ const CheckScrollTopClass = () => {
     toggleSidebarElm.removeEventListener('click', CheckSidebarOpen);
     toggleSidebarElm.addEventListener('click', CheckSidebarOpen);
   }
+  checkRootPath();
+};
+
+const checkRootPath = () => {
+  const themeElms = document.getElementsByClassName('theme-container');
+  if (themeElms.length < 1) return;
+  const themeElm = themeElms[0];
+  if (route.path !== '/') {
+    themeElm.classList.remove('ayund-scroll-blog-hero-inner');
+  }
 };
 
 onMounted(() => {
   nextTick(() => {
+    console.debug('TopNavBeautify mounted');
     CheckScrollTopClass(); // 切换时顶栏修改
 
     window.removeEventListener('scroll', () => {});
@@ -72,12 +84,11 @@ onMounted(() => {
 
 <template>
   <ClientOnly>
-    <div style="display: none;"></div>
+    <div class="none">TopNavBeautify mounted</div>
   </ClientOnly>
 </template>
 
 <style lang="scss">
-
 
 // 当导航栏在首页导到达顶部时
 .theme-container.ayund-scroll-top.ayund-blog-hero {

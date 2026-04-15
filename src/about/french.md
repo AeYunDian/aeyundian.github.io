@@ -47,7 +47,8 @@ Nous ne nous opposons pas à ce que les robots scrappent notre site pour l’app
 Si vous souhaitez dire quelque chose ou si vous trouvez un problème sur le site, vous pouvez me contacter via :
 - [BiliBili](https://space.bilibili.com/3494370328185235)
 - [Github](https://github.com/AeYunDian)
-- [Youtube](https://www.youtube.com/@yspost)
+- [Youtube](https://www.youtube.com/@aeundz)
+- [FoxMail](mailto:aeyundian@foxmail.com)
 - [YsPost (email personnel)](mailto:admin@undz.cn)
 
 ## Ma philosophie
@@ -55,7 +56,7 @@ Le code change le monde
 Code changes the world
 
 ## Déclaration des droits d’auteur
-© 2025-2026 Yundian (AeYunDian) également connu sous undz, Yund, YunDian
+© 2025-2026 Yundian (AeYunDian) également connu sous undz, Yund, YunDian, aeundz
 
 Tous les articles originaux de ce blog (sauf mention contraire) sont sous licence [Creative Commons Attribution - Partage dans les mêmes conditions 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/deed.zh). Vous êtes libre de partager et d’adapter mon travail, à condition de me créditer de manière appropriée (par exemple, indiquer clairement l’auteur AeYunDian au début de l’article avec un lien vers l’original). Une utilisation commerciale est autorisée, et toute œuvre dérivée doit être soumise à la même licence.
 
@@ -69,6 +70,6 @@ Ce site web et mes réseaux sociaux ne contiendront absolument aucun contenu li�
 
 
 ::: right
-Dernière mise à jour : 2026-03-11  
-Version : 1051
+Dernière mise à jour : 2026-04-15
+Version : 0415
 :::
