@@ -18,7 +18,7 @@ export default hopeTheme({
   navbarLayout: {
     start: ["Brand"],
     center: ["Links"],
-    end: ["SearchBox","Outlook", "SettingsMenu"],
+    end: ["Outlook", "SettingsMenu"],
   },
   repo: "AeYunDian",
 
@@ -146,60 +146,60 @@ export default hopeTheme({
   // 在这里配置主题提供的插件
   plugins: {
 
-   search: {
-      maxSuggestions: 15,
-      hotKeys: ['s', '/'],
-      isSearchable: (page) => page.path !== '/',
-      getExtraFields: (page) => {
-        const extra: string[] = []
+  //  search: {
+  //     maxSuggestions: 15,
+  //     hotKeys: ['s', '/'],
+  //     isSearchable: (page) => page.path !== '/',
+  //     getExtraFields: (page) => {
+  //       const extra: string[] = []
         
-        // 标签
-        const tags = page.frontmatter.tags
-        if (Array.isArray(tags)) {
-          extra.push(...tags.filter(t => typeof t === 'string'))
-        } else if (typeof tags === 'string') {
-          extra.push(tags)
-        }
+  //       // 标签
+  //       const tags = page.frontmatter.tags
+  //       if (Array.isArray(tags)) {
+  //         extra.push(...tags.filter(t => typeof t === 'string'))
+  //       } else if (typeof tags === 'string') {
+  //         extra.push(tags)
+  //       }
         
-        // 分类
-        let cats = page.frontmatter.category ?? page.frontmatter.categories
-        if (typeof cats === 'string') {
-          extra.push(cats)
-        } else if (Array.isArray(cats)) {
-          extra.push(...cats.filter(c => typeof c === 'string'))
-        }
+  //       // 分类
+  //       let cats = page.frontmatter.category ?? page.frontmatter.categories
+  //       if (typeof cats === 'string') {
+  //         extra.push(cats)
+  //       } else if (Array.isArray(cats)) {
+  //         extra.push(...cats.filter(c => typeof c === 'string'))
+  //       }
         
-        // 日期
-        const date = page.frontmatter.date
-        if (date instanceof Date) {
-          extra.push(date.toISOString().slice(0, 10))
-        } else if (typeof date === 'string') {
-          extra.push(date)
-        }
+  //       // 日期
+  //       const date = page.frontmatter.date
+  //       if (date instanceof Date) {
+  //         extra.push(date.toISOString().slice(0, 10))
+  //       } else if (typeof date === 'string') {
+  //         extra.push(date)
+  //       }
         
-        // 发布日期
-        const pubDate = page.frontmatter.publishDate
-        if (pubDate instanceof Date) {
-          extra.push(pubDate.toISOString().slice(0, 10))
-        } else if (typeof pubDate === 'string') {
-          extra.push(pubDate)
-        }
+  //       // 发布日期
+  //       const pubDate = page.frontmatter.publishDate
+  //       if (pubDate instanceof Date) {
+  //         extra.push(pubDate.toISOString().slice(0, 10))
+  //       } else if (typeof pubDate === 'string') {
+  //         extra.push(pubDate)
+  //       }
         
-        return extra
-      },
-    },
+  //       return extra
+  //     },
+  //   },
 
-   comment: {
-      provider: "Giscus",
-      repo: "AeYunDian/aeyundian.github.io",
-      repoId: "R_kgDORRf6GQ",
-      category: "General",
-      categoryId: "DIC_kwDORRf6Gc4C5A_E",
-      mapping: "pathname",
-      strict: false,
-      reactionsEnabled: true, 
-      inputPosition: "bottom",
-    },
+  //  comment: {
+  //     provider: "Giscus",
+  //     repo: "AeYunDian/aeyundian.github.io",
+  //     repoId: "R_kgDORRf6GQ",
+  //     category: "General",
+  //     categoryId: "DIC_kwDORRf6Gc4C5A_E",
+  //     mapping: "pathname",
+  //     strict: false,
+  //     reactionsEnabled: true, 
+  //     inputPosition: "bottom",
+  //   },
 
    watermark: {
       // 通过 enabled 函数控制只在关于页面显示

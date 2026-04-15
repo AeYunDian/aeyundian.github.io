@@ -1,6 +1,7 @@
 updata.bat
 ver.txt
 .gitignore
+package-lock.json
 node_modules/
 src/.vuepress/.cache/
 src/.vuepress/.temp/
