@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onMounted, nextTick } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
+
 const route = useRoute();
 
 const CheckSidebarOpen = () => {
@@ -53,6 +54,7 @@ const CheckScrollTopClass = () => {
 
 
 const checkRootPath = () => {
+  return;
   const themeElms = document.getElementsByClassName('theme-container');
   if (themeElms.length === 0) return;
   const themeElm = themeElms[0];
@@ -73,6 +75,7 @@ onMounted(() => {
   });
 
   const router = useRouter();
+
   router.afterEach(() => {
     nextTick(() => {
       setTimeout(() => {
