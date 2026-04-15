@@ -2,13 +2,14 @@
 import { onMounted, nextTick } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 
-const route = useRoute();
+// const route = useRoute();
 
 const CheckSidebarOpen = () => {
   CheckScrollTopClass();
 };
 
 const CheckScrollTopClass = () => {
+  return;
   const themeElms = document.getElementsByClassName('theme-container');
   if (themeElms.length < 1) {
     return null;
@@ -59,9 +60,9 @@ const checkRootPath = () => {
   if (themeElms.length === 0) return;
   const themeElm = themeElms[0];
   if (!themeElm) return;
-  if (route.path !== '/') {
-    themeElm.classList.remove('ayund-scroll-blog-hero-inner');
-  }
+  // if (route.path !== '/') {
+  //   themeElm.classList.remove('ayund-scroll-blog-hero-inner');
+  // }
 };
 onMounted(() => {
   nextTick(() => {
