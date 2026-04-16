@@ -20,7 +20,7 @@ jobs:
           cache: npm
 
       - name: 安装依赖项
-        run: npm ci
+        run: npm install --legacy-peer-deps
 
       - name: 运行检查脚本
         run: node .github/scripts/publish-check.cjs

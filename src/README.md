@@ -8,6 +8,11 @@ heroText: undz
 heroFullScreen: true
 tagline: 'Protect What You Love'
 projects:
+  - icon: link
+    name: "友情交换"
+    desc: 欢迎交换友链
+    link: /friends/
+
   - icon: gamepad
     name: "Crossfire: Ys"
     desc: 使用U3d自制的一款游戏
@@ -16,8 +21,6 @@ projects:
   - icon: envelope
     name: "Ys Post"
     desc: 安全、稳定的个人邮箱，为您守护每一封邮件
-    link: https://mail.io.hb.cn
-
-
+    link: https://mail.undz.cn
 footer: 
 ---
