@@ -1,10 +1,9 @@
 ---
-icon: basic
-pageInfo: ['Author', 'PageView']
-title: '基础入门'
+icon: database
+title: '编程开发基础入门'
 ---
 
-# 基础入门
+# 编程开发基础入门
 
 ## 前言
 
