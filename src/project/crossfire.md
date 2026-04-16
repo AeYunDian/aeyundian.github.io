@@ -1,10 +1,8 @@
 ---
 icon: pen-to-square
-date: 2026-04-09
-publishDate: 2026-04-16 08:00
+date: 2026-04-09T00:00:00.000Z
+publishDate: '2026-04-16 08:00'
 title: 'Crossfire: Ys 正式发布'
-draft: true
-index: false
 prev: false
 next: false
 ---
