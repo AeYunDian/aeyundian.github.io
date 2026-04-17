@@ -60,6 +60,10 @@ export default hopeTheme({
       "/diary/": {
         hint: "( ? ) the world",
         password: ["fuck", "hello"],
+      },
+      "/fuck.html": {
+        hint: "这是我的隐私",
+        password: ["fuckeveryone"],
       }
     },
   },
