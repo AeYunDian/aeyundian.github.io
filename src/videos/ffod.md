@@ -3,7 +3,6 @@ icon: film
 index: false
 date: 2026-03-22
 title: '《原神》过场动画-「折枝落梦」'
-draft: true
 ---
 
 <!-- more -->
@@ -16,7 +15,9 @@ const loadPlayer = ref(false)
 
 onMounted(() => {
   // 如果条件不满足，直接跳转，不渲染播放器
-  if (typeof window.debugMode === 'undefined') {
+  // 关闭功能，默认渲染
+  //  'undefined'
+  if (typeof window.debugMode !== 'undefined') {
     router.push('/videos/module_stopped_service.html')
   } else {
     loadPlayer.value = true   // 满足条件时才渲染播放器

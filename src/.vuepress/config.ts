@@ -7,6 +7,8 @@ export default defineUserConfig({
   head: [
     ['script', { src: 'https://hm.baidu.com/hm.js?79463ae1d0aa94c4bc728b9486856172' }],
     ['script', { src: 'https://hm.baidu.com/hm.js?7002155a5e0994d38a3585bf5e60cdbc' }],
+    
+    ['meta', { name: 'referrer', content: 'no-referrer' }],
     // PNG 128x128
     ["link", { rel: "icon", href: "/logo.png", type: "image/png", sizes: "128x128" }],
     // WebP
@@ -23,7 +25,7 @@ export default defineUserConfig({
 
     ['script', { src: '/global.js' }],
     ['link', { href: '/global.css', type: 'text/css', rel: 'stylesheet' }],
-    ['meta', { name: 'referrer', content: 'no-referrer' }],
+
     ['link', { href: "https://cdn.jsdmirror.com/npm/firacode@6.2.0/distr/fira_code.css", rel: "stylesheet" }],
   ],
   lang: "zh-CN",

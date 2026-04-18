@@ -4,6 +4,7 @@ import RTLToggle from './components/RTLToggle.vue'
 import SettingsMenu from './components/SettingsMenu.vue'
 import SaleBanner from './components/SaleBanner.vue'
 import SaleBlock from './components/SaleBlock.vue'
+import GeoBlocker from './components/GeoBlocker.vue'
 import TopNavBeautify from './components/TopNavBeautify.vue'
 import HeroBG from './components/HeroBG.vue'
 
@@ -13,7 +14,8 @@ export default defineClientConfig({
   },
   rootComponents: [
     TopNavBeautify,
-    HeroBG
+    HeroBG,
+    GeoBlocker
   ],
 
  enhance({ app, router, siteData }) {

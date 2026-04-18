@@ -1,7 +1,6 @@
 ---
-icon: film
-draft: true
 index: false
+icon: film
 title: '《南京照相馆》'
 date: 2026-03-22
 ---
@@ -15,8 +14,9 @@ const router = useRouter()
 const loadPlayer = ref(false)
 
 onMounted(() => {
-  // 如果条件不满足，直接跳转，不渲染播放器
-  if (typeof window.debugMode === 'undefined') {
+  // 关闭功能，默认渲染
+  //  'undefined'
+  if (typeof window.debugMode !== 'undefined') {
     router.push('/videos/module_stopped_service.html')
   } else {
     loadPlayer.value = true   // 满足条件时才渲染播放器
@@ -42,4 +42,5 @@ onMounted(() => {
 
 [9.7分](https://www.bilibili.com/bangumi/media/md26839589)
 
-简介：影片故事取材于南京大屠杀期间日军真实罪证影像。一群生活在南京的百姓躲在吉祥照相馆中避难，为了尽可能的多活一日，他们被迫帮助日军摄影师冲洗底片，却意外冲印出了能证明日军屠城的罪证照片。日军企图掩盖大屠杀真相，他们则在日军眼皮底下谋划着如何将底片运送出去……
+简�"��嗵冗銝𠰴遣��𥡝情銵��硋停鈭𤤿凒鈭𤾸�睃�𥪜蘨�����糓��㗛�𤘪1938~1938��亙�6睃�乩賑隞擧𧒄�仪隞𤾸�韏�瘙���汿���𧑐鈭𤾸�閖�睃⏚����鈭𢛵��
+甇�蒂敺��娍�𨅯僑���辺蝟颱誑�䔉摰硺�栞�賜�钅�賢��嗅�摰���銝�隡𡁜�𡝗�牐�汿����𧢲偌甇�”蝏𤩺鰵��

@@ -15,6 +15,7 @@ import BingHeroBackground from "vuepress-theme-hope/presets/BingHeroBackground.j
       <BingHeroBackground />
       <div class="backdrop-blur-layer"></div>
     </template>
+
     <template #heroAfter>
       <SaleBanner />
     </template>
@@ -33,4 +34,3 @@ import BingHeroBackground from "vuepress-theme-hope/presets/BingHeroBackground.j
   </Blog>
 
 </template>
-
