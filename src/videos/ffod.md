@@ -26,9 +26,9 @@ onMounted(() => {
 
 <ArtPlayer
   v-if="loadPlayer"
-  src="https://oss.undz.cn/ffod/manifest.mpd"
+  src="https://film.bucket.oss.undz.cn/ffod/manifest.mpd"
   title="《原神》过场动画-「折枝落梦」"
-  poster="https://oss.undz.cn/ffod/index.avif"
+  poster="https://film.bucket.oss.undz.cn/ffod/index.avif"
   ratio="16:9"
   fullscreen-web
   airplay

@@ -26,9 +26,9 @@ onMounted(() => {
 
 <ArtPlayer
   v-if="loadPlayer"
-  src="https://oss.undz.cn/sth1_cn/manifest.mpd"
+  src="https://film.bucket.oss.undz.cn/sth1_cn/manifest.mpd"
   title="《刺猬索尼克》国语版"
-  poster="https://oss.undz.cn/sth1_cn/index.webp"
+  poster="https://film.bucket.oss.undz.cn/sth1_cn/index.webp"
   ratio="21:9"
   fullscreen-web
   airplay

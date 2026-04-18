@@ -26,9 +26,9 @@ onMounted(() => {
 
 <ArtPlayer
   v-if="loadPlayer"
-  src="https://oss.undz.cn/dtr/manifest.mpd"
+  src="https://film.bucket.oss.undz.cn/dtr/manifest.mpd"
   title="《南京照相馆》"
-  poster="https://oss.undz.cn/dtr/index.webp"
+  poster="https://film.bucket.oss.undz.cn/dtr/index.webp"
   ratio="21:9"
   fullscreen-web
   airplay

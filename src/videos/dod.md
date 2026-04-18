@@ -26,8 +26,8 @@ onMounted(() => {
 
 <ArtPlayer
   v-if="loadPlayer"
-  src="https://oss.undz.cn/dod/manifest.mpd"
-  poster="https://oss.undz.cn/dod/index.webp"
+  src="https://film.bucket.oss.undz.cn/dod/manifest.mpd"
+  poster="https://film.bucket.oss.undz.cn/dod/index.webp"
   title="《孤注一掷》"
   ratio="21:9"
   fullscreen-web
