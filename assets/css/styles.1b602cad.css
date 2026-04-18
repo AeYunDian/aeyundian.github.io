@@ -1014,5 +1014,38 @@ div.pswp__img--placeholder,
   opacity: 1;
 }
 
+
+.geo-blocker[data-v-60d199be] {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f3f4f6;
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    pointer-events: auto;
+    justify-content: center;
+    font-family: sans-serif;
+    flex-direction: column;
+    text-align: center;
+    -moz-user-select: auto;
+         user-select: auto;
+    -webkit-user-select: auto;
+}
+.geo-blocker-content h1[data-v-60d199be] {
+    font-size: 4.6rem;
+    margin: 0;
+}
+.geo-blocker-content hr[data-v-60d199be] {
+    width: 75%;
+    border: 1px solid #ccc;
+    margin: 1rem auto;
+}
+.geo-blocker-content p[data-v-60d199be] {
+    font-size: 1.3rem;
+}
+
 .theme-container.ayund-scroll-top.ayund-blog-hero .vp-navbar{box-shadow:none}.theme-container .vp-page.vp-blog-home{padding-top:0}.blog-page-wrapper .vp-blog-main{min-height:710px}.theme-container.ayund-blog-hero .blog-page-wrapper .vp-blog-main{margin-top:.4em}.theme-container .vp-navbar{background:rgba(0,0,0,0)}.theme-container.ayund-blog-hero.ayund-scroll-top .vp-navbar{backdrop-filter:none}#main-content .vp-toc-placeholder{transition:top .3s}[data-theme=light] .theme-container .vp-navbar{backdrop-filter:blur(2px)}[data-theme=light] .theme-container.ayund-scroll-blog-hero-inner .vp-appearance-button{color:#eee}[data-theme=light] .theme-container.ayund-scroll-blog-hero-inner .settings-menu-wrapper{color:#eee}[data-theme=light] .theme-container.ayund-scroll-blog-hero-inner .rtl-toggle-item>.label{color:var(--vp-c-text, rgb(60, 60, 67))}[data-theme=light] .theme-container.ayund-scroll-blog-hero-inner .vp-site-name{color:#eee;text-shadow:.05rem .05rem .1rem rgba(0,0,0,.5);opacity:.85}[data-theme=light] .theme-container.ayund-scroll-blog-hero-inner .vp-site-name:hover{color:var(--theme-color-light);opacity:1}[data-theme=light] .theme-container.ayund-scroll-blog-hero-inner .vp-dropdown-title{color:#eee}[data-theme=light] .theme-container.ayund-scroll-blog-hero-inner .vp-navbar .vp-nav-item>.auto-link{color:#eee}[data-theme=light] .theme-container.ayund-scroll-blog-hero-inner .vp-navbar .vp-dropdown-title .i18n-icon{color:#eee}[data-theme=light] .theme-container.ayund-scroll-blog-hero-inner .vp-navbar .vp-outlook-button{color:#eee}[data-theme=light] .theme-container.ayund-scroll-blog-hero-inner .vp-navbar .vp-dropdown-title .arrow{display:none}[data-theme=light] .theme-container.ayund-scroll-blog-hero-inner .vp-toggle-sidebar-button::before,[data-theme=light] .theme-container.ayund-scroll-blog-hero-inner .vp-toggle-sidebar-button::after,[data-theme=light] .theme-container.ayund-scroll-blog-hero-inner .vp-toggle-sidebar-button .icon{background:#eee}[data-theme=light] .theme-container.ayund-scroll-blog-hero-inner .vp-toggle-navbar-button .vp-top,[data-theme=light] .theme-container.ayund-scroll-blog-hero-inner .vp-toggle-navbar-button .vp-middle,[data-theme=light] .theme-container.ayund-scroll-blog-hero-inner .vp-toggle-navbar-button .vp-bottom{background:#eee}[data-theme=dark] .theme-container .vp-navbar{backdrop-filter:blur(2px)}[data-theme=dark] .theme-container.ayund-scroll-blog-hero-inner .vp-navbar .vp-dropdown-title .arrow{display:none}
 .vp-blog-hero .slide-down-button{bottom:4.75rem}.vp-blog-hero.hero-fullscreen .vp-blog-mask{background-repeat:no-repeat;background-size:cover;background-position-y:top;background-position-x:center;background-attachment:fixed}.vp-blog-hero.hero-fullscreen{z-index:5;height:100vh !important;margin:0;padding:0;margin-bottom:1rem}.vp-footer-wrapper{border-top:none;background-repeat:no-repeat;background-size:cover;background-position-y:top;background-position-x:center;background-attachment:fixed}[data-theme=light] .vp-blog-hero .vp-blog-mask::after{background:#000;opacity:.3 !important}[data-theme=light] .vp-footer-wrapper::before{background:#000;opacity:.3}[data-theme=dark] .vp-blog-hero .vp-blog-mask::after{background:#000;opacity:.7 !important}[data-theme=dark] .vp-footer-wrapper::before{background:#000;opacity:.7}
