@@ -12,6 +12,10 @@ prev: false
 next: false
 breadcrumb: false
 backtotop: false
+head:
+  - - meta
+    - name: robots
+      content: noindex
 title: '人有所操'
 ---
 妈的，操他妈的逼fuck，没麻美肛门，出生东西
