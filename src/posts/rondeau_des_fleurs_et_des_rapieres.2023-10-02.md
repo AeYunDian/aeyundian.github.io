@@ -35,7 +35,7 @@ icon: record-vinyl
 出品 Produced by：HOYO-MiX
 ::: 
 
-<script setup>
+<script>
   (function() {
     // API 配置
     const GET_IP_URL = 'https://nextmusic.toubiec.cn/api/getip';
@@ -43,9 +43,9 @@ icon: record-vinyl
     const GET_SONG_LRC_API = 'https://nextmusic.toubiec.cn/api/getSongLyric';
     const GET_SONG_INFO_API = 'https://nextmusic.toubiec.cn/api/getSongInfo';
     const SECRET_PREFIX = 'suxiaoqings:';
-    //const SONG_ID = '2085836773';
-    const LEVEL = 'jymaster'; 
     const SONG_ID = '2085836773';
+    const LEVEL = 'jymaster'; 
+    //const SONG_ID = '1913871308';
     let player = null;
 
     async function getUserIP() {
@@ -94,7 +94,7 @@ icon: record-vinyl
       if (result.code === 200 && result.data && result.data.lrc) {
         return result.data.lrc;
       } else {
-        throw new Error('获取歌曲歌词失败' + JSON.stringify(result));
+        return '';
       }
     }
 
@@ -126,7 +126,7 @@ icon: record-vinyl
           cover: audioInfo.picimg
         }],
         autoplay: false,
-        theme: '#ff7b72'
+        theme: getComputedStyle(document.documentElement).getPropertyValue('--vp-c-accent').trim(),
       });
     }
 
@@ -139,9 +139,11 @@ icon: record-vinyl
       try {
         const ip = await getUserIP();
         const token = generateToken(ip);
-        const audioUrl = await getSongUrl(token);
-        const audioLrc = await getSongLrc(token);
-        const audioInfo = await getSongInfo(token);
+        const [audioUrl, audioLrc, audioInfo] = await Promise.all([
+          getSongUrl(token),
+          getSongLrc(token),
+          getSongInfo(token)
+        ]);
         initPlayer(audioUrl, audioLrc, audioInfo);
       } catch (err) {
         console.error(err);
