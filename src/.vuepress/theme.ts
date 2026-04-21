@@ -149,7 +149,7 @@ export default hopeTheme({
 
   // 在这里配置主题提供的插件
   plugins: {
-
+   //meting2: true,
    search: {
       maxSuggestions: 15,
       hotKeys: ['s', '/'],

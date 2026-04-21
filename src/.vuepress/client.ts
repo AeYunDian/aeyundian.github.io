@@ -7,7 +7,7 @@ import SaleBlock from './components/SaleBlock.vue'
 import GeoBlocker from './components/GeoBlocker.vue'
 import TopNavBeautify from './components/TopNavBeautify.vue'
 import HeroBG from './components/HeroBG.vue'
-
+import meting2 from 'vuepress-plugin-meting2';
 export default defineClientConfig({
   layouts: {
     Blog: Blog
@@ -19,7 +19,7 @@ export default defineClientConfig({
   ],
 
  enhance({ app, router, siteData }) {
-
+    //app.config.compilerOptions.isCustomElement = (tag) => tag === 'meting-js';
     // 注册全局组件
     app.component('RTLToggle', RTLToggle)
     app.component('SettingsMenu', SettingsMenu)

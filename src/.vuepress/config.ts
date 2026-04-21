@@ -1,6 +1,7 @@
 import { defineUserConfig } from "vuepress";
 import theme from "./theme.js";
 import { webpackBundler } from '@vuepress/bundler-webpack';
+
 export default defineUserConfig({
   base: "/",
 
@@ -22,10 +23,12 @@ export default defineUserConfig({
     // shortcut icon 兼容 IE 等旧浏览器
     ["link", { rel: "shortcut icon", href: "/favicon.ico", type: "image/x-icon", sizes: "any" }],
 
-
     ['script', { src: '/global.js' }],
     ['link', { href: '/global.css', type: 'text/css', rel: 'stylesheet' }],
-
+    ['link', { href: 'https://cdn.jsdmirror.com/npm/aplayer/dist/APlayer.min.css', type: 'text/css', rel: 'stylesheet' }],
+    ['script', { src: 'https://cdn.jsdmirror.com/npm/aplayer/dist/APlayer.min.js' }],
+    ['script', { src: 'https://cdn.jsdmirror.com/npm/meting@2/dist/Meting.min.js' }],
+    ['script', { src: 'https://cdn.jsdmirror.com/npm/js-md5@0.7.3/src/md5.min.js' }],
     ['link', { href: "https://cdn.jsdmirror.com/npm/firacode@6.2.0/distr/fira_code.css", rel: "stylesheet" }],
   ],
   lang: "zh-CN",
