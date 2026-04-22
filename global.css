@@ -1,13 +1,23 @@
 @font-face {
-    font-family: 'ys';
-    src: url('https://cdn.jsdmirror.com/gh/aeyundian/aeyundian.github.io/src/.vuepress/public/font/font.woff2') format('woff2'),
-          url('/font/font.woff2') format('woff2'),
-          url('https://cdn.jsdmirror.com/gh/aeyundian/aeyundian.github.io/src/.vuepress/public/font/font.woff') format('woff'),
-          url('/font/font.woff') format('woff'),
-          url('https://cdn.jsdmirror.com/gh/aeyundian/aeyundian.github.io/src/.vuepress/public/font/font.ttf') format('truetype'),
-          url('/font/font.ttf') format('truetype'),
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'ys';
+  src: url('https://cdn.jsdmirror.com/gh/aeyundian/aeyundian.github.io/src/.vuepress/public/font/font.woff2') format('woff2'),
+    url('/font/font.woff2') format('woff2'),
+    url('https://cdn.jsdmirror.com/gh/aeyundian/aeyundian.github.io/src/.vuepress/public/font/font.woff') format('woff'),
+    url('/font/font.woff') format('woff'),
+    url('https://cdn.jsdmirror.com/gh/aeyundian/aeyundian.github.io/src/.vuepress/public/font/font.ttf') format('truetype'),
+    url('/font/font.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
+.aplayer-music>.aplayer-title {
+  color: var(--vp-c-text) !important;
+}
+
+.aplayer {
+  background: var(--vp-c-bg-elv) !important;
+}
+.aplayer-played{
+  background: var(--vp-c-accent) !important;
+}
