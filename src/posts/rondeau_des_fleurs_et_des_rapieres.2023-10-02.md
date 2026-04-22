@@ -1,5 +1,5 @@
 ---
-date: 2026-04-21
+date: 2026-04-22
 title: '《花与剑的轮舞》'
 icon: record-vinyl
 ---
@@ -35,17 +35,19 @@ icon: record-vinyl
 出品 Produced by：HOYO-MiX
 ::: 
 
-<script>
-  (function() {
-    // API 配置
+<script setup>
+import { onMounted } from 'vue';
+
+onMounted(() => {
+    // 依赖加载完成，开始初始化播放器
     const GET_IP_URL = 'https://nextmusic.toubiec.cn/api/getip';
     const GET_SONG_URL_API = 'https://nextmusic.toubiec.cn/api/getSongUrl';
     const GET_SONG_LRC_API = 'https://nextmusic.toubiec.cn/api/getSongLyric';
     const GET_SONG_INFO_API = 'https://nextmusic.toubiec.cn/api/getSongInfo';
     const SECRET_PREFIX = 'suxiaoqings:';
     const SONG_ID = '2085836773';
-    const LEVEL = 'jymaster'; 
-    //const SONG_ID = '1913871308';
+    const LEVEL = 'jymaster';
+
     let player = null;
 
     async function getUserIP() {
@@ -67,11 +69,7 @@ icon: record-vinyl
       const response = await fetch(GET_SONG_URL_API, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          id: SONG_ID,
-          level: LEVEL,
-          token: token
-        })
+        body: JSON.stringify({ id: SONG_ID, level: LEVEL, token })
       });
       const result = await response.json();
       if (result.code === 200 && result.data && result.data.url) {
@@ -85,10 +83,7 @@ icon: record-vinyl
       const response = await fetch(GET_SONG_LRC_API, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          id: SONG_ID,
-          token: token
-        })
+        body: JSON.stringify({ id: SONG_ID, token })
       });
       const result = await response.json();
       if (result.code === 200 && result.data && result.data.lrc) {
@@ -102,20 +97,20 @@ icon: record-vinyl
       const response = await fetch(GET_SONG_INFO_API, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          id: SONG_ID,
-          token: token
-        })
+        body: JSON.stringify({ id: SONG_ID, token })
       });
       const result = await response.json();
       if (result.code === 200 && result.data) {
         return result.data;
       } else {
-        throw new Error('获取歌曲信息失败' + JSON.stringify(result));
+        throw new Error('获取歌曲信息失败: ' + JSON.stringify(result));
       }
     }
 
     function initPlayer(audioUrl, audioLrc, audioInfo) {
+      const accentColor = getComputedStyle(document.documentElement)
+        .getPropertyValue('--vp-c-accent')
+        .trim() || '#68a4ff';
       player = new APlayer({
         container: document.getElementById('audio-player'),
         audio: [{
@@ -126,16 +121,18 @@ icon: record-vinyl
           cover: audioInfo.picimg
         }],
         autoplay: false,
-        theme: getComputedStyle(document.documentElement).getPropertyValue('--vp-c-accent').trim(),
+        theme: accentColor
       });
     }
 
-    function showError(msg) {
+    function showError() {
       const container = document.getElementById('audio-player');
-      container.innerHTML = `<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="86" src="//music.163.com/outchain/player?type=2&id=2085836773&auto=1&height=66"></iframe>`;
+      if (container) {
+        container.innerHTML = `<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="86" src="//music.163.com/outchain/player?type=2&id=2085836773&auto=1&height=66"></iframe>`;
+      }
     }
 
-    async function main() {
+    (async () => {
       try {
         const ip = await getUserIP();
         const token = generateToken(ip);
@@ -147,14 +144,14 @@ icon: record-vinyl
         initPlayer(audioUrl, audioLrc, audioInfo);
       } catch (err) {
         console.error(err);
-        showError(err.message);
+        showError();
       }
+    })();
+  }).catch(() => {
+    // 依赖加载失败，降级到官方播放器
+    const container = document.getElementById('audio-player');
+    if (container) {
+      container.innerHTML = `<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="86" src="//music.163.com/outchain/player?type=2&id=2085836773&auto=1&height=66"></iframe>`;
     }
-
-    if (document.readyState === 'loading') {
-      document.addEventListener('load', main);
-    } else {
-      main();
-    }
-  })();
+  });
 </script>
