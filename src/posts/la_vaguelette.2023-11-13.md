@@ -37,7 +37,7 @@ icon: record-vinyl
 
 <script setup>
 import { onMounted, onBeforeUnmount} from 'vue';
-import { onBeforeRouteLeave } from 'vue-router';
+
 let player = null;
 onMounted(() => {
     const GET_IP_URL = 'https://nextmusic.toubiec.cn/api/getip';
@@ -84,11 +84,20 @@ onMounted(() => {
         body: JSON.stringify({ id: SONG_ID, token })
       });
       const result = await response.json();
-      if (result.code === 200 && result.data && result.data.lrc) {
-        return result.data.lrc;
-      } else {
-        return '';
-      }
+if (result.code === 200 && result.data && result.data.lrc) {
+    let lrcText = result.data.lrc;
+    // 正则检查是否包含时间标签 [mm:ss] 或 [mm:ss.xx]
+    const timeTagRegex = /\[\d{2}:\d{2}(?:\.\d{2,3})?\]/;
+    if (!timeTagRegex.test(lrcText)) {
+      // 不符合LRC格式，添加一行提示
+      lrcText = "[00:00.00]*该歌词不支持自动滚动*\n" + lrcText.replace(/\n/g, '\n[999:99.99]');
+    }
+    console.info(lrcText);
+    return lrcText;
+  } else {
+    console.info("歌词解析或获取失败，返回空");
+    return '';
+  }
     }
 
     async function getSongInfo(token) {
@@ -111,11 +120,11 @@ onMounted(() => {
         .trim() || '#68a4ff';
       player = new APlayer({
         container: document.getElementById('audio-player'),
+        lrcType: 1,
         audio: [{
           name: audioInfo.name,
           artist: audioInfo.singer,
           url: audioUrl,
-          lrcType: 1,
           lrc: audioLrc,
           cover: audioInfo.picimg
         }],
@@ -148,14 +157,8 @@ onMounted(() => {
   })();
   });
 
-// 路由离开守卫：离开当前页面时暂停播放
-onBeforeRouteLeave(() => {
-  if (player && !player.paused) {
-    player.pause();
-  }
-});
 
-// 可选：组件销毁时也暂停（防止意外）
+// 组件销毁时暂停（防止意外）
 onBeforeUnmount(() => {
   if (player && !player.paused) {
     player.pause();
