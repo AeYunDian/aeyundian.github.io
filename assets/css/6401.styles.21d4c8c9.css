@@ -1,0 +1,67 @@
+
+.input-group[data-v-4be09e34] {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 2rem;
+}
+.input-group input[data-v-4be09e34] {
+  flex: 1;
+  padding: 12px 18px;
+  font-size: 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 40px;
+  outline: none;
+  transition: all 0.2s ease;
+  background: #fff;
+  color: #1e293b;
+}
+.input-group input[data-v-4be09e34]:focus {
+  border-color: var(--vp-c-accent, #68a4ff);
+  box-shadow: 0 0 0 3px rgba(104, 164, 255, 0.2);
+}
+.input-group input[data-v-4be09e34]::-moz-placeholder {
+  color: #94a3b8;
+  font-size: 14px;
+}
+.input-group input[data-v-4be09e34]::placeholder {
+  color: #94a3b8;
+  font-size: 14px;
+}
+.input-group button[data-v-4be09e34] {
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 40px;
+  background:  var(--vp-c-accent, #3b82f6);
+  color: white;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.input-group button[data-v-4be09e34]:hover {
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  transform: translateY(-1px);
+}
+.input-group button[data-v-4be09e34]:active {
+  transform: translateY(1px);
+}
+
+/* 深色模式适配（如果你的博客支持暗色主题） */
+@media (prefers-color-scheme: dark) {
+.input-group input[data-v-4be09e34] {
+    background: #1e293b;
+    border-color: #334155;
+    color: #f1f5f9;
+}
+.input-group input[data-v-4be09e34]:focus {
+    border-color: var(--vp-c-accent, #68a4ff);
+}
+.input-group input[data-v-4be09e34]::-moz-placeholder {
+    color: #64748b;
+}
+.input-group input[data-v-4be09e34]::placeholder {
+    color: #64748b;
+}
+}
+
