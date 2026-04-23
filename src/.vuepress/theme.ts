@@ -164,7 +164,7 @@ export default hopeTheme({
         } else if (typeof tags === 'string') {
           extra.push(tags)
         }
-        
+      
         // 分类
         let cats = page.frontmatter.category ?? page.frontmatter.categories
         if (typeof cats === 'string') {
@@ -172,23 +172,6 @@ export default hopeTheme({
         } else if (Array.isArray(cats)) {
           extra.push(...cats.filter(c => typeof c === 'string'))
         }
-        
-        // 日期
-        const date = page.frontmatter.date
-        if (date instanceof Date) {
-          extra.push(date.toISOString().slice(0, 10))
-        } else if (typeof date === 'string') {
-          extra.push(date)
-        }
-        
-        // 发布日期
-        const pubDate = page.frontmatter.publishDate
-        if (pubDate instanceof Date) {
-          extra.push(pubDate.toISOString().slice(0, 10))
-        } else if (typeof pubDate === 'string') {
-          extra.push(pubDate)
-        }
-        
         return extra
       },
     },

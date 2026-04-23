@@ -28,7 +28,6 @@ export default defineUserConfig({
     ['link', { href: 'https://cdn.jsdmirror.com/npm/aplayer/dist/APlayer.min.css', type: 'text/css', rel: 'stylesheet' }],
     ['script', { src: 'https://cdn.jsdmirror.com/npm/aplayer/dist/APlayer.min.js' }],
     ['script', { src: 'https://cdn.jsdmirror.com/npm/meting@2/dist/Meting.min.js' }],
-    ['script', { src: 'https://cdn.jsdmirror.com/npm/js-md5@0.7.3/src/md5.min.js' }],
     ['link', { href: "https://cdn.jsdmirror.com/npm/firacode@6.2.0/distr/fira_code.css", rel: "stylesheet" }],
   ],
   lang: "zh-CN",

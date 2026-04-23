@@ -21,3 +21,9 @@
 .aplayer-played{
   background: var(--vp-c-accent) !important;
 }
+.aplayer .aplayer-lrc:before {
+  background: linear-gradient(180deg, #ffffff00 0, hsla(0, 0%, 100%, 0)) !important;
+}
+.aplayer .aplayer-lrc:after{
+  background: linear-gradient(180deg,hsla(0,0%,100%,0) 0,hsla(0,0%,100%,0)) !important;
+}
