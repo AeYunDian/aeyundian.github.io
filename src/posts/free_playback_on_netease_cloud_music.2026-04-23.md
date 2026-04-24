@@ -5,6 +5,8 @@ date: 2026-04-23
 ---
 免费在线解析、播放网易云音乐
 <!-- more -->
+[快速启动链接，下次直接复制粘贴 https://undz.cn/go.html?to=1001&rb=/](/go.html?to=1001&rb=/)
+
 <div class="music-loader">
   <div class="input-group">
     <input 
@@ -24,6 +26,8 @@ date: 2026-04-23
     :autoplay="autoPlay"
   />
 </div>
+
+
 
 <script setup>
 import { ref, nextTick, onMounted  } from 'vue';
