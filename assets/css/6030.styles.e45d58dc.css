@@ -1,10 +1,10 @@
 
-.input-group[data-v-12dcab97] {
+.input-group[data-v-25501460] {
   display: flex;
   gap: 12px;
   margin-bottom: 2rem;
 }
-.input-group input[data-v-12dcab97] {
+.input-group input[data-v-25501460] {
   flex: 1;
   padding: 12px 18px;
   font-size: 16px;
@@ -15,19 +15,19 @@
   background: #fff;
   color: #1e293b;
 }
-.input-group input[data-v-12dcab97]:focus {
+.input-group input[data-v-25501460]:focus {
   border-color: var(--vp-c-accent, #68a4ff);
   box-shadow: 0 0 0 3px rgba(104, 164, 255, 0.2);
 }
-.input-group input[data-v-12dcab97]::-moz-placeholder {
+.input-group input[data-v-25501460]::-moz-placeholder {
   color: #94a3b8;
   font-size: 14px;
 }
-.input-group input[data-v-12dcab97]::placeholder {
+.input-group input[data-v-25501460]::placeholder {
   color: #94a3b8;
   font-size: 14px;
 }
-.input-group button[data-v-12dcab97] {
+.input-group button[data-v-25501460] {
   padding: 12px 28px;
   font-size: 16px;
   font-weight: 500;
@@ -39,28 +39,28 @@
   transition: transform 0.1s ease, box-shadow 0.2s ease;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
-.input-group button[data-v-12dcab97]:hover {
+.input-group button[data-v-25501460]:hover {
   box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
   transform: translateY(-1px);
 }
-.input-group button[data-v-12dcab97]:active {
+.input-group button[data-v-25501460]:active {
   transform: translateY(1px);
 }
 
 /* 深色模式适配（如果你的博客支持暗色主题） */
 @media (prefers-color-scheme: dark) {
-.input-group input[data-v-12dcab97] {
+.input-group input[data-v-25501460] {
     background: #1e293b;
     border-color: #334155;
     color: #f1f5f9;
 }
-.input-group input[data-v-12dcab97]:focus {
+.input-group input[data-v-25501460]:focus {
     border-color: var(--vp-c-accent, #68a4ff);
 }
-.input-group input[data-v-12dcab97]::-moz-placeholder {
+.input-group input[data-v-25501460]::-moz-placeholder {
     color: #64748b;
 }
-.input-group input[data-v-12dcab97]::placeholder {
+.input-group input[data-v-25501460]::placeholder {
     color: #64748b;
 }
 }
