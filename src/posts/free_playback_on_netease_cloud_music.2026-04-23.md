@@ -5,28 +5,40 @@ date: 2026-04-23
 ---
 免费在线解析、播放网易云音乐
 <!-- more -->
-[快速启动链接，下次直接复制粘贴 https://undz.cn/go.html?to=1001&rb=/](/go.html?to=1001&rb=/)
+[快速启动链接（长按选择复制链接）](/go.html?to=1001&rb=/)
 
 <div class="music-loader">
+<fieldset class="typeSel">
+<legend>请选择类型：</legend>
+<input type="radio" id="song" value="song"  v-model="musicType" checked>
+<label for="song">单曲</label>
+<input type="radio" id="playlist" value="playlist" v-model="musicType">
+<label for="playlist">歌单</label>
+
+</fieldset>
+
   <div class="input-group">
     <input 
       v-model="userInput" 
       type="text" 
       placeholder="请输入网易云歌曲ID或网易云歌曲链接"
-      @keyup.enter="loadSong"
+      @keyup.enter="loadSong()"
     />
-    <button @click="loadSong">加载播放器</button>
+    <button @click="loadSong()">加载播放器</button>
   </div>
+
+
   <MusicPlayer
     v-if="showPlayer"
     :key="playerKey"
     server="netease"
-    type="song"
+    :type="musicType"
     :id="songId"
+    :list-folded="true"
     :autoplay="autoPlay"
   />
 </div>
-
+<!-- type="song" -->
 
 
 <script setup>
@@ -36,6 +48,8 @@ const userInput = ref('');
 const songId = ref('');
 const showPlayer = ref(false);
 const playerKey = ref(0);
+const isLoading = ref(false);
+const musicType = ref('song');   // 'song' 或 'playlist'
 const autoPlay = ref(false);
 
 /**
@@ -47,22 +61,28 @@ const autoPlay = ref(false);
  * - 任何包含 id=数字 的字符串
  */
 function extractSongId(input) {
-  const trimmed = input.trim();
+  if (input == null) return null;
+  const trimmed = String(input).trim();
+  if (!trimmed) return null;
+
   if (!trimmed) return null;
   // 1. 如果输入全是数字，直接返回
   if (/^\d+$/.test(trimmed)) {
     return trimmed;
   }
+
   // 2. 尝试用正则匹配 id=数字
   const match = trimmed.match(/[?&]id=(\d+)/);
   if (match) {
     return match[1];
   }
+  
   // 3. 尝试匹配URL路径形式的 /song/数字
-  const pathMatch = trimmed.match(/\/song\/(\d+)/);
+  const pathMatch = trimmed.match(/\/(song|playlist)\/(\d+)/);
   if (pathMatch) {
     return pathMatch[1];
   }
+
   return null;
 }
   
@@ -82,11 +102,13 @@ function showError(msg) {
 }
 
 function loadSong(optionalInput = null) {
-  const rawInput = optionalInput !== null ? optionalInput : userInput.value;
+  isLoading.value = true;
+  const rawInput = optionalInput != null ? optionalInput : userInput.value;
   const extractedId = extractSongId(rawInput);
   
   if (!extractedId) {
     showError('未能识别歌曲ID，请输入纯数字ID或正确的网易云歌曲链接');
+    isLoading.value = false;
     return false;
   }
   
@@ -100,6 +122,7 @@ function loadSong(optionalInput = null) {
     playerKey.value++;
     showPlayer.value = true;
   });
+  isLoading.value = false;
   return true;
 }
 
@@ -125,7 +148,9 @@ onMounted(() => {
   gap: 12px;
   margin-bottom: 2rem;
 }
-
+.typeSel{
+  margin: 15px 0 15px 0;
+}
 .input-group input {
   flex: 1;
   padding: 12px 18px;
@@ -137,6 +162,7 @@ onMounted(() => {
   background: #fff;
   color: #1e293b;
 }
+
 
 .input-group input:focus {
   border-color: var(--vp-c-accent, #68a4ff);
