@@ -1016,7 +1016,7 @@ div.pswp__img--placeholder,
 }
 
 
-.geo-blocker[data-v-60d199be] {
+.geo-blocker[data-v-29a28746] {
     position: fixed;
     top: 0;
     left: 0;
@@ -1035,16 +1035,16 @@ div.pswp__img--placeholder,
          user-select: auto;
     -webkit-user-select: auto;
 }
-.geo-blocker-content h1[data-v-60d199be] {
+.geo-blocker-content h1[data-v-29a28746] {
     font-size: 4.6rem;
     margin: 0;
 }
-.geo-blocker-content hr[data-v-60d199be] {
+.geo-blocker-content hr[data-v-29a28746] {
     width: 75%;
     border: 1px solid #ccc;
     margin: 1rem auto;
 }
-.geo-blocker-content p[data-v-60d199be] {
+.geo-blocker-content p[data-v-29a28746] {
     font-size: 1.3rem;
 }
 
