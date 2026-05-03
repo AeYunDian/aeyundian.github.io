@@ -24,9 +24,8 @@ export default {
             // 使用高德 API 获取 IP 归属地
             const res = await fetch('https://restapi.amap.com/v3/ip?key=9584879dc3893767f7f5adbc86afd516&output=JSON');
             const data = await res.json();
-            if (data.status === '1' && data.adcode && data.adcode.startsWith('3303')) {
+            if (data.status === '1' && data.adcode && data.adcode.startsWith('7100')) {
                 this.shouldBlock = true;
-                // 禁止页面滚动
                 document.body.style.overflow = 'hidden';
                 this.blockKeyboardAndCopy();
             }
