@@ -1,6 +1,5 @@
 <template>
   <div class="rtl-toggle-item">
-    <span class="label">RTL 布局：</span>
     <button class="toggle-button" @click="toggleRTL" :title="isRTL ? '切换为从左到右' : '切换为从右到左'">
       <VPIcon :icon="isRTL ? 'toggle-on' : 'toggle-off'" />
     </button>
@@ -34,9 +33,6 @@ onMounted(() => {
   gap: 0.5rem;
 }
 
-.label {
-  color: var(--text-color);
-}
 
 .toggle-button {
   width: 26px;

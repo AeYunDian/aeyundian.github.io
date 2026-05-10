@@ -1,11 +1,14 @@
 <template>
-  <div class="music-player-container" aria-label="音乐播放器">
-    <div ref="playerContainer" class="aplayer-container"></div>
-<div v-if="isLoading && type === 'playlist'" class="player-loading-mask">
+  <p v-if="isPlayList" class="stop-tip">歌单音乐解析API升级维护中，维护期间暂时无法提供服务，给您带来的不便敬请谅解！恢复时间待定。</p>
+ <!-- <div class="music-player-container" aria-label="音乐播放器"> -->
+    <div v-if="!isPlayList" ref="playerContainer" class="aplayer-container"></div>
+      <p v-if="!isPlayList" class="stop-tip">歌曲音乐解析API升级维护中，维护期间暂时无法提供服务，暂时使用网易云代替</p>
+
+<!-- <div v-if="isLoading && type === 'playlist'" class="player-loading-mask">
   <div class="indeterminate-progress"></div>
   <p>{{ loadingMessage || '正在加载歌单，请稍候…' }}</p>
 </div>
-  </div>
+  </div> -->
 
 </template>
 
@@ -38,6 +41,22 @@ const isLoading = ref(false);
 const playerContainer = ref(null);
 const loadingMessage = ref('');
 let player = null;
+const objectUrls = new Set();
+const isPlayList = ref(false);
+
+
+onMounted(() => { 
+
+if (props.type === 'playlist') {
+isPlayList.value = true;
+} else if (props.type === 'song') {
+playerContainer.value.innerHTML = `<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="86" src="//music.163.com/outchain/player?type=2&id=${props.id}&auto=1&height=66"></iframe>`;
+}
+});
+
+
+ 
+
 
 // 仅支持 netease
 if (props.server !== 'netease') {
@@ -50,6 +69,27 @@ async function getUserIP() {
   const data = await res.json();
   if (data.code === 200 && data.data?.ip) return data.data.ip;
   throw new Error('获取 IP 失败');
+}
+
+async function downloadAudioUrl(url) {
+  try {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`下载音频失败：${res.status}`);
+    const blob = await res.blob();
+    const blobUrl = URL.createObjectURL(blob);
+    objectUrls.add(blobUrl);
+    return blobUrl;
+  } catch (err) {
+    console.warn('[MusicPlayer] 本地下载失败，回退到原始链接', err);
+    return url;
+  }
+}
+
+function revokeObjectUrls() {
+  for (const url of objectUrls) {
+    URL.revokeObjectURL(url);
+  }
+  objectUrls.clear();
 }
 
 function generateToken(ip) {
@@ -143,10 +183,11 @@ async function loadSong() {
       getSongLrc(token),
       getSongInfo(token),
     ]);
+    const audioUrl = await downloadAudioUrl(url);
     const audioList = [{
       name: info.name,
       artist: info.singer,
-      url: url,
+      url: audioUrl,
       lrc: lrc,
       cover: info.picimg,
     }];
@@ -199,10 +240,11 @@ async function loadPlaylist() {
           getSongLrc(token, song.id),
           getSongInfo(token, song.id),
         ]);
+        const audioUrl = await downloadAudioUrl(url);
         const audioObj = {
           name: info.name,
           artist: info.singer,
-          url: url,
+          url: audioUrl,
           lrc: lrc,
           cover: info.picimg,
         };
@@ -262,6 +304,7 @@ watch(() => props.id, (newId, oldId) => {
     player.destroy();
     player = null;
   }
+  revokeObjectUrls();
   if (playerContainer.value) playerContainer.value.innerHTML = '';
   if (props.type === 'playlist') loadPlaylist();
   else loadSong();
@@ -275,6 +318,7 @@ onMounted(() => {
 
 onBeforeUnmount(() => {
   if (player && !player.paused) player.pause();
+  revokeObjectUrls();
 });
 </script>
 <style scoped>
@@ -306,6 +350,12 @@ onBeforeUnmount(() => {
   animation: indeterminate-slide 3s linear infinite;
 }
 
+.stop-tip {
+  text-align: center !important;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 2px solid #000;
+}
 
 @keyframes indeterminate-slide {
   0% {

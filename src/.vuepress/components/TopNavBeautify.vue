@@ -151,7 +151,7 @@ onMounted(() => {
     .vp-appearance-button {
       color: #eee;
     }
-    .settings-menu-wrapper {
+    .seiting_trigger {
       color: #eee;
     }
     .rtl-toggle-item > .label {

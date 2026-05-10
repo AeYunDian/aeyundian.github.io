@@ -22,5 +22,10 @@ projects:
     name: "Ys Post"
     desc: 安全、稳定的个人邮箱，为您守护每一封邮件
     link: https://mail.undz.cn
+
+  - icon: link
+    name: "Ay Online Chat Room"
+    desc: 在线安全公开无需账号的公共聊天室
+    link: https://chat.undz.cn
 footer: 
 ---
