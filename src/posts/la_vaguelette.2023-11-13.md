@@ -2,6 +2,8 @@
 date: 2026-04-22
 title: '《轻涟 La vaguelette》'
 icon: record-vinyl
+draft: true
+index: false
 ---
    
 <!-- more -->

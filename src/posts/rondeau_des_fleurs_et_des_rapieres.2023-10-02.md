@@ -2,6 +2,8 @@
 date: 2026-04-22
 title: '《花与剑的轮舞》'
 icon: record-vinyl
+draft: true
+index: false
 ---
    
 <!-- more -->

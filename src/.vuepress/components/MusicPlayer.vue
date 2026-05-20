@@ -1,8 +1,9 @@
 <template>
-  <p v-if="isPlayList" class="stop-tip">歌单音乐解析API升级维护中，维护期间暂时无法提供服务，给您带来的不便敬请谅解！恢复时间待定。</p>
- <!-- <div class="music-player-container" aria-label="音乐播放器"> -->
+  <p class="stop-tip">音乐播放解析暂停服务</p>
+  <!-- <p v-if="isPlayList" class="stop-tip">歌单音乐解析API升级维护中，维护期间暂时无法提供服务，给您带来的不便敬请谅解！恢复时间待定。</p>
+ <div class="music-player-container" aria-label="音乐播放器"> 
     <div v-if="!isPlayList" ref="playerContainer" class="aplayer-container"></div>
-      <p v-if="!isPlayList" class="stop-tip">歌曲音乐解析API升级维护中，维护期间暂时无法提供服务，暂时使用网易云代替</p>
+      <p v-if="!isPlayList" class="stop-tip">歌曲音乐解析API升级维护中，维护期间暂时无法提供服务，暂时使用网易云代替</p> -->
 
 <!-- <div v-if="isLoading && type === 'playlist'" class="player-loading-mask">
   <div class="indeterminate-progress"></div>
@@ -42,21 +43,9 @@ const playerContainer = ref(null);
 const loadingMessage = ref('');
 let player = null;
 const objectUrls = new Set();
-const isPlayList = ref(false);
-
-
-onMounted(() => { 
-
-if (props.type === 'playlist') {
-isPlayList.value = true;
-} else if (props.type === 'song') {
-playerContainer.value.innerHTML = `<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="86" src="//music.163.com/outchain/player?type=2&id=${props.id}&auto=1&height=66"></iframe>`;
-}
-});
 
 
  
-
 
 // 仅支持 netease
 if (props.server !== 'netease') {
