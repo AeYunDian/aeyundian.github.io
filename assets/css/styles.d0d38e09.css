@@ -1110,13 +1110,13 @@ div.pswp__img--placeholder,
 }
 
 
-.player-loading-mask[data-v-0096de6e] {
+.player-loading-mask[data-v-2cfb7eca] {
   align-items: center;
   text-align: center;
   justify-content: center;
 }
 /* 不确定进度条容器 */
-.indeterminate-progress[data-v-0096de6e] {
+.indeterminate-progress[data-v-2cfb7eca] {
   width: 100%;
   max-width: 300px;
   margin: 0 auto 20px;
@@ -1126,7 +1126,7 @@ div.pswp__img--placeholder,
   overflow: hidden;
   position: relative;
 }
-.indeterminate-progress[data-v-0096de6e]::before {
+.indeterminate-progress[data-v-2cfb7eca]::before {
   content: '';
   position: absolute;
   top: 0;
@@ -1134,15 +1134,15 @@ div.pswp__img--placeholder,
   width: 50%;
   height: 100%;
   background: var(--vp-c-accent, #299764);
-  animation: indeterminate-slide-0096de6e 3s linear infinite;
+  animation: indeterminate-slide-2cfb7eca 3s linear infinite;
 }
-.stop-tip[data-v-0096de6e] {
+.stop-tip[data-v-2cfb7eca] {
   text-align: center !important;
   margin-bottom: 10px;
   border-radius: 5px;
   border: 2px solid #000;
 }
-@keyframes indeterminate-slide-0096de6e {
+@keyframes indeterminate-slide-2cfb7eca {
 0% {
     left: -100%;
 }
