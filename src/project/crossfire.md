@@ -12,6 +12,8 @@ Crossfire: Ys 4.0.6 版本 正式发布
 这款游戏使用Unity引擎构建，目前只支持Windows端，短期时间内没有支持其他端的计划
 
 ## 下载
+<a href="https://api.undz.cn/proxy/github.com/AeYunDian/Crossfire-Ys/releases/download/4.0.6_beta_0.4/4.0.6.beta.0.4.26-02-13.7z" style="text-decoration: none;" download>直链快速下载（推荐）</a>
+
 <a href="https://github.com/AeYunDian/Crossfire-Ys/releases/download/4.0.6_beta_0.4/4.0.6.beta.0.4.26-02-13.7z" style="text-decoration: none;" download>Github下载</a>
 
 ## 目前版本优点
