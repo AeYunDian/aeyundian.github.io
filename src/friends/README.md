@@ -50,6 +50,13 @@ logo: https://cdn.jsdmirror.com/gh/20000428/PictureBed/img/huge.png
 link: https://yesuifeng.cc/
 background: rgba(253, 230, 138, 0.15)
 ```
+```component VPCard
+title: UpXuu's blog
+desc: 逐光而上
+logo: https://upxuu.com/images/20260214145619.jpg
+link: https://upxuu.com
+background: rgba(13.0769230769, 140.5769230769, 241.9230769231, 0.15)
+```
 <br />
 <hr />
 <br />
