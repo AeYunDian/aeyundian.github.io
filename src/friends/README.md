@@ -59,6 +59,14 @@ link: https://upxuu.com
 background: rgba(13.0769230769, 140.5769230769, 241.9230769231, 0.15)
 ```
 
+
+```component VPCard
+title: 流欺の博客
+desc: 嗯对就是个博客
+logo: https://undz.cn/default-avatar.svg
+link: https://blog.lqay.cn
+background: rgba(176, 224, 230, 0.15)
+```
 <!-- FRIEND_CARDS_END -->
 <br />
 <hr />
