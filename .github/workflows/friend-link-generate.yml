@@ -8,7 +8,9 @@ on:
 
 jobs:
   add-friend:
-    if: contains(github.event.issue.title, '友链申请')
+    if: |
+      (github.event_name == 'issues' && contains(github.event.issue.title, '友链申请')) ||
+      (github.event_name == 'discussion' && github.event.discussion.category.name == 'General')
     runs-on: ubuntu-latest
     permissions:
       issues: write
@@ -31,11 +33,9 @@ jobs:
             const isDiscussion = !!context.payload.discussion;
             
             let body = '';
-            let title = '';
             let category = '';
             if (isIssue) {
               body = context.payload.issue.body;
-              title = context.payload.issue.title;
             } else if (isDiscussion) {
               // 只处理 General 分类
               category = context.payload.discussion.category?.name;
@@ -44,13 +44,7 @@ jobs:
                 return;
               }
               body = context.payload.discussion.body;
-              title = context.payload.discussion.title;
             } else {
-              return;
-            }
-            // 判断标题格式（以"friends/" 开头）
-            if (!title.startsWith('friends/')) {
-              console.log('标题不符合 friends/ 前缀，跳过');
               return;
             }
             const colorPalette = [
