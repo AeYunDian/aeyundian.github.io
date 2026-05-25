@@ -133,7 +133,7 @@ jobs:
             const name = extract('网站名称');
             const desc = extract('网站描述');
             const url = extract('网站链接').replace(/^`|`$/g, '').trim();
-            const avatar = extract('网站头像 URL').replace(/^`|`$/g, '').trim();
+            const avatar = extract('网站头像URL').replace(/^`|`$/g, '').trim();
 
             if (!url) {
               await github.rest.issues.createComment({
