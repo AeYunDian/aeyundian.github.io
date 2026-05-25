@@ -66,6 +66,14 @@ logo: https://tc.lqay.cn/LightPicture/2026/03/5f64e0f0f361e19c.png
 link: https://blog.lqay.cn
 background: rgba(255, 193, 204, 0.15)
 ```
+
+```component VPCard
+title: 荒野孤灯
+desc: 荒野中的一盏孤灯，照亮夜里依然前行的人们!
+logo: https://undz.cn/default-avatar.svg
+link: https://www.80srz.com
+background: rgba(247, 233, 142, 0.15)
+```
 <!-- FRIEND_CARDS_END -->
 <br />
 <hr />
