@@ -58,6 +58,14 @@ logo: https://upxuu.com/images/20260214145619.jpg
 link: https://upxuu.com
 background: rgba(13.0769230769, 140.5769230769, 241.9230769231, 0.15)
 ```
+
+```component VPCard
+title: 流欺の博客
+desc: 嗯对就是个博客
+logo: https://tc.lqay.cn/LightPicture/2026/03/5f64e0f0f361e19c.png
+link: https://blog.lqay.cn
+background: rgba(255, 193, 204, 0.15)
+```
 <!-- FRIEND_CARDS_END -->
 <br />
 <hr />
