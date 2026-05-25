@@ -3,7 +3,7 @@ name: Friend Link Generate
 on:
   issues:
     types: [opened, edited]
-  discussions:
+  discussion:
     types: [created, edited]
 
 jobs:
@@ -56,7 +56,7 @@ jobs:
             const colorPalette = [
               'rgba(253, 230, 138, 0.15)',
               'rgba(255, 255, 255, 0.15)',
-              'rgba(13.0769230769, 140.5769230769, 241.9230769231, 0.15)',
+              'rgba(13, 141, 242, 0.15)',
               'rgba(255, 209, 220, 0.15)',
               'rgba(174, 198, 207, 0.15)',
               'rgba(119, 221, 119, 0.15)',
@@ -117,6 +117,15 @@ jobs:
               return match ? normalizeUrl(match[1].trim()) : null;
             }
             function findInsertPosition(content) {
+              // 优先使用明确的结束标记
+              const endMarker = '<!-- FRIEND_CARDS_END -->';
+              const endIndex = content.indexOf(endMarker);
+              if (endIndex !== -1) {
+                // 在结束标记之前插入
+                return endIndex;
+              }
+
+              // 后备方案：查找最后一个 VPCard 块之后
               const vpCardRegex = /```component\s+VPCard[\s\S]*?```/g;
               let lastMatch = null;
               let match;
@@ -124,15 +133,16 @@ jobs:
                 lastMatch = match;
               }
               if (lastMatch) {
-                // 返回最后一个匹配块的结束索引
                 return lastMatch.index + lastMatch[0].length;
               }
-              // 如果没有找到任何 VPCard，则回退到 <!-- more --> 后面
+            
+              // 最终回退：<!-- more --> 之后
               const moreIndex = content.indexOf('<!-- more -->');
               if (moreIndex !== -1) {
                 return moreIndex + '<!-- more -->'.length;
               }
-              // 最终回退：文件末尾
+            
+              // 实在不行，追加到文件末尾
               return content.length;
             }
             function extract(key) {
@@ -248,12 +258,12 @@ jobs:
               });
               return;
             }
-            if (desc.length > 200 || /\s/.test(desc)) {
+            if (desc.length > 200) {
               await github.rest.issues.createComment({
                 issue_number: context.issue.number,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                body: '## ❌ 描述过长\n\n请确保**网站描述**长度不超过 200 字符，且不包含空格。编辑此 Issue 重新触发。'
+                body: '## ❌ 描述过长\n\n请确保**网站描述**长度不超过 200 字符。编辑此 Issue 重新触发。'
               });
               await github.rest.issues.addLabels({
                 issue_number: context.issue.number,
@@ -267,7 +277,7 @@ jobs:
             const newCard = `\n\`\`\`component VPCard
             title: ${name || '未命名'}
             desc: ${desc || '暂无描述'}
-            logo: ${avatar || 'data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;%3E%3Crect fill=&quot;%23e5e7eb&quot; width=&quot;100&quot; height=&quot;100&quot;/%3E%3Ctext x=&quot;50&quot; y=&quot;55&quot; text-anchor=&quot;middle&quot; font-size=&quot;40&quot; fill=&quot;%239ca3af&quot;%3E?%3C/text%3E%3C/svg%3E'}
+            logo: ${avatar || 'https://undz.cn/default-avatar.svg'}
             link: ${url}
             background: ${randomBg}
             \`\`\`\n`;

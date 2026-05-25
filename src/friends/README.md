@@ -15,6 +15,7 @@ backtotop: false
 ---
  
 <!-- more -->
+<!-- FRIEND_CARDS_START -->
 ```component VPCard
 title: AeYunDian
 desc: 保护你所爱的一切
@@ -57,6 +58,7 @@ logo: https://upxuu.com/images/20260214145619.jpg
 link: https://upxuu.com
 background: rgba(13.0769230769, 140.5769230769, 241.9230769231, 0.15)
 ```
+<!-- FRIEND_CARDS_END -->
 <br />
 <hr />
 <br />
