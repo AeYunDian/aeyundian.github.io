@@ -58,6 +58,14 @@ logo: https://upxuu.com/images/20260214145619.jpg
 link: https://upxuu.com
 background: rgba(13.0769230769, 140.5769230769, 241.9230769231, 0.15)
 ```
+
+```component VPCard
+title: u的撒
+desc: Prote的撒
+logo: https://undz.cn/default-avatar.svg
+link: https://un的撒
+background: rgba(255, 188, 217, 0.15)
+```
 <!-- FRIEND_CARDS_END -->
 <br />
 <hr />
