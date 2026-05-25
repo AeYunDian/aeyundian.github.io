@@ -202,7 +202,7 @@ jobs:
               });
               return;
             }
-            if (avatar && !/^https?:\/\//.test(avatar) || avatar.length > 280 || /\s/.test(avatar)) {
+            if (avatar && (avatar.length > 280 || !/^https?:\/\//.test(avatar) || /\s/.test(avatar) ) ) {
               await github.rest.issues.createComment({
                 issue_number: context.issue.number,
                 owner: context.repo.owner,
