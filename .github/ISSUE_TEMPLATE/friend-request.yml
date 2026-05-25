@@ -60,7 +60,7 @@ body:
   - type: input
     id: avatar
     attributes:
-      label: "网站头像 URL"
+      label: "网站头像URL"
       description: "你的网站头像/Logo 的图片链接（可选）"
       placeholder: "https://example.com/avatar.png"
     validations:
