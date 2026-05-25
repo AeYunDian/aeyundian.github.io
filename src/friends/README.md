@@ -74,6 +74,14 @@ logo: https://undz.cn/default-avatar.svg
 link: https://www.80srz.com
 background: rgba(247, 233, 142, 0.15)
 ```
+
+```component VPCard
+title: 沈wai
+desc: _No response_
+logo: https://qlogo4.store.qq.com/qzone/3815085431/3815085431/100
+link: https://api.undz.cn/addqq?uid=3815085431
+background: rgba(137, 207, 240, 0.15)
+```
 <!-- FRIEND_CARDS_END -->
 <br />
 <hr />
