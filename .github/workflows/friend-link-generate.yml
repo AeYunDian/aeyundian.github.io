@@ -3,19 +3,14 @@ name: Friend Link Generate
 on:
   issues:
     types: [opened, edited]
-  discussion:
-    types: [created, edited]
 
 jobs:
   add-friend:
-    if: |
-      (github.event_name == 'issues' && contains(github.event.issue.title, '友链申请')) ||
-      (github.event_name == 'discussion' && github.event.discussion.category.name == 'General')
+    if: contains(github.event.issue.title, '友链申请')
     runs-on: ubuntu-latest
     permissions:
       issues: write
       contents: write
-      discussions: write
 
     steps:
       - name: Checkout
@@ -29,24 +24,8 @@ jobs:
             const fs = require('fs');
             const { execSync } = require('child_process');
 
-            const isIssue = !!context.payload.issue;
-            const isDiscussion = !!context.payload.discussion;
-            
-            let body = '';
-            let category = '';
-            if (isIssue) {
-              body = context.payload.issue.body;
-            } else if (isDiscussion) {
-              // 只处理 General 分类
-              category = context.payload.discussion.category?.name;
-              if (category !== 'General') {
-                console.log('非 General 分类，跳过');
-                return;
-              }
-              body = context.payload.discussion.body;
-            } else {
-              return;
-            }
+            const body = context.payload.issue.body;
+
             const colorPalette = [
               'rgba(253, 230, 138, 0.15)',
               'rgba(255, 255, 255, 0.15)',
@@ -296,4 +275,10 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               state: 'closed'
+            });
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'deploy-docs.yml',
+              ref: 'main'
             });

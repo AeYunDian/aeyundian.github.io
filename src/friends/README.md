@@ -59,21 +59,14 @@ link: https://upxuu.com
 background: rgba(13.0769230769, 140.5769230769, 241.9230769231, 0.15)
 ```
 
-```component VPCard
-title: u的撒
-desc: Prote的撒
-logo: https://undz.cn/default-avatar.svg
-link: https://un的撒
-background: rgba(255, 188, 217, 0.15)
-```
 <!-- FRIEND_CARDS_END -->
 <br />
 <hr />
 <br />
 
 ::: tip 欢迎交换友情链接
-如果您也想加入友链名单，<a href="https://github.com/AeYunDian/aeyundian.github.io/issues/new?template=friend-request.yml" style="text-decoration: none;">点击自助申请友链（全自动）</a>；
-或者，您也可以在下方按如下格式评论（人工 + 机器）：
+如果您也想加入友链名单，<a href="https://github.com/AeYunDian/aeyundian.github.io/issues/new?template=friend-request.yml" style="text-decoration: none;">点击自助申请友链（推荐，全自动）</a>；
+或者，您也可以在下方按如下格式评论（人工）：
 ```Markdown
 ### 网站名称
 undz
