@@ -62,12 +62,23 @@ background: rgba(13.0769230769, 140.5769230769, 241.9230769231, 0.15)
 <br />
 
 ::: tip 欢迎交换友情链接
-如果您也想加入友链名单，<a href="https://github.com/AeYunDian/aeyundian.github.io/tree/main/src/friends" style="text-decoration: none;">点击这里提交PR</a>；或者，您也可以在下方评论，按如下格式提供信息：
-```text
-icon: 网站图标
-name: 网站名字
-desc: 网站描述
-link: 网站链接
+如果您也想加入友链名单，<a href="https://github.com/AeYunDian/aeyundian.github.io/tree/main/src/friends" style="text-decoration: none;">点击自助申请友链（全自动）</a>；
+或者，您也可以在下方按如下格式评论（人工 + 机器）：
+```Markdown
+### 网站名称
+undz
+
+### 网站链接
+https://undz.cn
+
+### 友链页面 URL
+https://undz.cn/friends
+
+### 网站描述
+Protect What You Love
+
+### 网站头像 URL
+https://undz.cn/logo.png
 ```
 然后将本站的信息添加至您的网站中
 :::

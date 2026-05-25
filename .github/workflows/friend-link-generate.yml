@@ -1,0 +1,295 @@
+name: Friend Link Generate
+
+on:
+  issues:
+    types: [opened, edited]
+  discussions:
+    types: [created, edited]
+
+jobs:
+  add-friend:
+    if: contains(github.event.issue.title, '友链申请')
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      contents: write
+      discussions: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Process friend request
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const { execSync } = require('child_process');
+
+            const isIssue = !!context.payload.issue;
+            const isDiscussion = !!context.payload.discussion;
+            
+            let body = '';
+            let title = '';
+            let category = '';
+            if (isIssue) {
+              body = context.payload.issue.body;
+              title = context.payload.issue.title;
+            } else if (isDiscussion) {
+              // 只处理 General 分类
+              category = context.payload.discussion.category?.name;
+              if (category !== 'General') {
+                console.log('非 General 分类，跳过');
+                return;
+              }
+              body = context.payload.discussion.body;
+              title = context.payload.discussion.title;
+            } else {
+              return;
+            }
+            // 判断标题格式（以"friends/" 开头）
+            if (!title.startsWith('friends/')) {
+              console.log('标题不符合 friends/ 前缀，跳过');
+              return;
+            }
+            const colorPalette = [
+              'rgba(253, 230, 138, 0.15)',
+              'rgba(255, 255, 255, 0.15)',
+              'rgba(13.0769230769, 140.5769230769, 241.9230769231, 0.15)',
+              'rgba(255, 209, 220, 0.15)',
+              'rgba(174, 198, 207, 0.15)',
+              'rgba(119, 221, 119, 0.15)',
+              'rgba(253, 253, 150, 0.15)',
+              'rgba(179, 158, 181, 0.15)',
+              'rgba(255, 179, 71, 0.15)',
+              'rgba(255, 105, 97, 0.15)',
+              'rgba(244, 154, 194, 0.15)',
+              'rgba(207, 207, 196, 0.15)',
+              'rgba(152, 255, 152, 0.15)',
+              'rgba(230, 230, 250, 0.15)',
+              'rgba(137, 207, 240, 0.15)',
+              'rgba(255, 229, 180, 0.15)',
+              'rgba(248, 131, 121, 0.15)',
+              'rgba(200, 162, 200, 0.15)',
+              'rgba(204, 204, 255, 0.15)',
+              'rgba(224, 176, 255, 0.15)',
+              'rgba(255, 253, 208, 0.15)',
+              'rgba(245, 245, 220, 0.15)',
+              'rgba(251, 206, 177, 0.15)',
+              'rgba(135, 206, 235, 0.15)',
+              'rgba(172, 225, 175, 0.15)',
+              'rgba(208, 240, 192, 0.15)',
+              'rgba(175, 238, 238, 0.15)',
+              'rgba(176, 224, 230, 0.15)',
+              'rgba(216, 191, 216, 0.15)',
+              'rgba(255, 228, 225, 0.15)',
+              'rgba(255, 250, 205, 0.15)',
+              'rgba(240, 255, 240, 0.15)',
+              'rgba(224, 255, 255, 0.15)',
+              'rgba(255, 193, 204, 0.15)',
+              'rgba(255, 188, 217, 0.15)',
+              'rgba(247, 202, 201, 0.15)',
+              'rgba(146, 168, 209, 0.15)',
+              'rgba(237, 205, 194, 0.15)',
+              'rgba(149, 222, 227, 0.15)',
+              'rgba(239, 222, 205, 0.15)',
+              'rgba(244, 194, 194, 0.15)',
+              'rgba(188, 212, 230, 0.15)',
+              'rgba(250, 240, 190, 0.15)',
+              'rgba(231, 254, 255, 0.15)',
+              'rgba(239, 187, 204, 0.15)',
+              'rgba(247, 231, 206, 0.15)',
+              'rgba(196, 216, 226, 0.15)',
+              'rgba(255, 248, 231, 0.15)',
+              'rgba(239, 223, 187, 0.15)',
+              'rgba(240, 234, 214, 0.15)',
+              'rgba(247, 233, 142, 0.15)'
+            ];
+            function getRandomBackground() {
+              return colorPalette[Math.floor(Math.random() * colorPalette.length)];
+            }
+            function normalizeUrl(url) {
+              return url.replace(/\/$/, '');
+            }
+            function extractLinkFromCard(cardBlock) {
+              const match = cardBlock.match(/link:\s*(.+)/);
+              return match ? normalizeUrl(match[1].trim()) : null;
+            }
+            function findInsertPosition(content) {
+              const vpCardRegex = /```component\s+VPCard[\s\S]*?```/g;
+              let lastMatch = null;
+              let match;
+              while ((match = vpCardRegex.exec(content)) !== null) {
+                lastMatch = match;
+              }
+              if (lastMatch) {
+                // 返回最后一个匹配块的结束索引
+                return lastMatch.index + lastMatch[0].length;
+              }
+              // 如果没有找到任何 VPCard，则回退到 <!-- more --> 后面
+              const moreIndex = content.indexOf('<!-- more -->');
+              if (moreIndex !== -1) {
+                return moreIndex + '<!-- more -->'.length;
+              }
+              // 最终回退：文件末尾
+              return content.length;
+            }
+            function extract(key) {
+              const pattern = new RegExp('### ' + key + '\\s*\\n\\s*(.*?)(?=\\n###|\\Z)', 's');
+              const m = body.match(pattern);
+              if (m) {
+                let val = m[1].trim();
+                if (val === 'No response') return '';
+                return val.replace(/^`|`$/g, '').trim();
+              }
+              return '';
+            }
+
+            const name = extract('网站名称');
+            const desc = extract('网站描述');
+            const url = extract('网站链接').replace(/^`|`$/g, '').trim();
+            const avatar = extract('网站头像 URL').replace(/^`|`$/g, '').trim();
+
+            if (!url) {
+              await github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: '## ❌ 友链申请失败\n\n请确保已填写**网站链接**，然后编辑此 Issue 重新触发。'
+              });
+              await github.rest.issues.addLabels({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                labels: ['需处理']
+              });
+              return;
+            }
+
+            const mdFilePath = 'src/friends/README.md';
+            let mdContent;
+            try {
+              mdContent = fs.readFileSync(mdFilePath, 'utf-8');
+            } catch (err) {
+              await github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: `## ❌ 读取友链文件失败\n\n无法读取 \`${mdFilePath}\`，请检查文件是否存在。`
+              });
+              return;
+            }
+            const vpCardRegex = /```component\s+VPCard[\s\S]*?```/g;
+            let match;
+            const existingUrls = [];
+            while ((match = vpCardRegex.exec(mdContent)) !== null) {
+              const link = extractLinkFromCard(match[0]);
+              if (link) existingUrls.push(link);
+            }
+            const newUrlNormalized = normalizeUrl(url);
+            if (existingUrls.includes(newUrlNormalized)) {
+              await github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: `## ℹ️ 友链已存在\n\n该链接已在友链列表中，无需重复添加。`
+              });
+              await github.rest.issues.update({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                state: 'closed'
+              });
+              return;
+            }
+            if (url && !/^https?:\/\//.test(url) || url.length > 200 || /\s/.test(url)) {
+              await github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: '## ❌ 网站链接格式错误\n\n请确保**网站链接**以 `http://` 或 `https://` 开头，且不包含空格，长度不超过 200 字符。编辑此 Issue 重新触发。'
+              });
+              await github.rest.issues.addLabels({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                labels: ['需处理']
+              });
+              return;
+            }
+            if (avatar && !/^https?:\/\//.test(avatar) || avatar.length > 280 || /\s/.test(avatar)) {
+              await github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: '## ❌ 网站头像 URL 格式错误\n\n请确保**网站头像 URL**以 `http://` 或 `https://` 开头，且不包含空格，长度不超过 280 字符。编辑此 Issue 重新触发。'
+              });
+              await github.rest.issues.addLabels({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                labels: ['需处理']
+              });
+              return;
+            }
+            if (name.length > 50 || /\s/.test(name)) {
+              await github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: '## ❌ 名称过长\n\n请确保**网站名称**长度不超过 50 字符，且不包含空格。编辑此 Issue 重新触发。'
+              });
+              await github.rest.issues.addLabels({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                labels: ['需处理']
+              });
+              return;
+            }
+            if (desc.length > 200 || /\s/.test(desc)) {
+              await github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: '## ❌ 描述过长\n\n请确保**网站描述**长度不超过 200 字符，且不包含空格。编辑此 Issue 重新触发。'
+              });
+              await github.rest.issues.addLabels({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                labels: ['需处理']
+              });
+              return;
+            }
+            const randomBg = getRandomBackground();
+            const newCard = `\n\`\`\`component VPCard
+            title: ${name || '未命名'}
+            desc: ${desc || '暂无描述'}
+            logo: ${avatar || 'data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;%3E%3Crect fill=&quot;%23e5e7eb&quot; width=&quot;100&quot; height=&quot;100&quot;/%3E%3Ctext x=&quot;50&quot; y=&quot;55&quot; text-anchor=&quot;middle&quot; font-size=&quot;40&quot; fill=&quot;%239ca3af&quot;%3E?%3C/text%3E%3C/svg%3E'}
+            link: ${url}
+            background: ${randomBg}
+            \`\`\`\n`;
+            const insertPos = findInsertPosition(mdContent);
+            const newMdContent = mdContent.slice(0, insertPos) + newCard + mdContent.slice(insertPos);
+            fs.writeFileSync(mdFilePath, newMdContent, 'utf-8');
+
+            execSync('git config user.name "github-actions[bot]"');
+            execSync('git config user.email "github-actions[bot]@users.noreply.github.com"');
+            execSync('git add src/friends/README.md');
+            execSync('git commit -m "feat: 添加友链 "');
+            execSync('git push');
+
+            await github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `## ✅ 友链申请已通过！\n\n感谢申请！友链已成功添加到列表中。\n\n📋 **友链信息**\n- 名称：${name}\n- 链接：${url}\n\n⚡ GitHub Actions 将自动重新部署，几分钟内更新生效。\n\n感谢支持！🎉`
+            });
+            await github.rest.issues.update({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'closed'
+            });
