@@ -120,14 +120,14 @@ jobs:
               return content.length;
             }
             function extract(key) {
-              const pattern = new RegExp('### ' + key + '\\s*\\n\\s*(.*?)(?=\\n###|\\Z)', 's');
+              const pattern = new RegExp('### ' + key + '\\s*\\n\\s*(.*?)(?=\\n###|$)', 's');
               const m = body.match(pattern);
               if (m) {
                 let val = m[1].trim();
                 if (val === 'No response') return '';
                 return val.replace(/^`|`$/g, '').trim();
               }
-              return '';
+             return '';
             }
 
             const name = extract('网站名称');
