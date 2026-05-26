@@ -91,6 +91,14 @@ logo: https://q2.qlogo.cn/headimg_dl?dst_uin=1321482974&spec=0
 link: https://api.undz.cn/addqq?uid=1321482974
 background: rgba(247, 231, 206, 0.15)
 ```
+
+```component VPCard
+title: 二叉树树
+desc: Protect What You Love.
+logo: https://q2.qlogo.cn/headimg_dl?dst_uin=2726730791&spec=0
+link: https://2x.nz
+background: rgba(137, 207, 240, 0.15)
+```
 <!-- FRIEND_CARDS_END -->
 <br />
 <hr />
