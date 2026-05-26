@@ -77,7 +77,7 @@ background: rgba(247, 233, 142, 0.15)
 
 ```component VPCard
 title: 沈wai
-desc: _No response_
+desc: 暂无描述
 logo: https://qlogo4.store.qq.com/qzone/3815085431/3815085431/100
 link: https://api.undz.cn/addqq?uid=3815085431
 background: rgba(137, 207, 240, 0.15)
@@ -85,7 +85,7 @@ background: rgba(137, 207, 240, 0.15)
 
 ```component VPCard
 title: 魏靖宇
-desc: _No response_
+desc: 暂无描述
 logo: https://qlogo3.store.qq.com/qzone/1321482974/1321482974/100
 link: https://api.undz.cn/addqq?uid=1321482974
 background: rgba(247, 231, 206, 0.15)

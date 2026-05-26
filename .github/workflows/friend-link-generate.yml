@@ -249,9 +249,9 @@ jobs:
             }
             const randomBg = getRandomBackground();
             const newCard = `\n\`\`\`component VPCard
-            title: ${name || '未命名'}
-            desc: ${desc || '暂无描述'}
-            logo: ${avatar || 'https://undz.cn/default-avatar.svg'}
+            title: ${name === "_No response_" ? '未命名' : name}
+            desc: ${desc === "_No response_" ? '暂无描述' : desc}
+            logo: ${avatar === "_No response_" ? 'https://undz.cn/default-avatar.svg' : avatar}
             link: ${url}
             background: ${randomBg}
             \`\`\`\n`;
