@@ -1,5 +1,5 @@
 ---
-icon: megaphone
+icon: bullhorn
 date: 2026-05-26
 category:
   - 公告
@@ -28,7 +28,7 @@ category:
 ## 对现有用户的影响与建议
 
 - Ys Post 原有账号数据将**自动迁移至AyExMail**，您只需在 https://exm.undz.cn 登录您的旧帐号 。
-- 若您在 AyExMail 使用中遇到误判，请![联系客服](https://github.com/AeYunDian/aeyundian.github.io/issues/new?template=need-help.md)并提供使用场景说明，我们会手动复核。
+- 若您在 AyExMail 使用中遇到误判，请 [联系客服](https://github.com/AeYunDian/aeyundian.github.io/issues/new?template=need-help.md)并提供使用场景说明，我们会手动复核。
 
 ## 未来计划
 
