@@ -99,6 +99,14 @@ logo: https://qlogo4.store.qq.com/qzone/2726730791/2726730791/100
 link: https://2x.nz
 background: rgba(137, 207, 240, 0.15)
 ```
+
+```component VPCard
+title: 泠鸢
+desc: 暂无描述
+logo: https://qlogo4.store.qq.com/qzone/3132314904/3132314904/100
+link: https://api.undz.cn/addqq?uid=3132314904
+background: rgba(172, 225, 175, 0.15)
+```
 <!-- FRIEND_CARDS_END -->
 <br />
 <hr />
