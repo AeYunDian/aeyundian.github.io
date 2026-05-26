@@ -19,9 +19,9 @@ projects:
     link: https://github.com/AeYunDian/Crossfire-Ys
 
   - icon: envelope
-    name: "Ys Post"
+    name: "AyExMail"
     desc: 安全、稳定的个人邮箱，为您守护每一封邮件
-    link: https://mail.undz.cn
+    link: https://exm.undz.cn
 
   - icon: link
     name: "Ay Online Chat Room"
