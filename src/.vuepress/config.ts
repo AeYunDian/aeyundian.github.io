@@ -30,6 +30,7 @@ export default defineUserConfig({
     ['script', { src: 'https://cdn.jsdmirror.com/npm/meting@2/dist/Meting.min.js', crossorigin: 'anonymous'  }],
     ['link', { href: "https://cdn.jsdmirror.com/npm/firacode@6.2.0/distr/fira_code.css", rel: "stylesheet" }],
     ['link', { href: "https://cdn.jsdmirror.com/npm/cn-fontsource-source-han-sans-sc-vf@1.0.10/font.min.css", rel: "stylesheet" }],
+    ['script', { src: '/ct4.js', type: 'text/javascript', charset: 'utf-8' }],
   ],
   lang: "zh-CN",
   title: "undz",

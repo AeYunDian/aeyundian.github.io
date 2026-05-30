@@ -162,9 +162,18 @@ https://undz.cn/logo.png
 ```
 :::
 我们会定期对这里的所有站点做访问性测试，如果不通过测试（如网站无法访问），该条目将被删除。当您再次做好准备时，欢迎再次提交 PR 申请。
-
+<div
+  id="captcha"
+  :class="captchaConfig.config.product === 'bind' ? 'hideHeight' : ''"
+>
+<AliCaptcha :captcha-config="captchaConfig" />
 <style>
   .vp-card {
     min-width: 270px;
   }
 </style>
+<script setup>
+import { defineComponent, reactive, toRefs, getCurrentInstance } from "vue";
+import AliCaptcha from "./components/AliCaptcha.vue";
+
+</script>
