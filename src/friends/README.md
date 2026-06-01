@@ -19,14 +19,14 @@ backtotop: false
 ```component VPCard
 title: AeYunDian
 desc: 保护你所爱的一切
-logo: /ma.ico
+logo: https://net.undz.cn/static/jpg/f32f2e85fff0e6a63cacb7808cb0ecb2.jpg
 link: https://github.com/AeYunDian/
 background: rgba(253, 230, 138, 0.15)
 ```
 ```component VPCard
 title: ZYY-Office
 desc: https://zyy.undz.cn
-logo: https://i0.hdslb.com/bfs/face/44a43a3a4a119c301172102d504ea60a2af7ebc2.jpg
+logo: https://net.undz.cn/static/jpg/d6699b5e5ffacd0cea984f4c903d3742.jpg
 link: https://zyy.undz.cn
 background: rgba(255, 255, 255, 0.15)
 ```
@@ -95,7 +95,7 @@ background: rgba(247, 231, 206, 0.15)
 ```component VPCard
 title: 二叉树树
 desc: Protect What You Love
-logo: https://qlogo4.store.qq.com/qzone/2726730791/2726730791/100
+logo: https://q2.qlogo.cn/headimg_dl?dst_uin=02726730791&spec=0
 link: https://2x.nz
 background: rgba(137, 207, 240, 0.15)
 ```
@@ -103,7 +103,7 @@ background: rgba(137, 207, 240, 0.15)
 ```component VPCard
 title: 泠鸢
 desc: 暂无描述
-logo: https://qlogo4.store.qq.com/qzone/3132314904/3132314904/100
+logo: https://q2.qlogo.cn/headimg_dl?dst_uin=3132314904&spec=0
 link: https://api.undz.cn/addqq?uid=3132314904
 background: rgba(172, 225, 175, 0.15)
 ```
@@ -111,7 +111,7 @@ background: rgba(172, 225, 175, 0.15)
 ```component VPCard
 title: 墨汐
 desc: 暂无描述
-logo: https://qlogo4.store.qq.com/qzone/3821238370/3821238370/100
+logo: https://q2.qlogo.cn/headimg_dl?dst_uin=3821238370&spec=0
 link: https://api.undz.cn/addqq?uid=3821238370
 background: rgba(179, 158, 181, 0.15)
 ```
