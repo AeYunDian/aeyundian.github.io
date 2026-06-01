@@ -34,7 +34,7 @@ export default defineUserConfig({
     ['script', { src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7560146710668109",
      crossorigin: "anonymous" }],
     ['meta', { name: 'google-adsense-account', content: 'ca-pub-7560146710668109' }],
-    ['meta', { name: 'referrer', content: 'no-referrer' }],
+
   ],
   lang: "zh-CN",
   title: "undz",
