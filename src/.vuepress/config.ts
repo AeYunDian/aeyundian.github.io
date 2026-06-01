@@ -9,7 +9,7 @@ export default defineUserConfig({
     ['script', { src: 'https://hm.baidu.com/hm.js?79463ae1d0aa94c4bc728b9486856172' }],
     ['script', { src: 'https://hm.baidu.com/hm.js?7002155a5e0994d38a3585bf5e60cdbc' }],
     
-    ['meta', { name: 'referrer', content: 'no-referrer' }],
+    // 
     // PNG 128x128
     ["link", { rel: "icon", href: "/logo.png", type: "image/png", sizes: "128x128" }],
     // WebP
@@ -34,6 +34,7 @@ export default defineUserConfig({
     ['script', { src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7560146710668109",
      crossorigin: "anonymous" }],
     ['meta', { name: 'google-adsense-account', content: 'ca-pub-7560146710668109' }],
+    ['meta', { name: 'referrer', content: 'no-referrer' }],
   ],
   lang: "zh-CN",
   title: "undz",
