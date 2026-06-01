@@ -166,7 +166,7 @@ https://undz.cn/logo.png
   id="captcha"
   :class="captchaConfig.config.product === 'bind' ? 'hideHeight' : ''"
 >
-<AliCaptcha :captcha-config="captchaConfig" />
+
 <style>
   .vp-card {
     min-width: 270px;
