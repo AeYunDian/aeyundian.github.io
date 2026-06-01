@@ -172,8 +172,3 @@ https://undz.cn/logo.png
     min-width: 270px;
   }
 </style>
-<script setup>
-import { defineComponent, reactive, toRefs, getCurrentInstance } from "vue";
-import AliCaptcha from "./components/AliCaptcha.vue";
-
-</script>
