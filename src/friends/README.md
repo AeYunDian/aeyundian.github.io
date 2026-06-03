@@ -115,6 +115,14 @@ logo: https://q2.qlogo.cn/headimg_dl?dst_uin=3821238370&spec=0
 link: https://api.undz.cn/addqq?uid=3821238370
 background: rgba(179, 158, 181, 0.15)
 ```
+
+```component VPCard
+title: AJie’sBlog
+desc: 记录 AI 学习与探索之旅
+logo: https://www.promptnet.cn/img/avatar.webp
+link: https://www.promptnet.cn/
+background: rgba(240, 255, 240, 0.15)
+```
 <!-- FRIEND_CARDS_END -->
 <br />
 <hr />
