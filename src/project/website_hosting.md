@@ -20,7 +20,7 @@ date: 2026-06-03
 ## 如何申请？
 
 如果您需要托管个人静态网站，请联系我：
-- **QQ好友添加**：[api.undz.cn/addqq?uid=2768223712](https://api.undz.cn/addqq?uid=2768223712)
+- **QQ好友添加**：[点击此处唤起QQ](https://api.undz.cn/addqq?uid=2768223712)
 - **B站私信**：[https://space.bilibili.com/3494370328185235](https://space.bilibili.com/3494370328185235)
 - **邮箱**：[admin@exm.undz.cn](mailto:admin@exm.undz.cn) 或 [zhanghaoyu19281@gmail.com](mailto:zhanghaoyu19281@gmail.com)
 
