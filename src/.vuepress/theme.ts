@@ -10,7 +10,7 @@ export default hopeTheme({
   author: {
     name: "AeYunDian",
     url: "https://undz.cn",
-    email: "admin@undz.cn",
+    email: "admin@exm.undz.cn",
   },
   fullscreen: true,
 
@@ -41,9 +41,9 @@ export default hopeTheme({
     avatar: "/ma.ico",
     medias: {
       BiliBili: "https://space.bilibili.com/3494370328185235",
-      Email: "mailto:admin@undz.cn",
+      Email: "mailto:admin@exm.undz.cn",
       GitHub: "https://github.com/AeYunDian",
-      QQ: "mailto:aeyundian@qq.com",
+      QQ: "https://api.undz.cn/addqq?uid=2768223712",
     
       Gmail: "mailto:zhanghaoyu19281@gmail.com",
       Youtube: "https://www.youtube.com/@aeundz",
