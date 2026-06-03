@@ -7,9 +7,6 @@ import SaleBlock from '../components/SaleBlock.vue'
 import BingHeroBackground from "vuepress-theme-hope/presets/BingHeroBackground.js";
 import client from "../client.js";
 import { ClientOnly } from "vuepress/client";
-if (typeof window !== 'undefined') {
-  (window.adsbygoogle = window.adsbygoogle || []).push({});
-}
 </script>
 
 <template>
