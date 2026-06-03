@@ -7,6 +7,7 @@ import SaleBlock from '../components/SaleBlock.vue'
 import BingHeroBackground from "vuepress-theme-hope/presets/BingHeroBackground.js";
 import client from "../client.js";
 import { ClientOnly } from "vuepress/client";
+(adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
 <template>
@@ -31,15 +32,9 @@ import { ClientOnly } from "vuepress/client";
 
     <template #infoAfter>
       <ClientOnly>
-        <script async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3843140944895532"
-          crossorigin="anonymous"></script>
         <!-- ads1 -->
         <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3843140944895532"
           data-ad-slot="8419103573" data-ad-format="auto" data-full-width-responsive="true"></ins>
-        <script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
       </ClientOnly>
       <SaleBlock />
     </template>
@@ -47,3 +42,4 @@ import { ClientOnly } from "vuepress/client";
   </Blog>
 
 </template>
+
