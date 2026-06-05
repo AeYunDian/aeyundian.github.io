@@ -146,6 +146,14 @@ logo: https://haozhan.wang/favicon.ico
 link: https://haozhan.wang
 background: rgba(172, 225, 175, 0.15)
 ```
+
+```component VPCard
+title: 李文君'sBlog
+desc: 记录生活，记录工作，记录身边有趣的事.
+logo: https://loglib.cn/logo.png
+link: https://loglib.cn
+background: rgba(239, 187, 204, 0.15)
+```
 <!-- FRIEND_CARDS_END -->
 <br />
 <hr />
