@@ -138,6 +138,14 @@ logo: https://wuqishi.com/dan.svg
 link: https://wuqishi.com
 background: rgba(208, 240, 192, 0.15)
 ```
+
+```component VPCard
+title: 好站网
+desc: 发现好站、展示好站
+logo: https://haozhan.wang/favicon.ico
+link: https://haozhan.wang
+background: rgba(172, 225, 175, 0.15)
+```
 <!-- FRIEND_CARDS_END -->
 <br />
 <hr />
