@@ -123,6 +123,14 @@ logo: https://www.promptnet.cn/img/avatar.webp
 link: https://www.promptnet.cn/
 background: rgba(240, 255, 240, 0.15)
 ```
+
+```component VPCard
+title: Liseezn'blog
+desc: 暂无描述
+logo: https://blog.liseezn.top/logo.webp
+link: https://blog.liseezn.top
+background: rgba(208, 240, 192, 0.15)
+```
 <!-- FRIEND_CARDS_END -->
 <br />
 <hr />
