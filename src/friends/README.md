@@ -131,6 +131,14 @@ logo: https://blog.liseezn.top/logo.webp
 link: https://blog.liseezn.top
 background: rgba(208, 240, 192, 0.15)
 ```
+
+```component VPCard
+title: 蛋蛋之家
+desc: 一枚蛋蛋的自留地
+logo: https://wuqishi.com/dan.svg
+link: https://wuqishi.com
+background: rgba(208, 240, 192, 0.15)
+```
 <!-- FRIEND_CARDS_END -->
 <br />
 <hr />
