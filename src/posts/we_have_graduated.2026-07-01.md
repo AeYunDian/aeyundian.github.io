@@ -9,7 +9,10 @@ icon: circle-info
 # 我们毕业啦！
 
 今天，我们真的毕业了。
-![607班级毕业合照](https://net.undz.cn/static/png/d475374f852406e91f793537bbbe6bd2.png)
+
+![班级毕业合照](https://net.undz.cn/static/png/d475374f852406e91f793537bbbe6bd2.png)
+https://net.undz.cn/static/png/d475374f852406e91f793537bbbe6bd2.png
+
 六年，六个故事，六次成长。
 
 一年级，我们是 **“捕风的异乡人”** ，怯生生地走进校园，一切都是新鲜的。
