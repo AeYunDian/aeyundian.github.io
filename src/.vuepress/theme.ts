@@ -39,7 +39,7 @@ export default hopeTheme({
   // 博客相关
   blog: {
     description: "Protect What You Love",
-    intro: "/about/zh-cn.html",
+    intro: "/aboutus/zh-cn.html",
     avatar: "https://net.undz.cn/static/jpg/f32f2e85fff0e6a63cacb7808cb0ecb2.jpg",
     medias: {
       BiliBili: "https://space.bilibili.com/3494370328185235",
