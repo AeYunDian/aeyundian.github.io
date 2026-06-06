@@ -10,7 +10,7 @@ export default hopeTheme({
   author: {
     name: "AeYunDian",
     url: "https://undz.cn",
-    email: "admin@exm.undz.cn",
+    email: "aeyundian@foxmail.com",
   },
   fullscreen: true,
 
@@ -18,7 +18,7 @@ export default hopeTheme({
   navbarLayout: {
     start: ["Brand"],
     center: ["Links"],
-    end: ["SearchBox","Outlook", "SettingsMenu"],
+    end: ["SearchBox", "Outlook"],
   },
   repo: "AeYunDian",
 
@@ -37,34 +37,25 @@ export default hopeTheme({
   // 博客相关
   blog: {
     description: "Protect What You Love",
-    intro: "/about.html",
-    avatar: "/ma.ico",
+    intro: "/about/zh-cn.html",
+    avatar: "https://net.undz.cn/static/jpg/f32f2e85fff0e6a63cacb7808cb0ecb2.jpg",
     medias: {
       BiliBili: "https://space.bilibili.com/3494370328185235",
-      Email: "mailto:admin@exm.undz.cn",
+      Email: "mailto:aeyundian@foxmail.com",
       GitHub: "https://github.com/AeYunDian",
       QQ: "https://api.undz.cn/addqq?uid=2768223712",
-    
       Gmail: "mailto:zhanghaoyu19281@gmail.com",
-      Youtube: "https://www.youtube.com/@aeundz",
+      Youtube: "https://www.youtube.com/@aeydundz",
     },
   },
 
   // 加密配置
   encrypt: {
     config: {
-      "/demo/encrypt.html": {
-        hint: "1~3",
-        password: "123",
-      },
       "/diary/": {
-        hint: "( ? ) the world",
-        password: ["fuck", "hello"],
+        hint: "请键入密码",
+        password: ["googleads"],
       },
-      "/fuck.html": {
-        hint: "这是我的隐私",
-        password: ["fuckeveryone"],
-      }
     },
   },
 
@@ -73,10 +64,9 @@ export default hopeTheme({
     editLink: "在 GitHub 上编辑此页",
   },
 
-  // 如果想要实时查看任何改变，启用它。注: 这对更新性能有很大负面影响
-  // hotReload: true,
+  // 如果要实时查看任何改变，启用它。注: 这对更新性能有很大负面影响
+  hotReload: true,
 
-  // 此处开启了很多功能用于演示，你应仅保留用到的功能。
   markdown: {
     align: true,
     attrs: true,
@@ -111,11 +101,11 @@ export default hopeTheme({
     vPre: true,
 
     math: {
-    // 启用前安装 katex
-         type: "katex",
-    //   // 或者安装 @mathjax/src
-    //    // type: "mathjax",
-     },
+      // 启用前安装 katex
+      type: "katex",
+      //   // 或者安装 @mathjax/src
+      //    // type: "mathjax",
+    },
 
     // 如果你需要幻灯片，安装 @vuepress/plugin-revealjs 并取消下方注释
     // revealjs: {
@@ -149,34 +139,14 @@ export default hopeTheme({
 
   // 在这里配置主题提供的插件
   plugins: {
-   //meting2: true,
-   search: {
+    //meting2: true,
+    search: {
       maxSuggestions: 15,
       hotKeys: ['s', '/'],
       isSearchable: (page) => page.path !== '/',
-      getExtraFields: (page) => {
-        const extra: string[] = []
-        
-        // 标签
-        const tags = page.frontmatter.tags
-        if (Array.isArray(tags)) {
-          extra.push(...tags.filter(t => typeof t === 'string'))
-        } else if (typeof tags === 'string') {
-          extra.push(tags)
-        }
-      
-        // 分类
-        let cats = page.frontmatter.category ?? page.frontmatter.categories
-        if (typeof cats === 'string') {
-          extra.push(cats)
-        } else if (Array.isArray(cats)) {
-          extra.push(...cats.filter(c => typeof c === 'string'))
-        }
-        return extra
-      },
     },
 
-   comment: {
+    comment: {
       provider: "Giscus",
       repo: "AeYunDian/aeyundian.github.io",
       repoId: "R_kgDORRf6GQ",
@@ -184,62 +154,62 @@ export default hopeTheme({
       categoryId: "DIC_kwDORRf6Gc4C5A_E",
       mapping: "pathname",
       strict: false,
-      reactionsEnabled: true, 
+      reactionsEnabled: true,
       inputPosition: "bottom",
     },
 
-   watermark: {
-      // 通过 enabled 函数控制只在关于页面显示
-         enabled: (page) => page.path === '/about.html',  // 根据你的实际路径调整
-    },
-        notice: [
-            {
-                path: "/",
-                showOnce: true,
-                title: "Statement / 声明",
-                confirm: true,
-                content: "<p>UNDZ is the name of my technology project and has no connection with the Canadian underwear brand UNDZ (undz.ca).</p><p>This website and social media will never contain any content related to underwear or fashion, nor will they link to that brand. Please do not associate it with that brand!</p><p>UNDZ 是我的技术项目名称，与加拿大内衣品牌 UNDZ (undz.ca) 无任何关联。</p><p>此网站、社交媒体绝不出现任何与内衣、时尚相关的内容，也不会链接到该品牌。请不要带入该品牌！</p>",
-                actions: [
-                    {
-                        text: "查看详情 / View Details",
-                        link: "/about#特此声明",
-                        type: "primary",
-                    },
-                    { text: "确认 / Yes" },
-                ],
-            },
-        ],
+    // watermark: {
+    //   // 通过 enabled 函数控制只在关于页面显示
+    //     enabled: (page) => page.path === '/about.html',  // 根据你的实际路径调整
+    // },
+    // notice: [
+    //     {
+    //         path: "/",
+    //         showOnce: true,
+    //         title: "Statement / 声明",
+    //         confirm: true,
+    //         content: "<p>UNDZ is the name of my technology project and has no connection with the Canadian underwear brand UNDZ (undz.ca).</p><p>This website and social media will never contain any content related to underwear or fashion, nor will they link to that brand. Please do not associate it with that brand!</p><p>UNDZ 是我的技术项目名称，与加拿大内衣品牌 UNDZ (undz.ca) 无任何关联。</p><p>此网站、社交媒体绝不出现任何与内衣、时尚相关的内容，也不会链接到该品牌。请不要带入该品牌！</p>",
+    //         actions: [
+    //             {
+    //                 text: "查看详情 / View Details",
+    //                 link: "/about#特此声明",
+    //                 type: "primary",
+    //             },
+    //             { text: "确认 / Yes" },
+    //         ],
+    //     },
+    // ],
 
 
     components: {
-        components: [
-            "ArtPlayer",
-            "Badge",
-            "BiliBili",
-            "CodePen",
-            "PDF",
-            "Share",
-            "SiteInfo",
-            "StackBlitz",
-            "VPBanner",
-            "VPCard",
-            "VidStack",
-        ],
+      components: [
+        "ArtPlayer",
+        "Badge",
+        "BiliBili",
+        "CodePen",
+        "PDF",
+        "Share",
+        "SiteInfo",
+        "StackBlitz",
+        "VPBanner",
+        "VPCard",
+        "VidStack",
+      ],
     },
-   blog: {
-    filter: ({ filePathRelative, frontmatter }) => {
-      // 1. 如果文章标记为草稿（draft: true），则不视为博客文章
-      if (frontmatter.draft) {
-        return false;
-      }
-      // 2. 排除 demo 目录下的所有文件
-      if (filePathRelative && filePathRelative.startsWith('demo/')) {
-        return false;
-      }
-      // 3. 其他情况均视为文章
-      return true;
+    blog: {
+      filter: ({ filePathRelative, frontmatter }) => {
+        // 1. 如果文章标记为草稿（draft: true），则不视为博客文章
+        if (frontmatter.draft) {
+          return false;
+        }
+        // // 2. 排除 demo 目录下的所有文件
+        // if (filePathRelative && filePathRelative.startsWith('demo/')) {
+        //   return false;
+        // }
+        // 3. 其他情况均视为文章
+        return true;
+      },
     },
-  },
     icon: {
       prefix: "fa6-solid:",
     },

@@ -8,10 +8,15 @@ heroText: undz
 heroFullScreen: true
 tagline: 'Protect What You Love'
 projects:
-  - icon: link
+  - icon: laptop-code
     name: "友情交换"
     desc: 欢迎交换友链
     link: /friends/
+
+  - icon: hand-holding-heart
+    name: "赞助"
+    desc: 请我喝杯奶茶
+    link: /sponsors/
 
   - icon: gamepad
     name: "Crossfire: Ys"
@@ -27,5 +32,10 @@ projects:
     name: "Ay Online Chat Room"
     desc: 在线安全公开无需账号的公共聊天室
     link: https://chat.undz.cn
+
+  - icon: link
+    name: "AyOpenPlatform"
+    desc: 简单、可靠、为个人开发者打造的API服务平台
+    link: https://open.undz.cn
 footer: 
 ---

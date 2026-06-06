@@ -1,13 +1,14 @@
 import Blog from "./layouts/Blog.vue";
-import { defineClientConfig } from '@vuepress/client'
-import RTLToggle from './components/RTLToggle.vue'
-import SettingsMenu from './components/SettingsMenu.vue'
-import SaleBanner from './components/SaleBanner.vue'
-import SaleBlock from './components/SaleBlock.vue'
-import GeoBlocker from './components/GeoBlocker.vue'
-import MusicPlayer from './components/MusicPlayer.vue'
-import TopNavBeautify from './components/TopNavBeautify.vue'
-import HeroBG from './components/HeroBG.vue'
+import { defineClientConfig } from '@vuepress/client';
+import RTLToggle from './components/RTLToggle.vue';
+import SettingsMenu from './components/SettingsMenu.vue';
+import SaleBanner from './components/SaleBanner.vue';
+import SaleBlock from './components/SaleBlock.vue';
+import GeoBlocker from './components/GeoBlocker.vue';
+import MusicPlayer from './components/MusicPlayer.vue';
+import TopNavBeautify from './components/TopNavBeautify.vue';
+import HeroBG from './components/HeroBG.vue';
+import PrivacyConsentBanner from './components/privacyMessaging.vue';
 import meting2 from 'vuepress-plugin-meting2';
 export default defineClientConfig({
   layouts: {
@@ -16,7 +17,8 @@ export default defineClientConfig({
   rootComponents: [
     TopNavBeautify,
     HeroBG,
-    GeoBlocker
+    GeoBlocker,
+    PrivacyConsentBanner
   ],
 
  enhance({ app, router, siteData }) {

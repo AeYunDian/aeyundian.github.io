@@ -1,13 +1,11 @@
 import { defineUserConfig } from "vuepress";
 import theme from "./theme.js";
-import { webpackBundler } from '@vuepress/bundler-webpack';
 
 export default defineUserConfig({
   base: "/",
 
   head: [
     ['script', { src: 'https://hm.baidu.com/hm.js?79463ae1d0aa94c4bc728b9486856172' }],
-    ['script', { src: 'https://hm.baidu.com/hm.js?7002155a5e0994d38a3585bf5e60cdbc' }],
     
     // 
     // PNG 128x128
@@ -31,7 +29,7 @@ export default defineUserConfig({
     ['link', { href: "https://cdn.jsdmirror.com/npm/firacode@6.2.0/distr/fira_code.css", rel: "stylesheet" }],
     ['link', { href: "https://cdn.jsdmirror.com/npm/cn-fontsource-source-han-sans-sc-vf@1.0.10/font.min.css", rel: "stylesheet" }],
     ['script', { src: '/ct4.js', type: 'text/javascript', charset: 'utf-8' }],
-    ['script', { src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3843140944895532",
+    ['script', { src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3843140944895532", async: true ,
      crossorigin: "anonymous" }],
     ['meta', { name: 'google-adsense-account', content: 'ca-pub-3843140944895532' }],
     ['script', { src: 'https://fundingchoicesmessages.google.com/i/pub-3843140944895532?ers=1', async: true, crossorigin: 'anonymous' }],

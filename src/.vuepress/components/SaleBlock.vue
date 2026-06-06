@@ -1,8 +1,11 @@
 <template>
   <ClientOnly>
-    <div class="domain-sale-block" @click="handleBlockClick">
-      <h1 ref="domain-sale-title" class="domain-sale-title"><VPIcon icon="yen-sign" size="1.2rem"/>&nbsp;Domain for Sale</h1>
-      <span ref="domain-sale-text" class="domain-sale-text">The domain name you are currently visiting is being sold at an ultra-low price of 120 RMB. Click to see details.</span>
+    <div v-if="!closed" class="domain-sale-block" @click="handleBlockClick">
+      <h1 ref="domain-sale-title" class="domain-sale-title">
+        <VPIcon icon="yen-sign" size="1.2rem" />&nbsp;Domain for Sale
+      </h1>
+      <span ref="domain-sale-text" class="domain-sale-text">The domain name you are currently visiting is being sold at
+        an ultra-low price of 120 RMB. Click to see details.</span>
     </div>
   </ClientOnly>
 </template>
@@ -10,6 +13,12 @@
 <script>
 export default {
   name: 'SaleBlock',
+  data() {
+    return {
+      // closed: false,
+      closed: true // 暂时停用此组件
+    };
+  },
   mounted() {
     this.$nextTick(() => {
 
@@ -35,6 +44,7 @@ export default {
   align-items: center;
   cursor: pointer;
   box-shadow: 0 1px 3px 1px var(--vp-c-shadow);
+
   &:hover {
     box-shadow: 0 4px 8px 4px var(--vp-c-shadow);
   }

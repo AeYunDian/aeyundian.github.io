@@ -4,11 +4,6 @@ export default sidebar({
   "/": [
     "",
     {
-      text: "日记",
-      icon: "book",
-      link: "diary/",
-    },
-    {
       text: "文章",
       icon: "book",
       prefix: "posts/",
@@ -21,16 +16,29 @@ export default sidebar({
       children: "structure",
     },
     {
+      text: "隐私政策",
+      icon: "ic:baseline-privacy-tip",
+      prefix: "privacy_policy/",
+      children: "structure",
+    },
+    {
+      text: "联系我",
+      icon: "ic:round-message",
+      prefix: "contact_me/",
+      children: "structure",
+    },
+    {
       text: "关于",
+      prefix: "aboutus/",
       icon: "circle-info",
-      link: "/about",
+      children: "structure",
     },
   ],
   "/diary/": [
     {
       text: "上一级",
       icon: "arrow-up",
-      link: "/list/", 
+      link: "/list/",
     },
     {
       text: "日记",
@@ -43,7 +51,7 @@ export default sidebar({
     {
       text: "上一级",
       icon: "arrow-up",
-      link: "/list/", 
+      link: "/list/",
     },
     {
       text: "视频",

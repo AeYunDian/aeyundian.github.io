@@ -14,7 +14,8 @@ export default {
   name: 'SaleBanner',
   data() {
     return {
-      closed: false,
+      // closed: false,
+      closed: true, // 暂时停用此组件
       animationId: null
     };
   },

@@ -1,6 +1,7 @@
 ---
 icon: pen-to-square
 date: 2026-06-03
+title: AyWebHosting
 ---
 # AyWebHosting——更简单的个人静态网站托管
 
