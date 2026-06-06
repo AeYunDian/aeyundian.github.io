@@ -1,6 +1,7 @@
 ---
 prev: false
 icon: ic:round-message
+article: false
 next: false
 comment: false
 contributors: 'AeYunDian'

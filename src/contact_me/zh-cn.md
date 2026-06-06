@@ -2,6 +2,7 @@
 prev: false
 next: false
 icon: ic:round-message
+article: false
 comment: false
 contributors: 'AeYunDian'
 changelog: false

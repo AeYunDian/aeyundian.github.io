@@ -3,6 +3,7 @@ icon: circle-info
 prev: false
 next: false
 comment: false
+article: false
 lastUpdated: false
 contributors: 'AeYunDian'
 changelog: false

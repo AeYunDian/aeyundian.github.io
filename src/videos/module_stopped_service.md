@@ -1,6 +1,7 @@
 ---
 title: 视频板块暂停服务
 comment: false
+article: false
 icon: ban
 date: 2026-03-22
 ---

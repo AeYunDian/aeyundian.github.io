@@ -1,5 +1,6 @@
 ---
 index: false
+article: false
 icon: film
 title: '《南京照相馆》'
 date: 2026-03-22

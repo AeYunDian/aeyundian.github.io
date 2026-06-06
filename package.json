@@ -29,6 +29,7 @@
     "vuepress-theme-hope": "^2.0.0-rc.103"
   },
   "dependencies": {
+    "@vuepress/plugin-feed": "^2.0.0-rc.120",
     "@vuepress/plugin-watermark": "^2.0.0-rc.124",
     "gray-matter": "^4.0.3",
     "mpegts.js": "^1.8.0"

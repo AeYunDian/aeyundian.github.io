@@ -1,6 +1,8 @@
 import { hopeTheme } from "vuepress-theme-hope";
+import { feedPlugin } from '@vuepress/plugin-feed'
 
 import navbar from "./navbar.js";
+
 import sidebar from "./sidebar.js";
 
 export default hopeTheme({
@@ -139,6 +141,17 @@ export default hopeTheme({
 
   // 在这里配置主题提供的插件
   plugins: {
+    feed: {
+      rss: true,
+      atom: true,
+      json: true,
+      // 自定义频道信息
+      channel: {
+        title: "undz",
+        link: "https://undz.cn",
+        description: "Protect What You Love",
+      },
+    },
     //meting2: true,
     search: {
       maxSuggestions: 15,

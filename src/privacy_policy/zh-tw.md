@@ -2,6 +2,7 @@
 prev: false
 next: false
 icon: ic:baseline-privacy-tip
+article: false
 comment: false
 contributors: 'AeYunDian'
 changelog: false

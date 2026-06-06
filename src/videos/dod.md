@@ -1,5 +1,6 @@
 ---
 index: false
+article: false
 icon: film
 title: '《孤注一掷》'
 date: 2026-03-22

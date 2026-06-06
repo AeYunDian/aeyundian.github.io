@@ -4,6 +4,7 @@ prev: false
 next: false
 draft: true
 index: false
+article: false
 title: '"undz.cn" - Premium Short Domain Name, Ideal for Building a Digital Brand'
 ---
 

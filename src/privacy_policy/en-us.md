@@ -3,6 +3,7 @@ prev: false
 icon: ic:baseline-privacy-tip
 next: false
 comment: false
+article: false
 contributors: 'AeYunDian'
 changelog: false
 --- 

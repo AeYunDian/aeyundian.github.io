@@ -1,6 +1,7 @@
 ---
 icon: film
 index: false
+article: false
 date: 2026-03-22
 title: '《刺猬索尼克》国语版'
 ---
