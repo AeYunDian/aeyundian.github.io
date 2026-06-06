@@ -1,0 +1,946 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="https://undz.cn/rss.xsl"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <atom:link href="https://undz.cn/rss.xml" rel="self" type="application/rss+xml"/>
+    <title>undz</title>
+    <link>https://undz.cn/</link>
+    <description>AeYunDian的博客</description>
+    <language>zh-CN</language>
+    <pubDate>Sat, 06 Jun 2026 15:31:35 GMT</pubDate>
+    <lastBuildDate>Sat, 06 Jun 2026 15:31:35 GMT</lastBuildDate>
+    <generator>@vuepress/plugin-feed</generator>
+    <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+    <category>公告</category>
+    <category>原神</category>
+    <category>GitHub</category>
+    <category>个人</category>
+    <category>计算机与操作系统</category>
+    <category>开源的那些事</category>
+    <category>最舒适的开发环境</category>
+    <category>关于编程语言的那些事儿</category>
+    <category>路径和文件</category>
+    <category>文件编码</category>
+    <category>终端与shell</category>
+    <category>系统软件包管理器</category>
+    <category>Git与Github</category>
+    <category>VisualStudioCode</category>
+    <category>如何使用搜索引擎</category>
+    <category>科学上网和国内镜像</category>
+    <category>教程</category>
+    <category>Unity</category>
+    <item>
+      <title>我们毕业啦！</title>
+      <link>https://undz.cn/we/have/graduated.html</link>
+      <guid>https://undz.cn/we/have/graduated.html</guid>
+      <source url="https://undz.cn/rss.xml">我们毕业啦！</source>
+      <description>我们毕业啦！ 今天，我们真的毕业了。 班级毕业合照 https://net.undz.cn/static/png/d475374f852406e91f793537bbbe6bd2.png 六年，六个故事，六次成长。 一年级，我们是 “捕风的异乡人” ，怯生生地走进校园，一切都是新鲜的。 二年级， “为了没有眼泪的明天” ，我们学会了擦干眼泪，勇敢面对小...</description>
+      <pubDate>Wed, 01 Jul 2026 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+<p>今天，我们真的毕业了。</p>
+<p><img src="https://net.undz.cn/static/png/d475374f852406e91f793537bbbe6bd2.png" alt="班级毕业合照" loading="lazy"><br>
+<a href="https://net.undz.cn/static/png/d475374f852406e91f793537bbbe6bd2.png" target="_blank" rel="noopener noreferrer">https://net.undz.cn/static/png/d475374f852406e91f793537bbbe6bd2.png</a></p>
+<p>六年，六个故事，六次成长。</p>
+<p>一年级，我们是 <strong>“捕风的异乡人”</strong> ，怯生生地走进校园，一切都是新鲜的。<br>
+二年级， <strong>“为了没有眼泪的明天”</strong> ，我们学会了擦干眼泪，勇敢面对小小的挫折。<br>
+三年级， <strong>“千朵玫瑰带来的黎明”</strong> ，我们在知识的芬芳中迎来每一个充满希望的清晨。<br>
+四年级， <strong>“巨龙与自由之歌”</strong> ，我们在难题面前不再畏惧，唱响属于自己的歌。<br>
+五年级， <strong>“向深水中的晨星”</strong> ，我们开始探索更广阔的世界，追寻心中的光。<br>
+六年级， <strong>“我们终将重逢”</strong> ——今天，我们毕业了，但这不是结束，而是另一段旅程的起点。</p>
+<h2>谢谢您，老师</h2>
+<p>谢谢您，老师。六年的陪伴，您把知识和关爱种在我们心里。老师，您辛苦了！</p>
+<h2>谢谢你们，同学</h2>
+<p>谢谢你们，同学。<em><strong>、</strong></em>、<em><strong>、</strong></em>、<em><strong>、</strong></em>、<em><strong>、</strong></em>、<em><strong>、</strong></em>，还有每一位同窗。<br>
+六年的时光因为有你们而变得热闹、有趣。一起上课，一起吃饭，一起在操场上奔跑……这些平凡的每一天，都是我最珍贵的回忆。</p>
+<p>马上就要分开了，虽然不舍，但我知道，友谊不会因为距离而变淡。无论走到哪里，我们都是六年同窗的好朋友。</p>
+<h2>谢谢您，母校</h2>
+<p>谢谢您，母校。宽敞的教室、绿茵的操场、食堂里香喷喷的饭菜……这里的一草一木，都见证了我们的成长。无论将来走到哪里，我们都不会忘记，这里是我们梦想开始的地方。</p>
+<h2>未来，我们来了</h2>
+<p>毕业不是结束，而是新的开始。九月，我们就要走进不同的中学，开始新的旅程。也许会有新的挑战，但我们已经长大了，不怕。</p>
+<p>我们会在新的学校里继续努力，不辜负老师的期望，不辜负父母的付出，也不辜负自己的梦想。</p>
+<p>最后，祝老师们身体健康，祝同学们前程似锦，祝母校越来越好！</p>
+<p>我们毕业啦！未来，我们来了！</p>
+]]></content:encoded>
+      <enclosure url="https://net.undz.cn/static/png/d475374f852406e91f793537bbbe6bd2.png" type="image/png"/>
+    </item>
+    <item>
+      <title>AyWebHosting</title>
+      <link>https://undz.cn/project/website_hosting.html</link>
+      <guid>https://undz.cn/project/website_hosting.html</guid>
+      <source url="https://undz.cn/rss.xml">AyWebHosting</source>
+      <description>AyWebHosting——更简单的个人静态网站托管 免费托管，无限可能 您将免费获得一个类似 https://undz.cn/yourname/ 的网站路径，或者一个三级子域名（例如 yourname.undz.cn、yourname.io.hb.cn 等）。 支持以下域名格式： yourname.undz.cn yourname.io.hb.cn ...</description>
+      <pubDate>Wed, 03 Jun 2026 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+<h2>免费托管，无限可能</h2>
+<p>您将免费获得一个类似 <code>https://undz.cn/yourname/</code> 的网站路径，或者一个三级子域名（例如 <code>yourname.undz.cn</code>、<code>yourname.io.hb.cn</code> 等）。</p>
+<p>支持以下域名格式：</p>
+<ul>
+<li><code>yourname.undz.cn</code></li>
+<li><code>yourname.io.hb.cn</code></li>
+<li><code>yourname.exm2.eu.cc</code></li>
+<li><code>yourname.ayd2.eu.cc</code></li>
+<li><code>yourname.net2.eu.cc</code></li>
+<li><code>yourname.net3.eu.cc</code></li>
+<li><code>yourname.eu.cc</code></li>
+</ul>
+<h2>如何申请？</h2>
+<p>如果您需要托管个人静态网站，请联系我：</p>
+<ul>
+<li><strong>QQ好友添加</strong>：<a href="https://api.undz.cn/addqq?uid=2768223712" target="_blank" rel="noopener noreferrer">点击此处唤起QQ</a></li>
+<li><strong>B站私信</strong>：<a href="https://space.bilibili.com/3494370328185235" target="_blank" rel="noopener noreferrer">https://space.bilibili.com/3494370328185235</a></li>
+<li><strong>邮箱</strong>：<a href="mailto:admin@exm.undz.cn" target="_blank" rel="noopener noreferrer">admin@exm.undz.cn</a> 或 <a href="mailto:zhanghaoyu19281@gmail.com" target="_blank" rel="noopener noreferrer">zhanghaoyu19281@gmail.com</a></li>
+</ul>
+<h2>服务承诺</h2>
+<ul>
+<li>✅ <strong>完全免费</strong>：无需信用卡，无隐藏费用。</li>
+<li>🚫 <strong>无广告</strong>：您的网站就是您自己的，我们绝不会在上面投放任何广告。</li>
+<li>⏱️ <strong>99.99% 正常运行时间</strong>：接近100%的可用性，让您的网站全天候开放。</li>
+</ul>
+<div class="hint-container info">
+<p class="hint-container-title">相关信息</p>
+<p>当前自动化部署系统正在开发中，由于正在准备期末考和毕业考，较忙，预计于7月1日开放，预计还有 <span id="remaining_days"></span></p>
+</div>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Ys Post 变更通知</title>
+      <link>https://undz.cn/posts/announcement.2026-05-06.html</link>
+      <guid>https://undz.cn/posts/announcement.2026-05-06.html</guid>
+      <source url="https://undz.cn/rss.xml">Ys Post 变更通知</source>
+      <description>Ys Post 变更通知 尊敬的 Ys Post 用户： 非常抱歉地通知您，Ys Post 原有服务将于即日起停止运营。 停运原因 近期我们监测到，Ys Post 被大量滥用，成为批量注册海外平台（如各类论坛、社交媒体等）的工具。这种行为严重违反了我们的初心，也对其他正常用户的体验造成了影响。 为了维护服务的公平性与可靠性，我们不得不作出艰难决定：终止...</description>
+      <category>公告</category>
+      <pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+<p>尊敬的 Ys Post 用户：<br>
+非常抱歉地通知您，<strong>Ys Post 原有服务将于即日起停止运营</strong>。</p>
+<h2>停运原因</h2>
+<p>近期我们监测到，Ys Post 被大量滥用，成为批量注册海外平台（如各类论坛、社交媒体等）的工具。这种行为严重违反了我们的初心，也对其他正常用户的体验造成了影响。</p>
+<p>为了维护服务的公平性与可靠性，我们不得不作出艰难决定：<strong>终止 Ys Post 原有服务</strong>。</p>
+<h2>全新替代服务：AyExMail</h2>
+<p>作为替代，我们推出全新邮件服务 —— <strong>AyExMail</strong> （ <a href="https://exm.undz.cn" target="_blank" rel="noopener noreferrer">https://exm.undz.cn</a> ）。</p>
+<p>相比 Ys Post，AyExMail 在以下方面进行了重要升级：</p>
+<ol>
+<li><strong>人机校验机制</strong>：注册与使用过程中增加了验证码（CAPTCHA）等校验，有效阻止脚本和自动化工具的批量滥用。</li>
+<li><strong>异常行为监测</strong>：系统会实时分析使用模式，一旦检测到异常（如短时间内大量请求、非人类操作等），将<strong>自动暂停账号</strong>，保障服务环境的健康。</li>
+<li><strong>更稳定的体验</strong>：通过限制非正常流量，确保普通用户获得更流畅、更安全的服务。</li>
+</ol>
+<h2>对现有用户的影响与建议</h2>
+<ul>
+<li>Ys Post 原有账号数据将<strong>自动迁移至AyExMail</strong>，您只需在 <a href="https://exm.undz.cn" target="_blank" rel="noopener noreferrer">https://exm.undz.cn</a> 登录您的旧帐号 。</li>
+<li>若您在 AyExMail 使用中遇到误判，请 <a href="https://github.com/AeYunDian/aeyundian.github.io/issues/new?template=need-help.md" target="_blank" rel="noopener noreferrer">联系客服</a>并提供使用场景说明，我们会手动复核。</li>
+</ul>
+<h2>未来计划</h2>
+<p>我们将持续优化 AyExMail 的反滥用策略，同时保持对合法用户的低门槛。感谢您一直以来的理解与支持。</p>
+<p>给您带来的不便，深表歉意。</p>
+<div style="text-align:right">
+<p>2026-05-26<br>
+AyExMail 运营组织</p>
+</div>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>原神魔神任务列表（截止6.5版本）</title>
+      <link>https://undz.cn/posts/genshin_impact_task_list_as_of_6.5.2026-05-22.html</link>
+      <guid>https://undz.cn/posts/genshin_impact_task_list_as_of_6.5.2026-05-22.html</guid>
+      <source url="https://undz.cn/rss.xml">原神魔神任务列表（截止6.5版本）</source>
+      <description>原神魔神任务列表（截止6.5版本） 序章（蒙德） 主线序章（蒙德） 序章 第一幕 捕风的异乡人 主线序章（蒙德） 序章 第二幕 为了没有眼泪的明天 主线序章（蒙德） 序章 第三幕 巨龙与自由之歌 第一章（璃月） 主线第一章（璃月） 第一章 第一幕 浮世浮生千岩间 主线第一章（璃月） 第一章 第二幕 辞行久远之躯 主线第一章（璃月） 第一章 第三幕 迫近...</description>
+      <category>原神</category>
+      <pubDate>Fri, 22 May 2026 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+<h2>序章（蒙德）</h2>
+<p>主线序章（蒙德）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;序章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第一幕&nbsp;&nbsp;&nbsp;捕风的异乡人<br>
+主线序章（蒙德）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;序章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第二幕&nbsp;&nbsp;&nbsp;为了没有眼泪的明天<br>
+主线序章（蒙德）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;序章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第三幕&nbsp;&nbsp;&nbsp;巨龙与自由之歌</p>
+<h2>第一章（璃月）</h2>
+<p>主线第一章（璃月）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第一章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第一幕&nbsp;&nbsp;&nbsp;浮世浮生千岩间<br>
+主线第一章（璃月）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第一章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第二幕&nbsp;&nbsp;&nbsp;辞行久远之躯<br>
+主线第一章（璃月）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第一章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第三幕&nbsp;&nbsp;&nbsp;迫近的客星<br>
+主线第一章（璃月）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第一章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第四幕&nbsp;&nbsp;&nbsp;我们终将重逢</p>
+<h2>第二章（稻妻）</h2>
+<p>主线第二章（稻妻）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第二章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;序幕&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;振袖秋风问红叶<br>
+主线第二章（稻妻）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第二章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第一幕&nbsp;&nbsp;不动鸣神，恒常乐土<br>
+主线第二章（稻妻）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第二章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第二幕&nbsp;&nbsp;无念无想，泡影断灭<br>
+主线第二章（稻妻）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第二章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第三幕&nbsp;&nbsp;千手百眼，天下人间<br>
+主线第二章（稻妻）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第二章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第四幕&nbsp;&nbsp;回响渊底的安魂曲</p>
+<h2>第三章（须弥）</h2>
+<p>主线第三章（须弥）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第三章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第一幕&nbsp;&nbsp;&nbsp;穿越烟帷与暗林<br>
+主线第三章（须弥）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第三章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第二幕&nbsp;&nbsp;&nbsp;千朵玫瑰带来的黎明<br>
+主线第三章（须弥）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第三章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第三幕&nbsp;&nbsp;&nbsp;迷梦与空幻与欺骗<br>
+主线第三章（须弥）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第三章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第四幕&nbsp;&nbsp;&nbsp;赤土之王与三朝圣者<br>
+主线第三章（须弥）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第三章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第五幕&nbsp;&nbsp;&nbsp;虚空鼓动，劫火高扬<br>
+主线第三章（须弥）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第三章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第六幕&nbsp;&nbsp;&nbsp;卡利贝尔</p>
+<h2>第四章（枫丹）</h2>
+<p>主线第四章（枫丹）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第四章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第一幕&nbsp;&nbsp;&nbsp;白露与黑潮的序诗<br>
+主线第四章（枫丹）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第四章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第二幕&nbsp;&nbsp;&nbsp;仿若无因飘落的轻雨<br>
+主线第四章（枫丹）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第四章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第三幕&nbsp;&nbsp;&nbsp;向深水中的晨星<br>
+主线第四章（枫丹）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第四章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第四幕&nbsp;&nbsp;&nbsp;谕示胎动的终焉之刻<br>
+主线第四章（枫丹）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第四章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第五幕&nbsp;&nbsp;&nbsp;罪人舞步旋<br>
+主线第四章（枫丹）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第四章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第六幕&nbsp;&nbsp;&nbsp;睡前故事</p>
+<h2>第五章（纳塔）</h2>
+<p>主线第五章（纳塔）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第五章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第一幕&nbsp;&nbsp;&nbsp;荣花与炎日之途<br>
+主线第五章（纳塔）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第五章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第二幕&nbsp;&nbsp;&nbsp;黑石湮落白石下<br>
+主线第五章（纳塔）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第五章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第三幕&nbsp;&nbsp;&nbsp;镜与谜烟的彼方<br>
+主线第五章（纳塔）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第五章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第四幕&nbsp;&nbsp;&nbsp;命定将焚的虹光<br>
+主线第五章（纳塔）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第五章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第五幕&nbsp;&nbsp;&nbsp;炽烈的还魂诗<br>
+主线第五章（纳塔）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第五章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第六幕&nbsp;&nbsp;&nbsp;你存在的时空<br>
+主线第五章（纳塔）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第五章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;幕间&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;万火归一</p>
+<h2>独立间章</h2>
+<p>独立间章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;间章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第一幕&nbsp;&nbsp;&nbsp;风起鹤归<br>
+独立间章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;间章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第二幕&nbsp;&nbsp;&nbsp;危途疑踪<br>
+独立间章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;间章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第三幕&nbsp;&nbsp;&nbsp;倾落伽蓝<br>
+独立间章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;间章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第四幕&nbsp;&nbsp;&nbsp;悖理</p>
+<h2>空月之歌（挪德卡莱）</h2>
+<p>主线空月之歌&nbsp;&nbsp;&nbsp;&nbsp;空月之歌&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第一幕&nbsp;&nbsp;&nbsp;雪浪与苍林之舞<br>
+主线空月之歌&nbsp;&nbsp;&nbsp;&nbsp;空月之歌&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第二幕&nbsp;&nbsp;&nbsp;尘与灯的挽歌<br>
+主线空月之歌&nbsp;&nbsp;&nbsp;&nbsp;空月之歌&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第三幕&nbsp;&nbsp;&nbsp;不存在的国土<br>
+主线空月之歌&nbsp;&nbsp;&nbsp;&nbsp;空月之歌&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第四幕&nbsp;&nbsp;&nbsp;回望湮灭的月光</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>GitHub 加速与代理服务使用指南</title>
+      <link>https://undz.cn/posts/accelerate_your_github.2026-05-20.html</link>
+      <guid>https://undz.cn/posts/accelerate_your_github.2026-05-20.html</guid>
+      <source url="https://undz.cn/rss.xml">GitHub 加速与代理服务使用指南</source>
+      <description>GitHub 加速与代理服务使用指南 注意 此面向公众的为GitHub加速服务，不是VPN，请注意区分！ 在国内访问 GitHub 及其相关资源（如 raw、gist、各类 assets）时，经常遇到速度慢、甚至无法打开的问题。本文介绍一个基于 Cloudflare Worker 实现的代理服务，提供两种代理模式：无需授权的 GitHub 专用加速 和...</description>
+      <category>GitHub</category>
+      <pubDate>Wed, 20 May 2026 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+<div class="hint-container warning">
+<p class="hint-container-title">注意</p>
+<p>此面向公众的为GitHub加速服务，不是VPN，请注意区分！</p>
+</div>
+<p>在国内访问 GitHub 及其相关资源（如 raw、gist、各类 assets）时，经常遇到速度慢、甚至无法打开的问题。本文介绍一个基于 Cloudflare Worker 实现的代理服务，提供两种代理模式：<strong>无需授权的 GitHub 专用加速</strong> 和 <strong>需要授权的通用代理</strong>，帮助你稳定、快速地访问 GitHub 生态资源。</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title></title>
+      <link>https://undz.cn/go.html</link>
+      <guid>https://undz.cn/go.html</guid>
+      <source url="https://undz.cn/rss.xml"></source>
+      <description>继续访问 取消</description>
+      <pubDate>Thu, 23 Apr 2026 14:30:43 GMT</pubDate>
+      <content:encoded><![CDATA[<div class="go-container" v-if="showConfirm">
+  <div class="confirm">
+    <p v-html="confirmMsg"></p>
+    <div class="buttons">
+      <button @click="continueJump" class="btn primary">继续访问</button>
+      <button @click="cancelJump" class="btn secondary">取消</button>
+    </div>
+  </div>
+</div>
+<div class="go-container" v-else="">
+  <div class="loading">
+    <div class="indeterminate-progress"></div>
+  </div>
+</div>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>网易云音乐在线免费播放</title>
+      <link>https://undz.cn/posts/free_playback_on_netease_cloud_music.2026-04-23.html</link>
+      <guid>https://undz.cn/posts/free_playback_on_netease_cloud_music.2026-04-23.html</guid>
+      <source url="https://undz.cn/rss.xml">网易云音乐在线免费播放</source>
+      <description>免费在线解析、播放网易云音乐</description>
+      <pubDate>Thu, 23 Apr 2026 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p>免费在线解析、播放网易云音乐</p>
+<!-- more -->
+<p><a href="/go.html?to=1001&amp;rb=/" target="_blank">快速启动链接（长按选择复制链接）</a></p>
+<div class="music-loader">
+<fieldset class="typeSel">
+<legend>请选择类型：</legend>
+<input type="radio" id="song" value="song" v-model="musicType" checked="">
+<label for="song">单曲</label>
+<input type="radio" id="playlist" value="playlist" v-model="musicType">
+<label for="playlist">歌单</label>
+</fieldset>
+  <div class="input-group">
+    <input v-model="userInput" type="text" placeholder="请输入网易云歌曲ID或网易云歌曲链接" @keyup.enter="loadSong()">
+    <button @click="loadSong()">加载播放器</button>
+  </div>
+  </div>
+<!-- type="song" -->
+]]></content:encoded>
+    </item>
+    <item>
+      <title>《轻涟 La vaguelette》</title>
+      <link>https://undz.cn/posts/la_vaguelette.2023-11-13.html</link>
+      <guid>https://undz.cn/posts/la_vaguelette.2023-11-13.html</guid>
+      <source url="https://undz.cn/rss.xml">《轻涟 La vaguelette》</source>
+      <pubDate>Wed, 22 Apr 2026 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<!-- more -->
+]]></content:encoded>
+    </item>
+    <item>
+      <title>《花与剑的轮舞》</title>
+      <link>https://undz.cn/posts/rondeau_des_fleurs_et_des_rapieres.2023-10-02.html</link>
+      <guid>https://undz.cn/posts/rondeau_des_fleurs_et_des_rapieres.2023-10-02.html</guid>
+      <source url="https://undz.cn/rss.xml">《花与剑的轮舞》</source>
+      <pubDate>Wed, 22 Apr 2026 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<!-- more -->
+]]></content:encoded>
+    </item>
+    <item>
+      <title>关于为什么要成为IT的工作者？</title>
+      <link>https://undz.cn/me/why/become/it/worker.html</link>
+      <guid>https://undz.cn/me/why/become/it/worker.html</guid>
+      <source url="https://undz.cn/rss.xml">关于为什么要成为IT的工作者？</source>
+      <description>注意
+此页尚未编辑完整
+
+关于为什么要成为IT的工作者？
+很简单，对于我来说，因为中国人的人际交往的非常复杂，他是千变万化的，不像机器，虽然是死板的，但你想让她干什么就干什么，他绝不会违抗你。
+这比人要好太多了，所以我就成为了一个IT行业的工作者
+不过呢，到也有一个苦恼（其实可以来说一直是这样的），自己不善于社交，这东西你没办法拒绝的，你总要和人交往，...</description>
+      <category>个人</category>
+      <pubDate>Mon, 20 Apr 2026 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<!-- more -->
+<div class="hint-container warning">
+<p class="hint-container-title">注意</p>
+<p>此页尚未编辑完整</p>
+</div>
+<h1>关于为什么要成为IT的工作者？</h1>
+<p>很简单，对于我来说，因为中国人的人际交往的非常复杂，他是千变万化的，不像机器，虽然是死板的，但你想让她干什么就干什么，他绝不会违抗你。<br>
+这比人要好太多了，所以我就成为了一个IT行业的工作者</p>
+<p>不过呢，到也有一个苦恼（其实可以来说一直是这样的），自己不善于社交，这东西你没办法拒绝的，你总要和人交往，</p>
+<p>「社交」百科上的定义为“在一定的历史条件下，个体之间相互往来，进行物质、精神交流的社会活动”，显然这里的个体指的是人。所以社交是指你和其他之间往来的活动能力，那为什么程序员不擅长这项技能呢？我的一点思考</p>
+<p>首先，程序员的工作大部分是面向机器的，程序员善于「机交」，让计算机说一计算机不敢说二。自然相比很多与人打交道的工作来说，程序员缺乏锻炼社交的机会。</p>
+<p>其次，程序员工作中与人打交道的部分，主要也是讨论和解决问题，讨论和解决问题一定是一个很tough的过程，大家关注的核心点还是怎么解决问题，而不是怎么「社交」让对方舒服，这也让程序员养成了直击问题核心的习惯，不绕来绕去的，不玩虚的，不打太极似的玩「社交」。</p>
+<p>最后，能最快最准确的寻找解决方案是最重要的，也能为自己带来可观的回报，所以潜意识里也不会把社交当成一项对自己来说很重要的技能，或者说精力有限，花精力在这些事情上，不如好好提升自己的技术水平、提升自己分析和解决问题的能力。</p>
+<p>其实，不止程序员，很多靠技术吃饭的人，都会比靠人脉、资源吃饭的人社交能力差。本质上还是，什么能力会影响你的饭碗，你就会提升什么能力。</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>1.计算机和操作系统</title>
+      <link>https://undz.cn/posts/basic/computer_and_os.html</link>
+      <guid>https://undz.cn/posts/basic/computer_and_os.html</guid>
+      <source url="https://undz.cn/rss.xml">1.计算机和操作系统</source>
+      <description>1.计算机和操作系统
+一、计算机的基本组成和工作原理
+先来一段计算机导论节选：</description>
+      <category>计算机与操作系统</category>
+      <pubDate>Thu, 16 Apr 2026 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<!-- more -->
+<h1>1.计算机和操作系统</h1>
+<h2>一、计算机的基本组成和工作原理</h2>
+<p>先来一段计算机导论节选：</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>10.开源的那些事</title>
+      <link>https://undz.cn/posts/basic/open_source.html</link>
+      <guid>https://undz.cn/posts/basic/open_source.html</guid>
+      <source url="https://undz.cn/rss.xml">10.开源的那些事</source>
+      <description>10.开源的那些事 当我们在伤害开源的时候，在伤害什么？【差评君】 为什么程序员们愿意在 GitHub 上开源，给别人免费使用和学习？ 各种开源协议介绍 提示 看到这里，你应该理解为什么我的项目基本都开放源代码了。</description>
+      <category>开源的那些事</category>
+      <pubDate>Thu, 16 Apr 2026 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+]]></content:encoded>
+    </item>
+    <item>
+      <title>11.一套最舒适的开发环境</title>
+      <link>https://undz.cn/posts/basic/dev_env_ready.html</link>
+      <guid>https://undz.cn/posts/basic/dev_env_ready.html</guid>
+      <source url="https://undz.cn/rss.xml">11.一套最舒适的开发环境</source>
+      <description>11.一套最舒适的开发环境
+一套最舒适 最好的开发环境应该是什么样子的呢？
+Windows
+
+将系统更新到最新，包括驱动等
+将系统归属地改为香港，设定好时间日期格式(设定为香港可以访问到更多有趣的内容)
+在系统设置中配置好 开发者选项
+配置好 翻墙和代理服务
+安装 Chrome
+安装并配置 
+安装并配置 VSCode
+安装并配置 WSL
+设定好 WSL...</description>
+      <category>最舒适的开发环境</category>
+      <pubDate>Thu, 16 Apr 2026 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<!-- more -->
+<h1>11.一套最舒适的开发环境</h1>
+<p>一套最舒适 最好的开发环境应该是什么样子的呢？</p>
+<h2>Windows</h2>
+<ol>
+<li>将系统更新到最新，包括驱动等</li>
+<li>将系统归属地改为香港，设定好时间日期格式(设定为香港可以访问到更多有趣的内容)</li>
+<li>在系统设置中配置好 <strong>开发者选项</strong></li>
+<li>配置好 <a href="">翻墙和代理服务</a></li>
+<li>安装 <a href="https://www.google.com/chrome/" target="_blank" rel="noopener noreferrer">Chrome</a></li>
+<li>安装并配置 <a href="/bookmark/tools/git/" target="_blank">Git</a></li>
+<li>安装并配置 <a href="">VSCode</a></li>
+<li>安装并配置 <a href="">WSL</a></li>
+<li>设定好 <a href="">WSL 的系统代理</a></li>
+<li>然后在 WSL 中像 <a href="">Linux</a> 一样去使用 Windows 进行开发和编码</li>
+</ol>
+<h2>macOS</h2>
+<ol>
+<li>检查系统更新</li>
+<li>系统常规性设置，比如 <a href="https://support.apple.com/zh-cn/guide/mac-help/mchlp2304/mac" target="_blank" rel="noopener noreferrer">在 Mac 上显示或隐藏文件扩展名</a></li>
+<li>配置好 <a href="">翻墙和代理服务</a></li>
+<li>安装 <a href="https://www.google.com/chrome/" target="_blank" rel="noopener noreferrer">Chrome</a></li>
+<li>检查并配置好 <a href="https://support.apple.com/zh-cn/guide/terminal/welcome/mac" target="_blank" rel="noopener noreferrer">Terminal</a>，并安装 <a href="https://sysin.org/blog/macos-zsh/" target="_blank" rel="noopener noreferrer">oh-my-zsh </a></li>
+<li>安装 <a href="https://brew.sh/" target="_blank" rel="noopener noreferrer">Homebrew</a></li>
+<li>检查并配置 <a href="">Git</a> 等常用命令</li>
+<li>安装并配置 <a href="">VSCode</a></li>
+<li>安装并设置 <a href="">uTools</a></li>
+</ol>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>12.关于编程语言的那些事儿</title>
+      <link>https://undz.cn/posts/basic/coding_market.html</link>
+      <guid>https://undz.cn/posts/basic/coding_market.html</guid>
+      <source url="https://undz.cn/rss.xml">12.关于编程语言的那些事儿</source>
+      <description>12.关于编程语言的那些事儿
+编程语言的分类
+1.机器语言：
+机器语言是计算机最原始的语言，是一种指令集的体系。这种指令集称为机器码。仅由 0 和 1 组成。 CPU 在工作的时候只认识机器语言。每台机器都会存在自己的指令集。
+最早计算机是以 穿孔纸带 进行编程的。带孔为 1，无孔为 0，经过光电输入到计算机当中。纸带就充当了存储介质。后面被 磁带 所...</description>
+      <category>关于编程语言的那些事儿</category>
+      <pubDate>Thu, 16 Apr 2026 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<!-- more -->
+<h1>12.关于编程语言的那些事儿</h1>
+<h2>编程语言的分类</h2>
+<h3><strong>1.机器语言：</strong></h3>
+<p>机器语言是计算机最原始的语言，是一种<code>指令集</code>的体系。这种指令集称为<code>机器码</code>。仅由 <code>0</code> 和 <code>1</code> 组成。 CPU 在工作的时候只认识机器语言。每台机器都会存在自己的指令集。<br>
+最早计算机是以 <a href="https://baike.baidu.com/item/%E7%A9%BF%E5%AD%94%E7%BA%B8%E5%B8%A6/1234150" target="_blank" rel="noopener noreferrer">穿孔纸带</a> 进行编程的。带孔为 1，无孔为 0，经过光电输入到计算机当中。纸带就充当了存储介质。后面被 <code>磁带</code> 所取代。<br>
+机器语言的 可读性、可移植性差，编程非常繁杂。<br>
+但是直接和机器打交道，运行速度可以接近硬件的极限，资源占用少；</p>
+<h3><strong>2.汇编语言</strong></h3>
+<p><a href="https://baike.baidu.com/item/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/61826" target="_blank" rel="noopener noreferrer">汇编语言</a>，即一种低级语言，他用人类容易记忆的语言和符号来表示一组 <code>0</code> 和 <code>1</code> 的代码。相当于是 0 和 1 的一种高层次封装，一组 0 和 1 用一个单词表示。</p>
+<p>不同的处理器有不同的汇编语言语法和编译器，编译的程序无法在不同的处理器上执行，缺乏可移植性，难于从汇编语言代码上理解程序设计意图，可维护性差，即使是完成简单的工作也需要大量的汇编语言代码，很容易产生 bug，难于调试，使用汇编语言必须对某种处理器非常了解，而且只能针对特定的体系结构和处理器进行优化，开发效率很低，周期长且单调。<br>
+能够保持机器语言的一致性，直接、简捷，并能像机器指令一样访问、控制计算机的各种硬件设备，如磁盘、存储器、CPU、I/O 端口等。使用汇编语言，可以访问所有能够被访问的软、硬件资源，目标代码简短，占用内存少，执行速度快。</p>
+<p>所以汇编语言一般用来开发 CPU 指令集，驱动程序，逆向工程，破解，单片机，嵌入式开发，系统底层开发等。</p>
+<h3><strong>3.高级语言</strong></h3>
+<p>运行速度和执行效率低于汇编语言，程序大小与编译器有关。<br>
+高级语言接近 <a href="https://baike.baidu.com/item/%E7%AE%97%E6%B3%95%E8%AF%AD%E8%A8%80/10654294" target="_blank" rel="noopener noreferrer">算法语言</a> ，易学、易掌握，提供结构化程序设计的环境和工具，使得设计出来的程序可读性好，可维护性强，可靠性高；高级语言远离机器语言，与具体的计算机硬件关系不大，可移植性好，重用率高；由于把繁杂琐碎的事务交给了编译程序去做，所以自动化程度高，开发周期短，且程序员得到解脱，可以集中时间和精力去从事对于他们来说更为重要的创造性劳动，以提高程序的质量。</p>
+<p>高级语言按照执行方式又可以被分为 <a href="https://zh.wikipedia.org/wiki/%E7%B7%A8%E8%AD%AF%E8%AA%9E%E8%A8%80" target="_blank" rel="noopener noreferrer">编译型语言</a> 和 <a href="https://zh.wikipedia.org/zh-sg/%E7%9B%B4%E8%AD%AF%E8%AA%9E%E8%A8%80" target="_blank" rel="noopener noreferrer">解释型语言</a></p>
+<p><strong>编译型语言：</strong><br>
+编译语言，一般会通过<a href="https://zh.wikipedia.org/wiki/%E7%B7%A8%E8%AD%AF%E5%99%A8" target="_blank" rel="noopener noreferrer">编译器</a>处理，先将<strong>代码</strong>编译为<strong>机器码</strong>，再加以执行。比如 <code>exe</code> 文件，以后需要运行的时候就不用再重新编译了，运行时不需要再编译，所以执行效率很高。</p>
+<p><strong>解释型语言：</strong><br>
+解释型语言，一般通过 <a href="https://zh.wikipedia.org/wiki/%E7%9B%B4%E8%AD%AF%E5%99%A8" target="_blank" rel="noopener noreferrer">解释器</a> 将代码一句一句直接执行，不需要像编译语言一样先编译为机器码之后再执行。在执行期，动态将代码逐句解释并执行。典型的如脚本语言。</p>
+<p><strong>脚本语言：</strong><br>
+脚本语言是一种解释型语言，脚本语言是为了缩短传统的编写-编译-链接-运行（edit-compile-link-run）过程而创建的计算机编程语言。脚本语言一般都 有相应的脚本引擎来解释执行。 他们一般需要解释器才能运行。一个脚本通常是解释运行而非编译。脚本语言通常都有简单、易学、易用的特性，目的就是希望能让程序员快速完成程序的编写工作。而<a href="https://baike.baidu.com/item/%E5%AE%8F%E8%AF%AD%E8%A8%80/21500677" target="_blank" rel="noopener noreferrer">宏语言</a>则可视为脚本语言的分支，两者也有实质上的相同之处。脚本语言一般都是以文本形式存在,类似于一种命令。</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>2.路径和文件</title>
+      <link>https://undz.cn/posts/basic/file_and_path.html</link>
+      <guid>https://undz.cn/posts/basic/file_and_path.html</guid>
+      <source url="https://undz.cn/rss.xml">2.路径和文件</source>
+      <description>2.路径和文件
+路径-维基百科
+文件路径是用于描述文件系统资源的一个文本标识。 文件系统是对文件存储设备的空间进行组织和分配，负责文件存储并对存入的文件进行保护和检索的系统。 文件存放在外部存储器中的某些位置上，经由文件系统管理后，被系统以文件路径标识，系统可以通过文件路径检索到对应文件。
+放一段视频：</description>
+      <category>路径和文件</category>
+      <pubDate>Thu, 16 Apr 2026 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<!-- more -->
+<h1>2.路径和文件</h1>
+<p><a href="https://zh.wikipedia.org/wiki/%E8%B7%AF%E5%BE%84_(%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6)" target="_blank" rel="noopener noreferrer">路径-维基百科</a></p>
+<p>文件路径是用于描述文件系统资源的一个文本标识。 文件系统是对文件存储设备的空间进行组织和分配，负责文件存储并对存入的文件进行保护和检索的系统。 文件存放在外部存储器中的某些位置上，经由文件系统管理后，被系统以文件路径标识，系统可以通过文件路径检索到对应文件。</p>
+<p>放一段视频：</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>3.文件编码</title>
+      <link>https://undz.cn/posts/basic/file_utf8.html</link>
+      <guid>https://undz.cn/posts/basic/file_utf8.html</guid>
+      <source url="https://undz.cn/rss.xml">3.文件编码</source>
+      <description>3.文件编码
+不知道你有没有遇到过，打开一个.txt文件却发现文件乱码了？这种时候往往是因为使用了不一样的编码格式去打开文件导致的。
+比如当前正在编写的这篇文章，如果采用 GBK 编码打开，就会变成一堆不认识的字符：
+
+但是同样的一篇文章采用 UTF-8 打开则可以正常阅读：
+
+因为这篇文章就是在 UTF-8 编码规则下编写的。 而GBK编码是 win...</description>
+      <category>文件编码</category>
+      <pubDate>Thu, 16 Apr 2026 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<!-- more -->
+<h1>3.文件编码</h1>
+<p>不知道你有没有遇到过，打开一个<code>.txt</code>文件却发现文件乱码了？这种时候往往是因为使用了不一样的编码格式去打开文件导致的。</p>
+<p>比如当前正在编写的这篇文章，如果采用 <a href="https://zh.wikipedia.org/wiki/%E6%B1%89%E5%AD%97%E5%86%85%E7%A0%81%E6%89%A9%E5%B1%95%E8%A7%84%E8%8C%83" target="_blank" rel="noopener noreferrer">GBK</a> 编码打开，就会变成一堆不认识的字符：</p>
+<figure><figcaption></figcaption></figure>
+<p>但是同样的一篇文章采用 <a href="https://zh.wikipedia.org/wiki/UTF-8" target="_blank" rel="noopener noreferrer">UTF-8</a> 打开则可以正常阅读：</p>
+<figure><figcaption></figcaption></figure>
+<p>因为这篇文章就是在 <code>UTF-8</code> 编码规则下编写的。 而<code>GBK</code>编码是 windows 系统早期的默认编码。</p>
+<div class="hint-container tip">
+<p class="hint-container-title">提示</p>
+<p>如果没啥特殊需求，一般编写文件内容默认使用 <code>UTF-8</code> 是一定没错的。 <code>UTF-8</code> 现在基本是大多数操作系统的默认编码。</p>
+<p>也是因为编码的问题，所以一般来说，很多国外开发的老式软件无法在 中文目录下成功运行，所以目录名一般不推荐使用中文。</p>
+</div>
+<p>拓展阅读 <a href="https://www.cnblogs.com/Rainingday/p/14641104.html" target="_blank" rel="noopener noreferrer">ASCII 编码、GBK 编码，Unicode 编码和 UTF-8</a></p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>4.终端与 shell</title>
+      <link>https://undz.cn/posts/basic/cmd_shell.html</link>
+      <guid>https://undz.cn/posts/basic/cmd_shell.html</guid>
+      <source url="https://undz.cn/rss.xml">4.终端与 shell</source>
+      <description>4.终端与 shell
+我觉得这里放一个视频就足以解释清楚了。</description>
+      <category>终端与shell</category>
+      <pubDate>Thu, 16 Apr 2026 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<!-- more -->
+<h1>4.终端与 shell</h1>
+<p>我觉得这里放一个视频就足以解释清楚了。</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>5.系统软件包管理器</title>
+      <link>https://undz.cn/posts/basic/apt_homebrew.html</link>
+      <guid>https://undz.cn/posts/basic/apt_homebrew.html</guid>
+      <source url="https://undz.cn/rss.xml">5.系统软件包管理器</source>
+      <description>5.系统软件包管理器
+当你学会命令行的基本使用之后，那么就相当于一只脚踏入了另一个世界。
+除了从应用商店安装下载之外，一般情况下还可以通过 软件包管理系统 来安装各种好用的命令和工具。
+Linux
+一般 debian 系 的系统比如 Ubuntu 默认的包管理器都是 apt 命令</description>
+      <category>系统软件包管理器</category>
+      <pubDate>Thu, 16 Apr 2026 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<!-- more -->
+<h1>5.系统软件包管理器</h1>
+<p>当你学会命令行的基本使用之后，那么就相当于一只脚踏入了另一个世界。<br>
+除了从应用商店安装下载之外，一般情况下还可以通过 <a href="https://juejin.cn/post/6884417656699486221" target="_blank" rel="noopener noreferrer">软件包管理系统</a> 来安装各种好用的命令和工具。</p>
+<h2>Linux</h2>
+<p>一般 debian 系 的系统比如 <code>Ubuntu</code> 默认的包管理器都是 <a href="https://blog.csdn.net/qq_50001789/article/details/131401922" target="_blank" rel="noopener noreferrer">apt 命令</a></p>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># 例如 安装git命令</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">apt</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> install</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> git</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># 卸载 git命令</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">apt</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> remove</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">  git</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># 查看一些可更新的包</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> apt</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> update</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># 升级软件</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> apt</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> upgrade</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># 安装 curl</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> apt</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> install</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> curl</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
+    </item>
+    <item>
+      <title>6.Git 与 Github</title>
+      <link>https://undz.cn/posts/basic/git_github.html</link>
+      <guid>https://undz.cn/posts/basic/git_github.html</guid>
+      <source url="https://undz.cn/rss.xml">6.Git 与 Github</source>
+      <description>6.Git 与 Github
+这个系列视频讲解的非常好
+https://www.bilibili.com/video/BV1HM411377j/
+
+还有这份教程
+https://nulab.com/zh-cn/learn/software-development/git-tutorial/
+
+还有这份
+https://rogerdudler.githu...</description>
+      <category>Git与Github</category>
+      <pubDate>Thu, 16 Apr 2026 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<!-- more -->
+<h1>6.Git 与 Github</h1>
+<p>这个系列视频讲解的非常好<br>
+<a href="https://www.bilibili.com/video/BV1HM411377j/" target="_blank" rel="noopener noreferrer">https://www.bilibili.com/video/BV1HM411377j/</a></p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>7.Visual Studio Code</title>
+      <link>https://undz.cn/posts/basic/vscode.html</link>
+      <guid>https://undz.cn/posts/basic/vscode.html</guid>
+      <source url="https://undz.cn/rss.xml">7.Visual Studio Code</source>
+      <description>7.Visual Studio Code
+这年头什么都有教学视频
+https://www.bilibili.com/video/BV1ug4y1571s/</description>
+      <category>VisualStudioCode</category>
+      <pubDate>Thu, 16 Apr 2026 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<!-- more -->
+<h1>7.Visual Studio Code</h1>
+<p>这年头什么都有教学视频</p>
+<p><a href="https://www.bilibili.com/video/BV1ug4y1571s/" target="_blank" rel="noopener noreferrer">https://www.bilibili.com/video/BV1ug4y1571s/</a></p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>8.如何使用搜索引擎</title>
+      <link>https://undz.cn/posts/basic/search_engine.html</link>
+      <guid>https://undz.cn/posts/basic/search_engine.html</guid>
+      <source url="https://undz.cn/rss.xml">8.如何使用搜索引擎</source>
+      <description>8.如何使用搜索引擎
+搜索引擎 是一个跨时代的发明，基本上我们每天都会用到。但是你真的会使用搜索引擎吗？
+搜索引擎的选择
+
+注意
+在中国，虽然大部分人都知道 百度 ，但是身为一个搜索引擎它并没有履行好自己的职责。
+有兴趣吃瓜的可以查看以下链接：
+https://zh.wikipedia.org/wiki/对百度的争议
+魏则西事件
+以上这些都只是一小部分...</description>
+      <category>如何使用搜索引擎</category>
+      <pubDate>Thu, 16 Apr 2026 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<!-- more -->
+<h1>8.如何使用搜索引擎</h1>
+<p><a href="https://zh.wikipedia.org/wiki/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E" target="_blank" rel="noopener noreferrer">搜索引擎</a> 是一个跨时代的发明，基本上我们每天都会用到。但是你真的会使用搜索引擎吗？</p>
+<h2>搜索引擎的选择</h2>
+<div class="hint-container warning">
+<p class="hint-container-title">注意</p>
+<p>在中国，虽然大部分人都知道 <a href="https://www.baidu.com/" target="_blank" rel="noopener noreferrer">百度</a> ，但是身为一个搜索引擎它并没有履行好自己的职责。</p>
+<p>有兴趣吃瓜的可以查看以下链接：</p>
+<p><a href="https://zh.wikipedia.org/wiki/%E5%AF%B9%E7%99%BE%E5%BA%A6%E7%9A%84%E4%BA%89%E8%AE%AE" target="_blank" rel="noopener noreferrer">https://zh.wikipedia.org/wiki/对百度的争议</a></p>
+<p><a href="https://www.zhihu.com/topic/20047674/hot" target="_blank" rel="noopener noreferrer">魏则西事件</a></p>
+<p><strong>以上这些都只是一小部分。也就是说，你无法信任 百度 查询出来的任何东西。</strong></p>
+</div>
+<p>一般情况下，我推荐的搜索引擎只有两个</p>
+<ol>
+<li>微软出品的 <strong>必应搜索</strong> <a href="https://www.bing.com" target="_blank" rel="noopener noreferrer">https://www.bing.com</a> 。 <a href="https://cn.bing.com" target="_blank" rel="noopener noreferrer">https://cn.bing.com</a> 在国内也可以用。</li>
+</ol>
+<blockquote>
+<p>不过实践证明，国内的 Bing 属于特供版，内容会不太一样。</p>
+</blockquote>
+<ol start="2">
+<li>靠搜索家的 <strong>Google</strong> <a href="https://www.google.com/" target="_blank" rel="noopener noreferrer">https://www.google.com/</a> 可能需要掌握一定的 科学上网 小技巧。</li>
+</ol>
+<h2>搜索引擎使用技巧</h2>
+<p>只需要认真阅读这篇文章即可：</p>
+<p><a href="https://www.runoob.com/w3cnote/search-engines-usage-skills.html" target="_blank" rel="noopener noreferrer">盘点全球搜索引擎及其使用技巧</a></p>
+<h2>视频讲解</h2>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>9.科学上网和国内镜像</title>
+      <link>https://undz.cn/posts/basic/proxy_to_net.html</link>
+      <guid>https://undz.cn/posts/basic/proxy_to_net.html</guid>
+      <source url="https://undz.cn/rss.xml">9.科学上网和国内镜像</source>
+      <description>9.科学上网和国内镜像
+什么是 科学上网?</description>
+      <category>科学上网和国内镜像</category>
+      <pubDate>Thu, 16 Apr 2026 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<!-- more -->
+<h1>9.科学上网和国内镜像</h1>
+<p>什么是 <a href="https://cn.bing.com/search?q=%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91" target="_blank" rel="noopener noreferrer">科学上网?</a></p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>编程开发基础入门</title>
+      <link>https://undz.cn/posts/basic/</link>
+      <guid>https://undz.cn/posts/basic/</guid>
+      <source url="https://undz.cn/rss.xml">编程开发基础入门</source>
+      <description>编程开发基础入门
+前言
+前段时间 淘宝 Steam 安装教程 事件在网上大火。就是在大多数人看来 安装Steam 这么简单的一件事情居然会难倒这么多人。大家只是想玩一个游戏而已，为什么会如此魔幻?
+一方面是国内的大环境下所有厂商都在尽全力让人们把视线转向移动端，尽可能掠夺大家的时间和精力。传统 PC 相关的技能普及度正在降低。
+另一方面是因为一些国家政...</description>
+      <pubDate>Thu, 16 Apr 2026 13:25:48 GMT</pubDate>
+      <content:encoded><![CDATA[<!-- more -->
+<h1>编程开发基础入门</h1>
+<h2>前言</h2>
+<p>前段时间 <a href="https://www.douyin.com/search/%E6%B7%98%E5%AE%9Dsteam%E4%BB%A3%E5%AE%89%E8%A3%85" target="_blank" rel="noopener noreferrer">淘宝 Steam 安装教程</a> 事件在网上大火。就是在大多数人看来 <code>安装Steam</code> 这么简单的一件事情居然会难倒这么多人。大家只是想玩一个游戏而已，为什么会如此魔幻?</p>
+<p>一方面是国内的大环境下所有厂商都在尽全力让人们把视线转向移动端，尽可能<code>掠夺</code>大家的时间和精力。传统 PC 相关的技能普及度正在降低。<br>
+另一方面是因为一些国家政策，<a href="https://zhidao.baidu.com/question/2137758630299885628.html" target="_blank" rel="noopener noreferrer">GFW</a> 的存在也让信息闭塞了起来，间接的增加了很多<code>门槛</code>。其中也包括了国内计算机基础知识的普及与落后。</p>
+<p>我自己也是从编程小白一步步走过来的，我很清楚 对于一个小白来说， 想要靠自己打破认知壁垒入门编程是多么困难的一件事情。而编程在这个时代能做的事情实在是太多了太多了。掌握一定的编程技术无论是生活还是工作方便程度都能够带来质的飞跃。所以我特意花了几天时间编写了这篇 <code>基础教程</code>，希望可以帮助更多人。</p>
+<div class="hint-container info">
+<p class="hint-container-title">相关信息</p>
+<p>这些都是基础中的基础，如果不懂得这些知识和概念，你不是 <strong>计算机零基础</strong>，而是 <strong>负基础</strong> 。</p>
+</div>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>原神 6.5版本 风景图</title>
+      <link>https://undz.cn/posts/genshin_impact_6.5_scenery_pictures.2026-04-12.html</link>
+      <guid>https://undz.cn/posts/genshin_impact_6.5_scenery_pictures.2026-04-12.html</guid>
+      <source url="https://undz.cn/rss.xml">原神 6.5版本 风景图</source>
+      <description>原神 6.5版本 风景图
+空之神殿
+
+荆夫港
+
+风车镇
+
+去空之神殿的路</description>
+      <category>原神</category>
+      <pubDate>Sun, 12 Apr 2026 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<!-- more -->
+<h1>原神 6.5版本 风景图</h1>
+<h3>空之神殿</h3>
+
+<h3>荆夫港</h3>
+
+<h3>风车镇</h3>
+
+<h3>去空之神殿的路</h3>
+
+]]></content:encoded>
+      <enclosure url="https://cdn.jsdmirror.com/gh/aeyundian/aeyundian.github.io/src/.vuepress/public/6.5gi_images/1.png" type="image/png"/>
+    </item>
+    <item>
+      <title>AyCanvars</title>
+      <link>https://undz.cn/project/aycanvars.html</link>
+      <guid>https://undz.cn/project/aycanvars.html</guid>
+      <source url="https://undz.cn/rss.xml">AyCanvars</source>
+      <description>适用于触屏和鼠标的简易绘图软件。 安装包下载</description>
+      <pubDate>Wed, 08 Apr 2026 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p>适用于触屏和鼠标的简易绘图软件。 <a href="/aycanvars/download/release/1.2.0.exe">安装包下载</a></p>
+<!-- more -->
+<h2>简介</h2>
+<p>AyCanvars 是一款基于 C# 和 .NET Framework 4.6.2 开发的绘图程序，专为课堂批注、自由绘画等场景设计。支持触屏与鼠标双重操作，界面原创，图标独立设计。</p>
+<h2>主要功能</h2>
+<ul>
+<li>画笔：可调节颜色、粗细（1~100px），抗锯齿渲染。</li>
+<li>橡皮擦：大小自动为画笔的10倍，二次点击可清空画板。</li>
+<li>文本工具：自定义字体、字号、样式、颜色，点击画布输入。</li>
+<li>撤销重做：最多64步历史记录。</li>
+<li>导出图片：支持 PNG、JPEG、BMP、GIF。</li>
+<li>画板缩放：窗口自适应。</li>
+<li>触屏优化：多点触控，文本输入时自动弹出屏幕键盘。</li>
+</ul>
+<h2>技术参数</h2>
+<ul>
+<li>语言：C#</li>
+<li>框架：.NET Framework 4.6.2</li>
+<li>开发环境：Visual Studio 2026</li>
+<li>图形：Graphics Device Interface+</li>
+<li>触摸：Windows Touch API</li>
+<li>配置存储：Initialization File</li>
+<li>日志：自研 LogFile</li>
+<li>安装包：Inno Setup，大小约2.26 MB，实际程序大小约124 KB</li>
+</ul>
+<h2>下载与安装</h2>
+<p>当前版本：v1.2.0（2026-04-08）<br>
+<a href="/aycanvars/download/release/1.2.0.exe">下载链接</a><br>
+支持系统：Windows 7/8/10/11（需 .NET Framework 4.6.2）<br>
+安装步骤：运行安装包，按提示选择安装模式、路径，同意 GPL v3.0 协议即可。</p>
+<h2>使用说明</h2>
+<ol>
+<li>启动后底部工具栏：鼠标选择、画笔、橡皮擦、更多功能。</li>
+<li>单击画笔橡皮擦激活，再次单击打开设置（颜色、粗细）。</li>
+<li>更多菜单中包含撤销、重做、文本工具、导出图片、清理内存。</li>
+<li>左侧边栏：菜单（关于、设置、更新）、退出。</li>
+<li>文本工具：点击画布弹出输入框，支持字体、颜色设置。</li>
+<li>触屏设备：单指多指绘图，文本输入时自动弹出系统键盘。</li>
+</ol>
+<h2>更新日志</h2>
+<p>v1.2.0（2026-04-08）</p>
+<ul>
+<li>修复权限问题导致的日志与设置无法写入</li>
+<li>增加更新下载时显示进度</li>
+</ul>
+<p>v1.1.0（2026-04-06）</p>
+<ul>
+<li>新增关于对话框、设置窗口（自动保存、管理员启动、更新渠道）</li>
+<li>新增检查更新功能（正式版测试版自定义源）</li>
+<li>优化撤销重做栈限制为64步</li>
+<li>修复画板缩放偏移及触屏橡皮擦大小问题</li>
+</ul>
+<p>v1.0.0（2026-03-28）</p>
+<ul>
+<li>首个稳定版本。</li>
+<li>实现画笔、橡皮擦、文本、撤销/重做、导出图片等核心功能。</li>
+<li>支持触屏和鼠标。</li>
+</ul>
+<h2>许可与版权</h2>
+<p>开源协议：GNU General Public License v3.0<br>
+作者：韵典（AeYunDian）<br>
+版权年份：2025-2026<br>
+GitHub：<a href="https://github.com/AeYunDian/AyCanvars" target="_blank" rel="noopener noreferrer">https://github.com/AeYunDian/AyCanvars</a><br>
+著作权：已提交中国版权保护中心（受理中）</p>
+<h2>联系</h2>
+<p>网站：<a href="https://undz.cn" target="_blank" rel="noopener noreferrer">https://undz.cn</a><br>
+B站：<a href="https://space.bilibili.com/3494370328185235/" target="_blank" rel="noopener noreferrer">https://space.bilibili.com/3494370328185235/</a><br>
+邮箱：admin@undz.cn</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>游戏打不开？你该修复系统运行库了</title>
+      <link>https://undz.cn/posts/taps/repair_system_runtime_library.html</link>
+      <guid>https://undz.cn/posts/taps/repair_system_runtime_library.html</guid>
+      <source url="https://undz.cn/rss.xml">游戏打不开？你该修复系统运行库了</source>
+      <description>使用DirectX_Repair、微软 .NET 运行库安装工具和微软常用运行库合集 修复系统</description>
+      <category>教程</category>
+      <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p>使用<code>DirectX_Repair</code>、<code>微软 .NET 运行库安装工具</code>和<code>微软常用运行库合集 </code>修复系统</p>
+<!-- more -->
+<h1>游戏打不开？你该修复系统运行库了</h1>
+<h2>引言</h2>
+<p>下载好的游戏打不开，提示缺少 xxx.dll，如：<br>
+<img src="https://duba-seo-cdn.jinshan3.cn/img/8e9ab042713ac11c61bdfe4be0dcc6b0.png" alt="计算机缺失d3d12.dll" loading="lazy"><br>
+这多半是因为系统缺少运行库，特别是在精简系统中，这篇文章教你快速修复运行库。</p>
+<h3>游戏运行库核心功能：</h3>
+<ul>
+<li>图形引擎支持：让游戏能直接与显卡说话，最直接的就是DX9/DX11的区别</li>
+<li>基础环境依赖：C++写的游戏需要这些运行时组件，就像安卓APP需要对应版本的框架</li>
+<li>多媒体解码库：没有它，游戏可能没有声音</li>
+</ul>
+<h3>游戏运行库隐藏特性：</h3>
+<ul>
+<li>版本兼容性：运行库可以智能匹配游戏需求（比如同时安装DX11和DX12互不冲突）</li>
+<li>性能优化：像DX12比DX11能更高效调度多核CPU（高帧率）</li>
+<li>错误防护：部分运行库自带崩溃保护机制</li>
+</ul>
+<h2>修复DirectX</h2>
+<p>如果你的游戏提示“d3dx9_43.dll丢失”“DirectX错误”等，则需要修复DirectX运行库。<br>
+步骤详解：</p>
+<ul>
+<li>下载 <a href="https://www.123684.com/s/ay6VVv-itS4H" target="_blank" rel="noopener noreferrer">DirectX_Repair</a> 这款修复工具<br>
+工具罗列出的是可以修复的 dll 文件列表，内置 dll 完全够用</li>
+<li>点击 “检测并修复”<br>
+只需点击 “检测并修复”，软件就会自动扫描丢失的 dll 文件并进行修复<br>
+修复完后还会顺带修复 C++ 运行库，但我们使用这款软件主要是修复 DirectX 的，只要 DirectX 修复完成即可， C++ 修复失败或没有修复可以看下面的步骤。</li>
+</ul>
+<p>在导航栏 - 工具 - 高级筛选 中，也可以手动选择要修复的 dll 文件<br>
+当然，这款软件修复 C++ 运行库没有那么全，这时候就要接下来这款软件了。</p>
+<p>未完待续</p>
+]]></content:encoded>
+      <enclosure url="https://duba-seo-cdn.jinshan3.cn/img/8e9ab042713ac11c61bdfe4be0dcc6b0.png" type="image/png"/>
+    </item>
+    <item>
+      <title>列表</title>
+      <link>https://undz.cn/list/</link>
+      <guid>https://undz.cn/list/</guid>
+      <source url="https://undz.cn/rss.xml">列表</source>
+      <description>查看文章列表</description>
+      <pubDate>Thu, 12 Mar 2026 13:12:19 GMT</pubDate>
+      <content:encoded><![CDATA[<p>查看文章列表</p>
+<!-- more -->
+<p>您可以在左边选个一个项目查看</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Crossfire: Ys 正式发布</title>
+      <link>https://undz.cn/project/crossfire.html</link>
+      <guid>https://undz.cn/project/crossfire.html</guid>
+      <source url="https://undz.cn/rss.xml">Crossfire: Ys 正式发布</source>
+      <description>Crossfire: Ys 4.0.6 版本 正式发布</description>
+      <pubDate>Thu, 09 Apr 2026 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p>Crossfire: Ys 4.0.6 版本 正式发布</p>
+<!-- more -->
+<p>这款游戏使用Unity引擎构建，目前只支持Windows端，短期时间内没有支持其他端的计划</p>
+<h2>下载</h2>
+<p><a href="https://api.undz.cn/proxy/github.com/AeYunDian/Crossfire-Ys/releases/download/4.0.6_beta_0.4/4.0.6.beta.0.4.26-02-13.7z" style="text-decoration: none;" download="">直链快速下载（推荐）</a></p>
+<p><a href="https://github.com/AeYunDian/Crossfire-Ys/releases/download/4.0.6_beta_0.4/4.0.6.beta.0.4.26-02-13.7z" style="text-decoration: none;" download="">Github下载</a></p>
+<h2>目前版本优点</h2>
+<ul>
+<li>云端账号：使用网络保存您的游戏进度</li>
+<li>多关卡，多武器，完善您的游戏体验</li>
+<li>智能怪物。</li>
+</ul>
+<h2>配置</h2>
+<ul>
+<li>
+<p>最低配置</p>
+<ul>
+<li>1.系统：Windows 7 SP1 64-bit 或 Windows 8.1 64-bit 或 Windows 10 64-bit</li>
+<li>2.储存：512MB</li>
+<li>3.内存：2GB RAM</li>
+<li>4.DirectX 版本：11</li>
+</ul>
+</li>
+<li>
+<p>推荐配置：</p>
+<ul>
+<li>1.系统：Windows 10 64-bit 或 Windows 11 64-bit</li>
+<li>2.储存：1GB～2GB</li>
+<li>3.内存：8GB RAM</li>
+<li>4.DirectX 版本：11</li>
+</ul>
+</li>
+</ul>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>POST网络请求</title>
+      <link>https://undz.cn/posts/unity_notes/post_request.html</link>
+      <guid>https://undz.cn/posts/unity_notes/post_request.html</guid>
+      <source url="https://undz.cn/rss.xml">POST网络请求</source>
+      <description>Unity POST网络请求实现教程</description>
+      <category>Unity</category>
+      <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p>Unity POST网络请求实现教程</p>
+<!-- more -->
+<h1>POST网络请求</h1>
+<h2>前言</h2>
+<p>此文章只是POST请求，没有GET、DELETE、PULL等其它类型<br>
+为什么一开始是这个呢？因为这是我遇到的第一个问题</p>
+<h2>教程</h2>
+<p>代码使用系统的Http库<br>
+<code>using System.Net.Http;</code></p>
+<h3>1.新建文件</h3>
+<p>在Unity项目内新建一个名为<code>GameApiClient.cs</code>的C#代码文件。</p>
+<h3>2.输入以下内容</h3>
+<div class="language-cs line-numbers-mode" data-highlighter="shiki" data-ext="cs" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-cs"><span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">using</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B"> System</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">using</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B"> System</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B">Collections</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">using</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B"> System</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B">Collections</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B">Generic</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">using</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B"> System</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B">Net</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">using</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B"> System</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B">Net</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B">Http</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">using</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B"> System</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B">Text</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">using</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B"> System</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B">Threading</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B">Tasks</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">using</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B"> UnityEngine</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">public</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> class</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B"> GameApiClient</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> : </span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B">MonoBehaviour</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">{</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">    public</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> static</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B"> GameApiClient</span><span style="--shiki-light:#4078F2;--shiki-dark:#ABB2BF"> Instance</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> { </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">get</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">; </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">private</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> set</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">; }</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">    private</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B">  HttpClient</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75"> Client</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">  =</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> new </span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B">HttpClient</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">();</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">    private</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">  string</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75"> Domain</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2"> =</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> "https://api.io.hb.cn/api/"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">    private</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B">  HttpResponseMessage</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75"> response</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">    void</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> Awake</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">()</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    {</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">        if</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75">Instance</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2"> ==</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> null</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">        {</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#E06C75">            Instance</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2"> =</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B"> this</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">            DontDestroyOnLoad</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75">gameObject</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B">            Debug</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Log</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"GameApiClent创建成功！"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">        }</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">        else</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">        {</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">            Destroy</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75">gameObject</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B">            Debug</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Log</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"已存在GameApiClent，销毁重复的"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">        }</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">    public</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">  async</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B"> Task</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">&lt;</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B">HttpResponseMessage</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">&gt;  </span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">PostNetData</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">string</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B"> path</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">string</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B"> json</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    {</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">        var</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75"> content</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2"> =</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> new </span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B">StringContent</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75">json</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B">Encoding</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B">UTF8</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"application/json"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B">        Client</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B">Timeout</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2"> =</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B"> TimeSpan</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">FromSeconds</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">5</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#E06C75">        response</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2"> =</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> await </span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B">Client</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">PostAsync</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75">Domain</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2"> +</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75"> path</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75">content</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">        return</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75"> response</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">}</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3>3.加载</h3>
+<p>在游戏第一个场景创建一个空游戏对象，绑定这个代码文件，启动游戏，如果游戏的日志有一条<code>GameApiClient创建成功！</code>，则代表以上步骤你都完成了</p>
+<h3>4.调用</h3>
+<p>一个应用应该写一个类来处理网络请求，在其它类中处理返回<br>
+要想在其他代码中发送POST请求，只需调用 <code>GameApiClient.Instance.PostNetData(string path, string json)</code></p>
+<div class="hint-container warning">
+<p class="hint-container-title">警告</p>
+<p>网络请求是异步的，所以需要使用<code>await</code>来调用<br>
+在<code>GameApiClient.cs</code>中写了API的地址，这里是<code>https://api.io.hb.cn/api/</code>，你需要替换为自己服务器的地址。</p>
+</div>
+<h3>5.处理</h3>
+<p>该函数的返回格式是<code>HttpResponseMessage</code>，所以需要定义一个<code>HttpResponseMessage</code>类型的变量</p>
+<div class="language-cs line-numbers-mode" data-highlighter="shiki" data-ext="cs" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-cs"><span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">using</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B"> Newtonsoft</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B">Json</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">private</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> string</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75"> Path_BagGet</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2"> =</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> "/v1/bag/get"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">public</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> async</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B"> Task</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">&lt;</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">int</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">&gt; </span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">GetBagData</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">()</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">{</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">    var</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75"> data</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2"> =</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> new { </span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75">uuid</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75">token</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> };</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">    string</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75"> json</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2"> =</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B"> JsonConvert</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">SerializeObject</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75">data</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B">    HttpResponseMessage</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75"> response</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2"> =</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> await </span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B">GameApiClient</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B">Instance</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">PostNetData</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75">Path_BagGet</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75">json</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">    string</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75"> responseBody</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2"> =</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> await </span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B">response</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B">Content</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">ReadAsStringAsync</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">();</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B">    Debug</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Log</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B">response</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B">StatusCode</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">    switch</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B">response</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B">StatusCode</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    {</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">        case</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B"> HttpStatusCode</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B">OK</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">            var</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75"> bagData</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2"> =</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B"> JsonConvert</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">DeserializeObject</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">&lt;</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B">BagData</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">&gt;(</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75">responseBody</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">            return</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> int</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Parse</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B">bagData</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B">level</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">ToLower</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">());</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">        default</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">            return</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2"> -</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">1</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">}</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="hint-container info">
+<p class="hint-container-title">关于此代码</p>
+<p>该代码取自 <a href="https://github.com/AeYunDian/Crossfire-Ys" style="text-decoration: none;">Crossfire: Ys</a> 的部分片段，可能无法直接运行</p>
+</div>
+<p><code>switch</code>语句处理需要根据服务器具体返回做判断， <a href="https://github.com/AeYunDian/Crossfire-Ys" style="text-decoration: none;">Crossfire: Ys</a> 的网络处理逻辑是专门写几个类，游戏启动时自动加载，在其他需要用户信息时直接调用，<br>
+我也推荐你使用这种做法，更加规范，如以后有变动，只需改几个文件，而不是在各个犄角旮旯一个个改。</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>
