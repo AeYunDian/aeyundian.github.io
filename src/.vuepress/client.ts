@@ -9,6 +9,7 @@ import MusicPlayer from './components/MusicPlayer.vue';
 import TopNavBeautify from './components/TopNavBeautify.vue';
 import HeroBG from './components/HeroBG.vue';
 import PrivacyConsentBanner from './components/PrivacyMessaging.vue';
+import RiskDetector from './components/RiskDetector.vue';
 import meting2 from 'vuepress-plugin-meting2';
 export default defineClientConfig({
   layouts: {
@@ -16,6 +17,7 @@ export default defineClientConfig({
   },
   rootComponents: [
     TopNavBeautify,
+    RiskDetector,
     HeroBG,
     GeoBlocker,
     PrivacyConsentBanner

@@ -1,17 +1,15 @@
-$vp-font-heading: "Noto Sans SC", 'ys' , sans-serif, -apple-system  !important;
-$vp-font:  "Noto Sans SC", 'ys' , sans-serif, -apple-system  !important;
-$vp-font-mono: "Fira Code" , "Consolas", monospace  !important;
-
-$--vp-font-heading: "Noto Sans SC", 'ys' , sans-serif, -apple-system !important;
-$--vp-font:  "Noto Sans SC", 'ys' , sans-serif, -apple-system  !important;
-$--vp-font-mono: "Fira Code", sans-serif, "Consolas", monospace  !important;
-
-body, h1, h2, h3, h4, h5, h6, p, span[property="headline"], div, a, ul, ol, li, table, th, td {
-  font-family: "Noto Sans SC", 'ys' , sans-serif;
+$--vp-font-heading: "Microsoft JhengHei", 微軟正黑體, "Arial",  "Noto Sans SC", 'ys' , "sans-serif", -apple-system;
+$--vp-font:  "Noto Sans SC", 'ys' , "Microsoft JhengHei", 微軟正黑體, "Arial", "sans-serif", -apple-system ;
+$--vp-font-mono: "Fira Code", "sans-serif", "Consolas", "monospace" ;
+body,  p, div, a, ul, ol, li, table, th, td {
+  font-family: $--vp-font !important;
 }
-
+.vp-project-name , .vp-blog-count > .count , span[property="headline"], h1, h2, h3, h4, h5, h6, .vp-article-title, .vp-sidebar-link {
+  font-family: $--vp-font-heading !important;
+  font-weight: bold;
+}
 code, pre, kbd, samp {
-  font-family: $vp-font-mono !important;
+  font-family: $--vp-font-mono !important;
 }
  
 .color-text-secondary .text-sm{

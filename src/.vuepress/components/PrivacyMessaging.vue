@@ -16,10 +16,10 @@
                 </div>
 
                 <div class="card-body">
-                    <p class="description">继续使用本网站即表示你同意以下协议及隐私政策中所述的 Cookie 使用方式。</p>
+                    <p class="description">继续使用本網站即表示你同意以下协议及隱私政策中所述的 Cookie 使用方式。</p>
 
                     <div class="consent-options">
-                        <p class="description">点击"接受全部"即表示您同意我们使用所有 Cookie，您也可以点击"仅必要 Cookie"来同意我们使用必要的 Cookie 类型。</p>
+                        <p class="description">点击「接受全部」即表示您同意我們使用所有 Cookie，您也可以点击「僅必要 Cookie」来同意我們使用必要的 Cookie 类型。</p>
 
                         <!-- 同意复选框区域 -->
                         <div class="checkbox-group" :class="{ 'disabled': !canEnableCheckbox }">
@@ -80,7 +80,7 @@ export default {
             PrivacyVersion: 1,              // 版本号，便于未来更新时管理
             consentGiven: false,          // 是否已给出同意
             agreeChecked: false,          // 同意复选框是否勾选
-            privacyPolicyRead: false,     // 是否已阅读隐私政策
+            privacyPolicyRead: true,     // 是否已阅读隐私政策（默认已阅读）
             modalVisible: false,          // 协议弹窗显示状态
             modalType: '',                // 'privacy'
             modalTitle: '',
@@ -166,7 +166,7 @@ export default {
     inset: 0;
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(2px);
-    z-index: 9999;
+    z-index: 201312141; /* 小巧思，可能和身份z和**日期有关 */
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -356,7 +356,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 10000;
+    z-index: 201312143;
     padding: 1rem;
 }
 

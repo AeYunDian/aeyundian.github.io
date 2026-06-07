@@ -177,7 +177,7 @@ jobs:
                 issue_number: context.issue.number,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                body: `## ℹ️ 友链已存在\n\n该链接已在友链列表中，无需重复添加。`
+                body: `## ℹ️ 友链已存在\n\n该链接已在友链列表中，不能够重复添加，如要更正，请在友链页面发布评论。`
               });
               await github.rest.issues.update({
                 issue_number: context.issue.number,
@@ -217,12 +217,12 @@ jobs:
               });
               return;
             }
-            if (name.length > 50 || /\s/.test(name)) {
+            if (name.length > 50) {
               await github.rest.issues.createComment({
                 issue_number: context.issue.number,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                body: '## ❌ 名称过长\n\n请确保**网站名称**长度不超过 50 字符，且不包含空格。编辑此 Issue 重新触发。'
+                body: '## ❌ 名称过长\n\n请确保**网站名称**长度不超过 50 字符。编辑此 Issue 重新触发。'
               });
               await github.rest.issues.addLabels({
                 issue_number: context.issue.number,
