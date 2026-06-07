@@ -307,6 +307,10 @@ export default {
             const isLocalhost = ['localhost', '127.0.0.1', '::1'].some(host => window.location.hostname.includes(host));
             if (isLocalhost) console.warn('本地开发环境');
 
+            const res = await fetch('https://api.undz.cn/ip');
+            const data = await res.json();
+            if (data.code === 200 && data.country && data.country !== 'CN' && data.tlsVersion !== 'TLSv1.3') isRisky = true;
+
             const isHttps = window.location.protocol === 'https:';
             if (!isHttps && !isLocalhost) isRisky = true;
 
@@ -318,8 +322,8 @@ export default {
 
             const isAnOfficialDomain = ['undz.cn', 'io.hb.cn', 'ayd2.eu.cc',
                 'main.exm2.eu.cc', 'main.net3.eu.cc', 'main.net2.eu.cc',
-                'main.zyy2.eu.cc'
-            ].some(domain => window.location.hostname.endsWith(domain));
+                'main.zyy2.eu.cc', 'www.undz.cn', 'www.io.hb.cn'
+            ].some(domain => window.location.hostname === domain);
             if (!isAnOfficialDomain && !isLocalhost) isRisky = true;
             
             if (!isRisky) {
@@ -410,7 +414,7 @@ export default {
 .consent-card {
     max-width: 700px;
     width: 100%;
-    background-color: #fff;
+    background-color: var(--vp-c-bg, #fff);
     border-radius: 1.5rem;
     box-shadow: 0 20px 35px -8px rgba(0, 0, 0, 0.2);
     overflow: hidden;
@@ -436,20 +440,20 @@ export default {
     gap: 0.5rem;
     padding: 1rem 1.5rem;
     border-bottom: 1px solid #e9ecef;
-    background-color: #fafbfc;
+    background-color: var(--vp-c-bg, #fff);
 }
 
 .header-icon {
     display: flex;
     align-items: center;
-    color: #1b1b1b;
+    color: var(--vp-c-text, rgb(60, 60, 67));
 }
 
 .card-title {
     font-size: 1.125rem;
     font-weight: 500;
     margin: 0;
-    color: #1e2a3e;
+    color: var(--vp-c-text, rgb(60, 60, 67));
 }
 
 /* 主体 */
@@ -463,13 +467,21 @@ export default {
 
 .description {
     font-size: 0.875rem;
-    color: #4a5568;
+    color: var(--vp-c-text, rgb(60, 60, 67));
     margin-bottom: 1.25rem;
     line-height: 1.5;
 }
 
+.checkbox-group {
+    background-color: var(--vp-c-bg-elv-soft);
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--vp-c-bg-elv);
+}
+
 .alicom4 {
-    background-color: #f8f9fa;
+    background-color: var(--vp-c-bg);
     padding: 0.75rem 1rem;
     border-radius: 0.75rem;
     margin-bottom: 1.5rem;
@@ -491,7 +503,7 @@ export default {
 
 .checkbox-text {
     font-size: 0.8rem;
-    color: #2d3748;
+    color: var(--vp-c-text, rgb(60, 60, 67));
     line-height: 1.4;
 }
 

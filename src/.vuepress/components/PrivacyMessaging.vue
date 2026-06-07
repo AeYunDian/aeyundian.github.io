@@ -178,7 +178,7 @@ export default {
 .consent-card {
     max-width: 700px;
     width: 100%;
-    background-color: #fff;
+    background-color: var(--vp-c-bg, #fff);
     border-radius: 1.5rem;
     box-shadow: 0 20px 35px -8px rgba(0, 0, 0, 0.2);
     overflow: hidden;
@@ -204,20 +204,20 @@ export default {
     gap: 0.5rem;
     padding: 1rem 1.5rem;
     border-bottom: 1px solid #e9ecef;
-    background-color: #fafbfc;
+    background-color: var(--vp-c-bg, #fff);
 }
 
 .header-icon {
     display: flex;
     align-items: center;
-    color: #1b1b1b;
+    color: var(--vp-c-text, rgb(60, 60, 67));
 }
 
 .card-title {
     font-size: 1.125rem;
     font-weight: 500;
     margin: 0;
-    color: #1e2a3e;
+    color: var(--vp-c-text, rgb(60, 60, 67));
 }
 
 /* 主体 */
@@ -231,17 +231,17 @@ export default {
 
 .description {
     font-size: 0.875rem;
-    color: #4a5568;
+    color: var(--vp-c-text, rgb(60, 60, 67));
     margin-bottom: 1.25rem;
     line-height: 1.5;
 }
 
 .checkbox-group {
-    background-color: #f8f9fa;
+    background-color: var(--vp-c-bg-elv-soft);
     padding: 0.75rem 1rem;
     border-radius: 0.75rem;
     margin-bottom: 1.5rem;
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--vp-c-bg-elv);
 }
 
 .checkbox-label {
@@ -259,7 +259,7 @@ export default {
 
 .checkbox-text {
     font-size: 0.8rem;
-    color: #2d3748;
+    color: var(--vp-c-text, rgb(60, 60, 67));
     line-height: 1.4;
 }
 
@@ -361,7 +361,7 @@ export default {
 }
 
 .modal-card {
-    background: white;
+    background: var(--vp-c-bg, #fff);
     border-radius: 1rem;
     max-width: 550px;
     width: 100%;
