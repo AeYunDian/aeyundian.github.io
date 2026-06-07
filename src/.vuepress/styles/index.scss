@@ -1,13 +1,13 @@
-$vp-font-heading: "ys", -apple-system, BlinkMacSystemFont, sans-serif  !important;
-$vp-font:  "ys", -apple-system, BlinkMacSystemFont, sans-serif  !important;
+$vp-font-heading: "Noto Sans SC", 'ys' , sans-serif, -apple-system  !important;
+$vp-font:  "Noto Sans SC", 'ys' , sans-serif, -apple-system  !important;
 $vp-font-mono: "Fira Code" , "Consolas", monospace  !important;
 
-$--vp-font-heading: "ys", -apple-system, BlinkMacSystemFont, sans-serif  !important;
-$--vp-font:  "ys", -apple-system, BlinkMacSystemFont, sans-serif  !important;
-$--vp-font-mono: "Fira Code" , "Consolas", monospace  !important;
+$--vp-font-heading: "Noto Sans SC", 'ys' , sans-serif, -apple-system !important;
+$--vp-font:  "Noto Sans SC", 'ys' , sans-serif, -apple-system  !important;
+$--vp-font-mono: "Fira Code", sans-serif, "Consolas", monospace  !important;
 
 body, h1, h2, h3, h4, h5, h6, p, span[property="headline"], div, a, ul, ol, li, table, th, td {
-  font-family: "Source Han Sans SC VF", 'ys' , sans-serif;
+  font-family: "Noto Sans SC", 'ys' , sans-serif;
 }
 
 code, pre, kbd, samp {
