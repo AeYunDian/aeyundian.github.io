@@ -306,11 +306,14 @@ export default {
 
             const isLocalhost = ['localhost', '127.0.0.1', '::1'].some(host => window.location.hostname.includes(host));
             if (isLocalhost) console.warn('本地开发环境');
-
-            const res = await fetch('https://api.undz.cn/ip');
-            const data = await res.json();
-            if (data.code === 200 && data.country && data.country !== 'CN' && data.tlsVersion !== 'TLSv1.3') isRisky = true;
-
+            try {
+                const res = await fetch('https://api.undz.cn/ip');
+                const data = await res.json();
+                if (data.code === 200 && data.country && data.country !== 'CN' && data.tlsVersion && data.tlsVersion !== 'TLSv1.3') isRisky = true;
+            } catch (error) {
+                console.error("风险检测接口调用失败:", error);
+                isRisky = true; // 接口调用失败时，默认认为有风险
+            }
             const isHttps = window.location.protocol === 'https:';
             if (!isHttps && !isLocalhost) isRisky = true;
 
@@ -325,7 +328,7 @@ export default {
                 'main.zyy2.eu.cc', 'www.undz.cn', 'www.io.hb.cn'
             ].some(domain => window.location.hostname === domain);
             if (!isAnOfficialDomain && !isLocalhost) isRisky = true;
-            
+
             if (!isRisky) {
                 this.consentGiven = true;
                 return;
@@ -348,7 +351,7 @@ export default {
             window.initAlicom4({
                 captchaId: "420680785844799d0a512a27082dd6ad",
                 product: "bind",
-            }, function(captchaObj) {
+            }, function (captchaObj) {
                 // 这里的回调函数中 this 指向 window，所以用 self
                 captchaObj.onNextReady(() => {
                     self.isCanVerification = true;
