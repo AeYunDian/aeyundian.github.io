@@ -350,8 +350,8 @@ export default {
             }
 
             window.initAlicom4({
-                //captchaId: "420680785844799d0a512a27082dd6ad",
-                captchaId: "8848b0418f53cc0c2cc6853c6d20c6d3",
+                captchaId: "420680785844799d0a512a27082dd6ad",
+                //captchaId: "8848b0418f53cc0c2cc6853c6d20c6d3",
                 product: "bind",
             }, function (captchaObj) {
                 // 这里的回调函数中 this 指向 window，所以用 self
