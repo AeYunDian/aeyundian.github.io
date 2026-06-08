@@ -4,7 +4,7 @@
             <div class="consent-card">
                 <!-- 头部 -->
                 <div class="card-header">
-                    <h3 class="card-title">帮助我们战胜机器人</h3>
+                    <h3 class="card-title">您此次游览存在风险</h3>
                 </div>
 
                 <div class="card-body">
@@ -44,7 +44,7 @@ export default {
     name: 'RiskDetector',
     data() {
         return {
-            consentGiven: false,
+            consentGiven: true,
             agreeChecked: false,
             isCanVerification: false,
             numberOfVerification: 0,
@@ -222,7 +222,7 @@ export default {
     name: 'RiskDetector',
     data() {
         return {
-            consentGiven: false,
+            consentGiven: true,  // 默认同意，只有检测到风险时才显示弹窗
             agreeChecked: false,
             isCanVerification: false,
             numberOfVerification: 0,
@@ -305,15 +305,16 @@ export default {
             let isRisky = false;
 
             const isLocalhost = ['localhost', '127.0.0.1', '::1'].some(host => window.location.hostname.includes(host));
-            if (isLocalhost) console.warn('本地开发环境');
+            if (isLocalhost) console.warn('本地开发环境'); isRisky = true; 
             try {
                 const res = await fetch('https://api.undz.cn/ip');
                 const data = await res.json();
                 if (data.code === 200 && data.country && data.country !== 'CN' && data.tlsVersion && data.tlsVersion !== 'TLSv1.3') isRisky = true;
             } catch (error) {
-                console.error("风险检测接口调用失败:", error);
+                console.error("风测接口调用失败:", error);
                 isRisky = true; // 接口调用失败时，默认认为有风险
             }
+
             const isHttps = window.location.protocol === 'https:';
             if (!isHttps && !isLocalhost) isRisky = true;
 
@@ -349,21 +350,24 @@ export default {
             }
 
             window.initAlicom4({
-                captchaId: "420680785844799d0a512a27082dd6ad",
+                //captchaId: "420680785844799d0a512a27082dd6ad",
+                captchaId: "8848b0418f53cc0c2cc6853c6d20c6d3",
                 product: "bind",
             }, function (captchaObj) {
                 // 这里的回调函数中 this 指向 window，所以用 self
                 captchaObj.onNextReady(() => {
                     self.isCanVerification = true;
                 }).onSuccess(() => {
+                    
                     self.isCanVerification = false;
                     self.numberOfVerification += 1;
                     self.description = '验证成功，请继续游览';
+                    self.agreeChecked = true;
                     setTimeout(() => {
                         self.continueAll();
                     }, 1000);
-                    captchaObj.reset();
-                }).onError(() => {
+                    captchaObj.destroy(); // 销毁验证码实例，防止重复验证
+                }).onFail(() => {
                     self.isCanVerification = true;
                     self.numberOfVerification += 1;
                     if (self.numberOfVerification >= 3) {
@@ -373,6 +377,13 @@ export default {
                     } else {
                         self.description = '验证失败，请重试';
                     }
+                }).onError(() => {
+                    self.isCanVerification = false;
+                    self.description = '验证发生错误，请尝试刷新页面';
+                }).onClose(() => {
+                    self.isCanVerification = true;
+                    self.description = '验证已关闭，您可以重新尝试';
+                    captchaObj.reset(); // 重置验证码状态，允许用户再次尝试
                 });
 
                 // 绑定按钮事件（避免重复绑定）
@@ -394,6 +405,7 @@ export default {
             localStorage.setItem('RiskDetectorConsent', JSON.stringify(consentData));
             this.consentGiven = true;
         },
+
     }
 };
 </script>
