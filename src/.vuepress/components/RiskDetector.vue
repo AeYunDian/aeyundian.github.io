@@ -305,7 +305,7 @@ export default {
             let isRisky = false;
 
             const isLocalhost = ['localhost', '127.0.0.1', '::1'].some(host => window.location.hostname.includes(host));
-            if (isLocalhost) console.warn('本地开发环境'); isRisky = true; 
+            if (isLocalhost) console.warn('本地开发环境'); isRisky = true;
             try {
                 const res = await fetch('https://api.undz.cn/ip');
                 const data = await res.json();
@@ -316,28 +316,27 @@ export default {
             }
 
             const isHttps = window.location.protocol === 'https:';
-            if (!isHttps && !isLocalhost) isRisky = true;
+            if (!isHttps && !isLocalhost) isRisky = true; console.warn("!isHttps && !isLocalhost");
 
             const isInIframe = window.self !== window.top;
-            if (isInIframe) isRisky = true;
+            if (isInIframe) isRisky = true; console.warn("isInIframe");
 
             const mixedResources = scanMixedContent();
-            if (mixedResources.length > 0) isRisky = true;
-
+            if (mixedResources.length > 0) isRisky = true; console.warn("mixedResources.length > 0)");
+ 
             const isAnOfficialDomain = ['undz.cn', 'io.hb.cn', 'ayd2.eu.cc',
                 'main.exm2.eu.cc', 'main.net3.eu.cc', 'main.net2.eu.cc',
                 'main.zyy2.eu.cc', 'www.undz.cn', 'www.io.hb.cn'
             ].some(domain => window.location.hostname === domain);
-            if (!isAnOfficialDomain && !isLocalhost) isRisky = true;
+            if (!isAnOfficialDomain && !isLocalhost) isRisky = true; console.warn("!isAnOfficialDomain && !isLocalhost");
 
-            if (!isRisky) {
-                this.consentGiven = true;
-                return;
+            if (isRisky) {
+                // 有风险，显示弹窗并初始化验证码
+                this.consentGiven = false;
+                this.initCaptcha();
             }
 
-            // 有风险，显示弹窗并初始化验证码
-            this.consentGiven = false;
-            this.initCaptcha();
+
         },
 
         // 初始化验证码
@@ -358,7 +357,7 @@ export default {
                 captchaObj.onNextReady(() => {
                     self.isCanVerification = true;
                 }).onSuccess(() => {
-                    
+
                     self.isCanVerification = false;
                     self.numberOfVerification += 1;
                     self.description = '验证成功，请继续游览';
