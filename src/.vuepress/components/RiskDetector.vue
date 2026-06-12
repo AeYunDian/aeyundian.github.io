@@ -263,7 +263,7 @@ export default {
                 // 创建新的 script 标签
                 const script = document.createElement('script');
                 script.id = 'alicaptcha-script';
-                script.src = '/ct4.js';   // 你的脚本路径
+                script.src = 'https://net.undz.cn/static/js/663309100158b461908698ad346bf0b4.js';   // 你的脚本路径
                 script.type = 'text/javascript';
                 script.charset = 'utf-8';
                 script.onload = () => {
@@ -305,7 +305,7 @@ export default {
             let isRisky = false;
 
             const isLocalhost = ['localhost', '127.0.0.1', '::1'].some(host => window.location.hostname.includes(host));
-            if (isLocalhost) {console.warn('本地开发环境'); isRisky = true;}
+            if (isLocalhost) { console.warn('本地开发环境'); isRisky = true; }
             try {
                 const res = await fetch('https://api.undz.cn/ip');
                 const data = await res.json();
@@ -316,20 +316,25 @@ export default {
             }
 
             const isHttps = window.location.protocol === 'https:';
-            if (!isHttps && !isLocalhost) {isRisky = true; console.warn("!isHttps && !isLocalhost");}
+            if (!isHttps && !isLocalhost) { isRisky = true; console.warn("!isHttps && !isLocalhost"); }
 
             const isInIframe = window.self !== window.top;
-            if (isInIframe) {isRisky = true; console.warn("isInIframe");}
+            if (isInIframe) { isRisky = true; console.warn("isInIframe"); }
 
             const mixedResources = scanMixedContent();
-            if (mixedResources.length > 0) {isRisky = true; console.warn("mixedResources.length > 0)");}
- 
+            if (mixedResources.length > 0) { isRisky = true; console.warn("mixedResources.length > 0)"); }
+
             const isAnOfficialDomain = ['undz.cn', 'io.hb.cn', 'ayd2.eu.cc',
                 'main.exm2.eu.cc', 'main.net3.eu.cc', 'main.net2.eu.cc',
                 'main.zyy2.eu.cc', 'www.undz.cn', 'www.io.hb.cn'
             ].some(domain => window.location.hostname === domain);
-            if (!isAnOfficialDomain && !isLocalhost) {isRisky = true; console.warn("!isAnOfficialDomain && !isLocalhost");}
+            if (!isAnOfficialDomain && !isLocalhost) { isRisky = true; console.warn("!isAnOfficialDomain && !isLocalhost"); }
 
+            const storedConsent = localStorage.getItem('riskDetectorConsent');
+            if (storedConsent && JSON.parse(storedConsent).timestamp === 'passed' && (JSON.parse(storedConsent).timestamp + 86400 > Math.floor(Date.now() / 1000))) {
+                isRisky = false;
+            }
+            
             if (isRisky) {
                 // 有风险，显示弹窗并初始化验证码
                 this.consentGiven = false;
@@ -416,7 +421,6 @@ export default {
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(2px);
     z-index: 65535;
-    /* 小巧思，可能和身份z和**日期有关 */
     display: flex;
     align-items: flex-end;
     justify-content: center;

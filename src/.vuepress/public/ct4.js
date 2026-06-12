@@ -51,7 +51,7 @@ function Config(config) {
 Config.prototype = {
     apiServers: ['captcha.alicaptcha.com','captchabak.alicaptcha.com'],
     staticServers: ["static.alicaptcha.com"],
-    protocol: 'http://',
+    protocol: 'https://',
     typePath: '/load',
     fallback_config: {
         bypass: {
