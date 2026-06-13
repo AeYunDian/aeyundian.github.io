@@ -12,7 +12,7 @@
                             </path>
                         </svg>
                     </div>
-                    <h3 class="card-title">隐私与协议</h3>
+                    <h3 class="card-title">隐私与Cookie</h3>
                 </div>
 
                 <div class="card-body">
@@ -29,11 +29,14 @@
                                     我已阅读并同意
                                     <button type="button" class="link-btn"
                                         @click="openAgreementModal('privacy')">《隐私政策》</button>
+                                    和
+                                    <button type="button" class="link-btn" @click="openAgreementModal('cookie')">《Cookie
+                                        政策》</button>
                                 </span>
                             </label>
                         </div>
                         <div v-if="!canEnableCheckbox" class="warning-message">
-                            您还需要阅读《隐私政策》后方可勾选该复选框
+                            您还需要阅读《隐私政策》和《Cookie 政策》后方可勾选该复选框
                         </div>
 
                         <!-- 操作按钮组 -->
@@ -55,7 +58,7 @@
                 </div>
             </div>
 
-            <!-- 协议内容模态框（用户协议/隐私政策） -->
+            <!-- 协议内容模态框 -->
             <div v-if="modalVisible" class="modal-overlay" @click.self="closeModal">
                 <div class="modal-card">
                     <div class="modal-header">
@@ -77,48 +80,98 @@ export default {
     name: 'PrivacyConsentBanner',
     data() {
         return {
-            PrivacyVersion: 1,              // 版本号，便于未来更新时管理
+            PrivacyVersion: 2,              // 版本号，便于未来更新时管理
             consentGiven: false,          // 是否已给出同意
             agreeChecked: false,          // 同意复选框是否勾选
             privacyPolicyRead: true,     // 是否已阅读隐私政策（默认已阅读）
+            cookiePolicyRead: true,      // 是否已阅读Cookie政策（默认已阅读）
             modalVisible: false,          // 协议弹窗显示状态
-            modalType: '',                // 'privacy'
+            exemptPaths: [                  // 豁免路径前缀（不显示弹窗）
+                '/privacy_policy/',
+                '/cookie_policy/',
+                '/aboutus/',
+                '/contact_me/'
+            ],
+            modalType: '',                // 'privacy' or 'cookie'
             modalTitle: '',
             modalContent: '',
+            routerUnsubscribe: null,        // 路由监听器清理函数
         };
     },
     computed: {
         // 复选框是否可启用（协议已阅读过）
         canEnableCheckbox() {
-            return this.privacyPolicyRead;
+            return this.privacyPolicyRead && this.cookiePolicyRead;
         }
     },
     mounted() {
-        // 检查是否已存储过同意记录
-        const storedConsent = localStorage.getItem('cookieConsent');
-        if (storedConsent && JSON.parse(storedConsent).version === this.PrivacyVersion) {
-            this.consentGiven = true;
+
+        // 初始检查路径并设置 consentGiven
+        this.checkRouteAndSetConsent();
+
+        // 监听路由变化（每次导航后重新评估）
+        if (this.$router) {
+            this.routerUnsubscribe = this.$router.afterEach(() => {
+                this.checkRouteAndSetConsent();
+            });
         }
-        const url = new URL(window.location.href);
-        const doNotDisplay = url.searchParams.get('doNotDisplayPrivacy') === 'true';
-        if (doNotDisplay) {
-            this.consentGiven = true; // 直接标记为已同意，暂时跳过弹窗
+    },
+    beforeDestroy() {
+        // 清理路由监听器
+        if (this.routerUnsubscribe) {
+            this.routerUnsubscribe();
         }
-        // 此处不做自动弹出前的其他操作
     },
     methods: {
-        // 打开协议模态框
+        // 判断当前路径是否属于豁免路径
+        isExemptPath() {
+            const currentPath = this.$route?.path || window.location.pathname;
+            return this.exemptPaths.some(prefix => currentPath.startsWith(prefix));
+        },
+        checkRouteAndSetConsent() {
+            if (this.isExemptPath()) {
+                // 豁免路径：直接关闭弹窗，不读取 localStorage
+                this.consentGiven = true;
+                return;
+            }
+
+            // 非豁免路径：从 localStorage 读取同意记录
+            const storedConsent = localStorage.getItem('cookieConsent');
+            if (storedConsent) {
+                try {
+                    const consent = JSON.parse(storedConsent);
+                    if (consent.version === this.PrivacyVersion) {
+                        this.consentGiven = true;
+                        return;
+                    }
+                } catch (e) {
+                    console.error('解析 cookieConsent 失败', e);
+                }
+            }
+            // 未同意或版本不匹配：显示弹窗
+            this.consentGiven = false;
+        },
         openAgreementModal(type) {
             this.modalType = type;
             if (type === 'privacy') {
                 this.modalTitle = '隐私政策';
                 this.modalContent = `
-          <p>我们高度重视您的隐私。本政策说明我们如何收集、使用和保护您的信息。</p>
+          <p>本政策将帮助您了解我们收集哪些数据、收集这些数据的原因以及您与这些数据相关的权利。</p>
           <ul>
-            <li>详情请阅读完整版<a href="/privacy_policy/zh-cn.html?doNotDisplayPrivacy=true" target="_blank">《隐私政策》</a>。</li>
+            <li>详情请阅读完整版<a href="/privacy_policy/zh-cn.html" target="_blank">《隐私政策》</a>。</li>
           </ul>
           <p>若您有任何疑问，可通过邮件联系我们。</p>
         `;
+            } else if (type === 'cookie') {
+                this.modalTitle = 'Cookie 政策';
+                this.modalContent = `
+          <p>本政策将帮助您了解我们使用哪些Cookie和跟踪技术、我们如何使用它们以及您享有的相关权利。</p>
+          <ul>
+            <li>详情请阅读完整版<a href="/cookie_policy/zh-cn.html" target="_blank">《Cookie 政策》</a>。</li>
+          </ul>
+          <p>若您有任何疑问，可通过邮件联系我们。</p>
+                `;
+
             }
             this.modalVisible = true;
         },
@@ -126,6 +179,8 @@ export default {
         confirmRead() {
             if (this.modalType === 'privacy') {
                 this.privacyPolicyRead = true;
+            } else if (this.modalType === 'cookie') {
+                this.cookiePolicyRead = true;
             }
             this.modalVisible = false;
         },
@@ -166,7 +221,8 @@ export default {
     inset: 0;
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(2px);
-    z-index: 201312141; /* 小巧思，可能和身份z和**日期有关 */
+    z-index: 201312141;
+    /* 小巧思，可能和身份z和**日期有关 */
     display: flex;
     align-items: flex-end;
     justify-content: center;

@@ -18,21 +18,21 @@ export default {
             shouldBlock: false,
         };
     },
-    async mounted() {
+    // async mounted() {
         
-        try {
-            // 使用高德 API 获取 IP 归属地
-            const res = await fetch('https://restapi.amap.com/v3/ip?key=9584879dc3893767f7f5adbc86afd516&output=JSON');
-            const data = await res.json();
-            if (data.status === '1' && data.adcode && String(data.adcode).startsWith('7100')) {
-                this.shouldBlock = true;
-                document.body.style.overflow = 'hidden';
-                this.blockKeyboardAndCopy();
-            }
-        } catch (err) {
-            console.warn('Unable to check the location', err);
-        }
-    },
+    //     try {
+    //         // 使用高德 API 获取 IP 归属地
+    //         const res = await fetch('https://restapi.amap.com/v3/ip?key=9584879dc3893767f7f5adbc86afd516&output=JSON');
+    //         const data = await res.json();
+    //         if (data.status === '1' && data.adcode && String(data.adcode).startsWith('7100')) {
+    //             this.shouldBlock = true;
+    //             document.body.style.overflow = 'hidden';
+    //             this.blockKeyboardAndCopy();
+    //         }
+    //     } catch (err) {
+    //         console.warn('Unable to check the location', err);
+    //     }
+    // },
     methods: {
         blockKeyboardAndCopy() {
             // 阻止键盘全选和复制

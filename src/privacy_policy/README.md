@@ -7,5 +7,5 @@ comment: false
 --- 
 
 [简体中文](/privacy_policy/zh-cn.html)
-[繁體中文](/privacy_policy/zh-tw.html)
+[繁體中文](/privacy_policy/zh-hk.html)
 [English](/privacy_policy/en-us.html)

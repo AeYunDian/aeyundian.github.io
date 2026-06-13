@@ -16,22 +16,96 @@ export default sidebar({
       children: "structure",
     },
     {
-      text: "隐私政策",
-      icon: "ic:baseline-privacy-tip",
-      prefix: "privacy_policy/",
-      children: "structure",
-    },
-    {
-      text: "联系我",
-      icon: "ic:round-message",
-      prefix: "contact_me/",
-      children: "structure",
-    },
-    {
-      text: "关于",
-      prefix: "aboutus/",
-      icon: "circle-info",
-      children: "structure",
+      text: "关于网站",
+      icon: "circle-info", // 父级图标
+      children: [
+        {
+          text: "隐私政策",
+          icon: "ic:baseline-privacy-tip", // 父级图标
+          children: [
+            {
+              text: "简体中文",
+              icon: "ic:baseline-privacy-tip",
+              link: "/privacy_policy/zh-cn",
+            },
+            {
+              text: "繁體中文",
+              icon: "ic:baseline-privacy-tip",
+              link: "/privacy_policy/zh-hk",
+            },
+            {
+              text: "English",
+              icon: "ic:baseline-privacy-tip",
+              link: "/privacy_policy/en-us",
+            },
+          ],
+        },
+        {
+          text: "Cookie 政策",
+          icon: "ic:baseline-cookie", // 父级图标
+          children: [
+            {
+              text: "简体中文",
+              icon: "ic:baseline-cookie",
+              link: "/cookie_policy/zh-cn",
+            },
+            {
+              text: "繁體中文",
+              icon: "ic:baseline-cookie",
+              link: "/cookie_policy/zh-hk",
+            },
+            {
+              text: "English",
+              icon: "ic:baseline-cookie",
+              link: "/cookie_policy/en-us",
+            },
+          ],
+        },
+
+        {
+          text: "联系我",
+          icon: "ic:round-message", // 父级图标
+          children: [
+            {
+              text: "简体中文",
+              icon: "ic:round-message",
+              link: "/contact_me/zh-cn",
+            },
+            {
+              text: "繁體中文",
+              icon: "ic:round-message",
+              link: "/contact_me/zh-hk",
+            },
+            {
+              text: "English",
+              icon: "ic:round-message",
+              link: "/contact_me/en-us",
+            },
+          ],
+        },
+        {
+          text: "关于此网站",
+          icon: "circle-info", // 父级图标
+          children: [
+            {
+              text: "简体中文",
+              icon: "circle-info",
+              link: "/aboutus/zh-cn",
+            },
+            {
+              text: "繁體中文",
+              icon: "circle-info",
+              link: "/aboutus/zh-hk",
+            },
+            {
+              text: "English",
+              icon: "circle-info",
+              link: "/aboutus/en-us",
+            },
+          ],
+
+        },
+      ],
     },
   ],
   "/diary/": [

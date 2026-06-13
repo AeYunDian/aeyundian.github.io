@@ -4,14 +4,13 @@ prev: false
 next: false
 comment: false
 article: false
-lastUpdated: false
 contributors: 'AeYunDian'
 changelog: false
 --- 
    
 <!-- more -->
 ::: center
-[简体中文](/aboutus/zh-cn.html) | [繁體中文](/aboutus/zh-tw.html) | [English](/aboutus/en-us.html)
+[简体中文](/aboutus/zh-cn.html) | [繁體中文](/aboutus/zh-hk.html) | [English](/aboutus/en-us.html)
 :::
 
 # 关于
@@ -48,8 +47,3 @@ Code changes the world
 ## 特此声明
 UNDZ 是我的技术项目名称，与加拿大内衣品牌 UNDZ (undz.ca) 无任何关联。
 此网站、社交媒体绝不出现任何与内衣、时尚相关的内容，也不会链接到该品牌。请不要带入该品牌！
-
-
-::: right
-上一次更新：2026-06-06
-:::

@@ -1,8 +1,8 @@
 ---
 prev: false
+next: false
 icon: ic:round-message
 article: false
-next: false
 comment: false
 contributors: 'AeYunDian'
 changelog: false
@@ -11,7 +11,7 @@ changelog: false
 <!-- more -->
 
 ::: center
-[简体中文](/contact_me/zh-cn.html) | [繁體中文](/contact_me/zh-tw.html) | [English](/contact_me/en-us.html)
+[简体中文](/contact_me/zh-cn.html) | [繁體中文](/contact_me/zh-hk.html) | [English](/contact_me/en-us.html)
 :::
 
 # Contact Me
@@ -22,10 +22,10 @@ changelog: false
 - [zhanghaoyu19281@outlook.com](mailto:zhanghaoyu19281@outlook.com)
 
 ## Instant Messaging
-- WeChat: zhanghaoyu20131214
+- WeChat: yund_svc_166
 - QQ: [2768223712](https://api.undz.cn/addqq?uid=2768223712)
 
-## Other
+## Others
 - GitHub: [AeYunDian](https://github.com/AeYunDian/)
 - Bilibili: [3494370328185235](https://space.bilibili.com/3494370328185235)
 - YouTube: [@aeydundz](https://www.youtube.com/@aeydundz)
