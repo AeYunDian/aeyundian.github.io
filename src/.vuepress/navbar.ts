@@ -46,17 +46,17 @@ export default navbar([
           {
             text: "简体中文",
             icon: "ic:baseline-privacy-tip",
-            link: "/privacy_policy/zh-cn",
+            link: "/privacy_policy/zh-cn.html",
           },
           {
             text: "繁體中文",
             icon: "ic:baseline-privacy-tip",
-            link: "/privacy_policy/zh-hk",
+            link: "/privacy_policy/zh-hk.html",
           },
           {
             text: "English",
             icon: "ic:baseline-privacy-tip",
-            link: "/privacy_policy/en-us",
+            link: "/privacy_policy/en-us.html",
           },
         ],
       },
@@ -67,21 +67,41 @@ export default navbar([
           {
             text: "简体中文",
             icon: "ic:baseline-cookie",
-            link: "/cookie_policy/zh-cn",
+            link: "/cookie_policy/zh-cn.html",
           },
           {
             text: "繁體中文",
             icon: "ic:baseline-cookie",
-            link: "/cookie_policy/zh-hk",
+            link: "/cookie_policy/zh-hk.html",
           },
           {
             text: "English",
             icon: "ic:baseline-cookie",
-            link: "/cookie_policy/en-us",
+            link: "/cookie_policy/en-us.html",
           },
         ],
       },
-
+      {
+        text: "服务条款",
+        icon: "ic:round-gavel", // 父级图标
+        children: [
+          {
+            text: "简体中文",
+            icon: "ic:round-gavel",
+            link: "/terms/zh-cn.html",
+          },
+          {
+            text: "繁體中文",
+            icon: "ic:round-gavel",
+            link: "/terms/zh-hk.html",
+          },
+          {
+            text: "English",
+            icon: "ic:round-gavel",
+            link: "/terms/en-us.html",
+          },
+        ],
+      },
       {
         text: "联系我",
         icon: "ic:round-message", // 父级图标
@@ -89,17 +109,17 @@ export default navbar([
           {
             text: "简体中文",
             icon: "ic:round-message",
-            link: "/contact_me/zh-cn",
+            link: "/contact_me/zh-cn.html",
           },
           {
             text: "繁體中文",
             icon: "ic:round-message",
-            link: "/contact_me/zh-hk",
+            link: "/contact_me/zh-hk.html",
           },
           {
             text: "English",
             icon: "ic:round-message",
-            link: "/contact_me/en-us",
+            link: "/contact_me/en-us.html",
           },
         ],
       },
@@ -110,17 +130,17 @@ export default navbar([
           {
             text: "简体中文",
             icon: "circle-info",
-            link: "/aboutus/zh-cn",
+            link: "/aboutus/zh-cn.html",
           },
           {
             text: "繁體中文",
             icon: "circle-info",
-            link: "/aboutus/zh-hk",
+            link: "/aboutus/zh-hk.html",
           },
           {
             text: "English",
             icon: "circle-info",
-            link: "/aboutus/en-us",
+            link: "/aboutus/en-us.html",
           },
         ],
 

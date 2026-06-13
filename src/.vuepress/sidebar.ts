@@ -61,7 +61,27 @@ export default sidebar({
             },
           ],
         },
-
+        {
+          text: "服务条款",
+          icon: "ic:round-gavel", // 父级图标
+          children: [
+            {
+              text: "简体中文",
+              icon: "ic:round-gavel",
+              link: "/terms/zh-cn.html",
+            },
+            {
+              text: "繁體中文",
+              icon: "ic:round-gavel",
+              link: "/terms/zh-hk.html",
+            },
+            {
+              text: "English",
+              icon: "ic:round-gavel",
+              link: "/terms/en-us.html",
+            },
+          ],
+        },
         {
           text: "联系我",
           icon: "ic:round-message", // 父级图标

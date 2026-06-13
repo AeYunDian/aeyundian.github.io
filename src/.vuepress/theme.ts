@@ -33,7 +33,10 @@ export default hopeTheme({
   sidebar,
 
   // 页脚
-  footer: '<a href="https://icp.gov.moe/?keyword=20263044" target="_blank">萌ICP备20263044号</a>&nbsp;&nbsp;<a href="/privacy_policy/zh-cn.html">《隐私政策》</a>&nbsp;&nbsp;<a href="/cookie_policy/zh-cn.html">《Cookie 政策》</a></br> Running time: <span id="runtime-value">0 days 0 hours 0 minutes 0 seconds</span>',
+  footer: `<a href="https://icp.gov.moe/?keyword=20263044" target="_blank">萌ICP备20263044号</a></br> 
+  <a href="/privacy_policy/zh-cn.html">《隐私政策》</a>&nbsp;&nbsp;<a href="/cookie_policy/zh-cn.html">《Cookie 政策》</a>&nbsp;&nbsp;
+  <a href="/terms/zh-cn.html">《服务条款》</a></br> 
+  Running time: <span id="runtime-value">0 days 0 hours 0 minutes 0 seconds</span>`,
   displayFooter: true,
 
   // 博客相关

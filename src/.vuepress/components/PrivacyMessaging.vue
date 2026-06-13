@@ -29,14 +29,17 @@
                                     我已阅读并同意
                                     <button type="button" class="link-btn"
                                         @click="openAgreementModal('privacy')">《隐私政策》</button>
+                                    、
+                                    <button type="button" class="link-btn" 
+                                        @click="openAgreementModal('cookie')">《Cookie 政策》</button>
                                     和
-                                    <button type="button" class="link-btn" @click="openAgreementModal('cookie')">《Cookie
-                                        政策》</button>
+                                    <button type="button" class="link-btn" 
+                                        @click="openAgreementModal('terms')">《服务条款》</button>
                                 </span>
                             </label>
                         </div>
                         <div v-if="!canEnableCheckbox" class="warning-message">
-                            您还需要阅读《隐私政策》和《Cookie 政策》后方可勾选该复选框
+                            您还需要阅读《隐私政策》、《Cookie 政策》和《服务条款》后方可勾选该复选框
                         </div>
 
                         <!-- 操作按钮组 -->
@@ -48,10 +51,10 @@
                                         d="M.41 13.41L6 19l1.41-1.42L1.83 12m20.41-6.42L11.66 16.17L7.5 12l-1.43 1.41L11.66 19l12-12M18 7l-1.41-1.42l-6.35 6.35l1.42 1.41z">
                                     </path>
                                 </svg>
-                                接受全部
+                                接受全部（协议及所有 Cookie）
                             </button>
                             <button class="btn btn-secondary" :disabled="!agreeChecked" @click="acceptNecessaryOnly">
-                                仅必要 Cookie
+                                接受协议和仅必要 Cookie
                             </button>
                         </div>
                     </div>
@@ -80,19 +83,21 @@ export default {
     name: 'PrivacyConsentBanner',
     data() {
         return {
-            PrivacyVersion: 2,              // 版本号，便于未来更新时管理
+            PrivacyVersion: 3,              // 版本号，便于未来更新时管理
             consentGiven: false,          // 是否已给出同意
             agreeChecked: false,          // 同意复选框是否勾选
             privacyPolicyRead: true,     // 是否已阅读隐私政策（默认已阅读）
             cookiePolicyRead: true,      // 是否已阅读Cookie政策（默认已阅读）
+            termsPolicyRead: true,       // 是否已阅读服务条款（默认已阅读）
             modalVisible: false,          // 协议弹窗显示状态
             exemptPaths: [                  // 豁免路径前缀（不显示弹窗）
                 '/privacy_policy/',
                 '/cookie_policy/',
                 '/aboutus/',
-                '/contact_me/'
+                '/contact_me/',
+                '/terms/',
             ],
-            modalType: '',                // 'privacy' or 'cookie'
+            modalType: '',                // 'privacy' or 'cookie' or 'terms'
             modalTitle: '',
             modalContent: '',
             routerUnsubscribe: null,        // 路由监听器清理函数
@@ -101,7 +106,7 @@ export default {
     computed: {
         // 复选框是否可启用（协议已阅读过）
         canEnableCheckbox() {
-            return this.privacyPolicyRead && this.cookiePolicyRead;
+            return this.privacyPolicyRead && this.cookiePolicyRead && this.termsPolicyRead;
         }
     },
     mounted() {
@@ -172,6 +177,15 @@ export default {
           <p>若您有任何疑问，可通过邮件联系我们。</p>
                 `;
 
+            } else if (type === 'terms') {
+                this.modalTitle = '服务条款';
+                this.modalContent = `
+          <p>本服务条款适用于您对本网站及其内容、服务的使用。请仔细阅读以下条款。</p>
+          <ul>
+            <li>详情请阅读完整版<a href="/terms/zh-cn.html" target="_blank">《服务条款》</a>。</li>
+          </ul>
+          <p>若您有任何疑问，可通过邮件联系我们。</p>
+                `;
             }
             this.modalVisible = true;
         },
@@ -181,6 +195,8 @@ export default {
                 this.privacyPolicyRead = true;
             } else if (this.modalType === 'cookie') {
                 this.cookiePolicyRead = true;
+            } else if (this.modalType === 'terms') {
+                this.termsPolicyRead = true;
             }
             this.modalVisible = false;
         },
