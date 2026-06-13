@@ -12,14 +12,14 @@
                             </path>
                         </svg>
                     </div>
-                    <h3 class="card-title">隐私与Cookie</h3>
+                    <h3 class="card-title">隐私政策、Cookie政策与服务条款</h3>
                 </div>
 
                 <div class="card-body">
                     <p class="description">继续使用本網站即表示你同意以下协议及隱私政策中所述的 Cookie 使用方式。</p>
 
                     <div class="consent-options">
-                        <p class="description">点击「接受全部」即表示您同意我們使用所有 Cookie，您也可以点击「僅必要 Cookie」来同意我們使用必要的 Cookie 类型。</p>
+                        <p class="description">点击「接受全部（协议及所有 Cookie）」即表示您同意我們使用所有 Cookie，您也可以点击「接受协议和仅必要 Cookie」来同意我們使用必要的 Cookie 类型。</p>
 
                         <!-- 同意复选框区域 -->
                         <div class="checkbox-group" :class="{ 'disabled': !canEnableCheckbox }">

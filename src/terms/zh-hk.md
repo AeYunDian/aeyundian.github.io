@@ -7,7 +7,7 @@ comment: false
 contributors: 'AeYunDian'
 changelog: false
 --- 
-歡迎使用 undz.cn（以下簡稱「本網站」）。本服務條款（以下簡稱「本條款」）適用於您對本網站及其內容、服務的使用。請仔細閱讀以下條款。
+歡迎使用 undz.cn （以下簡稱「本網站」）。本服務條款（以下簡稱「本條款」）適用於您對本網站及其內容、服務的使用。請仔細閱讀以下條款。
 <!-- more -->
 
 ::: center
