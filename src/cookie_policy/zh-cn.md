@@ -7,7 +7,7 @@ comment: false
 contributors: 'AeYunDian'
 changelog: false
 --- 
-欢迎阅读undz.cn的Cookie政策。本政策将帮助您了解我们使用哪些Cookie和跟踪技术、我们如何使用它们以及您享有的相关权利。
+欢迎阅读 undz.cn 的Cookie政策。本政策将帮助您了解我们使用哪些Cookie和跟踪技术、我们如何使用它们以及您享有的相关权利。
 <!-- more -->
 
 ::: center

@@ -7,7 +7,7 @@ comment: false
 contributors: 'AeYunDian'
 changelog: false
 --- 
-欢迎阅读undz.cn的隐私政策。本政策将帮助您了解我们收集哪些数据、收集这些数据的原因以及您与这些数据相关的权利。
+欢迎阅读 undz.cn 的隐私政策。本政策将帮助您了解我们收集哪些数据、收集这些数据的原因以及您与这些数据相关的权利。
 <!-- more -->
 
 ::: center
