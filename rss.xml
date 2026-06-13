@@ -6,8 +6,8 @@
     <link>https://undz.cn/</link>
     <description>AeYunDian的博客</description>
     <language>zh-CN</language>
-    <pubDate>Fri, 12 Jun 2026 13:09:55 GMT</pubDate>
-    <lastBuildDate>Fri, 12 Jun 2026 13:09:55 GMT</lastBuildDate>
+    <pubDate>Sat, 13 Jun 2026 08:46:29 GMT</pubDate>
+    <lastBuildDate>Sat, 13 Jun 2026 08:46:29 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>公告</category>
@@ -499,14 +499,121 @@ Windows
       <description>2.路径和文件
 路径-维基百科
 文件路径是用于描述文件系统资源的一个文本标识。 文件系统是对文件存储设备的空间进行组织和分配，负责文件存储并对存入的文件进行保护和检索的系统。 文件存放在外部存储器中的某些位置上，经由文件系统管理后，被系统以文件路径标识，系统可以通过文件路径检索到对应文件。
-放一段视频：</description>
+文件、文件名、文件后缀名、文件拓展名
+这里放上一篇解释的比较清...</description>
       <category>路径和文件</category>
       <pubDate>Thu, 16 Apr 2026 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<!-- more -->
 <h1>2.路径和文件</h1>
 <p><a href="https://zh.wikipedia.org/wiki/%E8%B7%AF%E5%BE%84_(%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6)" target="_blank" rel="noopener noreferrer">路径-维基百科</a></p>
 <p>文件路径是用于描述文件系统资源的一个文本标识。 文件系统是对文件存储设备的空间进行组织和分配，负责文件存储并对存入的文件进行保护和检索的系统。 文件存放在外部存储器中的某些位置上，经由文件系统管理后，被系统以文件路径标识，系统可以通过文件路径检索到对应文件。</p>
-<p>放一段视频：</p>
+<h2>文件、文件名、文件后缀名、文件拓展名</h2>
+<p>这里放上一篇解释的比较清楚的文章<br>
+<a href="https://www.ecdove.com/p/245.html" target="_blank" rel="noopener noreferrer">https://www.ecdove.com/p/245.html</a></p>
+<p>文件名就是文件的名称，是为了方便人们区分计算机中的不同文件，而给每个文件设定一个指定的名称。<br>
+文件名不能包含控制字符: <code>&lt; &gt; / \ | : " \* ?</code></p>
+<p><a href="https://zh.wikipedia.org/wiki/%E6%96%87%E4%BB%B6%E6%89%A9%E5%B1%95%E5%90%8D" target="_blank" rel="noopener noreferrer">文件扩展名</a> 也称为文件的延伸文件名、后缀名，是操作系统用来标记文件类型的一种机制。通常来说，一个扩展名是跟在主文件名后面的，由一个分隔符分隔。</p>
+<p>文件扩展名其更重要的作用是让系统决定当用户想打开这个文件的时候用哪种软件运行，如 Windows 系统中 <code>.exe</code> 文件是可执行文件，<code>.doc</code> 文件默认用 <code>Microsoft Word</code> 打开的 Word 文件。</p>
+<div class="hint-container tip">
+<p class="hint-container-title">误区</p>
+<ol>
+<li>
+<p>文件扩展名是一个文件的必要构成部分。❌<br>
+任何一个文件都可以没有扩展名。没有扩展名的文件需要选择程序去打开它，有扩展名的文件会自动用设置好的默认程序去打开。文件扩展名是一个常规文件的构成部分，但一个文件并不一定需要一个扩展名。</p>
+</li>
+<li>
+<p>文件扩展名表明了该文件是何种类型。❌<br>
+文件扩展名可以人为设定，扩展名为 TXT 的文件有可能是一张图片，同样，扩展名为 MP3 的文件，依然可能是一个视频。</p>
+</li>
+</ol>
+<p>ps:凡是可以人为随意修改的东西，都是不可信的</p>
+</div>
+<p>你可以试试 在桌面新建一个 <code>demo.txt</code> 文件，在里面写上一句话，然后修改后缀名为 <code>demo.html</code>，然后刷新桌面看看。它的内容都没有变，只是解析这个文件的默认程序和方法变了。</p>
+<h2>绝对路径与相对路径</h2>
+<p><strong>绝对路径例子：</strong></p>
+<p><code>c:\user\www\index.html</code><br>
+<code>/user/www/index.html</code><br>
+<code>/Users/aeyund</code></p>
+<p>也就是说，路径的起始符号为路径分隔符 <code>/</code> 或者 <code>\</code> 或者盘符 <code>c:</code> , 该路径就表示为绝对路径，其中 <code>类Unix系统</code> 的路径分隔符都为 <code>/</code> , 只有 windows 系为 <code>\</code>, 这一点要注意。<br>
+绝对路径指向一个文件路径的固定位置，不会因为当前工作目录的变化而变化，所以为了准确描述，它必须包含根目录。</p>
+<p><strong>相对路径例子：</strong></p>
+<p><code>./www/index.html</code><br>
+<code>../index.html</code><br>
+<code>www/index.html</code></p>
+<p>也就是说，路径起始符号为 <code>./</code> <code>../</code> 或者是 <code>www/</code> 这样的目录名 的就是相对路径。也就是以当前工作目录或文件所在目录为起点表示的相对位置。<br>
+其中 <code>./</code> 表示当前目录。 <code>../</code> 表示上一层目录。<br>
+其中 <code>./www</code> 和 <code>www</code> 是等价的，都表示当前目录下的 <code>www</code> 目录。<br>
+同理 <code>./www/index.html</code> 和 <code>www/index.html</code> 也是等价的，都表示当前目录下的 <code>www</code>目录下的 <code>index.html</code> 文件。</p>
+<div class="hint-container tip">
+<p class="hint-container-title">提示</p>
+<p>通过相对路径和绝对路径，我们就可以在系统中准确的表示和定位一个文件或者目录了。<br>
+一般在项目开发中，一般都是基于于项目所在的目录为基准点使用相对路径来描述项目中文件和文件之间的关系。</p>
+</div>
+<h2>绝对路径和相对路径的应用</h2>
+<p>比如说，我们要在 main.js 文件中引入另一个 tools.js 文件。</p>
+<p>main.js 文件在 <code>/user/aeyund/my-project/main.js</code><br>
+tools.js 文件在 <code>/user/aeyund/my-project/tools.js</code></p>
+<p>绝对路径引用:</p>
+<div class="code-block-with-title">
+  <div class="code-block-title-bar" data-title="main.js">
+    <span>main.js</span>
+  </div>
+  <div class="language-js line-numbers-mode" data-highlighter="shiki" data-ext="js" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-js"><span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">import</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75"> tools</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> from</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> '/user/aeyund/my-project/tools.js'</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">;</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div>
+</div><p>相对路径引用:</p>
+<div class="code-block-with-title">
+  <div class="code-block-title-bar" data-title="main.js">
+    <span>main.js</span>
+  </div>
+  <div class="language-js line-numbers-mode" data-highlighter="shiki" data-ext="js" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-js"><span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">import</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75"> tools</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> from</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> './tools.js'</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">;</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div>
+</div><p>此时，这两种引用方式都是正确的，代码都可以顺利运行。因为两个文件都在 <code>aeyund/my-project</code> 下。</p>
+<p>这个时候，如果另一个人下载了项目，他的工作目录不是 <code>aeyund</code> ， 是 <code>aeundz</code>，那么文件的的路径就变成了:</p>
+<p>main.js 文件会变成 <code>/user/aeundz/my-project/main.js</code><br>
+tools.js 文件会变成 <code>/user/aeundz/my-project/tools.js</code></p>
+<p>那么绝对路径引用就必须得修改成下面这样:</p>
+<div class="code-block-with-title">
+  <div class="code-block-title-bar" data-title="main.js">
+    <span>main.js</span>
+  </div>
+  <div class="language-js line-numbers-mode" data-highlighter="shiki" data-ext="js" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-js"><span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">import</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75"> tools</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> from</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> '/user/aeundz/my-project/tools.js'</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">;</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div>
+</div><p>而此时，相对路径不需要修改，因为两个文件依然在 <code>my-project</code> 下面。如果一个项目有上百个文件，那么移动项目的位置将会是一场灾难。</p>
+<h2>统一资源定位符</h2>
+<p>windows 下一般定位资源必须得带上盘符，比如 <code>c:\user\aeyund\image</code><br>
+Linux 系统则是 <code>/home/aeyund/image</code><br>
+而一般的网络资源则是 <code>/ma.ico</code></p>
+<p>他们之间的区别是什么呢?</p>
+<p>一般 windows 会存在很多磁盘，<code>c:\</code>、<code>d:\</code>、<code>e:\</code>，没有盘符则无法在系统中准确描述一个文件所在位置的。<br>
+而 Linux 一般会把拓展的硬盘分区放在 <code>/mnt/c</code>、<code>/mnt/d</code>、<code>/mnt/e</code>，下。所以 Linux 下表示根目录有且只有一种方式： <code>/</code>。</p>
+<p>你自己本地的一个文件例如 <code>c:\user\aeyund\my-project\index.html</code> 要怎么才能共享给别人，让别人都能访问到呢？不太可能把电脑搬到人家里去吧？</p>
+<p>这个时候，如果你的机器有一个公网的 ip 地址，这个时候就可以使用 <a href="https://zh.wikipedia.org/wiki/%E7%BB%9F%E4%B8%80%E8%B5%84%E6%BA%90%E5%AE%9A%E4%BD%8D%E7%AC%A6" target="_blank" rel="noopener noreferrer">统一资源定位符</a> 来表示该文件了。这个时候这个文件又叫做<code>网络资源</code>或者<code>公网资源</code>。</p>
+<p>统一资源定位符的标准格式如下：</p>
+<div class="language-txt line-numbers-mode" data-highlighter="shiki" data-ext="txt" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-txt"><span class="line"><span>[协议类型]://[服务器地址]:[端口号]/[资源层级Unix文件路径][文件名]</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>例如 <a href="http://123.123.123.1234:8080/ma.ico" target="_blank" rel="noopener noreferrer">http://123.123.123.1234:8080/ma.ico</a></p>
+<p>协议类型为 <code>http</code><br>
+服务器地址为 <code>123.123.123.1234</code><br>
+端口号为 <code>8080</code><br>
+资源层级文件路径为 <code>ma.ico</code></p>
+<p>如果你注册了一个域名<code>undz.cn</code> 并指向了你的服务器 IP ，然后资源服务器的端口设定为 <code>80</code>，那么地址就变成了</p>
+<p><a href="http://undz.cn/ma.ico" target="_blank" rel="noopener noreferrer">http://undz.cn/ma.ico</a></p>
+<p>如果设定端口为 <code>443</code>，那么资源地址就会是</p>
+<p><a href="https://undz.cn/ma.ico" target="_blank" rel="noopener noreferrer">https://undz.cn/ma.ico</a></p>
+<div class="hint-container tip">
+<p class="hint-container-title">翻译成白话文就是</p>
+<p>使用 HTTP 协议的方式(如浏览器)，去访问 ip 地址为 <code>123.123.123.1234</code> 的服务器，因为公网的 ip 地址都是唯一的，所以一定可以定位到该服务器。然后端口也有了，那么就可以准确定位到这个服务器上的这个服务了。然后就可以尝试去和这个服务索要 <code>/ma.ico</code> 文件了。</p>
+<p>这个就是，<code>统一资源定位符</code> 的唯一性。而且是全世界唯一，所以任何人都可以通过这个 <strong>唯一性</strong> 去定位和访问这个文件了。</p>
+<p>路径，则是在这台机器上(也就是<code>本地</code>)具有 <code>唯一性</code>，所以<code>本地用户</code>就可以准确的定位这个文件并访问。</p>
+</div>
+<p>一个文件的路径必须具备 <code>本地唯一性</code>，一个公网资源路径则必须具备<code>世界唯一性</code>。</p>
+<div class="hint-container warning">
+<p class="hint-container-title">注意</p>
+<p><code>统一资源定位符</code> 中的域名一般是不区分大小写的<br>
+<a href="https://undz.cn/ma.ico" target="_blank" rel="noopener noreferrer">https://undz.cn/ma.ico</a><br>
+和<br>
+<a href="HTTPS://undz.cn/ma.ico">HTTPS://undz.cn/ma.ico</a><br>
+是一样的</p>
+</div>
 ]]></content:encoded>
     </item>
     <item>
@@ -545,12 +652,46 @@ Windows
       <guid>https://undz.cn/posts/basic/cmd_shell.html</guid>
       <source url="https://undz.cn/rss.xml">4.终端与 shell</source>
       <description>4.终端与 shell
-我觉得这里放一个视频就足以解释清楚了。</description>
+简明扼要
+终端，外表看起来就只是一个窗口，上面可以键入字符，当你输入特定字符的时候它会打印出一些反馈。这个字符一般就是Shell 命令。
+MacOS 现在默认的 shell 解释器是 Zsh;
+Linux 上的一般默认为 Bash;
+Windows 下默认为 PowerShell;
+
+相关阅读
+安装并开始设置 Windows 终...</description>
       <category>终端与shell</category>
       <pubDate>Thu, 16 Apr 2026 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<!-- more -->
 <h1>4.终端与 shell</h1>
-<p>我觉得这里放一个视频就足以解释清楚了。</p>
+<h2>简明扼要</h2>
+<p>终端，外表看起来就只是一个窗口，上面可以键入字符，当你输入特定字符的时候它会打印出一些反馈。这个字符一般就是<a href="https://www.runoob.com/linux/linux-shell.html" target="_blank" rel="noopener noreferrer">Shell 命令</a>。<br>
+MacOS 现在默认的 shell 解释器是 <a href="https://www.duidaima.com/Group/Topic/OtherTools/17940" target="_blank" rel="noopener noreferrer">Zsh</a>;<br>
+Linux 上的一般默认为 <a href="https://zh.wikipedia.org/wiki/Bash" target="_blank" rel="noopener noreferrer">Bash</a>;<br>
+Windows 下默认为 <a href="https://zh.wikipedia.org/wiki/PowerShell" target="_blank" rel="noopener noreferrer">PowerShell</a>;</p>
+<div class="hint-container tip">
+<p class="hint-container-title">相关阅读</p>
+<p><a href="https://learn.microsoft.com/zh-cn/windows/terminal/install" target="_blank" rel="noopener noreferrer">安装并开始设置 Windows 终端</a></p>
+<p><a href="https://support.apple.com/zh-cn/guide/terminal/welcome/mac" target="_blank" rel="noopener noreferrer">macOS 终端使用手册</a></p>
+<p><a href="https://blog.csdn.net/WQY867047910/article/details/134788517" target="_blank" rel="noopener noreferrer">80 个常用 shell 命令及简单用法</a></p>
+</div>
+<p>命令行使用的示例：</p>
+<figure><figcaption>ls、pwd、cd 命令演示</figcaption></figure>
+<div class="hint-container warning">
+<p class="hint-container-title">注意</p>
+<p><code>PowerShell</code> 的语法和 <code>Bash shell</code> 并不相同，但是在编程领域，<code>Bash shell</code> 无疑是占据领导地位的，在很多场景下都可以开箱即用，所以十分建议专门学习一下 <code>Bash shell</code>。</p>
+<p>在 windows 下推荐使用 <a href="https://moshanghua.net/details/2765" target="_blank" rel="noopener noreferrer">Git bash</a> 或 WSL 来进行日常操作。</p>
+</div>
+<blockquote>
+<p>好了，到这一步为止，你终于学会了命令行的基本使用了。</p>
+</blockquote>
+<h2>拓展阅读</h2>
+<p><a href="https://linux.cn/article-16120-1.html" target="_blank" rel="noopener noreferrer">Bash 脚本编程入门</a></p>
+<blockquote>
+<p>不得不说，微软爸爸家的文档是真的优秀 <br>
+<a href="https://learn.microsoft.com/zh-cn/powershell/scripting/overview" target="_blank" rel="noopener noreferrer">什么是 PowerShell？</a> <br>
+<a href="https://learn.microsoft.com/zh-cn/powershell/scripting/learn/ps101/01-getting-started" target="_blank" rel="noopener noreferrer">PowerShell 入门</a></p>
+</blockquote>
 ]]></content:encoded>
     </item>
     <item>
@@ -562,7 +703,11 @@ Windows
 当你学会命令行的基本使用之后，那么就相当于一只脚踏入了另一个世界。
 除了从应用商店安装下载之外，一般情况下还可以通过 软件包管理系统 来安装各种好用的命令和工具。
 Linux
-一般 debian 系 的系统比如 Ubuntu 默认的包管理器都是 apt 命令</description>
+一般 debian 系 的系统比如 Ubuntu 默认的包管理器都是 apt 命令
+
+macOS
+macOS 上一般都是用 Homebrew 来进行包管理
+...</description>
       <category>系统软件包管理器</category>
       <pubDate>Thu, 16 Apr 2026 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<!-- more -->
@@ -585,7 +730,16 @@ Linux
 <span class="line"></span>
 <span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># 安装 curl</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> apt</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> install</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> curl</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2>macOS</h2>
+<p>macOS 上一般都是用 <a href="https://brew.sh/zh-cn/" target="_blank" rel="noopener noreferrer">Homebrew</a> 来进行包管理</p>
+<p>当然，原版的安装可能需要 科学上网</p>
+<p>那么你可能需要看下面这篇文章<br>
+<a href="https://www.zhihu.com/tardis/zm/art/111014448" target="_blank" rel="noopener noreferrer">Homebrew 国内如何自动安装（国内地址）（Mac OS）</a></p>
+<h2>windows</h2>
+<p><a href="https://sspai.com/post/65933" target="_blank" rel="noopener noreferrer">https://sspai.com/post/65933</a></p>
+<p>之前我会在 windows 上使用各种包管理器来安装各种插件，但自从有了 <a href="/bookmark/tools/wsl_ready.html" target="_blank">WSL</a> 之后，我所有的和命令行相关的工作全部用 <code>WSL</code> 去完成了。</p>
+<p>windows 下最适合的方式就是用 <code>git-bash</code> 和 <code>WSL</code> ，以及鼠标点点点。</p>
+]]></content:encoded>
     </item>
     <item>
       <title>6.Git 与 Github</title>
@@ -593,20 +747,23 @@ Linux
       <guid>https://undz.cn/posts/basic/git_github.html</guid>
       <source url="https://undz.cn/rss.xml">6.Git 与 Github</source>
       <description>6.Git 与 Github
-这个系列视频讲解的非常好
-https://www.bilibili.com/video/BV1HM411377j/
+Github 入门
+看啥不如看官方文档(可能需要科学上网)
+https://docs.github.com/zh/get-started
+也可以看这篇
+https://zhuanlan.zhihu.com/p/337959303
 
-还有这份教程
-https://nulab.com/zh-cn/learn/software-development/git-tutorial/
-
-还有这份
-https://rogerdudler.githu...</description>
+在使用过程中可能还需要了解 SSH 密钥 相关的知识:
+https://docs.githu...</description>
       <category>Git与Github</category>
       <pubDate>Thu, 16 Apr 2026 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<!-- more -->
 <h1>6.Git 与 Github</h1>
-<p>这个系列视频讲解的非常好<br>
-<a href="https://www.bilibili.com/video/BV1HM411377j/" target="_blank" rel="noopener noreferrer">https://www.bilibili.com/video/BV1HM411377j/</a></p>
+<h2>Github 入门</h2>
+<p>看啥不如看官方文档(可能需要科学上网)</p>
+<p><a href="https://docs.github.com/zh/get-started" target="_blank" rel="noopener noreferrer">https://docs.github.com/zh/get-started</a></p>
+<p>也可以看这篇<br>
+<a href="https://zhuanlan.zhihu.com/p/337959303" target="_blank" rel="noopener noreferrer">https://zhuanlan.zhihu.com/p/337959303</a></p>
 ]]></content:encoded>
     </item>
     <item>
@@ -667,7 +824,6 @@ https://zh.wikipedia.org/wiki/对百度的争议
 <h2>搜索引擎使用技巧</h2>
 <p>只需要认真阅读这篇文章即可：</p>
 <p><a href="https://www.runoob.com/w3cnote/search-engines-usage-skills.html" target="_blank" rel="noopener noreferrer">盘点全球搜索引擎及其使用技巧</a></p>
-<h2>视频讲解</h2>
 ]]></content:encoded>
     </item>
     <item>
@@ -676,12 +832,82 @@ https://zh.wikipedia.org/wiki/对百度的争议
       <guid>https://undz.cn/posts/basic/proxy_to_net.html</guid>
       <source url="https://undz.cn/rss.xml">9.科学上网和国内镜像</source>
       <description>9.科学上网和国内镜像
-什么是 科学上网?</description>
+怎么讲呢，网络是自由的，但又不那么的自由。因为国内阻止了 Google 所以 百度 发家，百度又不干好事。
+Github 被 墙 但是国内的 Gitee 简直 依托答辩。
+墙 成了国内互联网企业发展护城河，让中国在孱弱时期避免被外来互联网技术和文化入侵，但是也一定程度上阻碍了科学技术的普及和发展。
+我们使用的 编程语言、各种命令...</description>
       <category>科学上网和国内镜像</category>
       <pubDate>Thu, 16 Apr 2026 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<!-- more -->
 <h1>9.科学上网和国内镜像</h1>
-<p>什么是 <a href="https://cn.bing.com/search?q=%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91" target="_blank" rel="noopener noreferrer">科学上网?</a></p>
+<p>怎么讲呢，网络是自由的，但又不那么的自由。因为国内阻止了 <strong>Google</strong> 所以 <strong>百度</strong> 发家，百度又不干好事。</p>
+<p><strong>Github</strong> 被 <strong>墙</strong> 但是国内的 <strong>Gitee</strong> 简直 <strong>依托答辩</strong>。</p>
+<p><strong>墙</strong> 成了国内互联网企业发展护城河，让中国在孱弱时期避免被外来互联网技术和文化入侵，但是也一定程度上阻碍了科学技术的普及和发展。</p>
+<p>我们使用的 编程语言、各种命令行工具、系统、开源仓库、包管理服务等大部分都是国外创造的。不翻墙，甚至很多工作都无法进行，文件资料无法查阅。</p>
+<p>一般来说，比较大的公司有相关的 <a href="http://www.elawcn.com/telecommunication/2020/0531/670.html" target="_blank" rel="noopener noreferrer">合法的国际专线</a> ，但是对于个人开发者来说，成本是巨大的，也是不现实的。</p>
+<p>这么说吧，如果说 <strong>科学上网</strong> 是违法的，那么没有任何一名程序员是无辜的。出于 <strong>学习</strong> 为目的的翻墙无可厚非，<strong>师夷之长技以制夷</strong>。</p>
+<p>如果想要 <strong>合法</strong> 的使用一些国外的程序相关服务，应该怎么办呢？</p>
+<h2>国内镜像</h2>
+<p>比如 <code>npm</code> 是 <code>Nodejs</code> 的包管理器，它的官网是 <code>https://www.npmjs.com/</code>，国内正常情况下你一定打不开。<br>
+<code>https://registry.npmjs.org/</code> 是 <code>npm</code> 的 <strong>官方源</strong>，<code>npm install</code> 指令依赖这个地址，但是在国内这个指令 90% 一定会执行失败。</p>
+<p>类似的还有 <code>Python</code> 的 <code>pip</code> 指令；<br>
+<code>Golang</code> 的 <code>go get</code> 指令；<br>
+<code>Linux</code> 的 <code>apt install</code> 指令；<br>
+<code>Homebrew</code> 的 <code>brew install</code> 指令；<br>
+.....</p>
+<p>不使用 <code>科学上网</code> 那应该怎么办呢？</p>
+<p><strong>阿里开源镜像站：</strong> <a href="https://developer.aliyun.com/mirror/" target="_blank" rel="noopener noreferrer">https://developer.aliyun.com/mirror/</a><br>
+<strong>网易开源镜像站：</strong> <a href="http://mirrors.163.com/" target="_blank" rel="noopener noreferrer">http://mirrors.163.com/</a><br>
+<strong>搜狐开源镜像站：</strong> <a href="http://mirrors.sohu.com/" target="_blank" rel="noopener noreferrer">http://mirrors.sohu.com/</a><br>
+<strong>北京交通大学开源镜像站：</strong> <a href="http://mirror.bjtu.edu.cn" target="_blank" rel="noopener noreferrer">http://mirror.bjtu.edu.cn</a><br>
+<strong>兰州大学开源软件镜像站：</strong> <a href="http://mirror.lzu.edu.cn/" target="_blank" rel="noopener noreferrer">http://mirror.lzu.edu.cn/</a><br>
+<strong>厦门大学开源软件镜像站：</strong> <a href="http://mirrors.xmu.edu.cn/" target="_blank" rel="noopener noreferrer">http://mirrors.xmu.edu.cn/</a><br>
+<strong>上海交通大学开源软件镜像站：</strong> <a href="http://ftp.sjtu.edu.cn/" target="_blank" rel="noopener noreferrer">http://ftp.sjtu.edu.cn/</a><br>
+<strong>清华大学开源软件镜像站：</strong> <a href="http://mirrors.tuna.tsinghua.edu.cn/" target="_blank" rel="noopener noreferrer">http://mirrors.tuna.tsinghua.edu.cn/</a><br>
+<strong>天津大学开源软件镜像站：</strong> <a href="http://mirror.tju.edu.cn/" target="_blank" rel="noopener noreferrer">http://mirror.tju.edu.cn/</a><br>
+<strong>中国科学技术大学开源软件镜像站：</strong> <a href="http://mirrors.ustc.edu.cn/" target="_blank" rel="noopener noreferrer">http://mirrors.ustc.edu.cn/</a><br>
+<strong>东北大学开源软件镜像站：</strong> <a href="http://mirror.neu.edu.cn/" target="_blank" rel="noopener noreferrer">http://mirror.neu.edu.cn/</a><br>
+<strong>东软信息学院开源软件镜像站：</strong> <a href="http://mirrors.neusoft.edu.cn/" target="_blank" rel="noopener noreferrer">http://mirrors.neusoft.edu.cn/</a><br>
+<strong>浙江大学开源软件镜像站：</strong> <a href="http://mirrors.zju.edu.cn" target="_blank" rel="noopener noreferrer">http://mirrors.zju.edu.cn</a><br>
+<strong>北京理工大学开源软件镜像站：</strong> <a href="http://mirror.bit.edu.cn" target="_blank" rel="noopener noreferrer">http://mirror.bit.edu.cn</a><br>
+<strong>华中科技大学开源软件镜像站：</strong> <a href="http://mirrors.hust.edu.cn/" target="_blank" rel="noopener noreferrer">http://mirrors.hust.edu.cn/</a><br>
+<strong>中山大学开源软件镜像站：</strong> <a href="http://mirror.sysu.edu.cn/" target="_blank" rel="noopener noreferrer">http://mirror.sysu.edu.cn/</a><br>
+<strong>大连理工大学开源软件镜像站：</strong> <a href="http://mirror.dlut.edu.cn/" target="_blank" rel="noopener noreferrer">http://mirror.dlut.edu.cn/</a></p>
+<p>通常情况下</p>
+<p><code>go语言</code> 使用 <a href="https://goproxy.cn/" target="_blank" rel="noopener noreferrer">https://goproxy.cn/</a><br>
+<code>npm</code> 使用 <a href="https://www.npmmirror.com/" target="_blank" rel="noopener noreferrer">https://www.npmmirror.com/</a><br>
+<code>Linux Debian</code> 使用 <a href="https://mirrors.tuna.tsinghua.edu.cn/help/debian/" target="_blank" rel="noopener noreferrer">https://mirrors.tuna.tsinghua.edu.cn/help/debian/</a><br>
+<code>Homebrew</code> 使用 <a href="https://developer.aliyun.com/mirror/homebrew" target="_blank" rel="noopener noreferrer">https://developer.aliyun.com/mirror/homebrew</a></p>
+<p>一般来说，阿里镜像源的稳定性最好，使用人数也比较多。</p>
+<blockquote>
+<p>学会使用国内的镜像，一般的编程和包安装下载应该都不是什么大问题了。一般来说，安装类的命令执行失败，90% 的原因都和 <strong>墙(GFW)</strong> 有关。<br>
+在早期，国内的各大镜像源都喜欢<strong>夹带私货</strong>，比如把 官方包 替换成自己的 私人包，在命令行中打广告，甚至是在包中插入病毒和挖矿程序，包版本落后等等等.....<br>
+不过随着国内监管力度的加大，现在这种情况比较少见了。<br>
+<strong>我相信中国人是世界上最聪明的，但是这个世界上最伟大的发明创造却鲜有中国的身影。可能会有中国人参与其中，但他们都非中国籍。</strong><br>
+(中国人的聪明才智，似乎也很少用到正道上。)</p>
+</blockquote>
+<h2>Github 的流畅访问手段</h2>
+<p>很多资源的获取都离不开 <a href="https://github.com" target="_blank" rel="noopener noreferrer">https://github.com</a></p>
+<p>但是大多数时候这个地址都无法被打开，如果还不会 <strong>科学上网</strong> 可以试试下面这个方案。</p>
+<ol>
+<li>打开 <code>Microsoft Store</code> 搜索 <code>Watt Toolkit</code> 并安装。</li>
+</ol>
+<figure><figcaption>微软商店搜索并下载 Watt Toolkit</figcaption></figure>
+<ol start="2">
+<li>启动 <code>Watt Toolkit</code> 并勾选 <code>Github</code></li>
+</ol>
+<figure><figcaption>勾选需要代理的服务并启用加速</figcaption></figure>
+<ol start="3">
+<li>然后点击 <code>一键加速</code> 就可以正常访问 <a href="http://github.com" target="_blank" rel="noopener noreferrer">github.com</a> 了</li>
+</ol>
+<figure><figcaption>Watt Toolkit</figcaption></figure>
+<h2>科学上网</h2>
+<p>如果你想要使用 <code>Google</code>、 <code>ChartGPT</code> 或者想要获取国内外一手资讯等，还是得了解一下 <strong>科学上网</strong> 这件事情的。</p>
+<p><a href="https://blog.tsingjyujing.com/spam/gfw-history" target="_blank" rel="noopener noreferrer">中国网络防火长城简史</a></p>
+<p><a href="">科学上网与本地代理教程</a></p>
+<blockquote>
+<p>请一定要做一个遵纪守法的好公民</p>
+</blockquote>
 ]]></content:encoded>
     </item>
     <item>
