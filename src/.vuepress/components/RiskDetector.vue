@@ -325,7 +325,7 @@ export default {
 
             const isAnOfficialDomain = ['undz.cn', 'io.hb.cn', 'ayd2.eu.cc',
                 'main.exm2.eu.cc', 'main.net3.eu.cc', 'main.net2.eu.cc',
-                'main.zyy2.eu.cc', 'www.undz.cn', 'www.io.hb.cn'
+                'main.zyy2.eu.cc', 'www.undz.cn', 'www.io.hb.cn', 'ecs.undz.cn', 'ali1pe.undz.cn', 'websocket.undz.cn'
             ].some(domain => window.location.hostname === domain);
             if (!isAnOfficialDomain && !isLocalhost) { isRisky = true; console.warn("!isAnOfficialDomain && !isLocalhost"); }
 
