@@ -17,11 +17,6 @@ export default hopeTheme({
   fullscreen: true,
 
   logo: "/logo.uhd.png",
-  navbarLayout: {
-    start: ["Brand"],
-    center: ["Links"],
-    end: ["SearchBox", "Outlook"],
-  },
   repo: "AeYunDian",
 
   docsDir: "src",
@@ -155,12 +150,7 @@ export default hopeTheme({
         description: "Protect What You Love",
       },
     },
-    //meting2: true,
-    search: {
-      maxSuggestions: 15,
-      hotKeys: ['s', '/'],
-      isSearchable: (page) => page.path !== '/',
-    },
+
 
     comment: {
       provider: "Giscus",

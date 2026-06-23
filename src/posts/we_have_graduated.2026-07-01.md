@@ -1,5 +1,5 @@
 ---
-permalink: /we/have/graduated.html
+permalink: /我们毕业啦.html
 date: 2026-07-01
 draft: true
 index: false
@@ -10,8 +10,8 @@ icon: circle-info
 
 今天，我们真的毕业了。
 
-![班级毕业合照](https://net.undz.cn/static/png/d475374f852406e91f793537bbbe6bd2.png)
-https://net.undz.cn/static/png/d475374f852406e91f793537bbbe6bd2.png
+![班级毕业合照](https://i0.undz.cn/bfs/openplatform/69b8e72f7c5b7f4f38e003af86ca820ed71e2b6c.jpg)
+https://i0.undz.cn/bfs/openplatform/69b8e72f7c5b7f4f38e003af86ca820ed71e2b6c.jpg
 
 六年，六个故事，六次成长。
 

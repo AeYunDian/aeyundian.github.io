@@ -11,11 +11,12 @@
     "docs:update-package": "npx vp-update"
   },
   "devDependencies": {
+    "@vuepress/bundler-vite": "^2.0.0-rc.26",
     "@vuepress/bundler-webpack": "2.0.0-rc.26",
     "@vuepress/plugin-comment": "^2.0.0-rc.125",
-    "@vuepress/plugin-search": "^2.0.0-rc.124",
     "@waline/client": "^3.12.0",
     "artplayer": "^5.3.0",
+    "compression-webpack-plugin": "^12.0.0",
     "dashjs": "^4.7.4",
     "gray-matter": "^4.0.3",
     "hls.js": "^1.6.15",
@@ -23,6 +24,7 @@
     "sass-embedded": "^1.97.1",
     "sass-loader": "^16.0.6",
     "vidstack": "^1.12.13",
+    "vite-plugin-compression": "^0.5.1",
     "vue": "^3.5.26",
     "vuepress": "2.0.0-rc.26",
     "vuepress-plugin-meting2": "^1.4.2",
