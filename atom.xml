@@ -3,7 +3,7 @@
   <id>https://undz.cn/</id>
   <title>undz</title>
   <subtitle>AeYunDian的博客</subtitle>
-  <updated>2026-06-18T13:56:54.728Z</updated>
+  <updated>2026-06-23T14:36:01.455Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="https://undz.cn/atom.xml"/>
   <link rel="alternate" href="https://undz.cn/"/>
@@ -57,7 +57,7 @@
 <h2>实现细节</h2>
 <h3>1. 检测博客Hero</h3>
 <div class="language-ts line-numbers-mode" data-highlighter="shiki" data-ext="ts" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-ts"><span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">const</span><span style="--shiki-light:#986801;--shiki-dark:#E5C07B"> blogHeroElms</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B"> document</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">getElementsByClassName</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">'vp-blog-hero'</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">);</span></span>
-<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">const</span><span style="--shiki-light:#986801;--shiki-dark:#E5C07B"> hasHero</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B"> blogHeroElms</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">length</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> &gt;</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 0</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">const</span><span style="--shiki-light:#986801;--shiki-dark:#E5C07B"> hasHero</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B"> blogHeroElms</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">length</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> ></span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 0</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">;</span></span>
 <span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">if</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75">hasHero</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">) {</span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B">  themeElm</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B">classList</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">add</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">'ayund-blog-hero'</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">);</span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">} </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">else</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
@@ -66,23 +66,23 @@
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><code>vuepress-theme-hope</code> 的主题中，博客首页会自动生成 <code>vp-blog-hero</code> 容器。我们通过它的存在来判断当前页面是否为博客首页。</p>
 <h3>2. 滚动监听与类切换</h3>
 <div class="language-ts line-numbers-mode" data-highlighter="shiki" data-ext="ts" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-ts"><span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">const</span><span style="--shiki-light:#986801;--shiki-dark:#E5C07B"> scrollTop</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B"> document</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B">documentElement</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">scrollTop</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">;</span></span>
-<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">if</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75">scrollTop</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> &lt;</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 60</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">) {</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">if</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75">scrollTop</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> &#x3C;</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 60</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">) {</span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B">  themeElm</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B">classList</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">add</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">'ayund-scroll-top'</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">);</span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">} </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">else</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B">  themeElm</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B">classList</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">remove</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">'ayund-scroll-top'</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">);</span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">}</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>滚动距离小于 60px 时，我们认为导航栏位于“顶部透明区域”，此时移除阴影和背景。这个阈值可以根据您的页面布局微调。</p>
 <p>对于首页Hero，我们还需要一个更精细的控制：当滚动距离小于Hero高度减 30px 时，导航栏文字使用亮色（适合深色Hero背景）；超过该距离后，导航栏恢复默认文字颜色。</p>
-<div class="language-ts line-numbers-mode" data-highlighter="shiki" data-ext="ts" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-ts"><span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">if</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75">scrollTop</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> &lt;</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B"> blogHeroElm</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">clientHeight</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> -</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 30</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">) {</span></span>
+<div class="language-ts line-numbers-mode" data-highlighter="shiki" data-ext="ts" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-ts"><span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">if</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75">scrollTop</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> &#x3C;</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B"> blogHeroElm</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">clientHeight</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> -</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 30</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">) {</span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B">  themeElm</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B">classList</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">add</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">'ayund-scroll-blog-hero-inner'</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">);</span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">} </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">else</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B">  themeElm</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B">classList</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">remove</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">'ayund-scroll-blog-hero-inner'</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">);</span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">}</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3>3. 路由变化后</h3>
 <p>使用 <code>vue-router</code> 的 <code>afterEach</code> 钩子，在每次路由跳转后重新执行样式检测。由于 DOM 更新可能有延迟，使用 <code>nextTick</code> 加 <code>setTimeout</code> 等待 50ms。</p>
-<div class="language-ts line-numbers-mode" data-highlighter="shiki" data-ext="ts" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-ts"><span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B">router</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">afterEach</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(() </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">=&gt;</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">  nextTick</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(() </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">=&gt;</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">    setTimeout</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(() </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">=&gt;</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<div class="language-ts line-numbers-mode" data-highlighter="shiki" data-ext="ts" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-ts"><span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B">router</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">afterEach</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(() </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">=></span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">  nextTick</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(() </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">=></span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">    setTimeout</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(() </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">=></span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">      CheckScrollTopClass</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">();</span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    }, </span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">50</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">);</span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">  });</span></span>
@@ -227,17 +227,17 @@
   </entry>
   <entry>
     <title type="text">我们毕业啦！</title>
-    <id>https://undz.cn/we/have/graduated.html</id>
-    <link href="https://undz.cn/we/have/graduated.html"/>
-    <updated>2026-06-06T00:52:42.000Z</updated>
+    <id>https://undz.cn/%E6%88%91%E4%BB%AC%E6%AF%95%E4%B8%9A%E5%95%A6.html</id>
+    <link href="https://undz.cn/%E6%88%91%E4%BB%AC%E6%AF%95%E4%B8%9A%E5%95%A6.html"/>
+    <updated>2026-06-23T14:34:45.000Z</updated>
     <summary type="html"><![CDATA[
 <p>今天，我们真的毕业了。</p>
-<p><img src="https://net.undz.cn/static/png/d475374f852406e91f793537bbbe6bd2.png" alt="班级毕业合照" loading="lazy"><br>
-<a href="https://net.undz.cn/static/png/d475374f852406e91f793537bbbe6bd2.png" target="_blank" rel="noopener noreferrer">https://net.undz.cn/static/png/d475374f852406e91f793537bbbe6bd2.png</a></p>]]></summary>
+<p><img src="https://i0.undz.cn/bfs/openplatform/69b8e72f7c5b7f4f38e003af86ca820ed71e2b6c.jpg" alt="班级毕业合照" loading="lazy"><br>
+<a href="https://i0.undz.cn/bfs/openplatform/69b8e72f7c5b7f4f38e003af86ca820ed71e2b6c.jpg" target="_blank" rel="noopener noreferrer">https://i0.undz.cn/bfs/openplatform/69b8e72f7c5b7f4f38e003af86ca820ed71e2b6c.jpg</a></p>]]></summary>
     <content type="html"><![CDATA[
 <p>今天，我们真的毕业了。</p>
-<p><img src="https://net.undz.cn/static/png/d475374f852406e91f793537bbbe6bd2.png" alt="班级毕业合照" loading="lazy"><br>
-<a href="https://net.undz.cn/static/png/d475374f852406e91f793537bbbe6bd2.png" target="_blank" rel="noopener noreferrer">https://net.undz.cn/static/png/d475374f852406e91f793537bbbe6bd2.png</a></p>
+<p><img src="https://i0.undz.cn/bfs/openplatform/69b8e72f7c5b7f4f38e003af86ca820ed71e2b6c.jpg" alt="班级毕业合照" loading="lazy"><br>
+<a href="https://i0.undz.cn/bfs/openplatform/69b8e72f7c5b7f4f38e003af86ca820ed71e2b6c.jpg" target="_blank" rel="noopener noreferrer">https://i0.undz.cn/bfs/openplatform/69b8e72f7c5b7f4f38e003af86ca820ed71e2b6c.jpg</a></p>
 <p>六年，六个故事，六次成长。</p>
 <p>一年级，我们是 <strong>“捕风的异乡人”</strong> ，怯生生地走进校园，一切都是新鲜的。<br>
 二年级， <strong>“为了没有眼泪的明天”</strong> ，我们学会了擦干眼泪，勇敢面对小小的挫折。<br>
@@ -362,57 +362,62 @@ AyExMail 运营组织</p>
     <updated>2026-05-22T14:41:31.000Z</updated>
     <summary type="html"><![CDATA[
 <h2>序章（蒙德）</h2>
-<p>主线序章（蒙德）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;序章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第一幕&nbsp;&nbsp;&nbsp;捕风的异乡人<br>
-主线序章（蒙德）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;序章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第二幕&nbsp;&nbsp;&nbsp;为了没有眼泪的明天<br>
-主线序章（蒙德）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;序章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第三幕&nbsp;&nbsp;&nbsp;巨龙与自由之歌</p>]]></summary>
+<p>主线序章（蒙德）      序章      第一幕   捕风的异乡人<br>
+主线序章（蒙德）      序章      第二幕   为了没有眼泪的明天<br>
+主线序章（蒙德）      序章      第三幕   巨龙与自由之歌</p>
+<h2>第一章（璃月）</h2>
+<p>主线第一章（璃月）      第一章      第一幕   浮世浮生千岩间<br>
+主线第一章（璃月）      第一章      第二幕   辞行久远之躯<br>
+主线第一章（璃月）      第一章      第三幕   迫近的客星<br>
+主线第一章（璃月）      第一章      第四幕   我们终将重逢</p>]]></summary>
     <content type="html"><![CDATA[
 <h2>序章（蒙德）</h2>
-<p>主线序章（蒙德）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;序章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第一幕&nbsp;&nbsp;&nbsp;捕风的异乡人<br>
-主线序章（蒙德）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;序章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第二幕&nbsp;&nbsp;&nbsp;为了没有眼泪的明天<br>
-主线序章（蒙德）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;序章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第三幕&nbsp;&nbsp;&nbsp;巨龙与自由之歌</p>
+<p>主线序章（蒙德）      序章      第一幕   捕风的异乡人<br>
+主线序章（蒙德）      序章      第二幕   为了没有眼泪的明天<br>
+主线序章（蒙德）      序章      第三幕   巨龙与自由之歌</p>
 <h2>第一章（璃月）</h2>
-<p>主线第一章（璃月）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第一章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第一幕&nbsp;&nbsp;&nbsp;浮世浮生千岩间<br>
-主线第一章（璃月）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第一章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第二幕&nbsp;&nbsp;&nbsp;辞行久远之躯<br>
-主线第一章（璃月）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第一章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第三幕&nbsp;&nbsp;&nbsp;迫近的客星<br>
-主线第一章（璃月）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第一章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第四幕&nbsp;&nbsp;&nbsp;我们终将重逢</p>
+<p>主线第一章（璃月）      第一章      第一幕   浮世浮生千岩间<br>
+主线第一章（璃月）      第一章      第二幕   辞行久远之躯<br>
+主线第一章（璃月）      第一章      第三幕   迫近的客星<br>
+主线第一章（璃月）      第一章      第四幕   我们终将重逢</p>
 <h2>第二章（稻妻）</h2>
-<p>主线第二章（稻妻）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第二章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;序幕&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;振袖秋风问红叶<br>
-主线第二章（稻妻）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第二章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第一幕&nbsp;&nbsp;不动鸣神，恒常乐土<br>
-主线第二章（稻妻）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第二章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第二幕&nbsp;&nbsp;无念无想，泡影断灭<br>
-主线第二章（稻妻）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第二章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第三幕&nbsp;&nbsp;千手百眼，天下人间<br>
-主线第二章（稻妻）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第二章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第四幕&nbsp;&nbsp;回响渊底的安魂曲</p>
+<p>主线第二章（稻妻）      第二章      序幕     振袖秋风问红叶<br>
+主线第二章（稻妻）      第二章      第一幕  不动鸣神，恒常乐土<br>
+主线第二章（稻妻）      第二章      第二幕  无念无想，泡影断灭<br>
+主线第二章（稻妻）      第二章      第三幕  千手百眼，天下人间<br>
+主线第二章（稻妻）      第二章      第四幕  回响渊底的安魂曲</p>
 <h2>第三章（须弥）</h2>
-<p>主线第三章（须弥）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第三章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第一幕&nbsp;&nbsp;&nbsp;穿越烟帷与暗林<br>
-主线第三章（须弥）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第三章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第二幕&nbsp;&nbsp;&nbsp;千朵玫瑰带来的黎明<br>
-主线第三章（须弥）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第三章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第三幕&nbsp;&nbsp;&nbsp;迷梦与空幻与欺骗<br>
-主线第三章（须弥）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第三章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第四幕&nbsp;&nbsp;&nbsp;赤土之王与三朝圣者<br>
-主线第三章（须弥）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第三章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第五幕&nbsp;&nbsp;&nbsp;虚空鼓动，劫火高扬<br>
-主线第三章（须弥）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第三章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第六幕&nbsp;&nbsp;&nbsp;卡利贝尔</p>
+<p>主线第三章（须弥）      第三章      第一幕   穿越烟帷与暗林<br>
+主线第三章（须弥）      第三章      第二幕   千朵玫瑰带来的黎明<br>
+主线第三章（须弥）      第三章      第三幕   迷梦与空幻与欺骗<br>
+主线第三章（须弥）      第三章      第四幕   赤土之王与三朝圣者<br>
+主线第三章（须弥）      第三章      第五幕   虚空鼓动，劫火高扬<br>
+主线第三章（须弥）      第三章      第六幕   卡利贝尔</p>
 <h2>第四章（枫丹）</h2>
-<p>主线第四章（枫丹）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第四章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第一幕&nbsp;&nbsp;&nbsp;白露与黑潮的序诗<br>
-主线第四章（枫丹）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第四章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第二幕&nbsp;&nbsp;&nbsp;仿若无因飘落的轻雨<br>
-主线第四章（枫丹）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第四章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第三幕&nbsp;&nbsp;&nbsp;向深水中的晨星<br>
-主线第四章（枫丹）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第四章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第四幕&nbsp;&nbsp;&nbsp;谕示胎动的终焉之刻<br>
-主线第四章（枫丹）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第四章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第五幕&nbsp;&nbsp;&nbsp;罪人舞步旋<br>
-主线第四章（枫丹）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第四章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第六幕&nbsp;&nbsp;&nbsp;睡前故事</p>
+<p>主线第四章（枫丹）      第四章      第一幕   白露与黑潮的序诗<br>
+主线第四章（枫丹）      第四章      第二幕   仿若无因飘落的轻雨<br>
+主线第四章（枫丹）      第四章      第三幕   向深水中的晨星<br>
+主线第四章（枫丹）      第四章      第四幕   谕示胎动的终焉之刻<br>
+主线第四章（枫丹）      第四章      第五幕   罪人舞步旋<br>
+主线第四章（枫丹）      第四章      第六幕   睡前故事</p>
 <h2>第五章（纳塔）</h2>
-<p>主线第五章（纳塔）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第五章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第一幕&nbsp;&nbsp;&nbsp;荣花与炎日之途<br>
-主线第五章（纳塔）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第五章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第二幕&nbsp;&nbsp;&nbsp;黑石湮落白石下<br>
-主线第五章（纳塔）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第五章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第三幕&nbsp;&nbsp;&nbsp;镜与谜烟的彼方<br>
-主线第五章（纳塔）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第五章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第四幕&nbsp;&nbsp;&nbsp;命定将焚的虹光<br>
-主线第五章（纳塔）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第五章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第五幕&nbsp;&nbsp;&nbsp;炽烈的还魂诗<br>
-主线第五章（纳塔）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第五章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第六幕&nbsp;&nbsp;&nbsp;你存在的时空<br>
-主线第五章（纳塔）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第五章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;幕间&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;万火归一</p>
+<p>主线第五章（纳塔）      第五章      第一幕   荣花与炎日之途<br>
+主线第五章（纳塔）      第五章      第二幕   黑石湮落白石下<br>
+主线第五章（纳塔）      第五章      第三幕   镜与谜烟的彼方<br>
+主线第五章（纳塔）      第五章      第四幕   命定将焚的虹光<br>
+主线第五章（纳塔）      第五章      第五幕   炽烈的还魂诗<br>
+主线第五章（纳塔）      第五章      第六幕   你存在的时空<br>
+主线第五章（纳塔）      第五章      幕间      万火归一</p>
 <h2>独立间章</h2>
-<p>独立间章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;间章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第一幕&nbsp;&nbsp;&nbsp;风起鹤归<br>
-独立间章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;间章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第二幕&nbsp;&nbsp;&nbsp;危途疑踪<br>
-独立间章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;间章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第三幕&nbsp;&nbsp;&nbsp;倾落伽蓝<br>
-独立间章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;间章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第四幕&nbsp;&nbsp;&nbsp;悖理</p>
+<p>独立间章      间章      第一幕   风起鹤归<br>
+独立间章      间章      第二幕   危途疑踪<br>
+独立间章      间章      第三幕   倾落伽蓝<br>
+独立间章      间章      第四幕   悖理</p>
 <h2>空月之歌（挪德卡莱）</h2>
-<p>主线空月之歌&nbsp;&nbsp;&nbsp;&nbsp;空月之歌&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第一幕&nbsp;&nbsp;&nbsp;雪浪与苍林之舞<br>
-主线空月之歌&nbsp;&nbsp;&nbsp;&nbsp;空月之歌&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第二幕&nbsp;&nbsp;&nbsp;尘与灯的挽歌<br>
-主线空月之歌&nbsp;&nbsp;&nbsp;&nbsp;空月之歌&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第三幕&nbsp;&nbsp;&nbsp;不存在的国土<br>
-主线空月之歌&nbsp;&nbsp;&nbsp;&nbsp;空月之歌&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第四幕&nbsp;&nbsp;&nbsp;回望湮灭的月光</p>
+<p>主线空月之歌    空月之歌      第一幕   雪浪与苍林之舞<br>
+主线空月之歌    空月之歌      第二幕   尘与灯的挽歌<br>
+主线空月之歌    空月之歌      第三幕   不存在的国土<br>
+主线空月之歌    空月之歌      第四幕   回望湮灭的月光</p>
 ]]></content>
     <category term="原神"/>
     <published>2026-05-22T00:00:00.000Z</published>
@@ -452,7 +457,7 @@ AyExMail 运营组织</p>
     </div>
   </div>
 </div>
-<div class="go-container" v-else="">
+<div class="go-container" v-else>
   <div class="loading">
     <div class="indeterminate-progress"></div>
   </div>
@@ -466,7 +471,7 @@ AyExMail 运营组织</p>
     </div>
   </div>
 </div>
-<div class="go-container" v-else="">
+<div class="go-container" v-else>
   <div class="loading">
     <div class="indeterminate-progress"></div>
   </div>
@@ -487,7 +492,7 @@ AyExMail 运营组织</p>
 <div class="music-loader">
 <fieldset class="typeSel">
 <legend>请选择类型：</legend>
-<input type="radio" id="song" value="song" v-model="musicType" checked="">
+<input type="radio" id="song" value="song" v-model="musicType" checked>
 <label for="song">单曲</label>
 <input type="radio" id="playlist" value="playlist" v-model="musicType">
 <label for="playlist">歌单</label>
@@ -496,7 +501,8 @@ AyExMail 运营组织</p>
     <input v-model="userInput" type="text" placeholder="请输入网易云歌曲ID或网易云歌曲链接" @keyup.enter="loadSong()">
     <button @click="loadSong()">加载播放器</button>
   </div>
-  </div>
+  
+</div>
 <!-- type="song" -->
 ]]></content>
     <published>2026-04-23T00:00:00.000Z</published>
@@ -506,7 +512,36 @@ AyExMail 运营组织</p>
     <id>https://undz.cn/posts/la_vaguelette.2023-11-13.html</id>
     <link href="https://undz.cn/posts/la_vaguelette.2023-11-13.html"/>
     <updated>2026-05-20T12:52:03.000Z</updated>
+    <summary type="text">“头悬剑，足蹁跹，罪人舞步旋。”
+“潸然泪，大权归，宣布无人罪。”
+「轻涟」的法语翻译La vaguelette中，vague意为“浪潮、波浪”，后缀-ette意为“微小的”，隐喻了芙宁娜背负了500年的孤独和痛苦拯救枫丹，在枫丹的历史长河中也只不过是泛起了一个小小的涟漪……
+“即便承受了许多痛苦与孤独，她也不曾质疑世界的美好。”
+「成为人类，就意味着...</summary>
     <content type="html"><![CDATA[<!-- more -->
+<p>“头悬剑，足蹁跹，罪人舞步旋。”<br>
+“潸然泪，大权归，宣布无人罪。”</p>
+<p>「轻涟」的法语翻译La vaguelette中，vague意为“浪潮、波浪”，后缀-ette意为“微小的”，隐喻了芙宁娜背负了500年的孤独和痛苦拯救枫丹，在枫丹的历史长河中也只不过是泛起了一个小小的涟漪……<br>
+“即便承受了许多痛苦与孤独，她也不曾质疑世界的美好。”</p>
+<p>「成为人类，就意味着隐藏秘密，经历痛苦，与孤独相伴…即便如此你也愿意吗？」<br>
+《水的女儿》中的这句何尝不是芙芙的真实写照呢？正因她五百年来如一日的台前演出，方有神芙胜天半子的盛大谢幕。<br>
+这五百年来辛苦你了，这次为你找到了今后的方向而感到欣慰，希望下次在风花节上相遇时你能结识到更多朋友</p>
+<div class="hint-container info">
+<p class="hint-container-title">关于音乐</p>
+<p>《轻涟 La vaguelette》<br>
+作词: 哈尼 Hani / 项柳 Hsiang Liu / 三宝 Bao<br>
+作曲: 苑迪萌 Dimeng Yuan (HOYO-MiX)<br>
+编曲 Arranger：苑迪萌 Dimeng Yuan (HOYO-MiX)<br>
+演唱 Vocal Artist：Cécilia Cara<br>
+原声吉他 Acoustic Guitar：尤裴佳 Peijia You (HOYO-MiX)<br>
+电吉他 Electric Guitar：苑迪萌 Dimeng Yuan (HOYO-MiX)<br>
+合唱 Choir：唐卫青 Weiqing Tang / 何晓楠 Xiaonan He / 张怡 Yi Zhang / 柴锦斐 Jinfei Chai / 汤琳 Lin Tang / 陈瑞 Rui Chen / 喻佳星 Jiaxing Yu / 王碧华 Bihua Wang<br>
+乐队 Orchestra：龙之艺交响乐团 Art of Dragon Orchestra / Budapest Scoring Orchestra<br>
+录音棚 Recording Studio：上海广播大厦 Shanghai Media Group / Budapest Scoring<br>
+录音师 Recording Engineer：莫家伟 Jiawei Mo / Viktor Szabó<br>
+混音师 Mixing Engineer：李海 Hai Li<br>
+母带制作 Mastering Engineer：李海 Hai Li<br>
+出品 Produced by：HOYO-MiX</p>
+</div>
 ]]></content>
     <published>2026-04-22T00:00:00.000Z</published>
   </entry>
@@ -515,7 +550,45 @@ AyExMail 运营组织</p>
     <id>https://undz.cn/posts/rondeau_des_fleurs_et_des_rapieres.2023-10-02.html</id>
     <link href="https://undz.cn/posts/rondeau_des_fleurs_et_des_rapieres.2023-10-02.html"/>
     <updated>2026-05-20T12:52:03.000Z</updated>
+    <summary type="text">“如果只能救五成的人，我就去尽力救下六成的人！”
+“没有人能评价我，没有人能审判我，没有人能原谅我。”
+“我并未觉得自己有任何负罪，如今伟业惜溃，但世界已然得救。”
+“任由他人责骂与嘲笑我吧。我的内心已经空落，徒余一种渴望。”
+“我也想回到最开始的时候，水仙的勇者还没有踏上旅程的时候。”
+雷内虽然窥探了不该知道的事情，走错了路
+他的经历和遭遇就像曲中下...</summary>
     <content type="html"><![CDATA[<!-- more -->
+<p>“如果只能救五成的人，我就去尽力救下六成的人！”<br>
+“没有人能评价我，没有人能审判我，没有人能原谅我。”<br>
+“我并未觉得自己有任何负罪，如今伟业惜溃，但世界已然得救。”<br>
+“任由他人责骂与嘲笑我吧。我的内心已经空落，徒余一种渴望。”<br>
+“我也想回到最开始的时候，水仙的勇者还没有踏上旅程的时候。”</p>
+<p>雷内虽然窥探了不该知道的事情，走错了路<br>
+他的经历和遭遇就像曲中下行音阶段，被命运无情戏谑嘲笑<br>
+但他其实在想方设法拯救提瓦特，最后给枫丹留下了提示<br>
+我想前代水神应该从中想到破局之法了<br>
+所以在结尾，水仙十字动机的变奏穿插在提瓦特战斗动机里<br>
+就像是黎明前到来的曙光，枫丹即将迎来新的开始</p>
+<div class="hint-container info">
+<p class="hint-container-title">关于音乐</p>
+<p>《花与剑的轮舞 Rondeau des fleurs et des rapieres》<br>
+作曲 : 苑迪萌 Dimeng Yuan (HOYO-MiX)<br>
+编曲 Arranger：苑迪萌 Dimeng Yuan (HOYO-MiX)<br>
+指挥 Conductor：Robert Ziegler<br>
+乐队 Orchestra：伦敦交响乐团 London Symphony Orchestra<br>
+玻璃琴 Glass Harmonica：Alasdair Malloy<br>
+乐杯 Glass Harp：Alasdair Malloy<br>
+手风琴 Accordion：Milos Milivojevic<br>
+曼陀林 Mandolin：Nigel Woodhouse<br>
+古典吉他 Classical Guitar：Richard Durrant<br>
+鲁特琴 Lute：Lynda Sayce<br>
+录音棚 Recording Studio：Abbey Road Studios / Angel Studios / Air-Edel Recording Studios<br>
+录音师 Recording Engineer：Simon Rhodes / Oliver Thompson<br>
+音频编辑 Editing Engineer：Chris Parker<br>
+混音师 Mixing Engineer：Simon Rhodes<br>
+母带制作 Mastering Engineer：黄巍 Zach Huang<br>
+出品 Produced by：HOYO-MiX</p>
+</div>
 ]]></content>
     <published>2026-04-22T00:00:00.000Z</published>
   </entry>
@@ -551,11 +624,84 @@ AyExMail 运营组织</p>
     <updated>2026-04-21T14:08:16.000Z</updated>
     <summary type="text">1.计算机和操作系统
 一、计算机的基本组成和工作原理
-先来一段计算机导论节选：</summary>
+先来一段计算机导论节选：
+
+原件链接 https://undz.cn//book/basic-computers.pdf
+
+当然，我知道你一定没耐心看完。
+扼要总结
+现代的大部分计算机基本都是采用的 冯·诺依曼结构，虽然计算机架构经过了多年的改良和优化，但实际上都没有跳脱出这个结构。
+冯.诺依曼确定...</summary>
     <content type="html"><![CDATA[<!-- more -->
 <h1>1.计算机和操作系统</h1>
 <h2>一、计算机的基本组成和工作原理</h2>
 <p>先来一段计算机导论节选：</p>
+<blockquote>
+<p>原件链接 <a href="https://undz.cn//book/basic-computers.pdf" target="_blank" rel="noopener noreferrer">https://undz.cn//book/basic-computers.pdf</a></p>
+</blockquote>
+<p>当然，我知道你一定没耐心看完。</p>
+<h3>扼要总结</h3>
+<p>现代的大部分计算机基本都是采用的 <a href="https://zh.wikipedia.org/zh-cn/%E5%86%AF%E8%AF%BA%E4%BC%8A%E6%9B%BC%E7%BB%93%E6%9E%84" target="_blank" rel="noopener noreferrer">冯·诺依曼结构</a>，虽然计算机架构经过了多年的改良和优化，但实际上都没有跳脱出这个结构。</p>
+<p>冯.诺依曼确定了 <strong>计算机结构</strong> 中的 5 大部件：</p>
+<ul>
+<li><strong>输入设备:</strong> 如键盘、鼠标、触摸屏、游戏手柄、麦克风、摄像头等。</li>
+<li><strong>输出设备:</strong> 显示器、打印机、扬声器、投影仪、手机屏幕等。</li>
+<li><strong>存储器:</strong> 如内存条、硬盘、SD 卡、寄存器等，分为内存和外存。</li>
+<li><strong>运算器:</strong> 计算机中执行各种算术和逻辑运算操作的部件，又叫做<code>算术逻辑部件（ALU）</code>。</li>
+<li><strong>控制器:</strong> 计算机的神经中枢，指挥全机中各个部件自动协调工作。由程序计数器、指令寄存器、指令译码器、时序产生器和操作控制器组成，它是发布命令的“决策机构”。</li>
+</ul>
+<p>现如今为了方便，<code>运算器</code>和<code>控制器</code>全部集成到同一个芯片上，统称为<code>中央处理器(CPU)</code>,其功能是从寄存器中取出指令、解释指令并执行指令。所以下面这张图更符合当下市场情况:</p>
+<figure><figcaption>冯·诺依曼体系结构</figcaption></figure>
+<p>如果自己亲手组装过电脑主机的话你应该知道，你最少需要购买<a href="https://baike.baidu.com/item/%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8" target="_blank" rel="noopener noreferrer">CPU</a>、<a href="https://baike.baidu.com/item/%E4%B8%BB%E6%9D%BF" target="_blank" rel="noopener noreferrer">主板</a>、<a href="https://baike.baidu.com/item/%E5%86%85%E5%AD%98" target="_blank" rel="noopener noreferrer">内存</a>、<a href="https://baike.baidu.com/item/%E7%94%B5%E8%84%91%E7%94%B5%E6%BA%90" target="_blank" rel="noopener noreferrer">电源</a>、<a href="https://baike.baidu.com/item/%E5%9B%BA%E6%80%81%E7%A1%AC%E7%9B%98" target="_blank" rel="noopener noreferrer">硬盘</a>。<br>
+除此之外如果想让这些部件良好的运行，还需要<a href="https://baike.baidu.com/item/%E7%94%B5%E8%84%91%E6%95%A3%E7%83%AD%E5%99%A8" target="_blank" rel="noopener noreferrer">散热器</a>、<a href="https://baike.baidu.com/item/%E7%94%B5%E8%84%91%E6%9C%BA%E7%AE%B1" target="_blank" rel="noopener noreferrer">机箱</a>。如果想运行一些高画质的游戏，还需要<a href="https://baike.baidu.com/item/%E6%98%BE%E5%8D%A1" target="_blank" rel="noopener noreferrer">GPU</a>。其中主板上会包含 <a href="https://baike.baidu.com/item/HDMI" target="_blank" rel="noopener noreferrer">HDMI</a> 接口，外设控制器，甚至是 <code>蓝牙</code>和 <code>Wi-Fi</code> 模块。</p>
+<p>如果我们进一步把 CPU、GPU、外设控制器，内存，网络连接模块等硬件功能集中到一块芯片上，那么这块芯片就被称为 <a href="https://baike.baidu.com/item/soc" target="_blank" rel="noopener noreferrer"><code>SOC</code> (System on a Chip)</a>，如<a href="https://zh.wikipedia.org/wiki/%E9%AB%98%E9%80%9A%E9%A9%8D%E9%BE%8D" target="_blank" rel="noopener noreferrer">高通骁龙</a>、<a href="https://zh.wikipedia.org/wiki/Apple_M1" target="_blank" rel="noopener noreferrer">Apple M1</a>等。</p>
+<p>CPU，存储器，外设控制器等模块都是无法独立运行的，模块之间的协作都是需要数据传递和能量消耗的，所以<code>SOC</code>把这些模块都集中在一个芯片上，信息之间的传递路径就会变得非常短。所以 <code>SOC</code>的运行能效比传统的 <code>CPU</code> 要高很多，非常适合电源局促的移动设备。</p>
+<blockquote>
+<p>这就是<code>苹果M系列芯片</code>笔记本电脑续航牛逼的核心原因。</p>
+</blockquote>
+<p>CPU 读取存储器中的程序和数据，完成一系列计算后再传递给外设控制器，然后对应的输出设备再做出相应的反应。我们生活中，大到火箭空间站，小到电视遥控器，路由器，电视机，手机。任何带有芯片控制的机器，其工作原理都基本类似。</p>
+<blockquote>
+<p>对，没错，任何传统物件只要带上一颗芯片，就能被称为<code>智能设备</code>，这块芯片如果还能联网，就变成了<code>物联网</code></p>
+</blockquote>
+<p>这里有一个视频讲解:</p>
+<p>以上的这些部件都被称之为<a href="https://baike.baidu.com/item/%E7%A1%AC%E4%BB%B6" target="_blank" rel="noopener noreferrer">硬件</a>，硬件是软件运行的基础，也决定了一个设备能力的<code>上限</code>。如果对应的硬件能力不存在，则功能就无法实现。比如你下载了一个音乐播放器，如果扬声器损坏或没有，你也是无法播放音乐的。</p>
+<details class="hint-container details"><summary>课外阅读</summary>
+<p><a href="https://www.voachinese.com/a/china-tech-investment-fraud-20210305/5803152.html" target="_blank" rel="noopener noreferrer">弘芯千亿“芯骗”工程落幕 全民“大炼钢铁”的翻版</a><br>
+<a href="https://cloud.tencent.com/developer/news/1018698" target="_blank" rel="noopener noreferrer">“汉芯”造假事件，中国芯片发展史上最大丑闻！</a><br>
+<a href="https://www.ccf.org.cn/Computing_history/Updates/2020-08-06/706463.shtml" target="_blank" rel="noopener noreferrer">我的计算机收藏之旅（7）：CPU——中国缺芯之觞</a></p>
+</details>
+<p>但是，如果没有对应的软件，再牛逼的芯片也无法发挥作用，就像一个<code>年轻力壮的植物人</code>一样。<br>
+接下来我们要认识一下，世界上最复杂的软件之一: <strong><code>操作系统</code></strong></p>
+<h2>二、操作系统初识</h2>
+<p><strong>这里放上一篇写的非常好的文档</strong></p>
+<p><a href="https://lfool.gitbook.io/operating-system/untitled-1/1.-cao-zuo-xi-tong-gai-lun-gong-neng" target="_blank" rel="noopener noreferrer">https://lfool.gitbook.io/operating-system/untitled-1/1.-cao-zuo-xi-tong-gai-lun-gong-neng</a></p>
+<h3>简明扼要</h3>
+<p><a href="https://zh.wikipedia.org/wiki/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F" target="_blank" rel="noopener noreferrer">操作系统（Operating System，OS）</a>是指控制和管理整个计算机系统的硬件和软件资源，并合理地组织调度计算机的工作和资源分配；以提供给用户和其他软件方便的接口和环境；它是硬件基础上的第一层软件，是硬件和其它软件沟通的桥梁。</p>
+<p>操作系统会控制其他程序运行，管理系统资源，提供最基本的计算功能，如管理及配置内存、决定系统资源供需的优先次序等，同时还提供一些基本的服务程序，例如:</p>
+<ol>
+<li>
+<p><a href="https://baike.baidu.com/item/%E7%94%A8%E6%88%B7%E6%8E%A5%E5%8F%A3" target="_blank" rel="noopener noreferrer">用户接口</a><br>
+操作系统需要为用户提供一种运行程序和访问文件系统的方法。如常用的 Windows 图形界面，安卓和 iOS 的触控式反馈等， 可以理解为一种用户与操作系统交互的方式。<br>
+用户接口还包含一个重要的分类: <a href="https://baike.baidu.com/item/shell" target="_blank" rel="noopener noreferrer">shell</a>。<br>
+如最常见的 <a href="https://zh.wikipedia.org/wiki/%E6%AA%94%E6%A1%88%E7%B8%BD%E7%AE%A1" target="_blank" rel="noopener noreferrer">Windows Explorer</a> 就是一种 <code>图形界面shell</code>；还有 Linux 上默认的 <a href="https://zh.wikipedia.org/wiki/Bash" target="_blank" rel="noopener noreferrer">Bash shell</a>，一般也被称作<code>文字界面</code>；MacOS 上默认的<a href="https://www.duidaima.com/Group/Topic/OtherTools/17940" target="_blank" rel="noopener noreferrer">Zsh shell</a>；当然还包括 Windows 上的 <a href="https://zh.wikipedia.org/wiki/PowerShell" target="_blank" rel="noopener noreferrer">PowerShell</a>等。</p>
+</li>
+<li>
+<p><a href="https://baike.baidu.com/item/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F" target="_blank" rel="noopener noreferrer">文件系统</a><br>
+提供计算机存储信息的结构，信息存储在文件中，文件主要存储在计算机的内部硬盘里，在目录的分层结构中组织文件。文件系统为操作系统提供了组织管理数据的方式。</p>
+</li>
+<li>
+<p><a href="https://baike.baidu.com/item/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86" target="_blank" rel="noopener noreferrer">进程管理</a><br>
+当计算机启动时，会自启动许多系统服务程序，执行安装文件、启动网络服务、运行预设任务，启动驱动程序等，进程管理可以很方便的去管理这些进程。</p>
+</li>
+<li>
+<p><a href="https://zh.wikipedia.org/wiki/%E5%AE%89%E8%A3%9D%E7%A8%8B%E5%BC%8F" target="_blank" rel="noopener noreferrer">安装和卸载程序</a><br>
+提供软件的卸载和安装服务，让用户可以随心所欲的拓展系统功能。</p>
+</li>
+</ol>
+<p>当然，除上述 4 条之外，操作系统还会提供非常非常多的功能和软件，但上面 4 个基本的功能是大多数系统都会有的。所以想要快速熟悉一个操作系统，上述 4 个功能是首当其冲需要掌握的。</p>
+<p>常见的操作系统如：<a href="https://zh.wikipedia.org/wiki/Microsoft_Windows" target="_blank" rel="noopener noreferrer">Windows</a> ， <a href="https://zh.wikipedia.org/wiki/MacOS" target="_blank" rel="noopener noreferrer">MacOS</a> ， <a href="https://zh.wikipedia.org/wiki/Linux" target="_blank" rel="noopener noreferrer">Linux</a> ，<a href="https://zh.wikipedia.org/wiki/Android" target="_blank" rel="noopener noreferrer">Android</a> ， <a href="https://zh.wikipedia.org/wiki/IOS" target="_blank" rel="noopener noreferrer">iOS</a> ，以及 各种 <a href="https://zh.wikipedia.org/wiki/%E7%B1%BBUnix%E7%B3%BB%E7%BB%9F" target="_blank" rel="noopener noreferrer">类 Unix 系统</a>。<br>
+除此之外，还有根据硬件专门定制的简洁系统，一般被称为<a href="https://zh.wikipedia.org/wiki/%E5%B5%8C%E5%85%A5%E5%BC%8F%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F" target="_blank" rel="noopener noreferrer">嵌入式操作系统</a>。</p>
+<p><a href="https://www.ofweek.com/im/2022-05/ART-201927-8120-30562861.html" target="_blank" rel="noopener noreferrer">吃瓜链接：各个操作系统之间的亲子关系</a>。</p>
 ]]></content>
     <category term="计算机与操作系统"/>
     <published>2026-04-16T00:00:00.000Z</published>
@@ -568,7 +714,10 @@ AyExMail 运营组织</p>
     <summary type="html"><![CDATA[
 <hr>
 <p><a href="https://www.bilibili.com/video/BV1n44y1b7Ta/" target="_blank" rel="noopener noreferrer">当我们在伤害开源的时候，在伤害什么？【差评君】</a></p>
-]]></summary>
+<hr>
+<p><a href="https://www.bilibili.com/video/BV1rM4m1k74v/" target="_blank" rel="noopener noreferrer">为什么程序员们愿意在 GitHub 上开源，给别人免费使用和学习？</a></p>
+<hr>
+<p><a href="https://www.runoob.com/w3cnote/open-source-license.html" target="_blank" rel="noopener noreferrer">各种开源协议介绍</a></p>]]></summary>
     <content type="html"><![CDATA[
 ]]></content>
     <category term="开源的那些事"/>
@@ -600,25 +749,25 @@ Windows
 <li>将系统更新到最新，包括驱动等</li>
 <li>将系统归属地改为香港，设定好时间日期格式(设定为香港可以访问到更多有趣的内容)</li>
 <li>在系统设置中配置好 <strong>开发者选项</strong></li>
-<li>配置好 <a href="">翻墙和代理服务</a></li>
+<li>配置好 <a href>翻墙和代理服务</a></li>
 <li>安装 <a href="https://www.google.com/chrome/" target="_blank" rel="noopener noreferrer">Chrome</a></li>
 <li>安装并配置 <a href="/bookmark/tools/git/" target="_blank">Git</a></li>
-<li>安装并配置 <a href="">VSCode</a></li>
-<li>安装并配置 <a href="">WSL</a></li>
-<li>设定好 <a href="">WSL 的系统代理</a></li>
-<li>然后在 WSL 中像 <a href="">Linux</a> 一样去使用 Windows 进行开发和编码</li>
+<li>安装并配置 <a href>VSCode</a></li>
+<li>安装并配置 <a href>WSL</a></li>
+<li>设定好 <a href>WSL 的系统代理</a></li>
+<li>然后在 WSL 中像 <a href>Linux</a> 一样去使用 Windows 进行开发和编码</li>
 </ol>
 <h2>macOS</h2>
 <ol>
 <li>检查系统更新</li>
 <li>系统常规性设置，比如 <a href="https://support.apple.com/zh-cn/guide/mac-help/mchlp2304/mac" target="_blank" rel="noopener noreferrer">在 Mac 上显示或隐藏文件扩展名</a></li>
-<li>配置好 <a href="">翻墙和代理服务</a></li>
+<li>配置好 <a href>翻墙和代理服务</a></li>
 <li>安装 <a href="https://www.google.com/chrome/" target="_blank" rel="noopener noreferrer">Chrome</a></li>
 <li>检查并配置好 <a href="https://support.apple.com/zh-cn/guide/terminal/welcome/mac" target="_blank" rel="noopener noreferrer">Terminal</a>，并安装 <a href="https://sysin.org/blog/macos-zsh/" target="_blank" rel="noopener noreferrer">oh-my-zsh </a></li>
 <li>安装 <a href="https://brew.sh/" target="_blank" rel="noopener noreferrer">Homebrew</a></li>
-<li>检查并配置 <a href="">Git</a> 等常用命令</li>
-<li>安装并配置 <a href="">VSCode</a></li>
-<li>安装并设置 <a href="">uTools</a></li>
+<li>检查并配置 <a href>Git</a> 等常用命令</li>
+<li>安装并配置 <a href>VSCode</a></li>
+<li>安装并设置 <a href>uTools</a></li>
 </ol>
 ]]></content>
     <category term="最舒适的开发环境"/>
@@ -679,7 +828,7 @@ Windows
 <p>这里放上一篇解释的比较清楚的文章<br>
 <a href="https://www.ecdove.com/p/245.html" target="_blank" rel="noopener noreferrer">https://www.ecdove.com/p/245.html</a></p>
 <p>文件名就是文件的名称，是为了方便人们区分计算机中的不同文件，而给每个文件设定一个指定的名称。<br>
-文件名不能包含控制字符: <code>&lt; &gt; / \ | : " \* ?</code></p>
+文件名不能包含控制字符: <code>&lt; &gt; / \ | : &quot; \* ?</code></p>
 <p><a href="https://zh.wikipedia.org/wiki/%E6%96%87%E4%BB%B6%E6%89%A9%E5%B1%95%E5%90%8D" target="_blank" rel="noopener noreferrer">文件扩展名</a> 也称为文件的延伸文件名、后缀名，是操作系统用来标记文件类型的一种机制。通常来说，一个扩展名是跟在主文件名后面的，由一个分隔符分隔。</p>
 <p>文件扩展名其更重要的作用是让系统决定当用户想打开这个文件的时候用哪种软件运行，如 Windows 系统中 <code>.exe</code> 文件是可执行文件，<code>.doc</code> 文件默认用 <code>Microsoft Word</code> 打开的 Word 文件。</p>
 <div class="hint-container tip">
@@ -1072,7 +1221,7 @@ Github 被 墙 但是国内的 Gitee 简直 依托答辩。
 <h2>科学上网</h2>
 <p>如果你想要使用 <code>Google</code>、 <code>ChartGPT</code> 或者想要获取国内外一手资讯等，还是得了解一下 <strong>科学上网</strong> 这件事情的。</p>
 <p><a href="https://blog.tsingjyujing.com/spam/gfw-history" target="_blank" rel="noopener noreferrer">中国网络防火长城简史</a></p>
-<p><a href="">科学上网与本地代理教程</a></p>
+<p><a href>科学上网与本地代理教程</a></p>
 <blockquote>
 <p>请一定要做一个遵纪守法的好公民</p>
 </blockquote>
@@ -1276,8 +1425,8 @@ B站：<a href="https://space.bilibili.com/3494370328185235/" target="_blank" re
 <!-- more -->
 <p>这款游戏使用Unity引擎构建，目前只支持Windows端，短期时间内没有支持其他端的计划</p>
 <h2>下载</h2>
-<p><a href="https://api.undz.cn/proxy/github.com/AeYunDian/Crossfire-Ys/releases/download/4.0.6_beta_0.4/4.0.6.beta.0.4.26-02-13.7z" style="text-decoration: none;" download="">直链快速下载（推荐）</a></p>
-<p><a href="https://github.com/AeYunDian/Crossfire-Ys/releases/download/4.0.6_beta_0.4/4.0.6.beta.0.4.26-02-13.7z" style="text-decoration: none;" download="">Github下载</a></p>
+<p><a href="https://api.undz.cn/proxy/github.com/AeYunDian/Crossfire-Ys/releases/download/4.0.6_beta_0.4/4.0.6.beta.0.4.26-02-13.7z" style="text-decoration: none;" download>直链快速下载（推荐）</a></p>
+<p><a href="https://github.com/AeYunDian/Crossfire-Ys/releases/download/4.0.6_beta_0.4/4.0.6.beta.0.4.26-02-13.7z" style="text-decoration: none;" download>Github下载</a></p>
 <h2>目前版本优点</h2>
 <ul>
 <li>云端账号：使用网络保存您的游戏进度</li>
@@ -1359,7 +1508,7 @@ B站：<a href="https://space.bilibili.com/3494370328185235/" target="_blank" re
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">        }</span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
 <span class="line"></span>
-<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">    public</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">  async</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B"> Task</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">&lt;</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B">HttpResponseMessage</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">&gt;  </span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">PostNetData</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">string</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B"> path</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">string</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B"> json</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">    public</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">  async</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B"> Task</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">&#x3C;</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B">HttpResponseMessage</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">>  </span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">PostNetData</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">string</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B"> path</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">string</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B"> json</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    {</span></span>
 <span class="line"></span>
 <span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">        var</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75"> content</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2"> =</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> new </span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B">StringContent</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75">json</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B">Encoding</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B">UTF8</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"application/json"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">);</span></span>
@@ -1383,7 +1532,7 @@ B站：<a href="https://space.bilibili.com/3494370328185235/" target="_blank" re
 <p>该函数的返回格式是<code>HttpResponseMessage</code>，所以需要定义一个<code>HttpResponseMessage</code>类型的变量</p>
 <div class="language-cs line-numbers-mode" data-highlighter="shiki" data-ext="cs" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-cs"><span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">using</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B"> Newtonsoft</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B">Json</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">;</span></span>
 <span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">private</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> string</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75"> Path_BagGet</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2"> =</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> "/v1/bag/get"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">;</span></span>
-<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">public</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> async</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B"> Task</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">&lt;</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">int</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">&gt; </span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">GetBagData</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">()</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">public</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> async</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B"> Task</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">&#x3C;</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">int</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">> </span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">GetBagData</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">()</span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">{</span></span>
 <span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">    var</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75"> data</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2"> =</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> new { </span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75">uuid</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75">token</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> };</span></span>
 <span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">    string</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75"> json</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2"> =</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B"> JsonConvert</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">SerializeObject</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75">data</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">);</span></span>
@@ -1393,7 +1542,7 @@ B站：<a href="https://space.bilibili.com/3494370328185235/" target="_blank" re
 <span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">    switch</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B">response</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B">StatusCode</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    {</span></span>
 <span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">        case</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B"> HttpStatusCode</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B">OK</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
-<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">            var</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75"> bagData</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2"> =</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B"> JsonConvert</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">DeserializeObject</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">&lt;</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B">BagData</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">&gt;(</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75">responseBody</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">            var</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75"> bagData</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2"> =</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B"> JsonConvert</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">DeserializeObject</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">&#x3C;</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B">BagData</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">>(</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75">responseBody</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">);</span></span>
 <span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">            return</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> int</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Parse</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B">bagData</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B">level</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">ToLower</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">());</span></span>
 <span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">        default</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
 <span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">            return</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2"> -</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">1</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">;</span></span>

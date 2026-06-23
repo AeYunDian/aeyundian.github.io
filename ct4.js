@@ -1,1 +1,488 @@
-!function(t){"use strict";if(void 0===t)throw new Error("Captcha4 requires browser environment");var e=t.document,r=t.Math,n=e.getElementsByTagName("head")[0];function o(t){this._obj=t}function a(t){var e=this;new o(t)._each(function(t,r){e[t]=r})}o.prototype={_each:function(t){var e=this._obj;for(var r in e)e.hasOwnProperty(r)&&t(r,e[r]);return this},_extend:function(t){var e=this;new o(t)._each(function(t,r){e._obj[t]=r})}},a.prototype={apiServers:["captcha.alicaptcha.com","captchabak.alicaptcha.com"],staticServers:["static.alicaptcha.com"],protocol:"https://",typePath:"/load",fallback_config:{bypass:{staticServers:["static.alicaptcha.com"],type:"bypass",bypass:"/v4/alibypass.js"}},_get_fallback_config:function(){var t=this;return c(t.type)?t.fallback_config[t.type]:t.fallback_config.bypass},_extend:function(t){var e=this;new o(t)._each(function(t,r){e[t]=r})}};var c=function(t){return"string"==typeof t},i=function(t){return"function"==typeof t},s=/Mobi/i.test(navigator.userAgent),l={},u={},f=Object.prototype.toString;function p(t,e){if((r=t)!==Object(r)||function(t){return"[object Date]"==f.call(t)}(t)||function(t){return"[object RegExp]"==f.call(t)}(t)||function(t){return"[object Boolean]"==f.call(t)}(t)||function(t){return"function"==typeof t}(t))return e?function(t){return t.replace(/(\S)(_([a-zA-Z]))/g,function(t,e,r,n){return e+n.toUpperCase()||""})}(t):t;var r;if(function(t){return"[object Array]"==f.call(t)}(t))for(var n=[],o=0;o<t.length;o++)n.push(p(t[o]));else for(var a in n={},t)t.hasOwnProperty(a)&&(n[p(a,!0)]=p(t[a]));return n}var d=function(a,i,s,l,u,f,p){var d=function(g){if(p){var h="captcha4_"+(parseInt(1e4*r.random())+(new Date).valueOf());t[h]=function(t,e){if("function"==typeof t){var r=Array.prototype.slice.call(arguments,2);return Function.prototype.bind?t.bind(e,r):function(){var n=Array.prototype.slice.call(arguments);return t.apply(e,r.concat(n))}}}(p,null,h),u.callback=h}!function(t,r,o){var a=e.createElement("script");a.charset="UTF-8",a.async=!0,/static\.geetest\.com/g.test(t)&&(a.crossOrigin="anonymous"),a.onerror=function(){r(!0),c=!0};var c=!1;a.onload=a.onreadystatechange=function(){c||a.readyState&&"loaded"!==a.readyState&&"complete"!==a.readyState||(c=!0,setTimeout(function(){r(!1)},0))},a.src=t,n.appendChild(a),setTimeout(function(){c||(a.onerror=a.onload=null,a.remove&&a.remove(),r(!0))},o||1e4)}(function(t,e,r,n){e=function(t){return t.replace(/^https?:\/\/|\/$/g,"")}(e);var a=function(t){return 0!==(t=t&&t.replace(/\/+/g,"/")).indexOf("/")&&(t="/"+t),t}(r)+function(t){if(!t)return"";var e="?";return new o(t)._each(function(t,r){(c(r)||function(t){return"number"==typeof t}(r)||function(t){return"boolean"==typeof t}(r))&&(e=e+encodeURIComponent(t)+"="+encodeURIComponent(r)+"&")}),"?"===e&&(e=""),e.replace(/&$/,"")}(n);return e&&(a=t+e+a),a}(i,s[g],l,u),function(e){if(e){if(h)try{t[h]=function(){t[h]=null}}catch(t){}g>=s.length-1?f(!0):d(g+1)}else f(!1)},a.timeout)};d(0)},g=function(t,e,r){if("function"!=typeof e.onError)throw new Error({networkError:"网络错误",gtTypeError:"gt字段不是字符串类型"}[t]);e.onError({desc:r.desc,msg:r.msg,code:r.code})};(t.Captcha4||e.getElementById("gt_lib"))&&(u.slide="loaded"),t.initAlicom4=function(n,c){var f,h=new a(n);n.https?h.protocol="https://":n.protocol||(h.protocol=t.location.protocol+"//"),"object"==typeof(f=n.getType)&&null!==f&&h._extend(n.getType),function(e,n,o,a){d(o,o.protocol,e,n,{callback:"",captcha_id:o.captchaId,challenge:o.challenge||"xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,function(t){var e=16*r.random()|0;return("x"===t?e:3&e|8).toString(16)}),client_type:s?"h5":"web",risk_type:o.riskType,user_info:o.userInfo,call_type:o.callType,lang:o.language?o.language:"Netscape"===navigator.appName?navigator.language.toLowerCase():navigator.userLanguage.toLowerCase()},function(t){t&&"function"==typeof o.offlineCb?o.offlineCb():t&&a(o._get_fallback_config())},function(e,r){"success"==r.status?a(r.data):(r.status,a(r)),t[e]=void 0;try{delete t[e]}catch(t){}})}(h.apiServers,h.typePath,h,function(r){if("error"===(r=p(r)).status)return g("networkError",h,r);var n=r.type;h.debug&&new o(r)._extend(h.debug);var a=function(){h._extend(r),c(new t.Captcha4(h))};l[n]=l[n]||[];var s=u[n]||"init";if("init"===s)u[n]="loading",l[n].push(a),r.gctPath&&d(h,h.protocol,Object.hasOwnProperty.call(h,"staticServers")?h.staticServers:r.staticServers||h.staticServers,r.gctPath,null,function(t){t&&g("networkError",h,{code:"60205",msg:"Network failure",desc:{detail:"gct resource load timeout"}})}),d(h,h.protocol,Object.hasOwnProperty.call(h,"staticServers")?h.staticServers:r.staticServers||h.staticServers,r.bypass||r.staticPath+r.js,null,function(t){if(t)u[n]="fail",g("networkError",h,{code:"60204",msg:"Network failure",desc:{detail:"js resource load timeout"}});else{u[n]="loaded";for(var e=l[n],r=0,o=e.length;r<o;r+=1){var a=e[r];i(a)&&a()}l[n]=[]}});else{if("loaded"===s)return r.gctPath&&!function(t){var r=!1,n=t&&{js:"script",css:"link"}[t.split(".").pop()];if(void 0!==n){var o=e.getElementsByTagName(n);for(var a in o)(o[a].href&&o[a].href.toString().indexOf(t)>0||o[a].src&&o[a].src.toString().indexOf(t)>0)&&(r=!0)}return r}(r.gctPath)&&d(h,h.protocol,Object.hasOwnProperty.call(h,"staticServers")?h.staticServers:r.staticServers||h.staticServers,r.gctPath,null,function(t){t&&g("networkError",h,{code:"60205",msg:"Network failure",desc:{detail:"gct resource load timeout"}})}),a();"fail"===s?g("networkError",h,{code:"60204",msg:"Network failure",desc:{detail:"js resource load timeout"}}):"loading"===s&&l[n].push(a)}})}}(window);
+"v1.0.0 Captcha4 Inc.";
+
+(function (window) {
+    "use strict";
+    if (typeof window === 'undefined') {
+        throw new Error('Captcha4 requires browser environment');
+    }
+
+var document = window.document;
+var Math = window.Math;
+var head = document.getElementsByTagName("head")[0];
+var TIMEOUT = 10000;
+
+function _Object(obj) {
+    this._obj = obj;
+}
+
+_Object.prototype = {
+    _each: function (process) {
+        var _obj = this._obj;
+        for (var k in _obj) {
+            if (_obj.hasOwnProperty(k)) {
+                process(k, _obj[k]);
+            }
+        }
+        return this;
+    },
+    _extend: function (obj){
+        var self = this;
+        new _Object(obj)._each(function (key, value){
+            self._obj[key] = value;
+        })
+    }
+};
+
+var uuid = function () {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+            var r = Math.random() * 16 | 0;
+            var v = c === 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+        });
+    };
+
+function Config(config) {
+    var self = this;
+    new _Object(config)._each(function (key, value) {
+        self[key] = value;
+    });
+}
+
+Config.prototype = {
+    apiServers: ['captcha.alicaptcha.com','captchabak.alicaptcha.com'],
+    staticServers: ["static.alicaptcha.com"],
+    protocol: 'https://',
+    typePath: '/load',
+    fallback_config: {
+        bypass: {
+            staticServers: ["static.alicaptcha.com"],
+            type: 'bypass',
+            bypass: '/v4/alibypass.js'
+        }
+    },
+    _get_fallback_config: function () {
+        var self = this;
+        if (isString(self.type)) {
+            return self.fallback_config[self.type];
+        } else {
+            return self.fallback_config.bypass;
+        }
+    },
+    _extend: function (obj) {
+        var self = this;
+        new _Object(obj)._each(function (key, value) {
+            self[key] = value;
+        })
+    }
+};
+var isNumber = function (value) {
+    return (typeof value === 'number');
+};
+var isString = function (value) {
+    return (typeof value === 'string');
+};
+var isBoolean = function (value) {
+    return (typeof value === 'boolean');
+};
+var isObject = function (value) {
+    return (typeof value === 'object' && value !== null);
+};
+var isFunction = function (value) {
+    return (typeof value === 'function');
+};
+var MOBILE = /Mobi/i.test(navigator.userAgent);
+
+var callbacks = {};
+var status = {};
+
+var random = function () {
+    return parseInt(Math.random() * 10000) + (new Date()).valueOf();
+};
+
+// bind 函数polify, 不带new功能的bind
+
+var bind = function(target,context){
+    if(typeof target !== 'function'){
+        return;
+    }
+    var args = Array.prototype.slice.call(arguments,2);
+
+    if(Function.prototype.bind){
+        return target.bind(context, args);
+    }else {
+        return function(){
+            var _args = Array.prototype.slice.call(arguments);
+            return target.apply(context,args.concat(_args));
+        }
+    }
+}
+
+
+
+var toString = Object.prototype.toString;
+
+var _isFunction = function(obj) {
+  return typeof(obj) === 'function';
+};
+var _isObject = function(obj) {
+  return obj === Object(obj);
+};
+var _isArray = function(obj) {
+  return toString.call(obj) == '[object Array]';
+};
+var _isDate = function(obj) {
+  return toString.call(obj) == '[object Date]';
+};
+var _isRegExp = function(obj) {
+  return toString.call(obj) == '[object RegExp]';
+};
+var _isBoolean = function(obj) {
+  return toString.call(obj) == '[object Boolean]';
+};
+
+
+function resolveKey(input){
+  return  input.replace(/(\S)(_([a-zA-Z]))/g, function(match, $1, $2, $3){
+          return $1 + $3.toUpperCase() || "";
+  })
+}
+
+function camelizeKeys(input, convert){
+  if(!_isObject(input) || _isDate(input) || _isRegExp(input) || _isBoolean(input) || _isFunction(input)){
+      return convert ? resolveKey(input) : input;
+  }
+
+  if(_isArray(input)){
+      var temp = [];
+      for(var i = 0; i < input.length; i++){
+          temp.push(camelizeKeys(input[i]));
+      }
+
+  }else {
+      var temp = {};
+      for(var prop in input){
+          if(input.hasOwnProperty(prop)){
+              temp[camelizeKeys(prop, true)] = camelizeKeys(input[prop]);
+          }
+      }
+  }
+  return temp;
+}
+
+var loadScript = function (url, cb, timeout) {
+    var script = document.createElement("script");
+    script.charset = "UTF-8";
+    script.async = true;
+
+    // 对geetest的静态资源添加 crossOrigin
+    if ( /static\.geetest\.com/g.test(url)) {
+        script.crossOrigin = "anonymous";
+    }
+
+    script.onerror = function () {
+        cb(true);
+        // 错误触发了，超时逻辑就不用了
+        loaded = true;
+    };
+    var loaded = false;
+    script.onload = script.onreadystatechange = function () {
+        if (!loaded &&
+            (!script.readyState ||
+            "loaded" === script.readyState ||
+            "complete" === script.readyState)) {
+
+            loaded = true;
+            setTimeout(function () {
+                cb(false);
+            }, 0);
+        }
+    };
+    script.src = url;
+    head.appendChild(script);
+
+    setTimeout(function () {
+        if (!loaded) {
+            script.onerror = script.onload = null;
+            script.remove && script.remove();
+            cb(true);
+        }
+    }, timeout || TIMEOUT);
+};
+
+var normalizeDomain = function (domain) {
+    // special domain: uems.sysu.edu.cn/jwxt/geetest/
+    // return domain.replace(/^https?:\/\/|\/.*$/g, ''); uems.sysu.edu.cn
+    return domain.replace(/^https?:\/\/|\/$/g, ''); // uems.sysu.edu.cn/jwxt/geetest
+};
+var normalizePath = function (path) {
+    path = path && path.replace(/\/+/g, '/');
+    if (path.indexOf('/') !== 0) {
+        path = '/' + path;
+    }
+    return path;
+};
+var normalizeQuery = function (query) {
+    if (!query) {
+        return '';
+    }
+    var q = '?';
+    new _Object(query)._each(function (key, value) {
+        if (isString(value) || isNumber(value) || isBoolean(value)) {
+            q = q + encodeURIComponent(key) + '=' + encodeURIComponent(value) + '&';
+        }
+    });
+    if (q === '?') {
+        q = '';
+    }
+    return q.replace(/&$/, '');
+};
+var makeURL = function (protocol, domain, path, query) {
+    domain = normalizeDomain(domain);
+
+    var url = normalizePath(path) + normalizeQuery(query);
+    if (domain) {
+        url = protocol + domain + url;
+    }
+
+    return url;
+};
+
+var load = function (config, protocol, domains, path, query, cb, handleCb) {
+    var tryRequest = function (at) {
+        // 处理jsonp回调，这里为了保证每个不同jsonp都有唯一的回调函数
+        if(handleCb){
+            var cbName = "captcha4_" + random();
+            // 需要与预先定义好cbname参数，删除对象
+            window[cbName] = bind(handleCb, null, cbName);
+            query.callback = cbName;
+        }
+        var url = makeURL(protocol, domains[at], path, query);
+        loadScript(url, function (err) {
+            if (err) {
+                // 超时或者出错的时候 移除回调
+                if(cbName){
+                  try {
+                     window[cbName] = function(){
+                       window[cbName] = null;
+                      }
+                    } catch (e) {}
+                }
+
+                if (at >= domains.length - 1) {
+                    cb(true);
+                    // report gettype error
+                } else {
+                    tryRequest(at + 1);
+                }
+            } else {
+                cb(false);
+            }
+        }, config.timeout);
+    };
+    tryRequest(0);
+};
+
+
+var jsonp = function (domains, path, config, callback) {
+
+    var handleCb = function (cbName, data) {
+
+        // 保证只执行一次，全部超时的情况下不会再触发;
+
+        if (data.status == 'success') {
+            callback(data.data);
+        } else if (!data.status) {
+            callback(data);
+        } else {
+            //接口有返回，但是返回了错误状态，进入报错逻辑
+            callback(data);
+        }
+        window[cbName] = undefined;
+        try {
+            delete window[cbName];
+        } catch (e) {
+        }
+    };
+    load(config, config.protocol, domains, path, {
+        callback: '',
+        captcha_id: config.captchaId,
+        challenge: config.challenge || uuid(),
+        client_type: MOBILE? 'h5':'web',
+        risk_type: config.riskType,
+        user_info: config.userInfo,
+        call_type: config.callType,
+        lang: config.language? config.language : navigator.appName === 'Netscape' ? navigator.language.toLowerCase() : navigator.userLanguage.toLowerCase()
+    }, function (err) {
+        // 网络问题接口没有返回，直接使用本地验证码，走宕机模式
+        // 这里可以添加用户的逻辑
+            if(err && typeof config.offlineCb === 'function'){
+                // 执行自己的宕机
+                config.offlineCb();
+                return;
+            }
+           if(err){
+            callback(config._get_fallback_config());
+           }
+    }, handleCb);
+};
+
+var reportError = function (config, url) {
+    load(config, config.protocol, ['monitor.geetest.com'], '/monitor/send', {
+        time: Date.now().getTime(),
+        captcha_id: config.gt,
+        challenge: config.challenge,
+        exception_url: url,
+        error_code: config.error_code
+    }, function (err) {})
+}
+
+var throwError = function (errorType, config, errObj) {
+    var errors = {
+        networkError: '网络错误',
+        gtTypeError: 'gt字段不是字符串类型'
+    };
+    if (typeof config.onError === 'function') {
+        config.onError({
+            desc: errObj.desc,
+            msg: errObj.msg,
+            code: errObj.code
+        });
+    } else {
+        throw new Error(errors[errorType]);
+    }
+};
+
+var detect = function () {
+    return window.Captcha4 || document.getElementById("gt_lib");
+};
+
+if (detect()) {
+    status.slide = "loaded";
+}
+var Captcha4IsLoad = function (fname) {
+  var Captcha4IsLoad = false;
+  var tags = { js: 'script', css: 'link' };
+  var tagname = fname && tags[fname.split('.').pop()];
+  if (tagname !== undefined) {
+    var elts = document.getElementsByTagName(tagname);
+    for (var i in elts) {
+      if ((elts[i].href && elts[i].href.toString().indexOf(fname) > 0)
+              || (elts[i].src && elts[i].src.toString().indexOf(fname) > 0)) {
+        Captcha4IsLoad = true;
+      }
+    }
+  }
+  return Captcha4IsLoad;
+};
+window.initAlicom4 = function (userConfig,callback) {
+
+    var config = new Config(userConfig);
+    if (userConfig.https) {
+        config.protocol = 'https://';
+    } else if (!userConfig.protocol) {
+        config.protocol = window.location.protocol + '//';
+    }
+
+
+    if (isObject(userConfig.getType)) {
+        config._extend(userConfig.getType);
+    }
+
+    jsonp(config.apiServers , config.typePath, config, function (newConfig) {
+            
+            //错误捕获，第一个load请求可能直接报错
+            var newConfig = camelizeKeys(newConfig);
+
+            if(newConfig.status === 'error'){
+               return throwError('networkError', config, newConfig);
+            }
+
+            var type = newConfig.type;
+            
+            if(config.debug){
+                new _Object(newConfig)._extend(config.debug)
+            }
+            var init = function () {
+                config._extend(newConfig);
+                callback(new window.Captcha4(config));
+            };
+
+            callbacks[type] = callbacks[type] || [];
+
+            var s = status[type] || 'init';
+            if (s === 'init') {
+                status[type] = 'loading';
+
+                callbacks[type].push(init);
+
+                if(newConfig.gctPath){
+                    load(config, config.protocol, Object.hasOwnProperty.call(config, 'staticServers') ? config.staticServers  : newConfig.staticServers || config.staticServers , newConfig.gctPath, null, function (err){
+                        if(err){
+                            throwError('networkError', config, {
+                                code: '60205',
+                                msg: 'Network failure',
+                                desc: {
+                                    detail: 'gct resource load timeout'
+                                }
+                            });
+                        }
+                    })
+                }
+
+                load(config,  config.protocol, Object.hasOwnProperty.call(config, 'staticServers') ? config.staticServers  : newConfig.staticServers || config.staticServers, newConfig.bypass || (newConfig.staticPath + newConfig.js), null, function (err) {
+                    if (err) {
+                        status[type] = 'fail';
+                        throwError('networkError', config, {
+                            code: '60204',
+                            msg: 'Network failure',
+                            desc: {
+                                detail: 'js resource load timeout'
+                            }
+                        });
+                    } else {
+                        status[type] = 'loaded';
+                        var cbs = callbacks[type];
+                        for (var i = 0, len = cbs.length; i < len; i = i + 1) {
+                            var cb = cbs[i];
+                            if (isFunction(cb)) {
+                                cb();
+                            }
+                        }
+                        callbacks[type] = [];
+                    }
+                });
+            } else if (s === "loaded") {
+                // 判断gct是否需要重新加载
+                if(newConfig.gctPath && !Captcha4IsLoad(newConfig.gctPath)){
+
+                // if(!Captcha4IsLoad(newConfig.gctPath)){
+                  load(config, config.protocol, Object.hasOwnProperty.call(config, 'staticServers') ? config.staticServers  : newConfig.staticServers || config.staticServers , newConfig.gctPath, null, function (err){
+                      if(err){
+                          throwError('networkError', config, {
+                              code: '60205',
+                              msg: 'Network failure',
+                              desc: {
+                                  detail: 'gct resource load timeout'
+                              }
+                          });
+                      }
+                  })
+                }
+                return  init();
+            } else if (s === "fail") {
+              throwError('networkError', config, {
+                code: '60204',
+                msg: 'Network failure',
+                desc: {
+                    detail: 'js resource load timeout'
+                }
+              });
+            } else if (s === "loading") {
+                callbacks[type].push(init);
+            }
+        });
+
+};
+
+
+})(window);
