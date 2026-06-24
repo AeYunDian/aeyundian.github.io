@@ -2,24 +2,60 @@ import { defineUserConfig } from "vuepress";
 import { viteBundler } from '@vuepress/bundler-vite'
 import theme from "./theme.js";
 import * as viteCompression from 'vite-plugin-compression';
-
+import { visualizer } from 'rollup-plugin-visualizer'
 const compressionPlugin = (viteCompression as any).default || viteCompression;
+import Components from 'unplugin-vue-components/vite';
+import AutoImport from 'unplugin-auto-import/vite';
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
+import Icons from 'unplugin-icons/vite'
 
 export default defineUserConfig({
-
   bundler: viteBundler({
     viteOptions: {
+      build: {
+        reportCompressedSize: false,
+        terserOptions: {
+          compress: {
+            drop_console: true,
+            drop_debugger: true,
+          },
+        },
+
+      },
       plugins: [
+        Icons({ autoInstall: true }),
+        AutoImport({
+          resolvers: [ElementPlusResolver()],
+          imports: ['vue', 'vue-router'],
+          dts: './src/.vuepress/auto-imports.d.ts',
+        }),
+        Components({
+          resolvers: [
+            ElementPlusResolver({
+              // 按需加载样式
+              importStyle: 'sass',
+            }),
+          ],
+          dts: './src/.vuepress/components.d.ts',
+          dirs: [],
+        }),
+        visualizer({
+          filename: './src/.vuepress/dist/stats.html',
+          // 用户也能看到当前网站详细信息
+          open: false,
+          gzipSize: true,
+          brotliSize: true,
+        }),
         compressionPlugin({
           algorithm: 'gzip',
           ext: '.gz',
-          threshold: 10240,
+          threshold: 5120,
           deleteOriginFile: false,
         }),
         compressionPlugin({
           algorithm: 'brotliCompress',
           ext: '.br',
-          threshold: 10240,
+          threshold: 5120,
           deleteOriginFile: false,
         }),
       ],
