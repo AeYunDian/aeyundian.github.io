@@ -1,4 +1,3 @@
-
 name: Deploy-Docs
 
 on:
@@ -28,19 +27,20 @@ jobs:
       - name: 安装依赖
         run: |
           corepack enable
-          npm install --legacy-peer-deps
+          npm ci --legacy-peer-deps
 
       - name: 构建文档
         env:
           NODE_OPTIONS: --max_old_space_size=8192
         run: |-
+          npm set config auto-install-peers true
           npm run docs:build
           > src\.vuepress\dist\.nojekyll
 
       - name: 部署文档
         uses: JamesIves/github-pages-deploy-action@v4
         env:
-            GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         with:
           # 部署文档
           branch: blog_pages
