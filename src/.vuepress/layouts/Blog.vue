@@ -2,6 +2,7 @@
 import { Blog } from "vuepress-theme-hope/blog";
 import { Layout, NotFound } from "vuepress-theme-hope/client";
 import TodayInHistory from '../components/TodayInHistory.vue'
+import Hitokoto from '../components/Hitokoto.vue'
 import SaleBanner from '../components/SaleBanner.vue'
 import SaleBlock from '../components/SaleBlock.vue'
 import BingHeroBackground from "vuepress-theme-hope/presets/BingHeroBackground.js";
@@ -25,7 +26,8 @@ import { ClientOnly } from "vuepress/client";
     <template #heroInfo>
       <div class="vp-blog-hero-info">
         <h1 class="vp-blog-hero-title">undz</h1>
-        <TodayInHistory />
+        <!-- <TodayInHistory /> -->
+        <Hitokoto />
       </div>
     </template>
 
@@ -41,4 +43,3 @@ import { ClientOnly } from "vuepress/client";
   </Blog>
 
 </template>
-

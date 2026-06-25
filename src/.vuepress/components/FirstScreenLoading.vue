@@ -1,17 +1,19 @@
 <template>
     <ClientOnly>
-        <div v-if="shouldLoading" id="app-loading">
-            <div class="loading-wrapper">
-                <svg class="circular" viewBox="0 0 20 20">
-                    <g class="loading-path" stroke-width="0" style="animation: none; stroke: none">
-                        <circle r="3.375" class="dot1" cx="0" cy="0" />
-                        <circle r="3.375" class="dot2" cx="0" cy="0" />
-                        <circle r="3.375" class="dot4" cx="0" cy="0" />
-                        <circle r="3.375" class="dot3" cx="0" cy="0" />
-                    </g>
-                </svg>
+        <div v-if="enable">
+            <div v-if="shouldLoading" id="app-loading">
+                <div class="loading-wrapper">
+                    <svg class="circular" viewBox="0 0 20 20">
+                        <g class="loading-path" stroke-width="0" style="animation: none; stroke: none">
+                            <circle r="3.375" class="dot1" cx="0" cy="0" />
+                            <circle r="3.375" class="dot2" cx="0" cy="0" />
+                            <circle r="3.375" class="dot4" cx="0" cy="0" />
+                            <circle r="3.375" class="dot3" cx="0" cy="0" />
+                        </g>
+                    </svg>
+                </div>
+                <div class="loading-text">加载中...</div>
             </div>
-            <div class="loading-text">加载中...</div>
         </div>
     </ClientOnly>
 </template>
@@ -21,6 +23,7 @@ export default {
     name: 'FirstScreenLoading',
     data() {
         return {
+            enable: false,
             shouldLoading: true,
             timer: null,
             startTime: null,
@@ -30,29 +33,35 @@ export default {
         this.startTime = Date.now();
     },
     mounted() {
-        const MIN_DISPLAY = 0.8; // 最小显示秒数
-        const elapsed = (Date.now() - this.startTime) / 1000; // 已过秒数
-        const delay = Math.max(0, MIN_DISPLAY - elapsed) * 1000; // 转为毫秒
+        if (this.enable === true) {
+            const MIN_DISPLAY = 0.8; // 最小显示秒数
+            const elapsed = (Date.now() - this.startTime) / 1000; // 已过秒数
+            const delay = Math.max(0, MIN_DISPLAY - elapsed) * 1000; // 转为毫秒
 
-        this.timer = setTimeout(() => {
-            const loading = document.getElementById('app-loading');
-            if (loading) {
-                loading.classList.add('hide');
-                setTimeout(() => {
-                    if (loading.parentNode) loading.remove();
-                }, 600);
-            }
-        }, delay);
+            this.timer = setTimeout(() => {
+                const loading = document.getElementById('app-loading');
+                if (loading) {
+                    loading.classList.add('hide');
+                    setTimeout(() => {
+                        if (loading.parentNode) loading.remove();
+                    }, 600);
+                }
+            }, delay);
+        }
+
     },
     beforeDestroy() {
-        if (this.timer) {
-            clearTimeout(this.timer);
-            this.timer = null;
-        }
-        // 确保移除元素（如果动画未完成）
-        const loading = document.getElementById('app-loading');
-        if (loading && loading.parentNode) {
-            loading.remove();
+
+        if (this.enable === true) {
+            if (this.timer) {
+                clearTimeout(this.timer);
+                this.timer = null;
+            }
+            // 确保移除元素（如果动画未完成）
+            const loading = document.getElementById('app-loading');
+            if (loading && loading.parentNode) {
+                loading.remove();
+            }
         }
     },
 };

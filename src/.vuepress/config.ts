@@ -94,6 +94,20 @@ export default defineUserConfig({
     [
       "link",
       {
+        href: "https://cdn.jsdmirror.com/npm/noto-sans-jp/noto_sans_jp_light/css.min.css",
+        rel: "stylesheet",
+      },
+    ],
+    [
+      "link",
+      {
+        href: "https://cdn.jsdmirror.com/npm/@fontsource/noto-sans-sc/index.min.css",
+        rel: "stylesheet",
+      },
+    ],
+    [
+      "link",
+      {
         href: "https://cdn.jsdmirror.com/npm/@fontsource/noto-sans-hk/index.min.css",
         rel: "stylesheet",
       },
