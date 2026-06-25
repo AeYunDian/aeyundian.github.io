@@ -1,42 +1,38 @@
-$--vp-font-heading: "Microsoft JhengHei", 微軟正黑體, "Arial",  "Noto Sans SC", 'ys' , "sans-serif", -apple-system;
-$--vp-font:  "Noto Sans SC", 'ys' , "Microsoft JhengHei", 微軟正黑體, "Arial", "sans-serif", -apple-system ;
-$--vp-font-mono: "Fira Code", "sans-serif", "Consolas", "monospace" ;
-body,  p, div, a, ul, ol, li, table, th, td {
-  font-family: $--vp-font !important;
+:root {
+  --vp-font-heading: "Noto Sans HK", "Noto Sans CJK SC", "Noto Sans",
+    "PingFang HK", "Microsoft JhengHei", 微軟正黑體, "Arial", "sans-serif",
+    -apple-system;
+  --vp-font: "Noto Sans HK", "Noto Sans CJK SC", "Noto Sans", "PingFang HK",
+    "Microsoft JhengHei", 微軟正黑體, "Arial", "sans-serif", -apple-system;
+  --vp-font-mono: "Fira Code", "sans-serif", "Consolas", "monospace";
 }
-.vp-project-name , .vp-blog-count > .count , span[property="headline"], h1, h2, h3, h4, h5, h6, .vp-article-title, .vp-sidebar-link {
-  font-family: $--vp-font-heading !important;
-  font-weight: bold !important;
+body {
+  font-family: var(--vp-font) !important;
 }
-code, pre, kbd, samp {
-  font-family: $--vp-font-mono !important;
-}
- 
-.color-text-secondary .text-sm{
+.color-text-secondary .text-sm {
   user-select: none;
   pointer-events: none;
   overflow: hidden;
-  display:none;
-  width:0;
-  height:0;
-  position:absolute;
-  top:0;
-  left:0;
-  visibility:hidden;
+  display: none;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
 }
 .none {
   user-select: none;
   pointer-events: none;
   overflow: hidden;
-  display:none;
-  width:0;
-  height:0;
-  position:absolute;
-  top:0;
-  left:0;
-  visibility:hidden;
+  display: none;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
 }
-
 
 // 让内容在更宽的屏幕上可以有更宽的显示区域，宽屏补丁
 :root {
@@ -60,7 +56,6 @@ code, pre, kbd, samp {
   }
 }
 
-
 // 回到顶部按钮半透明
 .vp-back-to-top-button {
   opacity: 0.7;
@@ -73,7 +68,6 @@ code, pre, kbd, samp {
     box-shadow: 0 1px 3px 1px var(--vp-c-shadow);
   }
 }
-
 
 // 美化标签hover之后的小标签
 [aria-label][data-balloon-pos]:after {
@@ -95,7 +89,7 @@ code, pre, kbd, samp {
   background: rgba($color: #fff, $alpha: $my-alpha);
   background-color: rgba($color: #fff, $alpha: $my-alpha);
 }
-[data-theme='light'] {
+[data-theme="light"] {
   .theme-container {
     .vp-page {
       .vp-blogger-info {
@@ -128,7 +122,7 @@ code, pre, kbd, samp {
   background: rgba($color: #000, $alpha: $my-alpha);
   background-color: rgba($color: #000, $alpha: $my-alpha);
 }
-[data-theme='dark'] {
+[data-theme="dark"] {
   .theme-container {
     .vp-page {
       .vp-blogger-info {

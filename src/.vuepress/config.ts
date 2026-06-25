@@ -20,8 +20,15 @@ export default defineUserConfig({
             drop_debugger: true,
           },
         },
-
+        rollupOptions: {
+          output: {
+            chunkFileNames: 'js/[name]-[hash].js',
+            entryFileNames: 'js/[name]-[hash].js',
+            assetFileNames: '[ext]/[name]-[hash].[ext]',
+          },
+        },
       },
+
       plugins: [
         Icons({ autoInstall: true }),
         AutoImport({
@@ -51,12 +58,14 @@ export default defineUserConfig({
           ext: '.gz',
           threshold: 5120,
           deleteOriginFile: false,
+          verbose: true,
         }),
         compressionPlugin({
           algorithm: 'brotliCompress',
           ext: '.br',
           threshold: 5120,
           deleteOriginFile: false,
+          verbose: true,
         }),
       ],
     },
@@ -67,12 +76,32 @@ export default defineUserConfig({
   head: [
     ['script', { src: 'https://hm.baidu.com/hm.js?79463ae1d0aa94c4bc728b9486856172' }],
 
-    ["link", { rel: "preconnect", href: "https://fonts.googleapis.com" }],
-    ["link", { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" }],
+    ["link", { rel: "preconnect", href: "https://cdn.jsdmirror.com" }],
     [
       "link",
       {
-        href: "https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&display=swap",
+        href: "https://cdn.jsdmirror.com/npm/noto-sans-cjk-sc/css/all.min.css",
+        rel: "stylesheet",
+      },
+    ],
+    // [
+    //   "link",
+    //   {
+    //     href: "https://cdn.jsdmirror.com/npm/fontsource-noto-sans-sc@4.0.0/index.min.css",
+    //     rel: "stylesheet",
+    //   },
+    // ],
+    [
+      "link",
+      {
+        href: "https://cdn.jsdmirror.com/npm/@fontsource/noto-sans-hk/index.min.css",
+        rel: "stylesheet",
+      },
+    ],
+    [
+      "link",
+      {
+        href: "https://cdn.jsdmirror.com/npm/@fontsource/noto-sans/index.min.css",
         rel: "stylesheet",
       },
     ],

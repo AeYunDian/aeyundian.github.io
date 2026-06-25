@@ -10,20 +10,21 @@ import TopNavBeautify from './components/TopNavBeautify.vue';
 import HeroBG from './components/HeroBG.vue';
 import PrivacyConsentBanner from './components/PrivacyMessaging.vue';
 import RiskDetector from './components/RiskDetector.vue';
-import meting2 from 'vuepress-plugin-meting2';
+import FirstScreenLoading from './components/FirstScreenLoading.vue'
 export default defineClientConfig({
   layouts: {
     Blog: Blog
   },
   rootComponents: [
+    HeroBG,
     TopNavBeautify,
     RiskDetector,
-    HeroBG,
+    FirstScreenLoading,
     GeoBlocker,
     PrivacyConsentBanner
   ],
 
- enhance({ app, router, siteData }) {
+  enhance({ app, router, siteData }) {
     //app.config.compilerOptions.isCustomElement = (tag) => tag === 'meting-js';
     // 注册全局组件
     app.component('MusicPlayer', MusicPlayer)
@@ -33,11 +34,11 @@ export default defineClientConfig({
     app.component('SaleBlock', SaleBlock)
   },
 
-  setup: function() {
+  setup: function () {
     if (typeof window !== 'undefined') {
-      var updateRuntime = function() {
-        var startTime = new Date('2025-02-22T13:42:00Z');
-        var now = new Date();
+      var updateRuntime = function () {
+        var startTime = new Date('2025-02-22T13:42:00Z').getTime();;
+        var now = Date.now();
         var diff = Math.floor((now - startTime) / 1000);
         var days = Math.floor(diff / 86400);
         var hours = Math.floor((diff % 86400) / 3600);
@@ -49,7 +50,7 @@ export default defineClientConfig({
         }
       };
       updateRuntime();
-      setInterval(updateRuntime, 1000);
+      setInterval(updateRuntime, 800);
     }
   }
 });
