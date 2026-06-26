@@ -15,6 +15,13 @@ export default {
             });
         }
 
+        if (url.pathname === '/我们毕业啦.html' || url.pathname === '/我们毕业啦') {
+            return new Response(null, {
+                status: 301,
+                headers: { 'Location': 'https://net.undz.cn/static/mp4/9e7e0f7e8a3f752c47bf759d7f1f606f.mp4' }
+            });
+        }
+
         if (url.pathname.startsWith("/api/")) {
             return new Response(JSON.stringify({ name: "Cloudflare" }), {
                 headers: { "Content-Type": "application/json" },
