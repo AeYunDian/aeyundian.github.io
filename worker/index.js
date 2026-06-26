@@ -25,7 +25,7 @@ export default {
             });
         }
 
-        if (path === '/我们毕业啦.html' || path === '/我们毕业啦') {
+        if (decodeURI(path) === '/我们毕业啦.html' || decodeURI(path) === '/我们毕业啦') {
             if (isMobile) {
                 return new Response(null, {
                     status: 301,
