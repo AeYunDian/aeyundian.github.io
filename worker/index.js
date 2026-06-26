@@ -24,8 +24,13 @@ export default {
                 headers: { 'Location': newUrl.toString() }
             });
         }
-
-        if (decodeURI(path) === '/我们毕业啦.html' || decodeURI(path) === '/我们毕业啦') {
+        let decodedPath;
+        try {
+            decodedPath = decodeURIComponent(path);
+        } catch {
+            decodedPath = path; // 解码失败时直接使用原路径
+        }
+        if (decodedPath === '/我们毕业啦.html' || decodedPath === '/我们毕业啦') {
             if (isMobile) {
                 return new Response(null, {
                     status: 301,
