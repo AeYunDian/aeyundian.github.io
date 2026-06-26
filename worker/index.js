@@ -19,7 +19,7 @@ export default {
             return new Response(JSON.stringify({ name: "Cloudflare" }), {
                 headers: { "Content-Type": "application/json" },
             });
-        }
+        } // 预留测试
 
         return env.ASSETS.fetch(request);
     },
