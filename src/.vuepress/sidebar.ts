@@ -29,7 +29,7 @@ export default sidebar({
               link: "/privacy_policy/zh-cn",
             },
             {
-              text: "繁體中文",
+              text: "繁體中文（香港）",
               icon: "ic:baseline-privacy-tip",
               link: "/privacy_policy/zh-hk",
             },
@@ -50,7 +50,7 @@ export default sidebar({
               link: "/cookie_policy/zh-cn",
             },
             {
-              text: "繁體中文",
+              text: "繁體中文（香港）",
               icon: "ic:baseline-cookie",
               link: "/cookie_policy/zh-hk",
             },
@@ -71,7 +71,7 @@ export default sidebar({
               link: "/terms/zh-cn.html",
             },
             {
-              text: "繁體中文",
+              text: "繁體中文（香港）",
               icon: "ic:round-gavel",
               link: "/terms/zh-hk.html",
             },
@@ -92,7 +92,7 @@ export default sidebar({
               link: "/contact_me/zh-cn",
             },
             {
-              text: "繁體中文",
+              text: "繁體中文（香港）",
               icon: "ic:round-message",
               link: "/contact_me/zh-hk",
             },
@@ -113,7 +113,7 @@ export default sidebar({
               link: "/aboutus/zh-cn",
             },
             {
-              text: "繁體中文",
+              text: "繁體中文（香港）",
               icon: "circle-info",
               link: "/aboutus/zh-hk",
             },

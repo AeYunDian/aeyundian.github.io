@@ -83,7 +83,7 @@ To exercise any of these rights, please contact us using the information at the 
 
 ## 11. Governing Law and Jurisdiction
 
-These Terms shall be governed by and construed in accordance with the laws of **[the People’s Republic of China]**, without regard to its conflict of law principles. Any dispute arising under or in connection with these Terms or your use of the Website shall be adjudicated by the **[People’s Court of Anlu City, Xiaogan City, Hubei Province, People’s Republic of China](http://www.alsfy.hbfy.gov.cn/)**. If you are located in the **European Union** or **Hong Kong SAR**, applicable laws and jurisdictional provisions of those regions may apply; however, you irrevocably agree that these Terms do not limit any non-waivable consumer protection rights you have under the laws of your country of residence.
+These Terms shall be governed by and construed in accordance with the laws of **[the People’s Republic of China]**, without regard to its conflict of law principles. Any dispute arising under or in connection with these Terms or your use of the Website shall be adjudicated by the **[People’s Court of Anlu City, Xiaogan City, Hubei Province, People’s Republic of China](https://alsfy.hbfy.gov.cn/)**. If you are located in the **European Union** or **Hong Kong SAR**, applicable laws and jurisdictional provisions of those regions may apply; however, you irrevocably agree that these Terms do not limit any non-waivable consumer protection rights you have under the laws of your country of residence.
 
 ## 12. Severability
 

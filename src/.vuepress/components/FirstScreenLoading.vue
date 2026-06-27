@@ -33,6 +33,30 @@ export default {
         this.startTime = Date.now();
     },
     mounted() {
+        const art = `
+      __      __          .----------------.  .----------------.  .----------------. 
+      \\ \\    / /         | .--------------. || .--------------. || .--------------. |
+  _____\\ \\  / /_____     | |      __      | || |  ____  ____  | || |  ________    | |
+ |______\\ \\/ /______|    | |     /  \\     | || | |_  _||_  _| | || | |_   ___ \`.  | |
+         \\  /            | |    / /\\ \\    | || |   \\ \\  / /   | || |   | |   \`. \\ | |
+          \\/             | |   / ____ \\   | || |    \\ \\/ /    | || |   | |    | | | |
+                         | | _/ /    \\ \\_ | || |    _|  |_    | || |  _| |___.' / | |
+                         | ||____|  |____|| || |   |______|   | || | |________.'  | |
+                         | |              | || |              | || |              | |
+                         | '--------------' || '--------------' || '--------------' |
+                          '----------------'  '----------------'  '----------------' 
+                                                       Powered by vuepress@2.0.0-rc.26
+                                                                 Powered by Cloudflare
+                                                            Copyright © 2026 AeYunDian
+`;
+        console.info(`%c${art}`, 'color: #4C9FFF;');
+        console.info("%c vuepress %c v2.0.0-rc.26 ", 
+        "padding: 2px 6px; border-radius: 3px 0 0 3px; color: #fff; background: #FF6699; font-weight: bold;", 
+        "padding: 2px 6px; border-radius: 0 3px 3px 0; color: #fff; background: #FF9999; font-weight: bold;")
+        console.info(
+        '%c 欢迎来到 undz.cn  🚀',
+        'color: #ffb74d; font-size: 14px; font-weight: bold; background: #ffc;'
+        );
         if (this.enable === true) {
             const MIN_DISPLAY = 0.8; // 最小显示秒数
             const elapsed = (Date.now() - this.startTime) / 1000; // 已过秒数
