@@ -7,5 +7,5 @@ comment: false
 ---
 
 [简体中文](/aboutus/zh-cn.html)
-[繁體中文](/aboutus/zh-hk.html)
+[繁體中文（香港）](/aboutus/zh-hk.html)
 [English](/aboutus/en-us.html)

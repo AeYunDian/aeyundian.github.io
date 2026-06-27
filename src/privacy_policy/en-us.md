@@ -4,23 +4,28 @@ prev: false
 next: false
 article: false
 comment: false
-contributors: 'AeYunDian'
+contributors: "AeYunDian"
 changelog: false
---- 
+---
+
 Welcome to undz.cn's Privacy Policy. This policy will help you understand what data we collect, why we collect it, and what rights you have in relation to your data.
+
 <!-- more -->
 
 ::: center
-[简体中文](/privacy_policy/zh-cn.html) | [繁體中文](/privacy_policy/zh-hk.html) | [English](/privacy_policy/en-us.html)
+[简体中文](/privacy_policy/zh-cn.html) | [繁體中文（香港）](/privacy_policy/zh-hk.html) | [English](/privacy_policy/en-us.html)
 :::
 
 # Privacy Policy
+
 ## Owner and Data Controller
+
 AeYunDian
 Contact email: aeyundian@qq.com , More contact information: [Click here](/contact_me/en-us.html)
 In this policy, "AeYunDian", the website owner and data controller, is referred to as the "Owner".
 
 ## Types of Data Collected
+
 Complete details on each type of personal data collected are provided in the dedicated sections of this privacy policy or by specific explanation texts displayed prior to the data collection.
 Personal Data may be freely provided by the User, or, in the case of Usage Data, collected automatically when using this website.
 Unless specified otherwise, all Data requested by this website is mandatory and failure to provide this Data may make it impossible for this website to provide its services. In cases where this website specifically states that some Data is not mandatory, Users are free not to communicate this Data without consequences on the availability or the functioning of the service.
@@ -30,23 +35,30 @@ The use of Cookies – or other tracking tools – by this website or by the own
 Users are responsible for any third-party Personal Data obtained, published, or shared through this website.
 
 ## Mode and Place of Processing the Data
+
 ### Methods of processing
+
 The Owner takes appropriate security measures to prevent unauthorized access, disclosure, modification, or unauthorized destruction of the Data.
 Data processing is carried out using computers and/or IT enabled tools, following organizational procedures and modes strictly related to the purposes indicated. In addition to the Owner, in some cases, the Data may be accessible to certain types of persons in charge of the operation of this website (administration, sales, marketing, legal, system administration) or external parties (such as third-party technical service providers, mail carriers, hosting providers, IT companies, communications agencies). These parties may be appointed as Data Processors by the Owner. You may request the latest list of these parties from the Owner at any time.
 
 ### Place
+
 The Data is processed at the Owner's operating offices and in any other places where the parties involved in the processing are located.
 
 Depending on the User's location, data transfers may involve transferring the User's Data to a country other than their own. To find out more about the place of processing of such transferred Data, Users can check the section containing details about the processing of Personal Data.
 
 ### Retention time
+
 Unless otherwise specified in this document, Personal Data shall be processed and stored for as long as required by the purpose they have been collected for and may be retained for longer due to applicable legal obligations or based on the User's consent.
 
 ## Cookie Policy
+
 This website uses Trackers. To learn more, Users may consult the [Cookie Policy](/cookie_policy/en-us.html).
 
 ## Additional information for EU users
+
 ### Legal basis of processing
+
 The Owner may process Personal Data relating to Users if one of the following applies:
 
 - Users have given their consent for one or more specific purposes.
@@ -55,7 +67,9 @@ The Owner may process Personal Data relating to Users if one of the following ap
 - processing is related to a task that is carried out in the public interest or in the exercise of official authority vested in the Owner;
 - processing is necessary for the purposes of the legitimate interests pursued by the Owner or by a third party.
 - In any case, the Owner will gladly help to clarify the specific legal basis that applies to the processing, and in particular whether the provision of Personal Data is a statutory or contractual requirement, or a requirement necessary to enter into a contract.
+
 ### More information about retention time
+
 Unless otherwise specified in this document, Personal Data shall be processed and stored for as long as required by the purpose they have been collected for and may be retained for longer due to applicable legal obligations or based on the User's consent.
 
 Therefore:
@@ -68,6 +82,7 @@ The Owner may be allowed to retain Personal Data for a longer period whenever th
 Once the retention period expires, Personal Data shall be deleted. Therefore, the right of access, the right to erasure, the right to rectification, and the right to data portability cannot be enforced after the expiration of the retention period.
 
 ### User rights under the GDPR
+
 Users may exercise certain rights regarding their Data processed by the Owner.
 
 In particular, Users have the right to do the following, to the extent permitted by law:
@@ -84,30 +99,38 @@ In particular, Users have the right to do the following, to the extent permitted
 Users also have the right to know the legal basis for Data transfers abroad, including to any international organization governed by public international law or set up by two or more countries (such as the UN), and the security measures taken by the Owner to safeguard their Data.
 
 ### Details about the right to object to processing
+
 **Where Personal Data is processed for a public interest, in the exercise of an official authority vested in the Owner, or for the purposes of the legitimate interests pursued by the Owner, Users may object to such processing by providing a ground related to their particular situation to justify the objection.**
 
 **Users must know that, however, should their Personal Data be processed for direct marketing purposes, they can object to that processing at any time, free of charge and without providing any justification. Where the User objects to processing for direct marketing purposes, the Personal Data will no longer be processed for such purposes. To learn whether the Owner is processing Personal Data for direct marketing purposes, Users may refer to the relevant sections of this document.**
 
 ### How to exercise these rights
+
 Any requests to exercise User rights can be directed to the Owner through the contact details provided in this document. These requests are free of charge and will be addressed by the Owner as early as possible and always within 28 working days, providing the User with the information required by law. Any rectification, erasure, or restriction of processing of Personal Data will be communicated by the Owner to each recipient, if any, to whom the Personal Data have been disclosed, unless this proves impossible or involves disproportionate effort. The Owner will inform the User about those recipients upon request.
 
 ---
 
 ## Additional information about Data collection and processing
+
 ### Legal action
+
 The User's Personal Data may be used for legal purposes by the Owner in court or in the stages leading to possible legal action arising from improper use of this website or the related Services.
 The User declares to be aware that the Owner may be required to reveal personal data upon request of public authorities.
 
 ### Additional information about User's Personal Data
+
 In addition to the information contained in this privacy policy, this website may provide the User with additional and contextual information concerning particular Services or the collection and processing of Personal Data upon request.
 
 ### System logs and maintenance
+
 For operation and maintenance purposes, this website and any third-party services may collect files that record interaction with this website (System logs) or use other Personal Data (such as IP Address) for this purpose.
 
 ### Information not contained in this policy
+
 More details concerning the collection or processing of Personal Data may be requested from the Owner at any time. Please see the contact information at the beginning of this document.
 
 ### Changes to this privacy policy
+
 The Owner reserves the right to make changes to this privacy policy at any time. The revised policy will be posted on this page, notified to Users through a notice within the website, or, as permitted by technical and legal means, sent to Users via any contact information available to the Owner. **It is strongly recommended to check this page often, referring to the date of the last modification listed at the bottom.**
 
 If a change affects processing activities performed on the basis of the User’s consent, the Owner shall collect new consent from the User, where required.
@@ -115,28 +138,37 @@ If a change affects processing activities performed on the basis of the User’s
 ---
 
 ## Definitions and legal references
+
 ### Personal Data (or Data)
+
 Any information that directly, indirectly, or in connection with other information — including a personal identification number — allows for the identification or identifiability of a natural person.
 
 ### Usage Data
+
 Information collected automatically through this website (or third-party services employed in this website), which can include: the IP addresses or domain names of the computers utilized by the Users who use this website, the URI addresses (Uniform Resource Identifier), the time of the request, the method utilized to submit the request to the server, the size of the file received in response, the numerical code indicating the status of the server's answer (successful outcome, error, etc.), the country of origin, the features of the browser and the operating system utilized by the User, the various time details per visit (e.g., the time spent on each page within the website), and the details about the path followed within the website, with special reference to the sequence of pages visited, and other parameters about the device operating system and/or the User's IT environment.
 
 ### User
+
 The individual using this website who, unless otherwise specified, coincides with the Data Subject.
 
 ### Data Subject
+
 The natural person to whom the Personal Data refers.
 
 ### Data Processor (or Processor)
+
 The natural or legal person, public authority, agency, or other body which processes Personal Data on behalf of the Controller, as described in this privacy policy.
 
 ### Data Controller (or Owner)
+
 The natural or legal person, public authority, agency, or other body which, alone or jointly with others, determines the purposes and means of the processing of Personal Data, including the security measures concerning the operation and use of this website. Unless otherwise specified, the Data Controller is the Owner of this website.
 
 ### European Union (EU)
+
 Unless otherwise specified, all references made within this document to the European Union include all current member states to the European Union and the European Economic Area.
 
 ---
 
 ### Legal information
+
 This privacy policy relates solely to this website, unless stated otherwise within this document.

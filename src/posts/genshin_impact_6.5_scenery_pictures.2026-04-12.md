@@ -7,10 +7,15 @@ tag:
   - 原神
   - 风景
 ---
-  
+
+# 原神 6.5 版本 风景图
+
+本文分享了一些原神 6.5 版本新地图的一些风景照。
+
 <!-- more -->
-# 原神 6.5版本 风景图
+
 ### 空之神殿
+
 ::: tabs
 @tab 隐藏
   ::: center
@@ -22,8 +27,8 @@ tag:
 ![无水印版](https://cdn.jsdmirror.com/gh/aeyundian/aeyundian.github.io/src/.vuepress/public/6.5gi_images/1-nwm.png)
 :::
 
-
 ### 荆夫港
+
 ::: tabs
 @tab 隐藏
   ::: center
@@ -36,6 +41,7 @@ tag:
 :::
 
 ### 风车镇
+
 ::: tabs
 @tab 隐藏
   ::: center
@@ -48,6 +54,7 @@ tag:
 :::
 
 ### 去空之神殿的路
+
 ::: tabs
 @tab 隐藏
   ::: center

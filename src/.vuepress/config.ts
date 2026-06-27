@@ -34,7 +34,7 @@ export default defineUserConfig({
         AutoImport({
           resolvers: [ElementPlusResolver()],
           imports: ['vue', 'vue-router'],
-          dts: './src/.vuepress/auto-imports.d.ts',
+          dts: 'auto-imports.d.ts',
         }),
         Components({
           resolvers: [
@@ -43,7 +43,7 @@ export default defineUserConfig({
               importStyle: 'sass',
             }),
           ],
-          dts: './src/.vuepress/components.d.ts',
+          dts: 'components.d.ts',
           dirs: [],
         }),
         visualizer({
@@ -77,6 +77,13 @@ export default defineUserConfig({
     ['script', { src: 'https://hm.baidu.com/hm.js?79463ae1d0aa94c4bc728b9486856172' }],
 
     ["link", { rel: "preconnect", href: "https://cdn.jsdmirror.com" }],
+    [
+      "link",
+      {
+        href: "/font/sdk_sc_web/font.css",
+        rel: "stylesheet",
+      },
+    ],
     [
       "link",
       {

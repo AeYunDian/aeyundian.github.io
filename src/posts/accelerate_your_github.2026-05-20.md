@@ -7,9 +7,15 @@ tag:
   - 加速
   - GitHub
 ---
+
 # GitHub 加速与代理服务使用指南
+
+本文讲述了 AeYunDian 提供的 GitHub 加速服务及其使用方法。
+
+<!-- more -->
+
 ::: warning
-此面向公众的为GitHub加速服务，不是VPN，请注意区分！
+此面向公众的为 GitHub 加速服务，不是 VPN，请注意区分！
 :::
 
 在国内访问 GitHub 及其相关资源（如 raw、gist、各类 assets）时，经常遇到速度慢、甚至无法打开的问题。本文介绍一个基于 Cloudflare Worker 实现的代理服务，提供两种代理模式：**无需授权的 GitHub 专用加速** 和 **需要授权的通用代理**，帮助你稳定、快速地访问 GitHub 生态资源。
@@ -28,55 +34,55 @@ tag:
 
 ### 可用前缀
 
-| 前缀 | 功能 |
-|------|------|
-| `/gh/` | 普通代理，直接返回原始内容（不重写页面） |
+| 前缀       | 功能                                                         |
+| ---------- | ------------------------------------------------------------ |
+| `/gh/`     | 普通代理，直接返回原始内容（不重写页面）                     |
 | `/gh_fix/` | 智能代理，自动重写 HTML 中的链接、资源路径，解决样式丢失问题 |
 
 ### 使用方式
 
 1. 方法一： 将你要访问的 GitHub 原始 URL 前面添加 （下载文件时推荐）：
    https://api.undz.cn/gh/
-   或者 （访问GitHub网页时推荐）
+   或者 （访问 GitHub 网页时推荐）
    https://api.undz.cn/gh_fix/
 
 2. 方法二： 将你要访问的 GitHub 原始 URL 转换为以下格式：
    https://api.undz.cn/gh/[类型]/[剩余路径]
    其中 `[类型]` 支持以下简写（自动映射到真实的 GitHub 域名）：
 
-| 简写 | 对应域名 | 说明 |
-|------|----------|------|
-| `www` | github.com | GitHub 主站 |
-| `raw` | raw.githubusercontent.com | 原始文件下载 |
-| `gist` | gist.github.com | Gist 代码片段 |
-| `api` | api.github.com | GitHub API |
-| `io` | github.io | GitHub Pages |
-| `camo` | camo.githubusercontent.com | 图片缓存 |
-| `avatars` | avatars.githubusercontent.com | 用户头像 |
-| `usercontent` | user-content.githubusercontent.com | 用户生成内容 |
-| `assets` | assets-cdn.github.com | 资源 CDN |
-| `ghs` | github.global.ssl.fastly.net | GitHub 全球加速节点 |
-| `greasyfork` | greasyfork.org | GreasyFork 脚本站 |
-| `upgf` | update.greasyfork.org | GreasyFork 更新源 |
-| `dev` | github.dev | GitHub Web 编辑器 |
-| `githubassets` | github.githubassets.com | GitHub 静态资源 |
-| `support` | support-assets.githubassets.com | GitHub 支持资源 |
-| `edu` | education.github.com | GitHub 教育 |
-| `res` | resources.github.com | GitHub 资源 |
-| `upload` | uploads.github.com | GitHub 上传服务 |
-| `ap` | archiveprogram.github.com | GitHub 归档计划 |
-| `guc` | githubusercontent.com | GitHub 用户内容泛域名 |
-| `cloud` | cloud.githubusercontent.com | 云图片缓存 |
-| `avatars0` | avatars0.githubusercontent.com | 头像 0 号节点 |
-| `avatars1` | avatars1.githubusercontent.com | 头像 1 号节点 |
-| `avatars2` | avatars2.githubusercontent.com | 头像 2 号节点 |
-| `avatars3` | avatars3.githubusercontent.com | 头像 3 号节点 |
-| `avatars4` | avatars4.githubusercontent.com | 头像 4 号节点 |
-| `userimg` | user-images.githubusercontent.com | 用户上传图片 |
-| `objects` | objects.githubusercontent.com | 对象存储 |
-| `pui` | private-user-images.githubusercontent.com | 私有用户图片 |
-| `pages` | pages.github.com | GitHub Pages 信息 |
-| `app` | githubapp.com | GitHub 应用域名 |
+| 简写           | 对应域名                                  | 说明                  |
+| -------------- | ----------------------------------------- | --------------------- |
+| `www`          | github.com                                | GitHub 主站           |
+| `raw`          | raw.githubusercontent.com                 | 原始文件下载          |
+| `gist`         | gist.github.com                           | Gist 代码片段         |
+| `api`          | api.github.com                            | GitHub API            |
+| `io`           | github.io                                 | GitHub Pages          |
+| `camo`         | camo.githubusercontent.com                | 图片缓存              |
+| `avatars`      | avatars.githubusercontent.com             | 用户头像              |
+| `usercontent`  | user-content.githubusercontent.com        | 用户生成内容          |
+| `assets`       | assets-cdn.github.com                     | 资源 CDN              |
+| `ghs`          | github.global.ssl.fastly.net              | GitHub 全球加速节点   |
+| `greasyfork`   | greasyfork.org                            | GreasyFork 脚本站     |
+| `upgf`         | update.greasyfork.org                     | GreasyFork 更新源     |
+| `dev`          | github.dev                                | GitHub Web 编辑器     |
+| `githubassets` | github.githubassets.com                   | GitHub 静态资源       |
+| `support`      | support-assets.githubassets.com           | GitHub 支持资源       |
+| `edu`          | education.github.com                      | GitHub 教育           |
+| `res`          | resources.github.com                      | GitHub 资源           |
+| `upload`       | uploads.github.com                        | GitHub 上传服务       |
+| `ap`           | archiveprogram.github.com                 | GitHub 归档计划       |
+| `guc`          | githubusercontent.com                     | GitHub 用户内容泛域名 |
+| `cloud`        | cloud.githubusercontent.com               | 云图片缓存            |
+| `avatars0`     | avatars0.githubusercontent.com            | 头像 0 号节点         |
+| `avatars1`     | avatars1.githubusercontent.com            | 头像 1 号节点         |
+| `avatars2`     | avatars2.githubusercontent.com            | 头像 2 号节点         |
+| `avatars3`     | avatars3.githubusercontent.com            | 头像 3 号节点         |
+| `avatars4`     | avatars4.githubusercontent.com            | 头像 4 号节点         |
+| `userimg`      | user-images.githubusercontent.com         | 用户上传图片          |
+| `objects`      | objects.githubusercontent.com             | 对象存储              |
+| `pui`          | private-user-images.githubusercontent.com | 私有用户图片          |
+| `pages`        | pages.github.com                          | GitHub Pages 信息     |
+| `app`          | githubapp.com                             | GitHub 应用域名       |
 
 ### 示例
 
@@ -99,6 +105,7 @@ tag:
 > 💡 如果代理后页面出现样式错乱或图片缺失，请尝试使用 **`/gh_fix/`** 前缀，它会自动重写页面内的链接，修复相对路径和 CSP 限制。
 
 ---
+
 ## 二、通用代理模式
 
 ::: info 此代理不公开
@@ -143,13 +150,13 @@ tag:
 
 ## 五、故障排除
 
-| 现象 | 可能原因 | 解决办法 |
-|------|----------|----------|
-| 返回 403 Forbidden | 访问通用代理但未授权 | 先完成 `/auth-proxy` 授权流程 |
-| 返回 400 Bad Request | 代理路径格式错误 | 检查是否漏掉协议（`http://` 或 `https://`） |
-| 页面样式丢失 | HTML 中的相对路径未被转换 | 改用 `*_fix` 模式（如 `/gh_fix/` 或 `/proxy_fix/`） |
-| 授权成功后依然 403 | Cookie 未携带或已过期 | 清除浏览器缓存/重试授权，或重新获取密钥 |
-| 返回 5xx 错误 | 上游服务或代理内部错误 | 稍后重试，或联系服务提供者 |
+| 现象                 | 可能原因                  | 解决办法                                            |
+| -------------------- | ------------------------- | --------------------------------------------------- |
+| 返回 403 Forbidden   | 访问通用代理但未授权      | 先完成 `/auth-proxy` 授权流程                       |
+| 返回 400 Bad Request | 代理路径格式错误          | 检查是否漏掉协议（`http://` 或 `https://`）         |
+| 页面样式丢失         | HTML 中的相对路径未被转换 | 改用 `*_fix` 模式（如 `/gh_fix/` 或 `/proxy_fix/`） |
+| 授权成功后依然 403   | Cookie 未携带或已过期     | 清除浏览器缓存/重试授权，或重新获取密钥             |
+| 返回 5xx 错误        | 上游服务或代理内部错误    | 稍后重试，或联系服务提供者                          |
 
 ---
 

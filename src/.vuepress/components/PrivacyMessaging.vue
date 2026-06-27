@@ -19,7 +19,8 @@
                     <p class="description">继续使用本網站即表示你同意以下协议及隱私政策中所述的 Cookie 使用方式。</p>
 
                     <div class="consent-options">
-                        <p class="description">点击「接受全部（协议及所有 Cookie）」即表示您同意我們使用所有 Cookie，您也可以点击「接受协议和仅必要 Cookie」来同意我們使用必要的 Cookie 类型。</p>
+                        <p class="description">点击「接受全部（协议及所有 Cookie）」即表示您同意我們使用所有 Cookie，您也可以点击「接受协议和仅必要
+                            Cookie」来同意我們使用必要的 Cookie 类型。</p>
 
                         <!-- 同意复选框区域 -->
                         <div class="checkbox-group" :class="{ 'disabled': !canEnableCheckbox }">
@@ -30,10 +31,10 @@
                                     <button type="button" class="link-btn"
                                         @click="openAgreementModal('privacy')">《隐私政策》</button>
                                     、
-                                    <button type="button" class="link-btn" 
-                                        @click="openAgreementModal('cookie')">《Cookie 政策》</button>
+                                    <button type="button" class="link-btn" @click="openAgreementModal('cookie')">《Cookie
+                                        政策》</button>
                                     和
-                                    <button type="button" class="link-btn" 
+                                    <button type="button" class="link-btn"
                                         @click="openAgreementModal('terms')">《服务条款》</button>
                                 </span>
                             </label>
@@ -237,8 +238,7 @@ export default {
     inset: 0;
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(2px);
-    z-index: 201312141;
-    /* 小巧思，可能和身份z和**日期有关 */
+    z-index: 201312140;
     display: flex;
     align-items: flex-end;
     justify-content: center;

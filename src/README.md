@@ -6,7 +6,7 @@ title: 主页
 heroImage: /logo.uhd.png
 heroText: undz
 heroFullScreen: true
-tagline: 'Protect What You Love'
+tagline: "Protect What You Love"
 projects:
   - icon: laptop-code
     name: "友情交换"
@@ -21,7 +21,7 @@ projects:
   - icon: gamepad
     name: "Crossfire: Ys"
     desc: 使用U3d自制的一款游戏
-    link: https://github.com/AeYunDian/Crossfire-Ys
+    link: /project/crossfire.html
 
   - icon: envelope
     name: "AyExMail"
@@ -29,7 +29,7 @@ projects:
     link: https://exm.undz.cn
 
   - icon: link
-    name: "Ay Online Chat Room"
+    name: "AyOnlineChatRoom"
     desc: 在线安全公开无需账号的公共聊天室
     link: https://chat.undz.cn
 
@@ -37,5 +37,5 @@ projects:
     name: "AyOpenPlatform"
     desc: 简单、可靠、为个人开发者打造的API服务平台
     link: https://open.undz.cn
-footer: 
+footer:
 ---
