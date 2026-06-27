@@ -10,6 +10,10 @@
 body {
   font-family: var(--vp-font) !important;
 }
+.vp-project-name {
+  font-weight: bold;
+}
+
 .color-text-secondary .text-sm {
   user-select: none;
   pointer-events: none;
