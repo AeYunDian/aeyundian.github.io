@@ -8,7 +8,7 @@ import { onMounted, nextTick } from 'vue';
 
 onMounted(() => {
   nextTick(() => {
-    console.debug('HeroBG mounted');
+    console.info('HeroBG mounted');
   });
 });
 
@@ -48,6 +48,7 @@ onMounted(() => {
     background: #000;
     opacity: 0.3 !important;
   }
+
   .vp-footer-wrapper {
     &::before {
       background: #000;
@@ -61,6 +62,7 @@ onMounted(() => {
     background: #000;
     opacity: 0.7 !important;
   }
+
   .vp-footer-wrapper {
     &::before {
       background: #000;

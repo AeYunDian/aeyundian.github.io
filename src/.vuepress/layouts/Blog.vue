@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { Blog } from "vuepress-theme-hope/blog";
-import { Layout, NotFound } from "vuepress-theme-hope/client";
 import TodayInHistory from '../components/TodayInHistory.vue'
 import Hitokoto from '../components/Hitokoto.vue'
 import SaleBanner from '../components/SaleBanner.vue'
@@ -8,6 +7,7 @@ import SaleBlock from '../components/SaleBlock.vue'
 import BingHeroBackground from "vuepress-theme-hope/presets/BingHeroBackground.js";
 import client from "../client.js";
 import { ClientOnly } from "vuepress/client";
+
 </script>
 
 <template>
@@ -39,6 +39,7 @@ import { ClientOnly } from "vuepress/client";
       </ClientOnly>
       <SaleBlock />
     </template>
+
 
   </Blog>
 

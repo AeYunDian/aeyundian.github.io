@@ -55,7 +55,7 @@ const CheckScrollTopClass = () => {
 
 
 const checkRootPath = () => {
- 
+
   const themeElms = document.getElementsByClassName('theme-container');
   if (themeElms.length === 0) return;
   const themeElm = themeElms[0];
@@ -66,10 +66,10 @@ const checkRootPath = () => {
 };
 onMounted(() => {
   nextTick(() => {
-    console.debug('TopNavBeautify mounted');
+    console.info('TopNavBeautify mounted');
     CheckScrollTopClass(); // 切换时顶栏修改
 
-    window.removeEventListener('scroll', () => {});
+    window.removeEventListener('scroll', () => { });
     window.addEventListener('scroll', () => {
       CheckScrollTopClass();
     });
@@ -94,7 +94,6 @@ onMounted(() => {
 </template>
 
 <style lang="scss">
-
 // 当导航栏在首页导到达顶部时
 .theme-container.ayund-scroll-top.ayund-blog-hero {
   .vp-navbar {
@@ -126,6 +125,7 @@ onMounted(() => {
     background: transparent;
   }
 }
+
 .theme-container.ayund-blog-hero.ayund-scroll-top {
   .vp-navbar {
     backdrop-filter: none;
@@ -151,18 +151,21 @@ onMounted(() => {
     .vp-appearance-button {
       color: #eee;
     }
+
     .seiting_trigger {
       color: #eee;
     }
-    .rtl-toggle-item > .label {
+
+    .rtl-toggle-item>.label {
       color: var(--vp-c-text, rgb(60, 60, 67));
-   }
+    }
 
     // 左边的名字颜色调整
     .vp-site-name {
       color: #eee;
       text-shadow: 0.05rem 0.05rem 0.1rem rgb(0 0 0 / 50%);
       opacity: 0.85;
+
       &:hover {
         color: var(--theme-color-light);
         opacity: 1;
@@ -172,20 +175,25 @@ onMounted(() => {
     .vp-dropdown-title {
       color: #eee;
     }
+
     .vp-navbar {
-      .vp-nav-item > .auto-link {
+      .vp-nav-item>.auto-link {
         color: #eee;
       }
+
       .vp-dropdown-title .i18n-icon {
         color: #eee;
       }
+
       .vp-outlook-button {
         color: #eee;
       }
+
       .vp-dropdown-title .arrow {
         display: none;
       }
     }
+
     .vp-toggle-sidebar-button::before,
     .vp-toggle-sidebar-button::after,
     .vp-toggle-sidebar-button .icon {
@@ -210,6 +218,7 @@ onMounted(() => {
 
   .theme-container.ayund-scroll-blog-hero-inner {
     .vp-navbar {
+
       // 去除下拉图标
       .vp-dropdown-title .arrow {
         display: none;

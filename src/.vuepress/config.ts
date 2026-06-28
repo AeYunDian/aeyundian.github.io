@@ -175,7 +175,7 @@ export default defineUserConfig({
       `]
   ],
   lang: "zh-CN",
-  title: "undz",
+  title: "AY",
   description: "AeYunDian的博客",
 
   theme,

@@ -1,4 +1,5 @@
 import Blog from "./layouts/Blog.vue";
+import Layout from "./layouts/Layout.vue";
 import { defineClientConfig } from '@vuepress/client';
 import RTLToggle from './components/RTLToggle.vue';
 import SettingsMenu from './components/SettingsMenu.vue';
@@ -13,7 +14,8 @@ import RiskDetector from './components/RiskDetector.vue';
 import FirstScreenLoading from './components/FirstScreenLoading.vue'
 export default defineClientConfig({
   layouts: {
-    Blog: Blog
+    Blog: Blog,
+    Layout: Layout
   },
   rootComponents: [
     HeroBG,
