@@ -131,7 +131,7 @@ export default {
                 || window.location.hostname.startsWith('172.16.')
                 || window.location.hostname.startsWith('172.17.');
             try {
-                const res = await fetch('https://api.undz.cn/ip');
+                const res = await fetch('https://api.undz.cn/ip/v1/get');
                 const data = await res.json();
                 if (data.code === 200 && data.country && data.country !== 'CN' && data.tlsVersion && data.tlsVersion !== 'TLSv1.3') isRisky = true;
             } catch (error) {
