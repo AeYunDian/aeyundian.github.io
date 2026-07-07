@@ -19,7 +19,7 @@ body:
         - **名称**: undz
         - **链接**: `https://undz.cn`
         - **头像**: `https://undz.cn/favicon.ico`
-        - **描述**: Protect What You Love
+        - **描述**: Do one thing and do it well
 
   - type: input
     id: name

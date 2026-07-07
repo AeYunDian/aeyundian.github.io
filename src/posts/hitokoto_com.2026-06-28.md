@@ -102,7 +102,7 @@ try {
     class="vp-blog-hero-description"
     @click="refresh()"
   >
-    Protect What You Love
+    Do one thing and do it well
   </p>
 
   <!-- 正常展示一言 -->

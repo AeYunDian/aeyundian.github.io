@@ -13,9 +13,10 @@ prev: false
 next: false
 backtotop: false
 ---
- 
+
 <!-- more -->
 <!-- FRIEND_CARDS_START -->
+
 ```component VPCard
 title: AeYunDian
 desc: 保护你所爱的一切
@@ -23,6 +24,7 @@ logo: https://net.undz.cn/static/jpg/f32f2e85fff0e6a63cacb7808cb0ecb2.jpg
 link: https://github.com/AeYunDian/
 background: rgba(253, 230, 138, 0.15)
 ```
+
 ```component VPCard
 title: ZYY-Office
 desc: https://zyy.undz.cn
@@ -30,6 +32,7 @@ logo: https://net.undz.cn/static/jpg/d6699b5e5ffacd0cea984f4c903d3742.jpg
 link: https://zyy.undz.cn
 background: rgba(255, 255, 255, 0.15)
 ```
+
 ```component VPCard
 title: Bing🐣
 desc: 一个基于VuePress的个人博客
@@ -37,6 +40,7 @@ logo: https://liubing.me/logo.png
 link: https://liubing.me
 background: rgba(225,252,252,1.00)
 ```
+
 ```component VPCard
 title: 墨七
 desc: 墨染七弦月，笔耕半亩田。
@@ -44,6 +48,7 @@ logo: https://file.mo7.cc/static/lxh_gif/lxh_71.gif
 link: https://mo7.cc
 background: rgba(13.0769230769, 140.5769230769, 241.9230769231, 0.15)
 ```
+
 ```component VPCard
 title: 叶随风
 desc: 世界和平,身体健康。
@@ -51,6 +56,7 @@ logo: https://cdn.jsdmirror.com/gh/20000428/PictureBed/img/huge.png
 link: https://yesuifeng.cc/
 background: rgba(253, 230, 138, 0.15)
 ```
+
 ```component VPCard
 title: UpXuu's blog
 desc: 逐光而上
@@ -154,6 +160,7 @@ logo: https://loglib.cn/logo.png
 link: https://loglib.cn
 background: rgba(239, 187, 204, 0.15)
 ```
+
 <!-- FRIEND_CARDS_END -->
 <br />
 <hr />
@@ -162,6 +169,7 @@ background: rgba(239, 187, 204, 0.15)
 ::: tip 欢迎交换友情链接
 如果您也想加入友链名单，<a href="https://github.com/AeYunDian/aeyundian.github.io/issues/new?template=friend-request.yml" style="text-decoration: none;">点击自助申请友链（推荐，全自动）</a>；
 或者，您也可以在下方按如下格式评论（人工）：
+
 ```Markdown
 ### 网站名称
 undz
@@ -173,32 +181,37 @@ https://undz.cn
 https://undz.cn/friends
 
 ### 网站描述
-Protect What You Love
+Do one thing and do it well
 
 ### 网站头像 URL
 https://undz.cn/logo.png
 ```
+
 然后将本站的信息添加至您的网站中
 :::
 本站信息：
 
 ::: code-tabs#shell
 @tab:active YAML
+
 ```yaml
 昵称: undz
-描述: Protect What You Love
+描述: Do one thing and do it well
 地址: https://undz.cn/
 头像: https://undz.cn/logo.png
 ```
+
 @tab JSON
+
 ```json
 {
-    "avatar": "https://undz.cn/logo.png",
-    "name": "undz",
-    "description": "Protect What You Love",
-    "link": "https://undz.cn/"
+  "avatar": "https://undz.cn/logo.png",
+  "name": "undz",
+  "description": "Do one thing and do it well",
+  "link": "https://undz.cn/"
 }
 ```
+
 :::
 我们会定期对这里的所有站点做访问性测试，如果不通过测试（如网站无法访问），该条目将被删除。当您再次做好准备时，欢迎再次提交 PR 申请。
 
@@ -220,6 +233,7 @@ https://undz.cn/logo.png
 
 如果因为从本页跳转给你造成了损失，深表歉意，并且建议用户如果发现存在问题在本页面进行回复。通常会很快处理。如果长时间无法得到处理，建议留言联系。
 :::
+
 <style>
   .vp-card {
     min-width: 270px;

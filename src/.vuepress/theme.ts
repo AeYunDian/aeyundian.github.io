@@ -36,7 +36,7 @@ export default hopeTheme({
 
   // 博客相关
   blog: {
-    description: "Protect What You Love",
+    description: "Do one thing and do it well",
     intro: "/aboutus/zh-cn.html",
     avatar: "https://net.undz.cn/static/jpg/f32f2e85fff0e6a63cacb7808cb0ecb2.jpg",
     medias: {
@@ -147,7 +147,7 @@ export default hopeTheme({
       channel: {
         title: "undz",
         link: "https://undz.cn",
-        description: "Protect What You Love",
+        description: "Do one thing and do it well",
       },
     },
 
