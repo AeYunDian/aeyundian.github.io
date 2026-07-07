@@ -32,7 +32,7 @@ export default hopeTheme({
   <a href="/privacy_policy/zh-cn.html">《隐私政策》</a>&nbsp;&nbsp;<a href="/cookie_policy/zh-cn.html">《Cookie 政策》</a>&nbsp;&nbsp;
   <a href="/terms/zh-cn.html">《服务条款》</a></br> 
   Running time: <span id="runtime-value">0 days 0 hours 0 minutes 0 seconds</span></br>
-  本网站为AeYunDian个人官方网站`,
+  本网站为非政府官方站点，仅为 韵典 自有信息发布与服务平台。`,
   displayFooter: true,
 
   // 博客相关
