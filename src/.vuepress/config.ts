@@ -149,7 +149,7 @@ export default defineUserConfig({
     ['link', { href: "https://cdn.undz.cn/npm/cn-fontsource-source-han-sans-sc-vf@1.0.10/font.min.css", rel: "stylesheet" }],
     ['script', { href: "https://cdn.undz.cn/npm/iconify-icon@2", crossorigin: 'anonymous', type: 'text/javascript' }],
     ['script', { src: 'https://net.undz.cn/static/js/663309100158b461908698ad346bf0b4.js', type: 'text/javascript', charset: 'utf-8' }],
-    ['script', { src: 'https://quge5.com/88/tag.min.js', 'data-zone': "257077", async: '', 'data-cfasync': "false", type: 'text/javascript', charset: 'utf-8' }],
+    ['script', { src: 'https://quge5.com/88/tag.min.js', 'data-zone': "257077", async: '', 'data-cfasync': "false" }],
     // ['script', {
     //   src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3843140944895532", async: true,
     //   crossorigin: "anonymous"
