@@ -1,7 +1,7 @@
 <template>
   <div v-if="loading" class="hitokoto-loading vp-blog-hero-description">Please wait a moment...</div>
-  <p v-else-if="showTagline" class="vp-blog-hero-description" style="cursor: pointer;" @click="refresh()">Protect What
-    You Love</p>
+  <p v-else-if="showTagline" class="vp-blog-hero-description" style="cursor: pointer;" @click="refresh()">Do one thing
+    and do it well</p>
   <div v-else>
     <p class="vp-blog-hero-description" @click="refresh()" style=" cursor: pointer;">『&nbsp;{{ event.hitokoto }}&nbsp;』
     </p>

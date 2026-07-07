@@ -74,6 +74,10 @@ export default defineUserConfig({
   base: "/",
 
   head: [
+    ['meta', { name: 'renderer', content: 'webkit' }],
+    ['meta', { name: 'force-rendering', content: 'webkit' }],
+    ['meta', { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge,chrome=1' }],
+    ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,viewport-fit=cover' }],
     ['script', { src: 'https://hm.baidu.com/hm.js?79463ae1d0aa94c4bc728b9486856172' }],
 
     ["link", { rel: "preconnect", href: "https://cdn.jsdmirror.com" }],

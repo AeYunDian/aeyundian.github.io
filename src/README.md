@@ -6,7 +6,7 @@ title: 主页
 heroImage: /logo.uhd.png
 heroText: undz
 heroFullScreen: true
-tagline: "Protect What You Love"
+tagline: "Do one thing and do it well"
 projects:
   - icon: laptop-code
     name: "友情交换"

@@ -76,11 +76,4 @@ v1.0.0（2026-03-28）
 开源协议：GNU General Public License v3.0  
 作者：韵典（AeYunDian）  
 版权年份：2025-2026  
-GitHub：[https://github.com/AeYunDian/AyCanvars](https://github.com/AeYunDian/AyCanvars)  
-著作权：已提交中国版权保护中心（受理中）
-
-## 联系
-
-网站：[https://undz.cn](https://undz.cn)  
-B 站：[https://space.bilibili.com/3494370328185235/](https://space.bilibili.com/3494370328185235/)  
-邮箱：admin@undz.cn
+GitHub：[https://github.com/AeYunDian/AyCanvars](https://github.com/AeYunDian/AyCanvars)

@@ -50,6 +50,7 @@ AyWebHosting 是一款面向个人的**免费静态网站托管服务**，旨在
 目前已入驻的网站：
 
 - [Zyy Maple Leaf OS 官方网站](https://zyy.undz.cn)
+- [Zyy Maple Leaf OS 项目维基](https://wiki.zyy.undz.cn)
 
 更多站点持续接入中。
 

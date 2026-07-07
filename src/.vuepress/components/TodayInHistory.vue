@@ -1,6 +1,6 @@
 <template>
   <div v-if="loading" class="history-loading">Please wait a moment...</div>
-  <p v-else-if="showTagline" class="vp-blog-hero-description">Protect What You Love</p>
+  <p v-else-if="showTagline" class="vp-blog-hero-description">Do one thing and do it well</p>
   <div v-else class="history-today-card">
     <div class="history-today-title">
       <h3 class="history-title">历史上的今天</h3>
@@ -12,13 +12,8 @@
       </p>
     </div>
     <div class="history-content">
-      <a
-        v-if="event.url"
-        :href="event.url"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="history-event-text"
-      >{{ event.title }}</a>
+      <a v-if="event.url" :href="event.url" target="_blank" rel="noopener noreferrer" class="history-event-text">{{
+        event.title }}</a>
       <p v-else class="history-event-text">{{ event.title }}</p>
     </div>
   </div>
@@ -55,13 +50,12 @@ onMounted(async () => {
 </script>
 
 <style scoped>
-
 .history-today-card {
   padding: 1rem 1.3rem;
   border-radius: 12px;
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
-  background: rgba(245,247,250,0.15);
+  background: rgba(245, 247, 250, 0.15);
   border: 2px solid #eaecef;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   margin: 1.5rem 0;
@@ -70,7 +64,8 @@ onMounted(async () => {
 .history-today-title {
   display: flex;
   justify-content: space-between;
-  align-items: baseline; /* 标题和年份基线对齐 */
+  align-items: baseline;
+  /* 标题和年份基线对齐 */
   gap: 0.5rem;
 }
 
@@ -82,24 +77,29 @@ onMounted(async () => {
   color: #eee;
   margin: 0;
 }
+
 .history-year {
   font-size: 0.9rem;
   color: #D3D3D3;
   margin: 0;
   text-align: left;
 }
+
 .history-content {
   margin-top: 0.5rem;
 }
+
 .history-event-text {
   font-size: 1rem;
   font-weight: 500;
   color: #eee;
   text-decoration: none;
 }
+
 .history-event-text:hover {
   color: #1e4c8f;
 }
+
 .history-loading {
   color: #eee;
   text-align: center;
