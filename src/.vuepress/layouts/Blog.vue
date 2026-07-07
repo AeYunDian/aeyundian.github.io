@@ -17,7 +17,8 @@ import { ClientOnly } from "vuepress/client";
     </template>
 
     <template #heroAfter>
-      <script>
+      <ClientOnly>
+        <script>
         atOptions = {
           key: "7c87ee8ce90e4cce52cfff1939b8ee7f",
           format: "iframe",
@@ -26,7 +27,8 @@ import { ClientOnly } from "vuepress/client";
           params: {},
         };
       </script>
-      <script src="https://www.highperformanceformat.com/7c87ee8ce90e4cce52cfff1939b8ee7f/invoke.js"></script>
+        <script src="https://www.highperformanceformat.com/7c87ee8ce90e4cce52cfff1939b8ee7f/invoke.js"></script>
+      </ClientOnly>
     </template>
 
     <template #heroInfo>
