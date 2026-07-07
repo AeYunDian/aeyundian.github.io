@@ -37,10 +37,10 @@ import { ClientOnly } from "vuepress/client";
           data-ad-format="auto"
           data-full-width-responsive="true"
         ></ins>
-        <div class="adsbox">
+        <!-- <div class="adsbox">
           广告：
           <div id="container-fea5bb195a297693414b0fb0d07361bd"></div>
-        </div>
+        </div> -->
       </ClientOnly>
       <SaleBlock />
     </template>

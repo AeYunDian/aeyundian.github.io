@@ -32,14 +32,14 @@
         ]"
       />
     </template>
-    <template #tocAfter>
+    <!-- <template #tocAfter>
       <ClientOnly>
         <div class="adsbox tocAfter">
           广告：
           <div id="container-fea5bb195a297693414b0fb0d07361bd"></div>
         </div>
       </ClientOnly>
-    </template>
+    </template> -->
   </Layout>
 </template>
 
