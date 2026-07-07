@@ -38,6 +38,33 @@ body {
   left: 0;
   visibility: hidden;
 }
+.adsbox {
+  padding: 18px 18px 0 18px;
+  margin-top: 12px;
+  border-radius: 12px;
+  text-align: center;
+  background: var(--vp-c-bg-alt);
+}
+.contentAfter {
+  display: none;
+}
+
+@media (max-width: 1440px) {
+  .adsbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .tocAfter {
+    display: none !important;
+  }
+  .contentAfter {
+    display: flex !important;
+  }
+}
+.container-fea5bb195a297693414b0fb0d07361bd__img-container {
+  border-radius: 12px;
+}
 
 // 让内容在更宽的屏幕上可以有更宽的显示区域，宽屏补丁
 :root {
