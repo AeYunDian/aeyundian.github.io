@@ -149,7 +149,61 @@ export default defineUserConfig({
     ['link', { href: "https://cdn.undz.cn/npm/cn-fontsource-source-han-sans-sc-vf@1.0.10/font.min.css", rel: "stylesheet" }],
     ['script', { href: "https://cdn.undz.cn/npm/iconify-icon@2", crossorigin: 'anonymous', type: 'text/javascript' }],
     ['script', { src: 'https://net.undz.cn/static/js/663309100158b461908698ad346bf0b4.js', type: 'text/javascript', charset: 'utf-8' }],
-    ['script', { src: 'https://quge5.com/88/tag.min.js', 'data-zone': "257077", async: '', 'data-cfasync': "false" }],
+    ['script', { src: 'https://pl30239622.effectivecpmnetwork.com/23/d0/03/23d00347a387eec77b271287bb590b64.js' }],
+
+    ['script', { async: '', 'data-cfasync': 'false', src: 'https://pl30239623.effectivecpmnetwork.com/fea5bb195a297693414b0fb0d07361bd/invoke.js' }],
+
+    // 第1组：key=7364335c...
+    ['script', {}, `atOptions = {
+    'key' : '7364335c4d182fce6cf714d3c4813f5f',
+    'format' : 'iframe',
+    'height' : 50,
+    'width' : 320,
+    'params' : {}
+  };`],
+    ['script', { src: 'https://www.highperformanceformat.com/7364335c4d182fce6cf714d3c4813f5f/invoke.js' }],
+
+    // 第2组：key=e275ac44...
+    ['script', {}, `atOptions = {
+    'key' : 'e275ac4496d4f8c8acb68e73f755f66e',
+    'format' : 'iframe',
+    'height' : 90,
+    'width' : 728,
+    'params' : {}
+  };`],
+    ['script', { src: 'https://www.highperformanceformat.com/e275ac4496d4f8c8acb68e73f755f66e/invoke.js' }],
+
+    // 第3组：key=7c87ee8c...
+    ['script', {}, `atOptions = {
+    'key' : '7c87ee8ce90e4cce52cfff1939b8ee7f',
+    'format' : 'iframe',
+    'height' : 300,
+    'width' : 160,
+    'params' : {}
+  };`],
+    ['script', { src: 'https://www.highperformanceformat.com/7c87ee8ce90e4cce52cfff1939b8ee7f/invoke.js' }],
+
+    // 第4组：key=51a6c8db...
+    ['script', {}, `atOptions = {
+    'key' : '51a6c8db60e61b0448e7b146dd6dfd0a',
+    'format' : 'iframe',
+    'height' : 600,
+    'width' : 160,
+    'params' : {}
+  };`],
+    ['script', { src: 'https://www.highperformanceformat.com/51a6c8db60e61b0448e7b146dd6dfd0a/invoke.js' }],
+
+    // 第5组：key=6d8df736...
+    ['script', {}, `atOptions = {
+    'key' : '6d8df736848279f5d28b3353cb66e8af',
+    'format' : 'iframe',
+    'height' : 60,
+    'width' : 468,
+    'params' : {}
+  };`],
+    ['script', { src: 'https://www.highperformanceformat.com/6d8df736848279f5d28b3353cb66e8af/invoke.js' }]
+    // ['script', { src: 'https://5gvci.com/act/files/tag.min.js?z=11250317', async: '', 'data-cfasync': "false" }],
+    // ['script', { src: 'https://quge5.com/88/tag.min.js', 'data-zone': "257077", async: '', 'data-cfasync': "false" }],
     // ['script', {
     //   src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3843140944895532", async: true,
     //   crossorigin: "anonymous"

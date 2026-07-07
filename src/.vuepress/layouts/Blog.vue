@@ -20,7 +20,7 @@ import { ClientOnly } from "vuepress/client";
     </template>
 
     <template #heroAfter>
-      <SaleBanner />
+      <div id="container-fea5bb195a297693414b0fb0d07361bd"></div>
     </template>
 
     <template #heroInfo>
