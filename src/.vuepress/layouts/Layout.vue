@@ -4,33 +4,29 @@
       <br />
       <hr />
       分享至：
-      <Share
-        colorful
-        :services="[
-          'adsterra',
-          'qq',
-          'qzone',
-          'twitter',
-          'facebook',
-          'reddit',
-          'telegram',
-          'whatsapp',
-          'tumblr',
-          'email',
-          'qrcode',
-          'linkedin',
-          'sms',
-          'snapchat',
-          'wordpress',
-          'line',
-          'flipboard',
-          'pinterest',
-          'evernote',
-          'messenger',
-          'buffer',
-          'vk',
-        ]"
-      />
+      <Share colorful :services="[
+        'qq',
+        'qzone',
+        'twitter',
+        'facebook',
+        'reddit',
+        'telegram',
+        'whatsapp',
+        'tumblr',
+        'email',
+        'qrcode',
+        'linkedin',
+        'sms',
+        'snapchat',
+        'wordpress',
+        'line',
+        'flipboard',
+        'pinterest',
+        'evernote',
+        'messenger',
+        'buffer',
+        'vk',
+      ]" />
     </template>
     <!-- <template #tocAfter>
       <ClientOnly>
