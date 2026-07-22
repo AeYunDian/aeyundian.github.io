@@ -139,12 +139,15 @@ function generateChallengePage(token) {
     <p>正在进行安全校验，请稍后...</p>
     <hr><p>此网站使用Ay Web Application Firewall保护站点安全。</p>
     <p>WAF</p>
-    <script>document.cookie="ayFirewall=${token}; path=/; max-age=300; SameSite=Lax; Secure";setTimeout(function(){location.reload()},100);</script></body></html>`
+    <script>document.cookie="ayFirewall=${token}; path=/; max-age=300; SameSite=Lax; Secure";location.reload();</script></body></html>`
 }
 
 function shouldValidate(request) {
     const url = new URL(request.url);
     const path = url.pathname;
+    const ua = request.headers.get('User-Agent') || '';    // 放行主流搜索引擎爬虫
+    const botRegex = /Googlebot|Baiduspider|bingbot|Sogou|360Spider|YandexBot|facebookexternalhit|Twitterbot/i;
+    if (botRegex.test(ua)) return false;
     if (request.method === 'OPTIONS') return false;
     if (path.startsWith('/api/')) return false;
     if (path.startsWith('/.well-known/')) return false;
