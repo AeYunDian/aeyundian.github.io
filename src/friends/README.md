@@ -52,7 +52,7 @@ background: rgba(13.0769230769, 140.5769230769, 241.9230769231, 0.15)
 ```component VPCard
 title: 叶随风
 desc: 世界和平,身体健康。
-logo: https://cdn.jsdmirror.com/gh/20000428/PictureBed/img/huge.png
+logo: https://cdn.undz.cn/gh/20000428/PictureBed/img/huge.png
 link: https://yesuifeng.cc/
 background: rgba(253, 230, 138, 0.15)
 ```
@@ -173,7 +173,7 @@ background: rgba(231, 254, 255, 0.15)
 ```component VPCard
 title: 爱玩电脑的小羊
 desc: 暂无描述
-logo: 
+logo: https://undz.cn/default-avatar.svg
 link: https://shenkongyun.cn
 background: rgba(255, 179, 71, 0.15)
 ```
