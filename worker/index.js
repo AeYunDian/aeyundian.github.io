@@ -139,79 +139,126 @@ function generateChallengePage(token) {
     <p>正在进行安全校验，请稍后...</p>
     <hr><p>此网站使用Ay Web Application Firewall保护站点安全。</p>
     <p>WAF</p>
-    <script>document.cookie="ayFirewall=${token}; path=/; max-age=300; SameSite=Lax; Secure";location.reload();</script></body></html>`
+    <script>document.cookie="ayFirewall=${token}; path=/; max-age=${60 * 60 * 24 * 3}; SameSite=Lax; Secure";location.reload();</script></body></html>`
 }
 
 function shouldValidate(request) {
     const url = new URL(request.url);
     const path = url.pathname;
-    const ua = request.headers.get('User-Agent') || '';    // 放行主流搜索引擎爬虫
+    const ua = request.headers.get('User-Agent') || '';
+    const cf = request.cf || {};
+    const country = (cf && cf.country) || '';
+    const asn = (cf && cf.asn) ? parseInt(cf.asn, 10) : 0;
+
+    // ----- 1. 搜索引擎爬虫白名单（直接放行） -----
     const botRegex = /Googlebot|Baiduspider|bingbot|Sogou|360Spider|YandexBot|facebookexternalhit|Twitterbot/i;
     if (botRegex.test(ua)) return false;
+
+    // ----- 2. 强跳路径（完全不需要验证） -----
     if (request.method === 'OPTIONS') return false;
     if (path.startsWith('/api/')) return false;
     if (path.startsWith('/.well-known/')) return false;
+
     const skipExact = [
-        '/_redirects',
-
-        // 根目录 Logo 文件
-        '/logo.png',
-        '/logo.svg',
-        '/logo.uhd.png',
-        '/logo.webp',
-        '/favicon.ico',
-        '/default-avatar.svg',
-
-        // 常见协议/标准文件
-        '/robots.txt',
-        '/humans.txt',
-        '/security.txt',
-        '/ads.txt',
-        '/app-ads.txt',
-
-        // 订阅
-        '/sitemap',
-        '/sitemap_index',
-        '/feed',
-        '/rss',
-        '/atom',
-
-        // 移动端/通用链接
-        '/apple-app-site-association',
-        '/assetlinks.json',
-        '/browserconfig.xml',
-        '/site.webmanifest',
-        '/manifest.json',
+        '/_redirects', '/logo.png', '/logo.svg', '/logo.uhd.png',
+        '/logo.webp', '/favicon.ico', '/default-avatar.svg',
+        '/robots.txt', '/humans.txt', '/security.txt', '/ads.txt',
+        '/app-ads.txt', '/sitemap', '/sitemap_index', '/feed',
+        '/rss', '/atom', '/apple-app-site-association',
+        '/assetlinks.json', '/browserconfig.xml', '/site.webmanifest',
+        '/manifest.json'
     ];
     if (skipExact.includes(path)) return false;
 
+    // ----- 3. 高危国家 / 空UA / 扫描器UA / 恶意ASN（任一命中则需验证） -----
+    const dangerousCountries = ['RU', 'UA', 'TR'];
+    if (dangerousCountries.includes(country.toUpperCase())) return true;
+
+    if (ua === '' || ua === 'undefined') return true;
+
+    const badKeywords = [
+        'masscan', 'nmap', 'zmap', 'zgrab', 'WPScan', 'sqlmap',
+        'fimap', 'Acunetix', 'FHscan', 'Gscan', 'Researchscan',
+        'Wprecon', 'BackDoorBot', 'Zeus'
+    ];
+    const lowerUA = ua.toLowerCase();
+    if (badKeywords.some(kw => lowerUA.includes(kw.toLowerCase()))) return true;
+
+    const badASNs = new Set([
+        210644, 216246, 211522, 214351, 213194, 214196, 44477,
+        215789, 214943, 48589, 202685, 57523, 136897, 45104,
+        45103, 45102, 37963, 59055, 59054, 59053, 59052, 59051,
+        59028, 269939, 206798, 45090, 132203, 132591, 133478,
+        131444, 63727, 63655, 61348, 134963, 34947, 55990,
+        141180, 139144, 139124, 137876, 140723, 136907, 211914,
+        149167, 206204, 200756, 398324, 14618, 10912, 24940,
+        14061, 16276, 36352, 53667, 60781, 5065, 6207, 35624,
+        43444, 198571, 33993, 209847, 35478, 58854, 138915,
+        140666, 265443
+    ]);
+    if (badASNs.has(asn)) return true;
+    const isChineseASN = /china|telecom|unicom|mobile|cnnic|aliyun|tencent|cloud/i.test(asOrganization);
+    if (country.toUpperCase() === 'CN') {
+        // 请求来自中国，但 ASN 不是中国 → 可能使用代理/VPN
+        if (!isChineseASN) return true;
+    } else {
+        // 请求来自国外，但 ASN 是中国 → 可能伪装或使用国内代理
+        if (isChineseASN) return true;
+    }
+    // ----- 3.6 时区一致性检查（针对中国） -----
+    const timezone = cf.timezone || '';
+    if (country.toUpperCase() === 'CN') {
+        // 中国法定时区为东八区（UTC+8），常见时区名称列表
+        const cnTimezones = [
+            'Asia/Shanghai',
+            'Asia/Hong_Kong',
+            'Asia/Macau',
+            'Asia/Chongqing',
+            'Asia/Harbin',
+            'Asia/Taipei',
+            'Asia/Urumqi'   // 乌鲁木齐虽为东六区，但部分地区可能使用
+        ];
+        // 如果时区不在列表中，且时区不为空（避免误判空值），则触发验证
+        if (timezone && !cnTimezones.includes(timezone)) {
+            return true;
+        }
+    }
+    // ----- 4. 强跳后缀（静态资源）直接放行 -----
     const staticExts = [
-        // 图片
-        '.jpg', '.jpeg', '.png', '.gif', '.bmp', '.ico', '.svg', '.webp',
-        '.tiff', '.tif', '.heic', '.heif', '.avif',
-        // 样式与脚本
+        '.jpg', '.jpeg', '.png', '.gif', '.bmp', '.ico', '.svg',
+        '.webp', '.tiff', '.tif', '.heic', '.heif', '.avif',
         '.css', '.scss', '.less', '.sass', '.styl',
         '.js', '.mjs', '.cjs', '.ts', '.jsx', '.tsx', '.map',
-        // 字体
         '.woff', '.woff2', '.ttf', '.otf', '.eot', '.fon',
-        // 视频音频
-        '.mp4', '.webm', '.ogv', '.avi', '.mov', '.wmv', '.flv', '.mkv',
-        '.mp3', '.wav', '.ogg', '.flac', '.aac', '.m4a', '.wma',
-        // 文档
-        '.pdf', '.doc', '.docx', '.xls', '.xlsx', '.ppt', '.pptx',
-        '.odt', '.ods', '.odp', '.rtf', '.txt', '.csv', '.md',
-        '.json', '.xml', '.yaml', '.yml', '.toml', '.ini', '.cfg', '.conf',
-        // 压缩包
-        '.zip', '.rar', '.7z', '.tar', '.gz', '.bz2', '.xz', '.tgz',
-        // 订阅
-        '.rss', '.atom',
-        // 其他网络资源
-        '.manifest', '.webapp', '.wasm', '.crx', '.xpi',
-        // 可执行文件
-        '.exe', '.msi', '.apk', '.dmg', '.pkg', '.deb', '.rpm', '.jar'
+        '.mp4', '.webm', '.ogv', '.avi', '.mov', '.wmv', '.flv',
+        '.mkv', '.mp3', '.wav', '.ogg', '.flac', '.aac', '.m4a',
+        '.wma', '.pdf', '.doc', '.docx', '.xls', '.xlsx', '.ppt',
+        '.pptx', '.odt', '.ods', '.odp', '.rtf', '.txt', '.csv',
+        '.md', '.json', '.xml', '.yaml', '.yml', '.toml', '.ini',
+        '.cfg', '.conf', '.zip', '.rar', '.7z', '.tar', '.gz',
+        '.bz2', '.xz', '.tgz', '.rss', '.atom', '.manifest',
+        '.webapp', '.wasm', '.crx', '.xpi', '.exe', '.msi',
+        '.apk', '.dmg', '.pkg', '.deb', '.rpm', '.jar'
     ];
     if (staticExts.some(ext => path.endsWith(ext))) return false;
-    return true
+
+    // ----- 5. 综合用户信息（TLS / HTTP 协议等异常检测） -----
+    const tlsVersion = cf.tlsVersion || '';
+    // 只允许 TLSv1.2 和 TLSv1.3
+    if (tlsVersion && !/TLSv1\.[23]/.test(tlsVersion)) {
+        return true;
+    }
+
+    const httpProtocol = cf.httpProtocol || '';
+    // 拒绝 HTTP/1.0 及更早版本
+    if (httpProtocol && /HTTP\/1\.[01]/.test(httpProtocol)) {
+        return true;
+    }
+
+    // （可选）检查其他字段，如 clientAcceptEncoding 等
+
+    // 默认放行
+    return false;
 }
 export default {
     async fetch(request, env) {
