@@ -161,6 +161,14 @@ link: https://loglib.cn
 background: rgba(239, 187, 204, 0.15)
 ```
 
+
+```component VPCard
+title: 他说
+desc: 梁栋烨的博客网站。
+logo: https://090909.top/assets/images/logo.ico
+link: https://090909.top/
+background: rgba(231, 254, 255, 0.15)
+```
 <!-- FRIEND_CARDS_END -->
 <br />
 <hr />
