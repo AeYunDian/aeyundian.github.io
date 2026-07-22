@@ -109,13 +109,13 @@ jobs:
               if (lastMatch) {
                 return lastMatch.index + lastMatch[0].length;
               }
-            
+
               // 最终回退：<!-- more --> 之后
               const moreIndex = content.indexOf('<!-- more -->');
               if (moreIndex !== -1) {
                 return moreIndex + '<!-- more -->'.length;
               }
-            
+
               // 实在不行，追加到文件末尾
               return content.length;
             }
@@ -202,7 +202,7 @@ jobs:
               });
               return;
             }
-            if (avatar && (avatar.length > 280 || !/^https?:\/\//.test(avatar) || /\s/.test(avatar) ) ) {
+            if (avatar != "_No response_" && (avatar.length > 280 || !/^https?:\/\//.test(avatar) || /\s/.test(avatar) ) ) {
               await github.rest.issues.createComment({
                 issue_number: context.issue.number,
                 owner: context.repo.owner,
