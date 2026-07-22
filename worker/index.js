@@ -113,11 +113,12 @@ function generateChallengePage(token) {
     <p>正在进行安全校验，请稍后...</p>
     <hr>
     <p>此网站使用 Ay Web Application Firewall 保护站点安全。</p>
+    <p>WAF</p>
     <script>
     document.cookie = "ayFirewall=${token}; path=/; max-age=300; SameSite=Lax; Secure";
     setTimeout(function() {
         location.reload();  
-    }, 300);
+    }, 100);
     </script></body></html>`;
 }
 function shouldValidate(request) {
