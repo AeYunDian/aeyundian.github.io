@@ -197,6 +197,7 @@ function shouldValidate(request) {
         140666, 265443
     ]);
     if (badASNs.has(asn)) return true;
+    const asOrganization = (cf && cf.asOrganization) || '';
     const isChineseASN = /china|telecom|unicom|mobile|cnnic|aliyun|tencent|cloud/i.test(asOrganization);
     if (country.toUpperCase() === 'CN') {
         // 请求来自中国，但 ASN 不是中国 → 可能使用代理/VPN
@@ -210,13 +211,18 @@ function shouldValidate(request) {
     if (country.toUpperCase() === 'CN') {
         // 中国法定时区为东八区（UTC+8），常见时区名称列表
         const cnTimezones = [
-            'Asia/Shanghai',
+            // 中国大陆常用时区
+            'Asia/Shanghai',    // 北京时间（主流）
+            'Asia/Chongqing',   // 重庆时间（西南地区）
+            'Asia/Harbin',      // 哈尔滨时间（东北地区）
+            'Asia/Urumqi',      // 乌鲁木齐时间（新疆，实际使用 UTC+6，但系统可能仍用此名）
+            'Asia/Kashgar',     // 喀什时间（新疆西部）
+            'Asia/Chungking',   // 旧称，兼容个别老旧系统
+
+            // 港澳台地区
             'Asia/Hong_Kong',
             'Asia/Macau',
-            'Asia/Chongqing',
-            'Asia/Harbin',
             'Asia/Taipei',
-            'Asia/Urumqi'   // 乌鲁木齐虽为东六区，但部分地区可能使用
         ];
         // 如果时区不在列表中，且时区不为空（避免误判空值），则触发验证
         if (timezone && !cnTimezones.includes(timezone)) {
