@@ -169,6 +169,14 @@ logo: https://090909.top/assets/images/logo.ico
 link: https://090909.top/
 background: rgba(231, 254, 255, 0.15)
 ```
+
+```component VPCard
+title: 爱玩电脑的小羊
+desc: 暂无描述
+logo: 
+link: https://shenkongyun.cn
+background: rgba(255, 179, 71, 0.15)
+```
 <!-- FRIEND_CARDS_END -->
 <br />
 <hr />
