@@ -407,19 +407,15 @@ async function validateRequest(request, url) {
 // ===========================================================主要函数
 function generateChallengePage(token) {
     return `<!DOCTYPE html>
-    <html lang="zh-CN">
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"content="width=device-width, initial-scale=1.0">
-    <style>body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}</style>
-    <title>AyWAF</title><style>html{text-align:center}</style>
-    </head>
-    <body
-    ><h3>Ay Web Application Firewall</h3>
-    <p>正在进行安全校验，请稍后...</p>
-    <hr><p>此网站使用Ay Web Application Firewall保护站点安全。</p>
-    <p>WAF</p>
-    <script>document.cookie="ayFirewall=${token}; path=/; max-age=${60 * 60 * 24 * 3}; SameSite=Lax; Secure";location.reload();</script></body></html>`
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport"content="width=device-width, initial-scale=1.0">
+<style>html{text-align:center}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}</style>
+<title>AyWAF</title></head>
+<body><h3>Ay Web Application Firewall</h3>
+<p>正在进行安全校验，请稍后...</p>
+<hr><p>此网站使用Ay Web Application Firewall保护站点安全。</p>
+<p>WAF</p>
+<script>document.cookie="ayFirewall=${token}; path=/; max-age=${60 * 60 * 24 * 3}; SameSite=Lax; Secure";location.reload();</script></body></html>`
 }
 
 async function shouldValidate(request, env) {
@@ -586,6 +582,31 @@ export default {
                 headers: {
                     'Location': newUrl.toString()
                 }
+            })
+        }
+        const ignore = [
+            '/.env', '/.flaskenv', '/env', '/.envrc', '/env', '/env.js', '/.env.js',
+            '/.env.test.local', '/.env.development.local', '/.env.production.local', '/.env.template',
+            '/.env.dist', '/.env.sample', '/.env.example', '/.env~', '/.env.swp',
+            '/.env.tmp', '/.env.bak', '/.env.old', '/.env.save', '/.env.backup',
+            '/.env.staging', '/.env.test', '/.env.prod', '/.env.dev', '/.env.development',
+            '/.env.production', '/.env.local', '/.config', '/config', '/.git/config',
+            '/.git/HEAD', '/_vti_pvt/zzcanary-c209086eca9aebb', '/.ssh/zzcanary-11cee87706275787', '/_vti_pvt/service.pwd', '/.ssh/id_rsa',
+            '/.ssh/id_ecdsa', '/.ssh/id_ed25519', '/.svn/zzcanary-7f24d6347052d904', '/actuator/zzcanary-745f4a4ad776a1b4', '/backup.tar.gz',
+            '/actuator/heapdump', '/.svn/wc.db', '/backup.zip', '/dump.sql', '/dump.sql', '/database.sql',
+        ];
+        if (ignore.some(ext => path.toLowerCase() === ext)) {
+            return new Response(`<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport"content="width=device-width, initial-scale=1.0">
+<style>html{text-align:center}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}</style>
+<title>AyWAF</title></head>
+<body><h3>Ay Web Application Firewall</h3>
+<p>危险操作，已被拦截</p>
+<hr><p>此网站使用Ay Web Application Firewall保护站点安全。</p>
+<p>WAF</p>
+`, {
+                status: 404,
             })
         }
         if (await shouldValidate(request, env)) {
