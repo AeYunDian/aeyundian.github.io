@@ -13,11 +13,6 @@
     "database_name": "api_db",
     "database_id": "aa999f5d-188b-4fe7-83be-24ec7d521060"
   },
-  "triggers": [
-    {
-      "crons": ["15 */2 * * *"]
-    }
-  ],
   "vars": {
     "KEY": "34d7ce5e8c56e52a8887985ab6a13728"
   }
