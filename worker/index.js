@@ -437,7 +437,7 @@ async function shouldValidate(request, env) {
 
     const skipExact = [
         '/_redirects', '/logo.png', '/logo.svg', '/logo.uhd.png',
-        '/logo.webp', '/favicon.ico', '/default-avatar.svg',
+        '/logo.webp', '/favicon.ico', '/default-avatar.svg', '/BingSiteAuth.xml',
         '/robots.txt', '/humans.txt', '/security.txt', '/ads.txt',
         '/app-ads.txt', '/sitemap', '/sitemap_index', '/feed',
         '/rss', '/atom', '/apple-app-site-association',
@@ -496,27 +496,8 @@ async function shouldValidate(request, env) {
     } else {
         if (isChineseASN) return true;
     }
-    // ----- 3.6 时区一致性检查（针对中国） -----
-    const timezone = cf.timezone || '';
-    if (country.toUpperCase() === 'CN') {
-        // 中国法定时区为东八区（UTC+8），常见时区名称列表
-        const cnTimezones = [
-            // 中国大陆常用时区
-            'Asia/Shanghai',    // 北京时间（主流）
-            'Asia/Chongqing',   // 重庆时间（西南地区）
-            'Asia/Harbin',      // 哈尔滨时间（东北地区）
-            'Asia/Urumqi',      // 乌鲁木齐时间（新疆，实际使用 UTC+6，但系统可能仍用此名）
-            'Asia/Kashgar',     // 喀什时间（新疆西部）
-            'Asia/Chungking',   // 旧称，兼容个别老旧系统
 
-            // 港澳台地区
-            'Asia/Hong_Kong',
-            'Asia/Macau',
-            'Asia/Taipei',
-        ];
-        if (!timezone || !cnTimezones.includes(timezone)) return true;
-    }
-    // ----- 4. 强跳后缀（静态资源）直接放行 -----
+    // ----- 强跳后缀（静态资源）直接放行 -----
     const staticExts = [
         '.jpg', '.jpeg', '.png', '.gif', '.bmp', '.ico', '.svg',
         '.webp', '.tiff', '.tif', '.heic', '.heif', '.avif',
