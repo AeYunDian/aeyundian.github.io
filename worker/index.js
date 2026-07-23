@@ -584,6 +584,25 @@ export default {
                 }
             })
         }
+        if (hostname === 'gy.undz.cn') {
+            return new Response(`<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport"content="width=device-width, initial-scale=1.0">
+<style>html{text-align:center}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}</style>
+<title>AyWAF</title></head>
+<body><h3>Ay Web Application Firewall</h3>
+<div style="text-align:left">
+<p>尊敬的访客，您好：</p>
+<p>您当前访问的页面已被管理员关闭，如有疑问，请<a href="https://undz.cn/contact_me/zh-cn.html">通过这些方式联系管理员</a>。</p></div>
+<hr><p>此网站使用Ay Web Application Firewall保护站点安全。</p>
+<p>WAF</p>
+`, {
+                status: 404, headers: {
+                    'Content-Type': 'text/html;charset=UTF-8',
+                    'Cache-Control': 'no-cache, no-store, must-revalidate',
+                }
+            })
+        }
         const ignore = [
             '/.env', '/.flaskenv', '/env', '/.envrc', '/env', '/env.js', '/.env.js',
             '/.env.test.local', '/.env.development.local', '/.env.production.local', '/.env.template',
@@ -607,6 +626,9 @@ export default {
 <p>WAF</p>
 `, {
                 status: 404,
+                headers: {
+                    'Content-Type': 'text/html;charset=UTF-8',
+                }
             })
         }
         if (await shouldValidate(request, env)) {
