@@ -413,7 +413,7 @@ function generateChallengePage(token) {
 <title>AyWAF</title></head>
 <body><h3>Ay Web Application Firewall</h3>
 <p>正在进行安全校验，请稍后...</p>
-<hr><p>此网站使用Ay Web Application Firewall保护站点安全。</p>
+<hr><p>此网站使用 Ay Web Application Firewall 保护站点安全。</p>
 <p>WAF</p>
 <script>document.cookie="ayFirewall=${token}; path=/; max-age=${60 * 60 * 24 * 3}; SameSite=Lax; Secure";location.reload();</script></body></html>`
 }
@@ -591,10 +591,9 @@ export default {
 <style>html{text-align:center}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}</style>
 <title>AyWAF</title></head>
 <body><h3>Ay Web Application Firewall</h3>
-<div style="text-align:left">
 <p>尊敬的访客，您好：</p>
-<p>您当前访问的页面已被管理员关闭，如有疑问，请<a href="https://undz.cn/contact_me/zh-cn.html">通过这些方式联系管理员</a>。</p></div>
-<hr><p>此网站使用Ay Web Application Firewall保护站点安全。</p>
+<p>您当前访问的页面已被管理员关闭，如有疑问，请<a href="https://undz.cn/contact_me/zh-cn.html">通过这些方式联系管理员</a>。</p>
+<hr><p>此网站使用 Ay Web Application Firewall 保护站点安全。</p>
 <p>WAF</p>
 `, {
                 status: 404, headers: {
@@ -622,7 +621,7 @@ export default {
 <title>AyWAF</title></head>
 <body><h3>Ay Web Application Firewall</h3>
 <p>危险操作，已被拦截</p>
-<hr><p>此网站使用Ay Web Application Firewall保护站点安全。</p>
+<hr><p>此网站使用 Ay Web Application Firewall 保护站点安全。</p>
 <p>WAF</p>
 `, {
                 status: 404,
