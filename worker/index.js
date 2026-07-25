@@ -404,18 +404,175 @@ async function validateRequest(request, url) {
         }
     }
 }
+// 985YXWmlk7jiVUT43tsrqponhgfedcbaZSRQ6PONMLK20zyxwvuJIHGF1EDCBA+/
+//     function base64Encode(input) {
+//     const base64Chars = '985YXWmlk7jiVUT43tsrqponhgfedcbaZSRQ6PONMLK20zyxwvuJIHGF1EDCBA+/';
+
+//     // 将字符串转换为 UTF-8 字节
+//     let utf8Bytes = new TextEncoder().encode(input);
+
+//     // 将每个字节转换为二进制字符串
+//     let binaryString = '';
+//     for (let i = 0; i < utf8Bytes.length; i++) {
+//         binaryString += utf8Bytes[i].toString(2).padStart(8, '0');
+//     }
+
+//     // 按 6 位拆分
+//     const chunks = [];
+//     for (let i = 0; i < binaryString.length; i += 6) {
+//         chunks.push(binaryString.slice(i, i + 6));
+//     }
+
+//     // 如果最后一组少于 6 位，进行填充
+//     if (chunks[chunks.length - 1].length < 6) {
+//         chunks[chunks.length - 1] = chunks[chunks.length - 1].padEnd(6, '0');
+//     }
+
+//     // 查找对应的 Base64 字符
+//     let base64Encoded = chunks.map(chunk => {
+//         const index = parseInt(chunk, 2); // 将二进制转换为数字
+//         return base64Chars.charAt(index);
+//     }).join('');
+
+//     // 添加填充字符
+//     while (base64Encoded.length % 4 !== 0) {
+//         base64Encoded += '=';
+//     }
+
+//     return base64Encoded;
+// }
 // ===========================================================主要函数
 function generateChallengePage(token) {
+
+    const r = () => Math.random().toString(16).substring(2, 8).padEnd(6, '0').toUpperCase();
+    const p = r();
+    let M = '';
+    for (let i = 0; i < token.length; i++) {
+        const code = token.charCodeAt(i) ^ p.charCodeAt(i % p.length);
+        M += String.fromCharCode(code);
+    }
+    const len = M.length;
+    const perm = Array.from({ length: len }, (_, i) => i);
+    for (let i = len - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [perm[i], perm[j]] = [perm[j], perm[i]];
+    }
+    let arg1 = '';
+    for (let i = 0; i < len; i++) {
+        arg1 += M[perm[i]];
+    }
+    const permHex = perm.map(v => '0x' + v.toString(16)).join(',');
+    const pHex = Array.from(p).map(ch => '0x' + ch.charCodeAt(0).toString(16)).join(',');
+    // jn = Javascript name
+    // el = 元素
+    // fu = 函数
+    const V_arg1 = '_' + r();
+    const V_m = '_' + r();
+    const V_pHex = '_' + r();
+    const V_p = '_' + r();
+    const V_q = '_' + r(); // 还原后的 M
+    const V_x = '_' + r();
+    const V_y = '_' + r();
+    const V_i = '_' + r();
+    const V_code = '_' + r();
+    const V_tip = 'el' + r();
+    const V_tipend = '_' + r();
+    const V_decode = 'fu' + r();
+    const V_decode_input = '_' + r();
+    const V_decode_b64chars = '_' + r();
+    const V_decode_decodedBytes = '_' + r();
+    const V_decode_binaryString = '_' + r();
+    const V_verification_failed = 'fu' + r();
+    const V_decode_return = '_' + r();
+    const V_token = '_' + r();
+    const V_el1 = 'el' + r();
+    const V_el2 = 'el' + r();
+    const V_el3 = 'el' + r();
+    const V_el4 = 'el' + r();
+    const V_el5 = 'el' + r();
+    const V_el6 = 'el' + r();
+    const V_el7 = 'el' + r();
+    const V_el8 = 'el' + r();
+    const V_radiobtn_sel = 'el' + r();
+    const V_radiobtn_none = 'el' + r();
     return `<!DOCTYPE html>
 <html lang="zh-CN">
 <head><meta charset="UTF-8"><meta name="viewport"content="width=device-width, initial-scale=1.0">
-<style>html{text-align:center}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}</style>
-<title>AyWAF</title></head>
-<body><h3>Ay Web Application Firewall</h3>
-<p>正在进行安全校验，请稍后...</p>
-<hr><p>此网站使用 Ay Web Application Firewall 保护站点安全。</p>
-<p>WAF</p>
-<script>document.cookie="ayFirewall=${token}; path=/; max-age=${60 * 60 * 24 * 3}; SameSite=Lax; Secure";location.reload();</script></body></html>`
+<style>html{text-align:center}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}.${V_radiobtn_sel}{display: inline-block;vertical-align: middle;background: #0075ff;height: 16px;width: 16px;border-radius: 5px;color: #fff;font-weight: bolder;font-size: 12px;}.${V_radiobtn_none}{cursor: pointer; display: inline-block;vertical-align: middle;background: #fff;height: 16px;width: 16px;border-radius: 5px;border: solid #000 1px;}.${V_el7}{display: inline-block;margin-block-start: 1em;margin-block-end: 1em;margin-inline-start: 0px;margin-inline-end: 0px;}</style>
+<title>WAF</title></head>
+<body><h3 id="${V_el1}" class="${V_el2}">Ay Web Application Firewall</h3>
+<p id="${V_tip}" style="display: none">正在进行安全校验，请稍后...</p>
+
+<div class="${V_el8}">
+<div class="${V_radiobtn_none}">
+</div>
+<p class="${V_el7}">点击以证明您不是恶意机器人</p>
+</div>
+
+<hr /><p id="${V_el3}" class="${V_el4}">此网站使用 Ay Web Application Firewall 保护站点安全。</p>
+<p  id="${V_el5}" class="${V_el6}">WAF</p>
+<script>
+(function() {
+    var ${V_verification_failed} = () => "\\u9a8c\\u8bc1\\u5931\\u8d25";
+    function wait(ms) {return new Promise(resolve => setTimeout(resolve, ms));}
+    function ${V_decode}(${V_decode_input}) {
+    const ${V_decode_b64chars} = '\\x39\\x38\\x35\\x59\\x58\\x57\\x6d\\x6c\\x6b\\x37\\x6a\\x69\\x56\\x55\\x54\\x34\\x33\\x74\\x73\\x72\\x71\\x70\\x6f\\x6e\\x68\\x67\\x66\\x65\\x64\\x63\\x62\\x61\\x5a\\x53\\x52\\x51\\x36\\x50\\x4f\\x4e\\x4d\\x4c\\x4b\\x32\\x30\\x7a\\x79\\x78\\x77\\x76\\x75\\x4a\\x49\\x48\\x47\\x46\\x31\\x45\\x44\\x43\\x42\\x41\\x2b\\x2f';
+    ${V_decode_input} = ${V_decode_input}.replace(/=/g, '');
+    let ${V_decode_binaryString} = '';
+    for (let i = 0; i < ${V_decode_input}.length; i++) {
+    const index = ${V_decode_b64chars}['\\u0069\\u006E\\u0064\\u0065\\u0078\\u004F\\u0066'](${V_decode_input}.charAt(i));${V_decode_binaryString} += index['\\u0074\\u006F\\u0053\\u0074\\u0072\\u0069\\u006E\\u0067'](2)['\\u0070\\u0061\\u0064\\u0053\\u0074\\u0061\\u0072\\u0074'](6, '0'); }
+    let ${V_decode_decodedBytes} = [];
+    for (let i = 0; i < Math.floor((${V_decode_input}.length * 6) / (2 ** 3)) * (2 ** 3); i += (2 ** 3)) {const byte = ${V_decode_binaryString}.slice(i, i + 8);${V_decode_decodedBytes}.push(parseInt(byte, 2));}
+    let ${V_decode_return} = new TextDecoder().decode(new Uint8Array(${V_decode_decodedBytes}));
+    return ${V_decode_return};}
+
+    document[${V_decode}('dnpPdNPrgovPhFtxdZ==')]('.${V_radiobtn_none}')[${V_decode}('hot6tngPeNtVfnUIgoEPdZ==')]("click",async function(){
+    document[${V_decode}('dnpPdNPrgovPhFtxdZ==')]('.${V_radiobtn_none}')[${V_decode}('hGvSdFUVfnUI')][${V_decode}('hot6')]('${V_radiobtn_sel}');
+    document[${V_decode}('dnpPdNPrgovPhFtxdZ==')]('.${V_radiobtn_none}')[${V_decode}('hGvSdFUVfnUI')][${V_decode}('dOpzeFgP')]('${V_radiobtn_none}');
+    document[${V_decode}('dnpPdNPrgovPhFtxdZ==')]('.${V_radiobtn_sel}')[${V_decode}('cmp1cXUxeNtPeN3=')] = "✓";
+    await wait(500); 
+    document[${V_decode}('dnpPdNPrgovPhFtxdZ==')]('.${V_el8}').style.display = "none";
+    document[${V_decode}('gGpItovPeopycX7Eso3')]('${V_tip}').style.display = "block"
+    if (
+      navigator.webdriver === true ||
+      /HeadlessChrome/.test(navigator.userAgent) ||
+      navigator.plugins.length === 0 ||
+      screen.colorDepth !== 24 ||
+      (screen.width < 1000 && !/android|iphone|ipad|ipod|blackberry|iemobile|opera mini|mobile|windows phone|phone|webos|kindle|tablet/i.test(navigator.userAgent))  ||
+      !window.chrome && !/Firefox|Safari/.test(navigator.userAgent)
+    ) {
+    document[${V_decode}('gGpItovPeopycX7Eso3')]('${V_tip}')[${V_decode}('cmp1cXUxeNtPeN3=')] = ${V_verification_failed}();
+    document[${V_decode}('gGpItovPeopycX7Eso3')]('${V_tip}').style.color = "#FF3333"
+    return;
+    }
+
+    var ${V_arg1} = ${JSON.stringify(arg1)};
+    var ${V_m} = [${permHex}];
+    var ${V_tipend} = () => "\\u7b49\\u5f85\\u670d\\u52a1\\u5668\\u54cd\\u5e94\\u3002";
+    var ${V_pHex} = [${pHex}];
+    var ${V_p} = '';
+    for (var ${V_i} = 0; ${V_i} < ${V_pHex}.length; ${V_i}++) {
+        ${V_p} += String.fromCharCode(${V_pHex}[${V_i}]);
+    }
+    var ${V_q} = [];
+    for (var ${V_x} = 0; ${V_x} < ${V_arg1}.length; ${V_x}++) {
+        for (var ${V_y} = 0; ${V_y} < ${V_m}.length; ${V_y}++) {
+            if (${V_m}[${V_y}] == ${V_x}) {
+                ${V_q}[${V_y}] = ${V_arg1}[${V_x}];
+                break;
+    }}}
+    var M_recovered = ${V_q}.join('');
+    var ${V_token} = '';
+    for (var ${V_i} = 0; ${V_i} < M_recovered.length; ${V_i}++) {
+        var ${V_code} = M_recovered.charCodeAt(${V_i}) ^ ${V_p}.charCodeAt(${V_i} % ${V_p}.length);
+        ${V_token} += String.fromCharCode(${V_code});
+    }
+    document[${V_decode}('hGAxfGPP')] = ${V_decode}('hnPmfn7PcGW0eYI') + ${V_token} + ${V_decode}('Tu8whntM4sBCkmHSb5HSgGqA') + ( (x) => (y) => (z) => (w) => x * y * z * w )( ~-61 )( ~-61 )( 0x18 )( ~~Math.PI ) + ${V_decode}('Tu8rhoHPqGPIgrHVhnZCkWUPhFpug3==');
+    document[${V_decode}('gGpItovPeopycX7Eso3')]('${V_tip}')[${V_decode}('cmp1cXUxeNtPeN3=')] = "\\u6821\\u9a8c\\u5df2\\u901a\\u8fc7\\uff0c\\u6b63\\u5728" + ${V_tipend}();
+    document['\\u006c\\u006f\\u0063\\u0061\\u0074\\u0069\\u006f\\u006e'][${V_decode}('dOp0eGW6')]();
+    });
+})();
+</script></body></html>`;
 }
 
 async function shouldValidate(request, env) {
@@ -436,7 +593,7 @@ async function shouldValidate(request, env) {
     if (path.startsWith('/.well-known/')) return false;
 
     const skipExact = [
-        '/_redirects', '/logo.png', '/logo.svg', '/logo.uhd.png',
+        '/logo.png', '/logo.svg', '/logo.uhd.png',
         '/logo.webp', '/favicon.ico', '/default-avatar.svg', '/BingSiteAuth.xml',
         '/robots.txt', '/humans.txt', '/security.txt', '/ads.txt',
         '/app-ads.txt', '/sitemap', '/sitemap_index', '/feed',
@@ -518,20 +675,13 @@ async function shouldValidate(request, env) {
 
     // ----- 5. 综合用户信息（TLS / HTTP 协议等异常检测） -----
     const tlsVersion = cf.tlsVersion || '';
-    // 只允许 TLSv1.2 和 TLSv1.3
     if (tlsVersion && !/TLSv1\.[23]/.test(tlsVersion)) {
         return true;
     }
-
     const httpProtocol = cf.httpProtocol || '';
-    // 拒绝 HTTP/1.0 及更早版本
     if (httpProtocol && /HTTP\/1\.[01]/.test(httpProtocol)) {
         return true;
     }
-
-    // （可选）检查其他字段，如 clientAcceptEncoding 等
-
-    // 默认放行
     return false;
 }
 
@@ -579,7 +729,6 @@ export default {
 `, {
                 status: 404, headers: {
                     'Content-Type': 'text/html;charset=UTF-8',
-                    'Cache-Control': 'no-cache, no-store, must-revalidate',
                 }
             })
         }
@@ -589,19 +738,26 @@ export default {
             '/.env.dist', '/.env.sample', '/.env.example', '/.env~', '/.env.swp',
             '/.env.tmp', '/.env.bak', '/.env.old', '/.env.save', '/.env.backup',
             '/.env.staging', '/.env.test', '/.env.prod', '/.env.dev', '/.env.development',
-            '/.env.production', '/.env.local', '/.config', '/config', '/.git/config',
-            '/.git/HEAD', '/_vti_pvt/zzcanary-c209086eca9aebb', '/.ssh/zzcanary-11cee87706275787', '/_vti_pvt/service.pwd', '/.ssh/id_rsa',
-            '/.ssh/id_ecdsa', '/.ssh/id_ed25519', '/.svn/zzcanary-7f24d6347052d904', '/actuator/zzcanary-745f4a4ad776a1b4', '/backup.tar.gz',
-            '/actuator/heapdump', '/.svn/wc.db', '/backup.zip', '/dump.sql', '/dump.sql', '/database.sql',
+            '/.env.production', '/.env.local', '/.config', '/config',
+            '/.git/HEAD', '/_vti_pvt/zzcanary-c209086eca9aebb', '/_vti_pvt/service.pwd',
+            '/database.sql', '/_redirects',
+            '/backup.tar.gz', '/dump.sql', '/dump.sql',
+            '/backup.zip',
+            '/db.sqlite',
+            '/database.sqlite',
+            '/web.config', '/console', '/server-status', '/info.php',
         ];
-        if (ignore.some(ext => path.toLowerCase() === ext)) {
+        const ignorePath = [
+            '/.vuepress/dist', '/backup', '/.ssh', '/.git', '/login', '/wp-admin', '/.htaccess', '/actuator', '/.svn', '/.vuepress/',
+        ];
+        if (ignore.some(ext => path.toLowerCase() === ext) || ignorePath.some(ext => path.startsWith(ext))) {
             return new Response(`<!DOCTYPE html>
 <html lang="zh-CN">
 <head><meta charset="UTF-8"><meta name="viewport"content="width=device-width, initial-scale=1.0">
 <style>html{text-align:center}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}</style>
 <title>AyWAF</title></head>
 <body><h3>Ay Web Application Firewall</h3>
-<p>危险操作，已被拦截</p>
+<p>已阻止不安全的请求</p>
 <hr><p>此网站使用 Ay Web Application Firewall 保护站点安全。</p>
 <p>WAF</p>
 `, {
@@ -678,7 +834,7 @@ export default {
                 }
             }
             return new Response(JSON.stringify({
-                code: 200,
+                code: 404,
                 name: "Cloudflare edge server",
                 userAgent,
                 platform,
