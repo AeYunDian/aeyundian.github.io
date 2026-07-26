@@ -578,7 +578,7 @@ async function shouldValidate(request, env) {
     const cf = request.cf || {};
     const country = (cf && cf.country) || '';
     const asn = (cf && cf.asn) ? parseInt(cf.asn, 10) : 0;
-
+    if (url.searchParams.get('waf') != null) { return true }
     const isBot = await isSearchEngineBot(request, env);
     if (isBot) {
         return false;
