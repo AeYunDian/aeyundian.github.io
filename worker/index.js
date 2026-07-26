@@ -474,6 +474,7 @@ function generateChallengePage(token) {
     const V_x = '_0x' + r();
     const V_y = '_0x' + r();
     const V_i = '_0x' + r();
+    const V_j = '_0x' + r();
     const V_code = '_0x' + r();
     const V_tip = 'el' + r();
     const V_tipend = '_0x' + r();
