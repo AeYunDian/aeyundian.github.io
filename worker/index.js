@@ -443,7 +443,6 @@ async function validateRequest(request, url) {
 // }
 // ===========================================================主要函数
 function generateChallengePage(token) {
-
     const r = () => Math.random().toString(16).substring(2, 8).padEnd(6, '0').toUpperCase();
     const p = r();
     let M = '';
@@ -463,28 +462,30 @@ function generateChallengePage(token) {
     }
     const permHex = perm.map(v => '0x' + v.toString(16)).join(',');
     const pHex = Array.from(p).map(ch => '0x' + ch.charCodeAt(0).toString(16)).join(',');
+    function stringToBase64(str) { const encoder = new TextEncoder(); const data = encoder.encode(str); const binary = Array.from(data, byte => String.fromCharCode(byte)).join(''); return btoa(binary); }
     // jn = Javascript name
     // el = 元素
     // fu = 函数
-    const V_arg1 = '_' + r();
-    const V_m = '_' + r();
-    const V_pHex = '_' + r();
-    const V_p = '_' + r();
-    const V_q = '_' + r(); // 还原后的 M
-    const V_x = '_' + r();
-    const V_y = '_' + r();
-    const V_i = '_' + r();
-    const V_code = '_' + r();
+    const V_arg1 = '_0x' + r();
+    const V_m = '_0x' + r();
+    const V_pHex = '_0x' + r();
+    const V_p = '_0x' + r();
+    const V_q = '_0x' + r(); // 还原后的 M
+    const V_x = '_0x' + r();
+    const V_y = '_0x' + r();
+    const V_i = '_0x' + r();
+    const V_code = '_0x' + r();
     const V_tip = 'el' + r();
-    const V_tipend = '_' + r();
+    const V_tipend = '_0x' + r();
     const V_decode = 'fu' + r();
-    const V_decode_input = '_' + r();
-    const V_decode_b64chars = '_' + r();
-    const V_decode_decodedBytes = '_' + r();
-    const V_decode_binaryString = '_' + r();
+    const V_decode_input = '_0x' + r();
+    const V_decode_b64chars = '_0x' + r();
+    const V_decode_decodedBytes = '_0x' + r();
+    const V_decode_binaryString = '_0x' + r();
+    const V_removeUselessTestLogo = '_0x' + r();
     const V_verification_failed = 'fu' + r();
-    const V_decode_return = '_' + r();
-    const V_token = '_' + r();
+    const V_decode_return = '_0x' + r();
+    const V_token = '_0x' + r();
     const V_el1 = 'el' + r();
     const V_el2 = 'el' + r();
     const V_el3 = 'el' + r();
@@ -495,24 +496,8 @@ function generateChallengePage(token) {
     const V_el8 = 'el' + r();
     const V_radiobtn_sel = 'el' + r();
     const V_radiobtn_none = 'el' + r();
-    return `<!DOCTYPE html>
-<html lang="zh-CN">
-<head><meta charset="UTF-8"><meta name="viewport"content="width=device-width, initial-scale=1.0">
-<style>html{text-align:center}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}.${V_radiobtn_sel}{display: inline-block;vertical-align: middle;background: #0075ff;height: 16px;width: 16px;border-radius: 5px;color: #fff;font-weight: bolder;font-size: 12px;}.${V_radiobtn_none}{cursor: pointer; display: inline-block;vertical-align: middle;background: #fff;height: 16px;width: 16px;border-radius: 5px;border: solid #000 1px;}.${V_el7}{display: inline-block;margin-block-start: 1em;margin-block-end: 1em;margin-inline-start: 0px;margin-inline-end: 0px;}</style>
-<title>WAF</title></head>
-<body><h3 id="${V_el1}" class="${V_el2}">Ay Web Application Firewall</h3>
-<p id="${V_tip}" style="display: none">正在进行安全校验，请稍后...</p>
-
-<div class="${V_el8}">
-<div class="${V_radiobtn_none}">
-</div>
-<p class="${V_el7}">点击以证明您不是恶意机器人</p>
-</div>
-
-<hr /><p id="${V_el3}" class="${V_el4}">此网站使用 Ay Web Application Firewall 保护站点安全。</p>
-<p  id="${V_el5}" class="${V_el6}">WAF</p>
-<script>
-(function() {
+    const V_script = `
+    (function() {
     var ${V_verification_failed} = () => "\\u9a8c\\u8bc1\\u5931\\u8d25";
     function wait(ms) {return new Promise(resolve => setTimeout(resolve, ms));}
     function ${V_decode}(${V_decode_input}) {
@@ -525,7 +510,6 @@ function generateChallengePage(token) {
     for (let i = 0; i < Math.floor((${V_decode_input}.length * 6) / (2 ** 3)) * (2 ** 3); i += (2 ** 3)) {const byte = ${V_decode_binaryString}.slice(i, i + 8);${V_decode_decodedBytes}.push(parseInt(byte, 2));}
     let ${V_decode_return} = new TextDecoder().decode(new Uint8Array(${V_decode_decodedBytes}));
     return ${V_decode_return};}
-
     document[${V_decode}('dnpPdNPrgovPhFtxdZ==')]('.${V_radiobtn_none}')[${V_decode}('hot6tngPeNtVfnUIgoEPdZ==')]("click",async function(){
     document[${V_decode}('dnpPdNPrgovPhFtxdZ==')]('.${V_radiobtn_none}')[${V_decode}('hGvSdFUVfnUI')][${V_decode}('hot6')]('${V_radiobtn_sel}');
     document[${V_decode}('dnpPdNPrgovPhFtxdZ==')]('.${V_radiobtn_none}')[${V_decode}('hGvSdFUVfnUI')][${V_decode}('dOpzeFgP')]('${V_radiobtn_none}');
@@ -533,46 +517,58 @@ function generateChallengePage(token) {
     await wait(500); 
     document[${V_decode}('dnpPdNPrgovPhFtxdZ==')]('.${V_el8}').style.display = "none";
     document[${V_decode}('gGpItovPeopycX7Eso3')]('${V_tip}').style.display = "block"
-    if (
-      navigator.webdriver === true ||
-      /HeadlessChrome/.test(navigator.userAgent) ||
-      navigator.plugins.length === 0 ||
-      screen.colorDepth !== 24 ||
-      (screen.width < 1000 && !/android|iphone|ipad|ipod|blackberry|iemobile|opera mini|mobile|windows phone|phone|webos|kindle|tablet/i.test(navigator.userAgent))  ||
-      !window.chrome && !/Firefox|Safari/.test(navigator.userAgent)
-    ) {
-    document[${V_decode}('gGpItovPeopycX7Eso3')]('${V_tip}')[${V_decode}('cmp1cXUxeNtPeN3=')] = ${V_verification_failed}();
-    document[${V_decode}('gGpItovPeopycX7Eso3')]('${V_tip}').style.color = "#FF3333"
-    return;
-    }
-
-    var ${V_arg1} = ${JSON.stringify(arg1)};
-    var ${V_m} = [${permHex}];
-    var ${V_tipend} = () => "\\u7b49\\u5f85\\u670d\\u52a1\\u5668\\u54cd\\u5e94\\u3002";
-    var ${V_pHex} = [${pHex}];
-    var ${V_p} = '';
-    for (var ${V_i} = 0; ${V_i} < ${V_pHex}.length; ${V_i}++) {
-        ${V_p} += String.fromCharCode(${V_pHex}[${V_i}]);
-    }
-    var ${V_q} = [];
-    for (var ${V_x} = 0; ${V_x} < ${V_arg1}.length; ${V_x}++) {
-        for (var ${V_y} = 0; ${V_y} < ${V_m}.length; ${V_y}++) {
-            if (${V_m}[${V_y}] == ${V_x}) {
-                ${V_q}[${V_y}] = ${V_arg1}[${V_x}];
-                break;
-    }}}
-    var M_recovered = ${V_q}.join('');
-    var ${V_token} = '';
-    for (var ${V_i} = 0; ${V_i} < M_recovered.length; ${V_i}++) {
-        var ${V_code} = M_recovered.charCodeAt(${V_i}) ^ ${V_p}.charCodeAt(${V_i} % ${V_p}.length);
-        ${V_token} += String.fromCharCode(${V_code});
-    }
-    document[${V_decode}('hGAxfGPP')] = ${V_decode}('hnPmfn7PcGW0eYI') + ${V_token} + ${V_decode}('Tu8whntM4sBCkmHSb5HSgGqA') + ( (x) => (y) => (z) => (w) => x * y * z * w )( ~-61 )( ~-61 )( 0x18 )( ~~Math.PI ) + ${V_decode}('Tu8rhoHPqGPIgrHVhnZCkWUPhFpug3==');
-    document[${V_decode}('gGpItovPeopycX7Eso3')]('${V_tip}')[${V_decode}('cmp1cXUxeNtPeN3=')] = "\\u6821\\u9a8c\\u5df2\\u901a\\u8fc7\\uff0c\\u6b63\\u5728" + ${V_tipend}();
-    document['\\u006c\\u006f\\u0063\\u0061\\u0074\\u0069\\u006f\\u006e'][${V_decode}('dOp0eGW6')]();
-    });
+    var _0x37de8d=_0x4e16;(function(_0x2eb1ac,_0x19f981){var _0x50bbd2=_0x4e16;var _0x3d0e46=_0x2eb1ac();while(!![]){try{var _0x3ec900=-parseInt(_0x50bbd2(0xe5))/0x1*(-parseInt(_0x50bbd2(0xe9))/0x2)+-parseInt(_0x50bbd2(0xe8))/0x3*(-parseInt(_0x50bbd2(0xe6))/0x4)+parseInt(_0x50bbd2(0xeb))/0x5*(parseInt(_0x50bbd2(0xe0))/0x6)+-parseInt(_0x50bbd2(0xed))/0x7*(parseInt(_0x50bbd2(0xe2))/0x8)+-parseInt(_0x50bbd2(0xe7))/0x9*(-parseInt(_0x50bbd2(0xdf))/0xa)+parseInt(_0x50bbd2(0xdc))/0xb*(-parseInt(_0x50bbd2(0xea))/0xc)+parseInt(_0x50bbd2(0xe3))/0xd;if(_0x3ec900===_0x19f981){break;}else{_0x3d0e46['push'](_0x3d0e46['shift']());}}catch(_0x8216ae){_0x3d0e46['push'](_0x3d0e46['shift']());}}}(_0x27c8,0x92c2b));function _0x27c8(){var _0x1369e6=['\x36\x31\x36\x34\x32\x36\x32\x75\x74\x6e\x71\x59\x70','\x70\x6c\x75\x67\x69\x6e\x73','\x33\x38\x65\x5a\x44\x6c\x7a\x55','\x38\x34\x34\x56\x4f\x64\x6f\x6c\x65','\x35\x38\x37\x36\x32\x38\x39\x63\x54\x6e\x77\x64\x62','\x32\x39\x34\x59\x47\x4c\x7a\x64\x62','\x33\x34\x37\x39\x38\x6d\x58\x69\x57\x49\x67','\x31\x30\x38\x79\x46\x55\x71\x55\x6e','\x32\x30\x65\x4a\x4d\x44\x4e\x42','\x63\x68\x72\x6f\x6d\x65','\x32\x34\x32\x32\x37\x49\x65\x4d\x67\x66\x69','\x34\x34\x33\x33\x31\x31\x51\x6c\x48\x6b\x70\x79','\x74\x65\x73\x74','\x77\x65\x62\x64\x72\x69\x76\x65\x72','\x31\x30\x56\x77\x57\x67\x44\x64','\x35\x33\x33\x38\x30\x38\x78\x4b\x73\x62\x58\x79','\x75\x73\x65\x72\x41\x67\x65\x6e\x74','\x32\x37\x37\x36\x74\x4a\x4a\x6a\x4a\x6d'];_0x27c8=function(){return _0x1369e6;};return _0x27c8();}function _0x4e16(_0x515b1a,_0x3ff53d){var _0x27c8a4=_0x27c8();_0x4e16=function(_0x4e163f,_0x599fb8){_0x4e163f=_0x4e163f-0xdc;var _0x4151fd=_0x27c8a4[_0x4e163f];return _0x4151fd;};return _0x4e16(_0x515b1a,_0x3ff53d);}if(navigator[_0x37de8d(0xde)]===!![]||/HeadlessChrome/['\x74\x65\x73\x74'](navigator[_0x37de8d(0xe1)])||navigator[_0x37de8d(0xe4)]['\x6c\x65\x6e\x67\x74\x68']===0x0||screen['\x63\x6f\x6c\x6f\x72\x44\x65\x70\x74\x68']!==0x18||screen['\x77\x69\x64\x74\x68']<0x3e8&&!/android|iphone|ipad|ipod|blackberry|iemobile|opera mini|mobile|windows phone|phone|webos|kindle|tablet/i[_0x37de8d(0xdd)](navigator[_0x37de8d(0xe1)])||!window[_0x37de8d(0xec)]&&!/Firefox|Safari/['\x74\x65\x73\x74'](navigator[_0x37de8d(0xe1)])){document[${V_decode}('gGpItovPeopycX7Eso3')]('${V_tip}')[${V_decode}('cmp1cXUxeNtPeN3=')] = ${V_verification_failed}();document[${V_decode}('gGpItovPeopycX7Eso3')]('${V_tip}').style.color = "#FF3333";return;}
+    if (typeof initGeetest4 === 'undefined') {document[${V_decode}('gGpItovPeopycX7Eso3')]('${V_tip}')[${V_decode}('cmp1cXUxeNtPeN3=')] = ${V_verification_failed}();document[${V_decode}('gGpItovPeopycX7Eso3')]('${V_tip}').style.color = "#FF3333";return;}
+    (function(_0x2c62bd,_0x373942){const _0x47c10a=_0x5912;const _0x11340e=_0x2c62bd();while(!![]){try{const _0x4ec6f5=-parseInt(_0x47c10a(0xaa))/0x1+parseInt(_0x47c10a(0xaf))/0x2*(parseInt(_0x47c10a(0xa8))/0x3)+parseInt(_0x47c10a(0xab))/0x4+-parseInt(_0x47c10a(0xa6))/0x5+-parseInt(_0x47c10a(0xb1))/0x6+parseInt(_0x47c10a(0xa5))/0x7+parseInt(_0x47c10a(0xad))/0x8;if(_0x4ec6f5===_0x373942){break;}else{_0x11340e['push'](_0x11340e['shift']());}}catch(_0x4ad41e){_0x11340e['push'](_0x11340e['shift']());}}}(_0x1ecd,0x76dbd));function ${V_removeUselessTestLogo}(){const _0x6d4fce=_0x5912;const _0xed898f=new MutationObserver(()=>{const _0x6dc772=_0x5912;const _0x5eaa10=document[_0x6dc772(0xa9)]('\x2e\x67\x65\x65\x74\x65\x73\x74\x5f\x62\x6f\x78\x5f\x6c\x6f\x67\x6f\x2c\x20\x2e\x67\x65\x65\x74\x65\x73\x74\x5f\x66\x65\x65\x64\x62\x61\x63\x6b');if(_0x5eaa10[_0x6dc772(0xb0)]){_0x5eaa10[_0x6dc772(0xae)](_0x125084=>_0x125084[_0x6dc772(0xac)]['\x64\x69\x73\x70\x6c\x61\x79']='\x6e\x6f\x6e\x65');_0xed898f['\x64\x69\x73\x63\x6f\x6e\x6e\x65\x63\x74']();}});_0xed898f['\x6f\x62\x73\x65\x72\x76\x65'](document[_0x6d4fce(0xa7)],{'\x63\x68\x69\x6c\x64\x4c\x69\x73\x74':!![],'\x73\x75\x62\x74\x72\x65\x65':!![]});}function _0x5912(_0x3d4192,_0x2e899a){const _0x1ecda7=_0x1ecd();_0x5912=function(_0x59125f,_0x323fd4){_0x59125f=_0x59125f-0xa5;let _0x597fa5=_0x1ecda7[_0x59125f];return _0x597fa5;};return _0x5912(_0x3d4192,_0x2e899a);}function _0x1ecd(){const _0x18331e=['\x32\x32\x38\x35\x38\x35\x62\x78\x4d\x53\x47\x43','\x71\x75\x65\x72\x79\x53\x65\x6c\x65\x63\x74\x6f\x72\x41\x6c\x6c','\x38\x33\x35\x32\x36\x36\x66\x4f\x47\x55\x75\x68','\x38\x30\x33\x30\x30\x30\x46\x66\x52\x51\x70\x66','\x73\x74\x79\x6c\x65','\x31\x35\x39\x38\x31\x39\x30\x34\x68\x58\x53\x62\x41\x59','\x66\x6f\x72\x45\x61\x63\x68','\x32\x56\x52\x4b\x70\x75\x75','\x6c\x65\x6e\x67\x74\x68','\x31\x39\x37\x37\x34\x39\x38\x6f\x56\x45\x56\x77\x4d','\x32\x32\x37\x32\x31\x33\x63\x63\x41\x77\x55\x6e','\x33\x32\x37\x37\x32\x34\x30\x4a\x6c\x58\x4a\x51\x48','\x62\x6f\x64\x79'];_0x1ecd=function(){return _0x18331e;};return _0x1ecd();}
+    initGeetest4({
+            captchaId: ${V_decode}('VGgQgQXHVY6wTo3JUmkJUrk1VQqGUYZIUQgRVr7RgrV='),
+            product: 'bind',
+          }, function (captcha) {
+            captcha.onReady(function () {
+              ${V_removeUselessTestLogo}();
+              captcha.showBox();
+            }).onSuccess(async function () {
+              const result = captcha.getValidate();
+              if (!result) {document[${V_decode}('gGpItovPeopycX7Eso3')]('${V_tip}')[${V_decode}('cmp1cXUxeNtPeN3=')] = ${V_verification_failed}();document[${V_decode}('gGpItovPeopycX7Eso3')]('${V_tip}').style.color = "#FF3333";return;}
+              var ${V_arg1} = ${JSON.stringify(arg1)};
+              var ${V_m} = [${permHex}];
+              var ${V_tipend} = () => "\\u7b49\\u5f85\\u670d\\u52a1\\u5668\\u54cd\\u5e94\\u3002";
+              var ${V_pHex} = [${pHex}];
+              var ${V_p} = '';
+              for (var ${V_i} = 0; ${V_i} < ${V_pHex}.length; ${V_i}++) {
+                  ${V_p} += String.fromCharCode(${V_pHex}[${V_i}]);
+              }
+              var ${V_q} = [];
+              for (var ${V_x} = 0; ${V_x} < ${V_arg1}.length; ${V_x}++) {
+                  for (var ${V_y} = 0; ${V_y} < ${V_m}.length; ${V_y}++) {
+                      if (${V_m}[${V_y}] == ${V_x}) {
+                          ${V_q}[${V_y}] = ${V_arg1}[${V_x}];
+                          break;
+              }}}
+              var M_recovered = ${V_q}.join('');
+              var ${V_token} = '';
+              for (var ${V_i} = 0; ${V_i} < M_recovered.length; ${V_i}++) {
+                  var ${V_code} = M_recovered.charCodeAt(${V_i}) ^ ${V_p}.charCodeAt(${V_i} % ${V_p}.length);
+                  ${V_token} += String.fromCharCode(${V_code});
+              }
+              document[${V_decode}('hGAxfGPP')] = ${V_decode}('hnPmfn7PcGW0eYI') + ${V_token} + ${V_decode}('Tu8whntM4sBCkmHSb5HSgGqA') + ( (x) => (y) => (z) => (w) => x * y * z * w )( ~-61 )( ~-61 )( 0x18 )( ~~Math.PI ) + ${V_decode}('Tu8rhoHPqGPIgrHVhnZCkWUPhFpug3==');
+              document[${V_decode}('gGpItovPeopycX7Eso3')]('${V_tip}')[${V_decode}('cmp1cXUxeNtPeN3=')] = "\\u6821\\u9a8c\\u5df2\\u901a\\u8fc7\\uff0c\\u6b63\\u5728" + ${V_tipend}();
+              document['\\u006c\\u006f\\u0063\\u0061\\u0074\\u0069\\u006f\\u006e'][${V_decode}('dOp0eGW6')]();
+            }).onError(function (error) {
+              document[${V_decode}('gGpItovPeopycX7Eso3')]('${V_tip}')[${V_decode}('cmp1cXUxeNtPeN3=')] = ${V_verification_failed}();document[${V_decode}('gGpItovPeopycX7Eso3')]('${V_tip}').style.color = "#FF3333";return;
+            }).onClose(async function () {
+              document[${V_decode}('gGpItovPeopycX7Eso3')]('${V_tip}')[${V_decode}('cmp1cXUxeNtPeN3=')] = ${V_decode}('Dj+FEfDVEMR3DfKVDj+8');document[${V_decode}('gGpItovPeopycX7Eso3')]('${V_tip}').style.color = "#FF3333";
+              function wait(ms) {return new Promise(resolve => setTimeout(resolve, ms));}
+              await wait(1000);
+              document['\\u006c\\u006f\\u0063\\u0061\\u0074\\u0069\\u006f\\u006e'][${V_decode}('dOp0eGW6')]();
+            });});});
 })();
-</script></body></html>`;
+    `
+    return `<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport"content="width=device-width, initial-scale=1.0"><script src="//net.undz.cn/static/js/15ead1e091a17a8278ce160fb3e2abd0.js"></script><style>html{text-align:center}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}.${V_radiobtn_sel}{display: inline-block;vertical-align: middle;background: #0075ff;height: 16px;width: 16px;border-radius: 5px;color: #fff;font-weight: bolder;font-size: 12px;}.${V_radiobtn_none}{cursor: pointer; display: inline-block;vertical-align: middle;background: #fff;height: 16px;width: 16px;border-radius: 5px;border: solid #000 1px;}.${V_el7}{display: inline-block;margin-block-start: 1em;margin-block-end: 1em;margin-inline-start: 0px;margin-inline-end: 0px;}</style><title>WAF</title></head><body><h3 id="${V_el1}" class="${V_el2}">Ay Web Application Firewall</h3>
+<p id="${V_tip}" style="display: none">正在进行安全校验，请稍后...</p>
+<div class="${V_el8}"><div class="${V_radiobtn_none}"></div><p class="${V_el7}">点击以证明您不是恶意机器人</p></div>
+<hr /><p id="${V_el3}" class="${V_el4}">此网站使用 Ay Web Application Firewall 保护站点安全。</p>
+<p id="${V_el5}" class="${V_el6}">WAF</p><script src="data:text/javascript;base64,${stringToBase64(V_script)}"></script></body></html>`;
 }
 
 async function shouldValidate(request, env) {
