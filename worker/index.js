@@ -539,13 +539,13 @@ function generateChallengePage(token) {
               for (var ${V_i} = 0; ${V_i} < ${V_pHex}.length; ${V_i}++) {
                   ${V_p} += String.fromCharCode(${V_pHex}[${V_i}]);
               }
-var ${V_q} = [];
-for (var ${V_j} = 0; ${V_j} < ${V_arg1}.length; ${V_j}++) {
-    for (var ${V_i} = 0; ${V_i} < ${V_m}.length; ${V_i}++) {
-        if (${V_m}[${V_i}] == ${V_j}) {
-            ${V_q}[${V_j}] = ${V_arg1}[${V_i}];
-            break;
-}}}
+              var ${V_q} = [];
+              for (var ${V_j} = 0; ${V_j} < ${V_arg1}.length; ${V_j}++) {
+                  for (var ${V_i} = 0; ${V_i} < ${V_m}.length; ${V_i}++) {
+                      if (${V_m}[${V_i}] == ${V_j}) {
+                          ${V_q}[${V_j}] = ${V_arg1}[${V_i}];
+                          break;
+              }}}
               var M_recovered = ${V_q}.join('');
               var ${V_token} = '';
               for (var ${V_i} = 0; ${V_i} < M_recovered.length; ${V_i}++) {
