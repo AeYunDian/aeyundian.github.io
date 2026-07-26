@@ -510,7 +510,7 @@ function generateChallengePage(token) {
     for (let i = 0; i < Math.floor((${V_decode_input}.length * 6) / (2 ** 3)) * (2 ** 3); i += (2 ** 3)) {const byte = ${V_decode_binaryString}.slice(i, i + 8);${V_decode_decodedBytes}.push(parseInt(byte, 2));}
     let ${V_decode_return} = new TextDecoder().decode(new Uint8Array(${V_decode_decodedBytes}));
     return ${V_decode_return};}
-    document[${V_decode}('dnpPdNPrgovPhFtxdZ==')]('.${V_radiobtn_none}')[${V_decode}('hot6tngPeNtVfnUIgoEPdZ==')]("click",async function(){
+    document[${V_decode}('dnpPdNPrgovPhFtxdZ==')]('.${V_el8}')[${V_decode}('hot6tngPeNtVfnUIgoEPdZ==')]("click",async function(){
     document[${V_decode}('dnpPdNPrgovPhFtxdZ==')]('.${V_radiobtn_none}')[${V_decode}('hGvSdFUVfnUI')][${V_decode}('hot6')]('${V_radiobtn_sel}');
     document[${V_decode}('dnpPdNPrgovPhFtxdZ==')]('.${V_radiobtn_none}')[${V_decode}('hGvSdFUVfnUI')][${V_decode}('dOpzeFgP')]('${V_radiobtn_none}');
     document[${V_decode}('dnpPdNPrgovPhFtxdZ==')]('.${V_radiobtn_sel}')[${V_decode}('cmp1cXUxeNtPeN3=')] = "✓";
@@ -564,7 +564,7 @@ function generateChallengePage(token) {
             });});});
 })();
     `
-    return `<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport"content="width=device-width, initial-scale=1.0"><script src="//net.undz.cn/static/js/15ead1e091a17a8278ce160fb3e2abd0.js"></script><style>html{text-align:center}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}.${V_radiobtn_sel}{display: inline-block;vertical-align: middle;background: #0075ff;height: 16px;width: 16px;border-radius: 5px;color: #fff;font-weight: bolder;font-size: 12px;}.${V_radiobtn_none}{cursor: pointer; display: inline-block;vertical-align: middle;background: #fff;height: 16px;width: 16px;border-radius: 5px;border: solid #000 1px;}.${V_el7}{display: inline-block;margin-block-start: 1em;margin-block-end: 1em;margin-inline-start: 0px;margin-inline-end: 0px;}</style><title>WAF</title></head><body><h3 id="${V_el1}" class="${V_el2}">Ay Web Application Firewall</h3>
+    return `<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport"content="width=device-width, initial-scale=1.0"><script src="//net.undz.cn/static/js/15ead1e091a17a8278ce160fb3e2abd0.js"></script><style>html{text-align:center}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}.${V_radiobtn_sel}{margin-right: 5px;display: inline-block;vertical-align: middle;background: #0075ff;height: 16px;width: 16px;border-radius: 5px;border: solid #0075ff 1px;color: #fff;font-weight: bolder;font-size: 12px;}.${V_radiobtn_none}{margin-right: 5px;cursor: pointer; display: inline-block;vertical-align: middle;background: #fff;height: 16px;width: 16px;border-radius: 5px;border: solid #000 1px;}.${V_el7}{display: inline-block;margin-block-start: 1em;margin-block-end: 1em;margin-inline-start: 0px;margin-inline-end: 0px;}.${V_el8}{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}</style><title>WAF</title></head><body><h3 id="${V_el1}" class="${V_el2}">Ay Web Application Firewall</h3>
 <p id="${V_tip}" style="display: none">正在进行安全校验，请稍后...</p>
 <div class="${V_el8}"><div class="${V_radiobtn_none}"></div><p class="${V_el7}">点击以证明您不是恶意机器人</p></div>
 <hr /><p id="${V_el3}" class="${V_el4}">此网站使用 Ay Web Application Firewall 保护站点安全。</p>
