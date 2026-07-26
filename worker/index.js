@@ -514,7 +514,7 @@ function generateChallengePage(token) {
     document[${V_decode}('dnpPdNPrgovPhFtxdZ==')]('.${V_radiobtn_none}')[${V_decode}('hGvSdFUVfnUI')][${V_decode}('hot6')]('${V_radiobtn_sel}');
     document[${V_decode}('dnpPdNPrgovPhFtxdZ==')]('.${V_radiobtn_none}')[${V_decode}('hGvSdFUVfnUI')][${V_decode}('dOpzeFgP')]('${V_radiobtn_none}');
     document[${V_decode}('dnpPdNPrgovPhFtxdZ==')]('.${V_radiobtn_sel}')[${V_decode}('cmp1cXUxeNtPeN3=')] = "✓";
-    await wait(500); 
+    await wait(500);
     document[${V_decode}('dnpPdNPrgovPhFtxdZ==')]('.${V_el8}').style.display = "none";
     document[${V_decode}('gGpItovPeopycX7Eso3')]('${V_tip}').style.display = "block"
     var _0x37de8d=_0x4e16;(function(_0x2eb1ac,_0x19f981){var _0x50bbd2=_0x4e16;var _0x3d0e46=_0x2eb1ac();while(!![]){try{var _0x3ec900=-parseInt(_0x50bbd2(0xe5))/0x1*(-parseInt(_0x50bbd2(0xe9))/0x2)+-parseInt(_0x50bbd2(0xe8))/0x3*(-parseInt(_0x50bbd2(0xe6))/0x4)+parseInt(_0x50bbd2(0xeb))/0x5*(parseInt(_0x50bbd2(0xe0))/0x6)+-parseInt(_0x50bbd2(0xed))/0x7*(parseInt(_0x50bbd2(0xe2))/0x8)+-parseInt(_0x50bbd2(0xe7))/0x9*(-parseInt(_0x50bbd2(0xdf))/0xa)+parseInt(_0x50bbd2(0xdc))/0xb*(-parseInt(_0x50bbd2(0xea))/0xc)+parseInt(_0x50bbd2(0xe3))/0xd;if(_0x3ec900===_0x19f981){break;}else{_0x3d0e46['push'](_0x3d0e46['shift']());}}catch(_0x8216ae){_0x3d0e46['push'](_0x3d0e46['shift']());}}}(_0x27c8,0x92c2b));function _0x27c8(){var _0x1369e6=['\x36\x31\x36\x34\x32\x36\x32\x75\x74\x6e\x71\x59\x70','\x70\x6c\x75\x67\x69\x6e\x73','\x33\x38\x65\x5a\x44\x6c\x7a\x55','\x38\x34\x34\x56\x4f\x64\x6f\x6c\x65','\x35\x38\x37\x36\x32\x38\x39\x63\x54\x6e\x77\x64\x62','\x32\x39\x34\x59\x47\x4c\x7a\x64\x62','\x33\x34\x37\x39\x38\x6d\x58\x69\x57\x49\x67','\x31\x30\x38\x79\x46\x55\x71\x55\x6e','\x32\x30\x65\x4a\x4d\x44\x4e\x42','\x63\x68\x72\x6f\x6d\x65','\x32\x34\x32\x32\x37\x49\x65\x4d\x67\x66\x69','\x34\x34\x33\x33\x31\x31\x51\x6c\x48\x6b\x70\x79','\x74\x65\x73\x74','\x77\x65\x62\x64\x72\x69\x76\x65\x72','\x31\x30\x56\x77\x57\x67\x44\x64','\x35\x33\x33\x38\x30\x38\x78\x4b\x73\x62\x58\x79','\x75\x73\x65\x72\x41\x67\x65\x6e\x74','\x32\x37\x37\x36\x74\x4a\x4a\x6a\x4a\x6d'];_0x27c8=function(){return _0x1369e6;};return _0x27c8();}function _0x4e16(_0x515b1a,_0x3ff53d){var _0x27c8a4=_0x27c8();_0x4e16=function(_0x4e163f,_0x599fb8){_0x4e163f=_0x4e163f-0xdc;var _0x4151fd=_0x27c8a4[_0x4e163f];return _0x4151fd;};return _0x4e16(_0x515b1a,_0x3ff53d);}if(navigator[_0x37de8d(0xde)]===!![]||/HeadlessChrome/['\x74\x65\x73\x74'](navigator[_0x37de8d(0xe1)])||navigator[_0x37de8d(0xe4)]['\x6c\x65\x6e\x67\x74\x68']===0x0||screen['\x63\x6f\x6c\x6f\x72\x44\x65\x70\x74\x68']!==0x18||screen['\x77\x69\x64\x74\x68']<0x3e8&&!/android|iphone|ipad|ipod|blackberry|iemobile|opera mini|mobile|windows phone|phone|webos|kindle|tablet/i[_0x37de8d(0xdd)](navigator[_0x37de8d(0xe1)])||!window[_0x37de8d(0xec)]&&!/Firefox|Safari/['\x74\x65\x73\x74'](navigator[_0x37de8d(0xe1)])){document[${V_decode}('gGpItovPeopycX7Eso3')]('${V_tip}')[${V_decode}('cmp1cXUxeNtPeN3=')] = ${V_verification_failed}();document[${V_decode}('gGpItovPeopycX7Eso3')]('${V_tip}').style.color = "#FF3333";return;}
@@ -564,7 +564,7 @@ function generateChallengePage(token) {
             });});});
 })();
     `
-    return `<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport"content="width=device-width, initial-scale=1.0"><script src="//net.undz.cn/static/js/15ead1e091a17a8278ce160fb3e2abd0.js"></script><style>html{text-align:center}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}.${V_radiobtn_sel}{margin-right: 5px;display: inline-block;vertical-align: middle;background: #0075ff;height: 16px;width: 16px;border-radius: 5px;border: solid #0075ff 1px;color: #fff;font-weight: bolder;font-size: 12px;}.${V_radiobtn_none}{margin-right: 5px;cursor: pointer; display: inline-block;vertical-align: middle;background: #fff;height: 16px;width: 16px;border-radius: 5px;border: solid #000 1px;}.${V_el7}{display: inline-block;margin-block-start: 1em;margin-block-end: 1em;margin-inline-start: 0px;margin-inline-end: 0px;}.${V_el8}{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}</style><title>WAF</title></head><body><h3 id="${V_el1}" class="${V_el2}">Ay Web Application Firewall</h3>
+    return `<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport"content="width=device-width, initial-scale=1.0"><script src="//net.undz.cn/static/js/15ead1e091a17a8278ce160fb3e2abd0.js"></script><style>html{text-align:center}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}.${V_radiobtn_sel}{margin-right: 5px;display: inline-block;vertical-align: middle;background: #0075ff;height: 16px;width: 16px;border-radius: 5px;border: solid #0075ff 1px;color: #fff;font-weight: bolder;font-size: 12px;}.${V_radiobtn_none}{margin-right: 5px;cursor: pointer; display: inline-block;vertical-align: middle;background: #fff;height: 16px;width: 16px;border-radius: 5px;border: solid #000 1px;}.${V_el7}{display: inline-block;margin-block-start: 1em;margin-block-end: 1em;margin-inline-start: 0px;margin-inline-end: 0px;}.${V_el8}{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}</style><title>AYWAF</title></head><body><h3 id="${V_el1}" class="${V_el2}">Ay Web Application Firewall</h3>
 <p id="${V_tip}" style="display: none">正在进行安全校验，请稍后...</p>
 <div class="${V_el8}"><div class="${V_radiobtn_none}"></div><p class="${V_el7}">点击以证明您不是恶意机器人</p></div>
 <hr /><p id="${V_el3}" class="${V_el4}">此网站使用 Ay Web Application Firewall 保护站点安全。</p>
@@ -578,7 +578,11 @@ async function shouldValidate(request, env) {
     const cf = request.cf || {};
     const country = (cf && cf.country) || '';
     const asn = (cf && cf.asn) ? parseInt(cf.asn, 10) : 0;
-    if (url.searchParams.get('waf') != null) { return true }
+    if (url.searchParams.get('waf') != null) {
+        const result = await validateRequest(request, url);
+        if (result.valid) { return false; }
+        return true;
+    }
     const isBot = await isSearchEngineBot(request, env);
     if (isBot) {
         return false;
@@ -626,7 +630,7 @@ async function shouldValidate(request, env) {
     ];
     if (badKeywords.some(kw => lowerUA.includes(kw.toLowerCase()))) return true;
 
-    const badASNs = new Set([
+    const badASNs = new Set([ // 各大云厂商服务器的ASN，排除机房的恶意请求
         0,
         210644, 216246, 211522, 214351, 213194, 214196, 44477,
         215789, 214943, 48589, 202685, 57523, 136897,
@@ -641,15 +645,12 @@ async function shouldValidate(request, env) {
         9786, 59077, 135377 // 优刻得
     ]);
     if (badASNs.has(asn)) return true;
-
-    const asOrganization = (cf && cf.asOrganization) || '';
-    const isChineseASN = /china|telecom|unicom|mobile|cnnic|aliyun|tencent|cloud/i.test(asOrganization);
-    if (country.toUpperCase() === 'CN') {
-        if (!isChineseASN) return true;
-    } else {
-        if (isChineseASN) return true;
-    }
-
+    const goodASNs = new Set([ // 家庭ASN，包含中国家庭的正常ASN
+        4134, 4808, 4811,
+        4812, 4835, 4837, 9394, 9808, 17622, 17816, 23650, 23724, 23764, 24400, 24444, 24445, 56040, 56041,
+        56044, 56045, 56046, 58517, 58518, 131285, 132225, 132437, 132536, 132833, 134810, 140349, 140657
+    ]);
+    if (goodASNs.has(asn) && country.toUpperCase() === 'CN') return false;
     // ----- 强跳后缀（静态资源）直接放行 -----
     const staticExts = [
         '.jpg', '.jpeg', '.png', '.gif', '.bmp', '.ico', '.svg',
@@ -831,12 +832,8 @@ export default {
             }
             return new Response(JSON.stringify({
                 code: 404,
-                name: "Cloudflare edge server",
-                userAgent,
-                platform,
-                isWechat,
-                clientIP,
-                isMobile
+                message: "已阻止不安全的请求。此网站使用 Ay Web Application Firewall 保护站点安全。",
+                server: "Ay Web Application Firewall"
             }), {
                 headers: {
                     "Content-Type": "application/json"
