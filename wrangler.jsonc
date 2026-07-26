@@ -20,5 +20,11 @@
   ],
   "vars": {
     "KEY": "73238d0f0c7c2912f8c90ffdc1e60ef0"
+  },
+  "observability": {
+    "logs": {
+      "enabled": true,
+      "invocation_logs": true
+    }
   }
 }
