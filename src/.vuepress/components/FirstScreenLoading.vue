@@ -33,6 +33,7 @@ export default {
         this.startTime = Date.now();
     },
     mounted() {
+        console.info(" \n============================================================");
         const art = `
       __      __          .----------------.  .----------------.  .----------------. 
       \\ \\    / /         | .--------------. || .--------------. || .--------------. |
@@ -49,14 +50,19 @@ export default {
                                                                  Powered by Cloudflare
                                                             Copyright © 2026 AeYunDian
 `;
+
         console.info(`%c${art}`, 'color: #4C9FFF;');
-        console.info("%c vuepress %c v2.0.0-rc.26 ", 
-        "padding: 2px 6px; border-radius: 3px 0 0 3px; color: #fff; background: #FF6699; font-weight: bold;", 
-        "padding: 2px 6px; border-radius: 0 3px 3px 0; color: #fff; background: #FF9999; font-weight: bold;")
+        console.info("%c vuepress %c v2.0.0-rc.26 ",
+            "padding: 2px 6px; border-radius: 3px 0 0 3px; color: #fff; background: #FF6699; font-weight: bold;",
+            "padding: 2px 6px; border-radius: 0 3px 3px 0; color: #fff; background: #FF9999; font-weight: bold;")
+        console.info("%c AyFAST %c fast.undz.cn ",
+            "padding: 2px 6px; border-radius: 3px 0 0 3px; color: #fff; background: #409cff; font-weight: bold;",
+            "padding: 2px 6px; border-radius: 0 3px 3px 0; color: #fff; background: #40cfff; font-weight: bold;")
         console.info(
-        '%c 欢迎来到 undz.cn  🚀',
-        'color: #ffb74d; font-size: 14px; font-weight: bold; background: #ffc;'
+            '%c Welcome to undz.cn',
+            'color: #ffb74d; font-size: 14px; font-weight: bold; background: #ffc;'
         );
+        console.info("============================================================\n ");
         if (this.enable === true) {
             const MIN_DISPLAY = 0.8; // 最小显示秒数
             const elapsed = (Date.now() - this.startTime) / 1000; // 已过秒数
@@ -147,6 +153,7 @@ export default {
 .loading-path .dot2 {
     transform: translate(calc(100% - 3.75px), 3.75px);
     fill: #409eff;
+
     animation: custom-spin-move 1s infinite linear alternate;
     opacity: 0.3;
     animation-delay: 0.4s;
