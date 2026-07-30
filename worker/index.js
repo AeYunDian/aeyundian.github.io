@@ -584,10 +584,10 @@ async function shouldValidate(request, env) {
         if (result.valid) { return false; }
         return true;
     }
-    const isBot = await isSearchEngineBot(request, env);
-    if (isBot) {
-        return false;
-    }
+    // const isBot = await isSearchEngineBot(request, env);
+    // if (isBot) {
+    //     return false;
+    // }
 
     if (request.method === 'OPTIONS') return false;
     if (path.startsWith('/api/')) return false;
@@ -605,81 +605,81 @@ async function shouldValidate(request, env) {
     if (skipExact.includes(path)) return false;
 
     // ---------- 危险 UA 黑名单（触发验证） ----------
-    const dangerousUAKeywords = [
-        // “禁止搜索引擎”列表
-        '2345Explorer', 'curl', 'wget', 'webZIP', 'qihoobot',
-        // 微信/QQ
-        'MicroMessenger', 'QQTheme',
-        'WPScan',
-    ];
-    // 以上列表已去重，且移除了主流搜索引擎
-    const lowerUA = ua.toLowerCase();
-    if (dangerousUAKeywords.some(kw => lowerUA.includes(kw.toLowerCase()))) {
-        return true;
-    }
+    // const dangerousUAKeywords = [
+    //     // “禁止搜索引擎”列表
+    //     '2345Explorer', 'curl', 'wget', 'webZIP', 'qihoobot',
+    //     // 微信/QQ
+    //     'MicroMessenger', 'QQTheme',
+    //     'WPScan',
+    // ];
+    // // 以上列表已去重，且移除了主流搜索引擎
+    // const lowerUA = ua.toLowerCase();
+    // if (dangerousUAKeywords.some(kw => lowerUA.includes(kw.toLowerCase()))) {
+    //     return true;
+    // }
 
     // ----- 高危国家 / 空UA / 扫描器UA / 恶意ASN（任一命中则需验证） -----
-    const dangerousCountries = ['RU', 'UA', 'TR'];
-    if (dangerousCountries.includes(country.toUpperCase())) return true;
+    // const dangerousCountries = ['RU', 'UA', 'TR'];
+    // if (dangerousCountries.includes(country.toUpperCase())) return true;
 
-    if (ua === '' || ua === 'undefined') return true;
+    // if (ua === '' || ua === 'undefined') return true;
 
-    const badKeywords = [
-        'masscan', 'nmap', 'zmap', 'zgrab', 'WPScan', 'sqlmap',
-        'fimap', 'Acunetix', 'FHscan', 'Gscan', 'Researchscan',
-        'Wprecon', 'BackDoorBot', 'Zeus'
-    ];
-    if (badKeywords.some(kw => lowerUA.includes(kw.toLowerCase()))) return true;
+    // const badKeywords = [
+    //     'masscan', 'nmap', 'zmap', 'zgrab', 'WPScan', 'sqlmap',
+    //     'fimap', 'Acunetix', 'FHscan', 'Gscan', 'Researchscan',
+    //     'Wprecon', 'BackDoorBot', 'Zeus'
+    // ];
+    // if (badKeywords.some(kw => lowerUA.includes(kw.toLowerCase()))) return true;
 
-    const badASNs = new Set([ // 各大云厂商服务器的ASN，排除机房的恶意请求
-        0,
-        210644, 216246, 211522, 214351, 213194, 214196, 44477,
-        215789, 214943, 48589, 202685, 57523, 136897,
-        398324, 14618, 10912, 24940, 13335, 36351, 31898,
-        14061, 16276, 36352, 53667, 60781, 5065, 6207, 35624,
-        43444, 198571, 33993, 209847, 35478, 58854, 138915, 140666,
-        16509, // AWS 亚洲
-        34947, 37963, 45102, 45103, 45104, 59028, 59051, 59052, 59053, 59054, 59055, 134963, 211914, // 阿里
-        45090, 132203, 132591, 133478, 137876, // 腾讯
-        55990, 61348, 63655, 63727, 131444, 136907, 139124, 139144, 140723, 141180, 149167, 200756, 206204, 206798, 265443, 269939, // 华为
-        38365, 38627, 45076, 45085, 55967, 63288, 63728, 63729, 131138, 131139, 131140, 131141, 133746, 199506, // 百度云
-        9786, 59077, 135377 // 优刻得
-    ]);
-    if (badASNs.has(asn)) return true;
-    const goodASNs = new Set([ // 家庭ASN，包含中国家庭的正常ASN
-        4134, 4808, 4811,
-        4812, 4835, 4837, 9394, 9808, 17622, 17816, 23650, 23724, 23764, 24400, 24444, 24445, 56040, 56041,
-        56044, 56045, 56046, 58517, 58518, 131285, 132225, 132437, 132536, 132833, 134810, 140349, 140657
-    ]);
-    if (goodASNs.has(asn) && country.toUpperCase() === 'CN') return false;
-    // ----- 强跳后缀（静态资源）直接放行 -----
-    const staticExts = [
-        '.jpg', '.jpeg', '.png', '.gif', '.bmp', '.ico', '.svg',
-        '.webp', '.tiff', '.tif', '.heic', '.heif', '.avif',
-        '.css', '.scss', '.less', '.sass', '.styl',
-        '.js', '.mjs', '.cjs', '.ts', '.jsx', '.tsx', '.map',
-        '.woff', '.woff2', '.ttf', '.otf', '.eot', '.fon',
-        '.mp4', '.webm', '.ogv', '.avi', '.mov', '.wmv', '.flv',
-        '.mkv', '.mp3', '.wav', '.ogg', '.flac', '.aac', '.m4a',
-        '.wma', '.pdf', '.doc', '.docx', '.xls', '.xlsx', '.ppt',
-        '.pptx', '.odt', '.ods', '.odp', '.rtf', '.txt', '.csv',
-        '.md', '.json', '.xml', '.yaml', '.yml', '.toml', '.ini',
-        '.cfg', '.conf', '.zip', '.rar', '.7z', '.tar', '.gz',
-        '.bz2', '.xz', '.tgz', '.rss', '.atom', '.manifest',
-        '.webapp', '.wasm', '.crx', '.xpi', '.exe', '.msi',
-        '.apk', '.dmg', '.pkg', '.deb', '.rpm', '.jar'
-    ];
-    if (staticExts.some(ext => path.endsWith(ext))) return false;
+    // const badASNs = new Set([ // 各大云厂商服务器的ASN，排除机房的恶意请求
+    //     0,
+    //     210644, 216246, 211522, 214351, 213194, 214196, 44477,
+    //     215789, 214943, 48589, 202685, 57523, 136897,
+    //     398324, 14618, 10912, 24940, 13335, 36351, 31898,
+    //     14061, 16276, 36352, 53667, 60781, 5065, 6207, 35624,
+    //     43444, 198571, 33993, 209847, 35478, 58854, 138915, 140666,
+    //     16509, // AWS 亚洲
+    //     34947, 37963, 45102, 45103, 45104, 59028, 59051, 59052, 59053, 59054, 59055, 134963, 211914, // 阿里
+    //     45090, 132203, 132591, 133478, 137876, // 腾讯
+    //     55990, 61348, 63655, 63727, 131444, 136907, 139124, 139144, 140723, 141180, 149167, 200756, 206204, 206798, 265443, 269939, // 华为
+    //     38365, 38627, 45076, 45085, 55967, 63288, 63728, 63729, 131138, 131139, 131140, 131141, 133746, 199506, // 百度云
+    //     9786, 59077, 135377 // 优刻得
+    // ]);
+    // if (badASNs.has(asn)) return true;
+    // const goodASNs = new Set([ // 家庭ASN，包含中国家庭的正常ASN
+    //     4134, 4808, 4811,
+    //     4812, 4835, 4837, 9394, 9808, 17622, 17816, 23650, 23724, 23764, 24400, 24444, 24445, 56040, 56041,
+    //     56044, 56045, 56046, 58517, 58518, 131285, 132225, 132437, 132536, 132833, 134810, 140349, 140657
+    // ]);
+    // if (goodASNs.has(asn) && country.toUpperCase() === 'CN') return false;
+    // // ----- 强跳后缀（静态资源）直接放行 -----
+    // const staticExts = [
+    //     '.jpg', '.jpeg', '.png', '.gif', '.bmp', '.ico', '.svg',
+    //     '.webp', '.tiff', '.tif', '.heic', '.heif', '.avif',
+    //     '.css', '.scss', '.less', '.sass', '.styl',
+    //     '.js', '.mjs', '.cjs', '.ts', '.jsx', '.tsx', '.map',
+    //     '.woff', '.woff2', '.ttf', '.otf', '.eot', '.fon',
+    //     '.mp4', '.webm', '.ogv', '.avi', '.mov', '.wmv', '.flv',
+    //     '.mkv', '.mp3', '.wav', '.ogg', '.flac', '.aac', '.m4a',
+    //     '.wma', '.pdf', '.doc', '.docx', '.xls', '.xlsx', '.ppt',
+    //     '.pptx', '.odt', '.ods', '.odp', '.rtf', '.txt', '.csv',
+    //     '.md', '.json', '.xml', '.yaml', '.yml', '.toml', '.ini',
+    //     '.cfg', '.conf', '.zip', '.rar', '.7z', '.tar', '.gz',
+    //     '.bz2', '.xz', '.tgz', '.rss', '.atom', '.manifest',
+    //     '.webapp', '.wasm', '.crx', '.xpi', '.exe', '.msi',
+    //     '.apk', '.dmg', '.pkg', '.deb', '.rpm', '.jar'
+    // ];
+    // if (staticExts.some(ext => path.endsWith(ext))) return false;
 
-    // ----- 5. 综合用户信息（TLS / HTTP 协议等异常检测） -----
-    const tlsVersion = cf.tlsVersion || '';
-    if (tlsVersion && !/TLSv1\.[23]/.test(tlsVersion)) {
-        return true;
-    }
-    const httpProtocol = cf.httpProtocol || '';
-    if (httpProtocol && /HTTP\/1\.[01]/.test(httpProtocol)) {
-        return true;
-    }
+    // // ----- 5. 综合用户信息（TLS / HTTP 协议等异常检测） -----
+    // const tlsVersion = cf.tlsVersion || '';
+    // if (tlsVersion && !/TLSv1\.[23]/.test(tlsVersion)) {
+    //     return true;
+    // }
+    // const httpProtocol = cf.httpProtocol || '';
+    // if (httpProtocol && /HTTP\/1\.[01]/.test(httpProtocol)) {
+    //     return true;
+    // }
     return false;
 }
 
