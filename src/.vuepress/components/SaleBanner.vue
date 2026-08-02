@@ -42,7 +42,7 @@ export default {
     handleBannerClick(e) {
       // 点击关闭按钮时不触发跳转
       if (e.target.classList.contains('close-btn')) return;
-      window.location.href = '/sale_the_domain_name.html';
+      window.location.href = 'new.undz.cn';
     },
     startScrollAnimation() {
       const scrollContainer = this.$refs.scrollContainer;
@@ -50,7 +50,7 @@ export default {
       if (!scrollContainer || !textSpan) return;
 
       let startTime = null;
-      const duration = 15000; // 一次完整滚动时间 (ms)
+      const duration = 200000; // 一次完整滚动时间 (ms)
       let containerWidth = scrollContainer.clientWidth;
       let textWidth = textSpan.clientWidth;
 
