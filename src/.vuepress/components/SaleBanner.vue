@@ -2,7 +2,7 @@
   <ClientOnly>
     <div v-if="!closed" class="domain-sale-banner" @click="handleBannerClick">
       <div ref="scrollContainer" class="scroll-container">
-        <span ref="scrollText" class="scroll-text">我们很快会推出新的博客页面。试试 new.undz.cn 预览。</span>
+        <span ref="scrollText" class="scroll-text">我们很快会推出新的博客页面，点击此横幅，试试 new.undz.cn 预览。</span>
       </div>
       <button class="close-btn" @click.stop="closeBanner" style="display: none;">✕</button>
     </div>
@@ -32,7 +32,7 @@ export default {
     handleBannerClick(e) {
       // 点击关闭按钮时不触发跳转
       if (e.target.classList.contains('close-btn')) return;
-      window.location.href = 'new.undz.cn';
+      window.location.replace("https://new.undz.cn");
     },
 
   },
