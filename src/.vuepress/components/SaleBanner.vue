@@ -47,7 +47,7 @@ export default {
   background: #fff0e3;
   font-size: 13px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   color: #e58900;
   box-sizing: border-box;
