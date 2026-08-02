@@ -16,7 +16,9 @@ import { ClientOnly } from "vuepress/client";
       <div class="backdrop-blur-layer"></div>
     </template>
 
-    <template #heroAfter> </template>
+    <template #heroAfter>
+      <SaleBanner />
+    </template>
 
     <template #heroInfo>
       <div class="vp-blog-hero-info">
@@ -29,14 +31,8 @@ import { ClientOnly } from "vuepress/client";
     <template #infoAfter>
       <ClientOnly>
         <!-- ads1 -->
-        <ins
-          class="adsbygoogle"
-          style="display: block"
-          data-ad-client="ca-pub-3843140944895532"
-          data-ad-slot="8419103573"
-          data-ad-format="auto"
-          data-full-width-responsive="true"
-        ></ins>
+        <ins class="adsbygoogle" style="display: block" data-ad-client="ca-pub-3843140944895532"
+          data-ad-slot="8419103573" data-ad-format="auto" data-full-width-responsive="true"></ins>
         <!-- <div class="adsbox">
           广告：
           <div id="container-fea5bb195a297693414b0fb0d07361bd"></div>
