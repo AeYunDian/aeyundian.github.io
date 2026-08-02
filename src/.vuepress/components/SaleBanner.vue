@@ -59,10 +59,8 @@ export default {
 }
 
 .scroll-container {
-  flex: 1;
   overflow: hidden;
   white-space: nowrap;
-  position: relative;
   height: 100%;
 }
 
@@ -70,7 +68,6 @@ export default {
   display: inline-block;
   text-align: center;
   white-space: nowrap;
-
 }
 
 .close-btn {
