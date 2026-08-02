@@ -16,76 +16,26 @@ export default {
     return {
       // closed: false,
       closed: false,
-      animationId: null
     };
   },
   mounted() {
-
-    // 检查 localStorage 是否关闭过
     if (localStorage.getItem('domainSaleBannerClosed') === 'true') {
       this.closed = true;
       return;
     }
-    // 等待 DOM 完全渲染后再启动动画
-    this.$nextTick(() => {
-      this.startScrollAnimation();
-    });
   },
   methods: {
     closeBanner() {
       this.closed = true;
       localStorage.setItem('domainSaleBannerClosed', 'true');
-      if (this.animationId) {
-        cancelAnimationFrame(this.animationId);
-      }
     },
     handleBannerClick(e) {
       // 点击关闭按钮时不触发跳转
       if (e.target.classList.contains('close-btn')) return;
       window.location.href = 'new.undz.cn';
     },
-    startScrollAnimation() {
-      const scrollContainer = this.$refs.scrollContainer;
-      const textSpan = this.$refs.scrollText;
-      if (!scrollContainer || !textSpan) return;
 
-      let startTime = null;
-      const duration = 200000; // 一次完整滚动时间 (ms)
-      let containerWidth = scrollContainer.clientWidth;
-      let textWidth = textSpan.clientWidth;
-
-      const updateDimensions = () => {
-        containerWidth = scrollContainer.clientWidth;
-        textWidth = textSpan.clientWidth;
-      };
-
-      const animate = (timestamp) => {
-        if (!startTime) startTime = timestamp;
-        const elapsed = timestamp - startTime;
-        const progress = (elapsed % duration) / duration;
-        const translateX = containerWidth - (progress * (containerWidth + textWidth));
-        textSpan.style.transform = `translateX(${translateX}px)`;
-        this.animationId = requestAnimationFrame(animate);
-      };
-
-      window.addEventListener('resize', () => {
-        updateDimensions();
-        startTime = null;
-      });
-
-      // 延迟确保首次尺寸计算正确
-      setTimeout(() => {
-        updateDimensions();
-        startTime = null;
-        this.animationId = requestAnimationFrame(animate);
-      }, 100);
-    }
   },
-  beforeDestroy() {
-    if (this.animationId) {
-      cancelAnimationFrame(this.animationId);
-    }
-  }
 };
 </script>
 
@@ -118,9 +68,9 @@ export default {
 
 .scroll-text {
   display: inline-block;
+  text-align: center;
   white-space: nowrap;
-  position: relative;
-  animation: fade-blink 2s ease-in-out infinite;
+
 }
 
 .close-btn {
@@ -143,17 +93,5 @@ export default {
 .close-btn:hover {
   background: rgba(0, 0, 0, 0.2);
   color: #b06d00;
-}
-
-@keyframes fade-blink {
-
-  0%,
-  100% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0.55;
-  }
 }
 </style>
