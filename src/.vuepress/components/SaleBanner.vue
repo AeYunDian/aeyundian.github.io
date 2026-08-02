@@ -2,9 +2,9 @@
   <ClientOnly>
     <div v-if="!closed" class="domain-sale-banner" @click="handleBannerClick">
       <div ref="scrollContainer" class="scroll-container">
-        <span ref="scrollText" class="scroll-text">This domain name is for sale, click to see details!</span>
+        <span ref="scrollText" class="scroll-text">我们很快会推出新的博客页面。试试 new.undz.cn 预览。</span>
       </div>
-      <button class="close-btn" @click.stop="closeBanner">✕</button>
+      <button class="close-btn" @click.stop="closeBanner" style="display: none;">✕</button>
     </div>
   </ClientOnly>
 </template>
@@ -15,7 +15,7 @@ export default {
   data() {
     return {
       // closed: false,
-      closed: true, // 暂时停用此组件
+      closed: false,
       animationId: null
     };
   },
@@ -53,7 +53,7 @@ export default {
       const duration = 15000; // 一次完整滚动时间 (ms)
       let containerWidth = scrollContainer.clientWidth;
       let textWidth = textSpan.clientWidth;
-      
+
       const updateDimensions = () => {
         containerWidth = scrollContainer.clientWidth;
         textWidth = textSpan.clientWidth;
@@ -107,6 +107,7 @@ export default {
   position: relative;
   z-index: 9999;
 }
+
 .scroll-container {
   flex: 1;
   overflow: hidden;
@@ -114,14 +115,16 @@ export default {
   position: relative;
   height: 100%;
 }
+
 .scroll-text {
   display: inline-block;
   white-space: nowrap;
   position: relative;
   animation: fade-blink 2s ease-in-out infinite;
 }
+
 .close-btn {
-  background: rgba(0,0,0,0);
+  background: rgba(0, 0, 0, 0);
   border: none;
   font-size: 16px;
   color: #e58900;
@@ -136,12 +139,21 @@ export default {
   margin-left: 10px;
   flex-shrink: 0;
 }
+
 .close-btn:hover {
-  background: rgba(0,0,0,0.2);
+  background: rgba(0, 0, 0, 0.2);
   color: #b06d00;
 }
+
 @keyframes fade-blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.55; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.55;
+  }
 }
 </style>
