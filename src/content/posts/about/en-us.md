@@ -9,8 +9,6 @@ title: About
 
 </div>
 
-# About
-
 ## Site Info
 
 - **Site Name**: undz

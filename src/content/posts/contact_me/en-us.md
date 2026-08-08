@@ -9,8 +9,6 @@ title: Contact Me
 
 </div>
 
-# Contact Me
-
 ## Email
 
 - [aeyundian@gmail.com](mailto:aeyundian@gmail.com)

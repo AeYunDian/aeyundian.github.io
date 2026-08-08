@@ -10,8 +10,6 @@ description: "Welcome to the Privacy Policy of undz.cn. This policy will help yo
 
 </div>
 
-# Privacy Policy
-
 ## Owner and Data Controller
 
 AeYunDian  

@@ -9,8 +9,6 @@ title: 聯絡我
 
 </div>
 
-# 聯絡我
-
 ## 電郵
 
 - [aeyundian@gmail.com](mailto:aeyundian@gmail.com)

@@ -10,8 +10,6 @@ description: "Welcome to the Cookie Policy of undz.cn. This policy will help you
 
 </div>
 
-# Cookie Policy
-
 ## Introduction
 
 This document is intended to inform users about the technologies used by this Website, which help to achieve the purposes described below. These technologies allow the Owner to access and store information on the user's device (for example, by using Cookies) or to use resources on the user's device (for example, by running scripts) when the user interacts with this Website.

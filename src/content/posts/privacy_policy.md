@@ -1,6 +1,6 @@
 ---
 published: 2026-01-01
-title: Privacy Policy
+title: 隐私政策
 description: "欢迎阅读 undz.cn 的隐私政策。本政策将帮助您了解我们收集哪些数据、收集这些数据的原因以及您与这些数据相关的权利。"
 ---
 
@@ -9,8 +9,6 @@ description: "欢迎阅读 undz.cn 的隐私政策。本政策将帮助您了解
 [简体中文](/privacy_policy/) | [繁體中文（香港）](/privacy_policy/zh-hk/) | [English](/privacy_policy/en-us/)
 
 </div>
-
-# 隐私政策
 
 ## 所有者和数据控制者
 
